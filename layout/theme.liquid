@@ -1,0 +1,455 @@
+{% if
+  request.page_type == 'blog'
+  or request.page_type == 'collection'
+  or request.page_type == 'list-collections'
+  or request.page_type == 'search'
+%}
+{%- assign hide_footer = true -%}
+{% endif %}
+
+<!doctype html>
+<html class="supports-no-js {% if hide_footer %} site-footer--hidden{% endif %}" lang="{{ shop.locale }}">
+
+<head>
+  <meta charset="utf-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="{{ settings.color_primary }}">
+  <link rel="canonical" href="{{ canonical_url }}">
+
+  {% if settings.favicon != blank %}
+  <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+  {% endif %}
+
+  <title>
+    {{ page_title }}{% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %} &ndash;
+    {{ 'general.meta.tags' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} &ndash;
+    {{ 'general.meta.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash;
+    {{ shop.name }}{% endunless %}
+  </title>
+
+  {% if page_description %}
+  <meta name="description" content="{{ page_description | escape }}">
+  {% endif %}
+
+  {% include 'social-meta-tags' %}
+
+  {{ content_for_header }}
+
+  {% include 'critical-css' %}
+  {% include 'load-css' %}
+
+  <script>
+    var theme = {
+      stylesheet: "{{ 'theme.scss.css' | asset_url }}",
+      modelViewerUiSprite: "{{ 'model-viewer-ui-sprite.svg' | asset_url }}",
+      plyrSprite: "{{ 'plyr-sprite.svg' | asset_url }}",
+      strings: {
+        addToCart: {{ 'products.product.add_to_cart' | t | json }},
+        soldOut: {{ 'products.product.sold_out' | t | json }},
+        unavailable: {{ 'products.product.unavailable' | t | json }},
+        addItemSuccess: {{ 'products.product.item_added_to_cart' | t | json }},
+        viewCart: {{ 'products.product.view_cart' | t | json }},
+        cartError: {{ 'cart.general.cart_error' | t | json }},
+        cartQuantityError: {{ 'cart.general.cart_quantity_error_html' | t: quantity: '[quantity]', title: '[title]' | json }},
+        regularPrice: {{ 'products.product.regular_price' | t | json }},
+        salePrice: {{ 'products.product.sale_price' | t | json }},
+        unitPrice: {{ 'products.product.unit_price' | t | json }},
+        unitPriceSeparator: {{ 'general.accessibility.unit_price_separator' | t | json }},
+        newsletter: {
+          blankError: {{ 'general.newsletter_form.blank_error' | t | json }},
+          invalidError: {{ 'general.newsletter_form.invalid_error' | t | json }}
+        },
+        map: {
+          zeroResults: {{ 'sections.map.address_no_results' | t | json }},
+          overQueryLimit: {{ 'sections.map.address_query_limit_html' | t | json }},
+          authError: {{ 'sections.map.auth_error_html' | t | json }},
+          addressError: {{ 'sections.map.address_error' | t | json }}
+        },
+        slideshow: {
+          loadSlideA11yString: {{ 'sections.slider.load_slide' | t: slide_number: '[slide_number]' | json }},
+          activeSlideA11yString: {{ 'sections.slider.active_slide' | t: slide_number: '[slide_number]' | json }}
+        }
+      },
+      isOnline: true,
+      moneyFormat: {{ shop.money_format | json }},
+      mediaQuerySmall: 750,
+      mediaQueryMedium: 990
+    };
+
+    {% if request.page_type contains 'customers/' %}
+    theme.countryOptionTags = {{ all_country_option_tags | json }};
+    {% endif %}
+
+    document.documentElement.className = document.documentElement.className.replace('supports-no-js', '');
+  </script>
+
+  <script src="{{ 'lazysizes.min.js' | asset_url }}" async="async"></script>
+  <!-- <script src="{{ 'vendor.min.js' | asset_url }}" defer="defer"></script> -->
+  <script src="{{ 'theme.min.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'custom.js' | asset_url }}" defer="defer"></script>
+
+
+  <link rel='stylesheet' id='gtranslate-style-css' href="{{ 'gtranslate-style24.css' | asset_url }}" type='text/css'
+    media='all' />
+  <link rel='stylesheet' id='wp-block-library-css' href="{{ 'style.min.css' | asset_url }}" type='text/css'
+    media='all' />
+  <link rel='stylesheet' id='wc-block-vendors-style-css' href="{{ 'vendors-style.css' | asset_url }}" type='text/css'
+    media='all' />
+  <link rel='stylesheet' id='wc-block-style-css' href="{{ 'style-woocommerce.css' | asset_url }}" type='text/css'
+    media='all' />
+  <link rel='stylesheet' id='ae-pro-css-css' href="{{ 'ae-pro.min.css' | asset_url }}" type='text/css' media='all' />
+  <link rel='stylesheet' id='photoswipe-css' href="{{ 'photoswipe.min.css' | asset_url }}" type='text/css' media='all' />
+  <link rel='stylesheet' id='photoswipe-default-skin-css' href="{{ 'default-skin.min.css' | asset_url }}" type='text/css' media='all' />
+  <link rel='stylesheet' id='woocommerce-layout-css' href="{{ 'woocommerce-layout.css' | asset_url }}" type='text/css'
+    media='all' />
+  <link rel='stylesheet' id='woocommerce-smallscreen-css' href="{{ 'woocommerce-smallscreen.css' | asset_url }}"
+    type='text/css' media='only screen and (max-width: 768px)' />
+  <link rel='stylesheet' id='woocommerce-general-css' href="{{ 'woocommerce.css' | asset_url }}" type='text/css'
+    media='all' />
+  <link rel='stylesheet' id='vegas-css-css' href="{{ 'vegas.min.css' | asset_url }}" type='text/css' media='all' />
+  <link rel='stylesheet' id='tinvwl-css' href="{{ 'public.min.css' | asset_url }}" type='text/css' media='all' />
+  <link rel='stylesheet' id='owl_min_css-css'
+    href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css?ver=5.5' type='text/css'
+    media='all' />
+  <link rel='stylesheet' id='owl_min_default_css-css'
+    href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css?ver=5.5'
+    type='text/css' media='all' />
+  <link rel='stylesheet' id='stoni-default-style-css' href="{{ 'style.css' | asset_url }}" type='text/css'
+    media='all' />
+  <link rel='stylesheet' id='flaticon-css' href="{{ 'flaticon.css' | asset_url }}" type='text/css' media='all' />
+  <link rel='stylesheet' id='stoni-main-css' href="{{ 'main.css' | asset_url }}" type='text/css' media='all' />
+  <link rel='stylesheet' id='stoni-main-inline-css' href="{{ 'stoni-main-inline.css' | asset_url }}" type='text/css'
+    media='all' />
+  <link rel='stylesheet' id='swipebox-css' href="{{ 'swipebox.min.css' | asset_url }}" type='text/css' media='all' />
+  <link rel='stylesheet' id='jet-elements-css' href="{{ 'jet-elements.css' | asset_url }}" type='text/css'
+    media='all' />
+  <link rel='stylesheet' id='jet-elements-skin-css' href="{{ 'jet-elements-skin.css' | asset_url }}" type='text/css'
+    media='all' />
+  <link rel='stylesheet' id='elementor-icons-css' href="{{ 'elementor-icons.min.css' | asset_url }}" type='text/css'
+    media='all' />
+  <link rel='stylesheet' id='elementor-animations-css' href="{{ 'animations.min.css' | asset_url }}" type='text/css'
+    media='all' />
+  <link rel='stylesheet' id='elementor-frontend-css' href="{{ 'custom-frontend.min.css' | asset_url }}" type='text/css'
+    media='all' />
+  <link rel='stylesheet' id='elementor-frontend-inline-css' href="{{ 'elementor-frontend-inline.css' | asset_url }}"
+    type='text/css' media='all' />
+  <link rel='stylesheet' id='elementor-pro-css' href="{{ 'custom-pro-frontend.min.css' | asset_url }}" type='text/css'
+    media='all' />
+  <link rel='stylesheet' id='uael-frontend-css' href="{{ 'uael-frontend.min.css' | asset_url }}" type='text/css'
+    media='all' />
+  <link rel='stylesheet' id='uael-woocommerce-css' href="{{ 'uael-woocommerce.min.css' | asset_url }}" type='text/css'
+    media='all' />
+  <link rel='stylesheet' id='wpforms-smart-phone-field-css' href="{{ 'intl-tel-input.min.css' | asset_url }}"
+    type='text/css' media='all' />
+  <link rel='stylesheet' id='wpforms-full-css' href="{{ 'wpforms-full.css' | asset_url }}" type='text/css'
+    media='all' />
+  <link rel='stylesheet' id='jquery-chosen-css' href="{{ 'chosen.min.css' | asset_url }}" type='text/css' media='all' />
+  <link rel='stylesheet' id='jet-search-css' href="{{ 'jet-search.css' | asset_url }}" type='text/css' media='all' />
+  <link rel='stylesheet' id='jet-tabs-frontend-css' href="{{ 'jet-tabs-frontend.css' | asset_url }}" type='text/css'
+    media='all' />
+  <link rel='stylesheet' id='jet-tricks-frontend-css' href="{{ 'jet-tricks-frontend.css' | asset_url }}" type='text/css'
+    media='all' />
+  <link rel='stylesheet' id='she-header-style-css' href="{{ 'she-header-style.css' | asset_url }}" type='text/css'
+    media='all' />
+  <link rel='stylesheet' id='popup-maker-site-css' href="{{ 'pum-site.min.css' | asset_url }}" type='text/css'
+    media='all' />
+  <link rel='stylesheet' id='popup-maker-site-inline-css' href="{{ 'popup-maker-site-inline.css' | asset_url }}"
+    type='text/css' media='all' />
+  <link rel='stylesheet' id='gforms_reset_css-css' href="{{ 'formreset.min.css' | asset_url }}" type='text/css'
+    media='all' />
+  <link rel='stylesheet' id='gforms_formsmain_css-css' href="{{ 'formsmain.min.css' | asset_url }}" type='text/css'
+    media='all' />
+  <link rel='stylesheet' id='gforms_ready_class_css-css' href="{{ 'readyclass.min.css' | asset_url }}" type='text/css'
+    media='all' />
+  <link rel='stylesheet' id='gforms_browsers_css-css' href="{{ 'browsers.min.css' | asset_url }}" type='text/css'
+    media='all' />
+  <link rel='stylesheet' id='wpf-css' href="{{ 'wpf-public.css' | asset_url }}" type='text/css' media='all' />
+  <link rel='stylesheet' id='cleverfont-css' href="{{ 'style.min.css' | asset_url }}" type='text/css' media='all' />
+  <link rel='stylesheet' id='cmm4e-menu-skin-default-menu-skin-461836-css'
+    href="{{ 'cmm4e-menu-skin-default-menu-skin-461836.min.css' | asset_url }}" type='text/css' media='all' />
+  <link rel='stylesheet' id='google-fonts-1-css'
+    href='https://fonts.googleapis.com/css?family=Raleway%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CPlayfair+Display%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;ver=5.5'
+    type='text/css' media='all' />
+  <link rel='stylesheet' id='elementor-icons-prvd-css' href="{{ 'prvd.css' | asset_url }}" type='text/css'
+    media='all' />
+  <script type='text/javascript' src="{{ 'jquery.js' | asset_url }}" id='jquery-js'></script>
+
+  <!-- <script type='text/javascript' id='jquery-js-after'>
+    window.scope_array = [];
+    window.backend = 0;
+    jQuery.cachedScript = function (url, options) {
+      // Allow user to set any option except for dataType, cache, and url.
+      options = jQuery.extend(options || {}, {
+        dataType: "script",
+        cache: true,
+        url: url
+      });
+      // Return the jqXHR object so we can chain callbacks.
+      return jQuery.ajax(options);
+    };
+    jQuery(window).on("elementor/frontend/init", function () {
+      elementorFrontend.hooks.addAction("frontend/element_ready/global", function ($scope, $) {
+        if ("undefined" == typeof $scope) {
+          return;
+        }
+        if ($scope.hasClass("uael-particle-yes")) {
+          window.scope_array.push($scope);
+          $scope.find(".uael-particle-wrapper").addClass("js-is-enabled");
+        } else {
+          return;
+        }
+        if (elementorFrontend.isEditMode() && $scope.find(".uael-particle-wrapper").hasClass("js-is-enabled") && window.backend == 0) {
+          var uael_url = uael_script.uael_particles_url;
+
+          jQuery.cachedScript(uael_url);
+          window.backend = 1;
+        } else if (elementorFrontend.isEditMode()) {
+          var uael_url = uael_script.uael_particles_url;
+          jQuery.cachedScript(uael_url).done(function () {
+            var flag = true;
+          });
+        }
+      });
+    });
+    jQuery(document).ready(function () {
+      if (jQuery.find(".uael-particle-yes").length < 1) {
+        return;
+      }
+      var uael_url = uael_script.uael_particles_url;
+      jQuery.cachedScript = function (url, options) {
+        // Allow user to set any option except for dataType, cache, and url.
+        options = jQuery.extend(options || {}, {
+          dataType: "script",
+          cache: true,
+          url: url
+        });
+        // Return the jqXHR object so we can chain callbacks.
+        return jQuery.ajax(options);
+      };
+      jQuery.cachedScript(uael_url);
+    });
+  </script> -->
+
+  <script type='text/javascript' src="{{ 'cookie.js' | asset_url }}" id='cookie-js'></script>
+  <script type='text/javascript' src="{{ 'perfect-scrollbar.min.js' | asset_url }}" id='perfect-scrollbar-js'></script>
+  <script type='text/javascript' src="{{ 'jquery.swipebox.min.js' | asset_url }}" id='swipebox-js'></script>
+  <script type='text/javascript' src="{{ 'v4-shims.min.js' | asset_url }}" id='font-awesome-4-shim-js'></script>
+  <script type='text/javascript' src="{{ 'she-header.js' | asset_url }}" id='she-header-js'></script>
+  <script type='text/javascript' src="{{ 'jquery.json.min.js' | asset_url }}" id='gform_json-js'></script>
+  <script type='text/javascript' src="{{ 'gravityforms.min.js' | asset_url }}" id='gform_gravityforms-js'></script>
+  <script type='text/javascript' src="{{ 'placeholders.jquery.min.js' | asset_url }}"
+    id='gform_placeholder-js'></script>
+  <script type='text/javascript' src="{{ 'jquery-core.js' | asset_url }}" id='jquery-core-js'></script>
+  <link rel='stylesheet' id='wp-custom-css' href="{{ 'custom.css' | asset_url }}" type='text/css' media='all' />
+  <link rel='stylesheet' id='mega-menu-css' href="{{ 'mega-menu.css' | asset_url }}" type='text/css' media='all' />
+
+  <!-- font awesome -->
+  <script src="https://kit.fontawesome.com/6a2495ce17.js" crossorigin="anonymous"></script>
+
+  {% render 'pagefly-header' %}
+</head>
+
+<body id="{{ page_title | handle }}"
+  class="{% if customer %}customer-logged-in {% endif %}template-{% if request.page_type != blank %}{{ request.page_type | handle }}{% else %}none{% endif %} data-animations">
+
+  <a class="visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
+
+  <!-- mega menu header -->
+  <div data-elementor-type="header" data-elementor-id="16754"
+    class="elementor elementor-16754 elementor-location-header" data-elementor-settings="[]">
+    <div class="elementor-inner">
+      <div class="elementor-section-wrap">
+        {% section 'mega-menu' %}
+      </div>
+    </div>
+  </div>
+
+  <div class="main-content{% if request.page_type == blank %} main-content--no-template{% endif %}" data-drawer-push>
+    <div class="main-content__wrapper">
+      <main class="content-for-layout" id="MainContent" role="main">
+        {{ content_for_layout }}
+      </main>
+
+      {% section 'mega-footer' %}
+    </div>
+  </div>
+
+
+  <script type="text/javascript">
+    jQuery(document).ready(function ($) {
+      $('.remove-fm').click(function () {
+        $(this).attr('id', '');
+        var FMcurrentID = $(this).attr('id');
+        $('#footer-moodboard-form input[value="' + FMcurrentID + '"]').val("");
+      });
+    });
+
+  </script>
+
+  <script type="text/javascript">
+    jQuery(document).ready(function ($) {
+      $('.down-mb').click(function (e) {
+        $('#footer-moodboard').hide();
+        e.preventDefault();
+      });
+
+      $('.up-mb').click(function (e) {
+        $('#footer-moodboard').show();
+        e.preventDefault();
+      });
+
+    });
+  </script>
+  <link rel='stylesheet' id='premium-addons-css' href="{{ 'premium-addons.min.css' | asset_url }}" type='text/css'
+    media='all' />
+  <script type='text/javascript' id='ae-pro-js-js-extra'>
+    var aepro = { "ajaxurl": "https:\/\/pravadafloorsinc.myshopify.com", "current_url": "aHR0cHM6Ly9wcmF2YWRhLndlYm91bmNlcy5jb20vcHJvZHVjdC9hZnJpY2FuLXdhbG51dC8=", "breakpoints": { "xs": 0, "sm": 480, "md": 767, "lg": 1000, "xl": 1440, "xxl": 1600 } };
+  </script>
+  <script type='text/javascript' src="{{ 'ae-pro.min.js' | asset_url }}" id='ae-pro-js-js'></script>
+  <script type='text/javascript' id='aepro-editor-js-js-extra'>
+    var aepro_editor = { "plugin_url": "https:\/\/pravadafloorsinc.myshopify.com" };
+  </script>
+  <script type='text/javascript' src="{{ 'common.min.js' | asset_url }}" id='aepro-editor-js-js'></script>
+  <script type='text/javascript' src="{{ 'imagesloaded.min.js' | asset_url }}" id='imagesloaded-js'></script>
+  <script type='text/javascript' src="{{ 'masonry.min.js' | asset_url }}" id='masonry-js'></script>
+  <script type='text/javascript' src="{{ 'jquery.masonry.min.js' | asset_url }}" id='jquery-masonry-js'></script>
+  <script type='text/javascript' src="{{ 'masonry.pkgd.min.js' | asset_url }}" id='ae-masonry-js'></script>
+  <script type='text/javascript' src="{{ 'dynamic-conditions-public.js' | asset_url }}"
+    id='dynamic-conditions-js'></script>
+  <script type='text/javascript' src="{{ 'jquery.blockUI.min.js' | asset_url }}" id='jquery-blockui-js'></script>
+  <script type='text/javascript' id='wc-add-to-cart-js-extra'>
+    var wc_add_to_cart_params = { "ajax_url": "\/wp-admin\/admin-ajax.php", "wc_ajax_url": "\/?wc-ajax=%%endpoint%%", "i18n_view_cart": "View basket", "cart_url": "https:\/\/pravadafloorsinc.myshopify.com\/sample-bag\/", "is_cart": "", "cart_redirect_after_add": "no" };
+  </script>
+  <script type='text/javascript' src="{{ 'add-to-cart.min.js' | asset_url }}" id='wc-add-to-cart-js'></script>
+  <script type='text/javascript' src="{{ 'jquery.zoom.min.js' | asset_url }}" id='zoom-js'></script>
+  <script type='text/javascript' src="{{ 'jquery.flexslider.min.js' | asset_url }}" id='flexslider-js'></script>
+  <script type='text/javascript' src="{{ 'photoswipe.min.js' | asset_url }}" id='photoswipe-js'></script>
+  <script type='text/javascript' src="{{ 'photoswipe-ui-default.min.js' | asset_url }}" id='photoswipe-ui-default-js'></script>
+  <script type='text/javascript' id='wc-single-product-js-extra'>
+    var wc_single_product_params = { "i18n_required_rating_text": "Please select a rating", "review_rating_required": "yes", "flexslider": { "rtl": false, "animation": "slide", "smoothHeight": true, "directionNav": false, "controlNav": "thumbnails", "slideshow": false, "animationSpeed": 500, "animationLoop": false, "allowOneSlide": false }, "zoom_enabled": "1", "zoom_options": [], "photoswipe_enabled": "1", "photoswipe_options": { "shareEl": false, "closeOnScroll": false, "history": false, "hideAnimationDuration": 0, "showAnimationDuration": 0 }, "flexslider_enabled": "1" };
+  </script>
+  <script type='text/javascript' src="{{ 'single-product.min.js' | asset_url }}" id='wc-single-product-js'></script>
+  <script type='text/javascript' src="{{ 'js.cookie.min.js' | asset_url }}" id='js-cookie-js'></script>
+  <script type='text/javascript' id='woocommerce-js-extra'>
+    var woocommerce_params = { "ajax_url": "\/wp-admin\/admin-ajax.php", "wc_ajax_url": "\/?wc-ajax=%%endpoint%%" };
+  </script>
+  <script type='text/javascript' src="{{ 'woocommerce.min.js' | asset_url }}" id='woocommerce-js'></script>
+  <script type='text/javascript' id='wc-cart-fragments-js-extra'>
+    var wc_cart_fragments_params = { "ajax_url": "\/wp-admin\/admin-ajax.php", "wc_ajax_url": "\/?wc-ajax=%%endpoint%%", "cart_hash_key": "wc_cart_hash_a0639b07d90d9950dacd86759731ddc3", "fragment_name": "wc_fragments_a0639b07d90d9950dacd86759731ddc3", "request_timeout": "5000" };
+  </script>
+  <script type='text/javascript' src="{{ 'cart-fragments.min.js' | asset_url }}" id='wc-cart-fragments-js'></script>
+  <script type='text/javascript' src="{{ 'vegas.min.js' | asset_url }}" id='vegas-js'></script>
+  <script type='text/javascript' id='tinvwl-js-extra'>
+    var tinvwl_add_to_wishlist = { "text_create": "Create New", "text_already_in": "\"{product_name}\" already in Wishlist", "simple_flow": "1", "i18n_make_a_selection_text": "Please select some product options before adding this product to your wishlist.", "tinvwl_break_submit": "No items or actions are selected.", "tinvwl_clipboard": "Copied!", "allow_parent_variable": "", "hash_key": "ti_hash_a0639b07d90d9950dacd86759731ddc3", "nonce": "b7f3d5c719", "rest_root": "https:\/\/pravada.webounces.com\/wp-json\/" };
+  </script>
+  <script type='text/javascript' src="{{ 'public.min.js' | asset_url }}" id='tinvwl-js'></script>
+  <script type='text/javascript' src="{{ 'printThis.js' | asset_url }}" id='printThis-js'></script>
+  <script type='text/javascript' src="{{ 'footerscripts.js' | asset_url }}" id='footer-scripts-js'></script>
+  <script type='text/javascript' id='ajax-load-more-js-extra'>
+    var alm_localize = { "ajaxurl": "https:\/\/pravadafloorsinc.myshopify.com", "alm_nonce": "35e3a8fb15", "rest_api": "https:\/\/pravada.webounces.com\/wp-json\/", "rest_nonce": "ed1aef0be7", "pluginurl": "https:\/\/pravada.webounces.com\/wp-content\/plugins\/ajax-load-more", "speed": "200", "ga_debug": "false", "results_text": "Viewing {post_count} of {total_posts} results.", "no_results_text": "No results found.", "alm_debug": "", "a11y_focus": "1" };
+  </script>
+  <script type='text/javascript' src="{{ 'ajax-load-more.min.js' | asset_url }}" id='ajax-load-more-js'></script>
+  <script type='text/javascript' id='prefix-script-js-extra'>
+    var prefix_vars = { "ajaxurl": "https:\/\/pravadafloorsinc.myshopify.com" };
+  </script>
+  <script type='text/javascript' src="{{ 'moodboard_load.js' | asset_url }}" id='prefix-script-js'></script>
+  <script type='text/javascript' src="{{ 'theme-addons.js' | asset_url }}" id='stoni-theme-addons-js'></script>
+  <script type='text/javascript' id='stoni-theme-js-extra'>
+    var wgl_core = { "ajaxurl": "https:\/\/pravadafloorsinc.myshopify.com", "slickSlider": "https:\/\/pravadafloorsinc.myshopify.com", "JarallaxPlugin": "https:\/\/pravadafloorsinc.myshopify.com", "JarallaxPluginVideo": "https:\/\/pravadafloorsinc.myshopify.com", "like": "Like", "unlike": "Unlike" };
+  </script>
+  <script type='text/javascript' src="{{ 'theme-stoni.js' | asset_url }}" id='stoni-theme-js'></script>
+  <script type='text/javascript' src="{{ 'core.min.js' | asset_url }}" id='jquery-ui-core-js'></script>
+  <script type='text/javascript' src="{{ 'position.min.js' | asset_url }}" id='jquery-ui-position-js'></script>
+  <script type='text/javascript' src="{{ 'site.min.js' | asset_url }}" id='popup-maker-site-js'></script>
+  <script type='text/javascript' src="{{ 'mobile-detect.min.js' | asset_url }}" id='mobile-detect-js'></script>
+  <script type='text/javascript' id='wpf-js-extra'>
+    var wpf = { "ajaxurl": "https:\/\/pravadafloorsinc.myshopify.com", "url": "https:\/\/pravadafloorsinc.myshopify.com", "ver": "1.2.7", "rtl": "" };
+  </script>
+  <script type='text/javascript' src="{{ 'wpf-public.js' | asset_url }}" id='wpf-js'></script>
+  <script type='text/javascript' id='cmm4e-mega-menu-js-extra'>
+    var cmm4eFrontendConfig = { "isRTL": "", "isMobile": "" };
+  </script>
+  <script type='text/javascript' src="{{ 'cmm4e.min.js' | asset_url }}" id='cmm4e-mega-menu-js'></script>
+  <script type='text/javascript' src="{{ 'wp-embed.min.js' | asset_url }}" id='wp-embed-js'></script>
+  <script type='text/javascript' src="{{ 'jquery.smartmenus.min.js' | asset_url }}" id='smartmenus-js'></script>
+  <script type='text/javascript' src="{{ 'uael-nav-menu.min.js' | asset_url }}" id='uael-nav-menu-js'></script>
+  <script type='text/javascript' src="{{ 'jquery_resize.min.js' | asset_url }}" id='uael-element-resize-js'></script>
+  <script type='text/javascript' src="{{ 'js_cookie.min.js' | asset_url }}" id='uael-cookie-lib-js'></script>
+  <script type='text/javascript' src="{{ 'lottie.min.js' | asset_url }}" id='lottie-js-js'></script>
+  <script type='text/javascript' src="{{ 'modal.min.js' | asset_url }}" id='modal-js-js'></script>
+  <script type='text/javascript' id='premium-addons-js-js-extra'>
+    var PremiumSettings = { "ajaxurl": "https:\/\/pravadafloorsinc.myshopify.com" };
+  </script>
+  <script type='text/javascript' src="{{ 'slick.min.js' | asset_url }}" id='jquery-slick-js'></script>
+  <script type='text/javascript' src="{{ 'premium-addons.min.js' | asset_url }}" id='premium-addons-js-js'></script>
+  <script type='text/javascript' src="{{ 'frontend-modules.min.js' | asset_url }}"
+    id='elementor-frontend-modules-js'></script>
+  <script type='text/javascript' src="{{ 'jquery.sticky.min.js' | asset_url }}" id='elementor-sticky-js'></script>
+  <script type='text/javascript' id='elementor-pro-frontend-js-before'>
+    var ElementorProFrontendConfig = {
+      "ajaxurl": "https:\/\/pravadafloorsinc.myshopify.com\/",
+      "nonce": "d940e3fd1e",
+      "i18n": { "toc_no_headings_found": "No headings were found on this page." },
+      "shareButtonsNetworks": {
+        "facebook": { "title": "Facebook", "has_counter": true },
+        "twitter": { "title": "Twitter" },
+        "google": { "title": "Google+", "has_counter": true },
+        "linkedin": { "title": "LinkedIn", "has_counter": true },
+        "pinterest": { "title": "Pinterest", "has_counter": true },
+        "reddit": { "title": "Reddit", "has_counter": true },
+        "vk": { "title": "VK", "has_counter": true },
+        "odnoklassniki": { "title": "OK", "has_counter": true },
+        "tumblr": { "title": "Tumblr" },
+        "delicious": { "title": "Delicious" },
+        "digg": { "title": "Digg" },
+        "skype": { "title": "Skype" },
+        "stumbleupon": { "title": "StumbleUpon", "has_counter": true },
+        "mix": { "title": "Mix" },
+        "telegram": { "title": "Telegram" },
+        "pocket": { "title": "Pocket", "has_counter": true },
+        "xing": { "title": "XING", "has_counter": true },
+        "whatsapp": { "title": "WhatsApp" },
+        "email": { "title": "Email" },
+        "print": { "title": "Print" }
+      },
+      "menu_cart": { "cart_page_url": "https:\/\/pravadafloorsinc.myshopify.com\/", "checkout_page_url": "https:\/\/pravadafloorsinc.myshopify.com\/" },
+      "facebook_sdk": { "lang": "en_US", "app_id": "" },
+      "lottie": { "defaultAnimationUrl": "https:\/\/pravada.webounces.com\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json" }
+    };
+  </script>
+  <script type='text/javascript' src="{{ 'elementor-pro-frontend.min.js' | asset_url }}"
+    id='elementor-pro-frontend-js'></script>
+  <script type='text/javascript' src="{{ 'dialog.min.js' | asset_url }}" id='elementor-dialog-js'></script>
+  <script type='text/javascript' src="{{ 'waypoints.min.js' | asset_url }}" id='elementor-waypoints-js'></script>
+  <script type='text/javascript' src="{{ 'swiper.min.js' | asset_url }}" id='swiper-js'></script>
+  <script type='text/javascript' src="{{ 'share-link.min.js' | asset_url }}" id='share-link-js'></script>
+  <script type='text/javascript' id='elementor-frontend-js-before'>
+    var elementorFrontendConfig = { "environmentMode": { "edit": false, "wpPreview": false }, "i18n": { "shareOnFacebook": "Share on Facebook", "shareOnTwitter": "Share on Twitter", "pinIt": "Pin it", "downloadImage": "Download image" }, "is_rtl": false, "breakpoints": { "xs": 0, "sm": 480, "md": 767, "lg": 1000, "xl": 1440, "xxl": 1600 }, "version": "2.9.13", "urls": { "assets": "https:\/\/pravada.webounces.com\/wp-content\/plugins\/elementor\/assets\/" }, "settings": { "page": [], "general": { "elementor_lightbox_enable_counter": "yes", "elementor_lightbox_enable_fullscreen": "yes", "elementor_lightbox_enable_zoom": "yes", "elementor_lightbox_enable_share": "yes", "elementor_lightbox_title_src": "title", "elementor_lightbox_description_src": "description" }, "editorPreferences": [] }, "post": { "id": 10, "title": "Home%20-%20Pravada%20Floors", "excerpt": "", "featuredImage": false } };
+  </script>
+  <script type='text/javascript' src="{{ 'elementor-frontend.min.js' | asset_url }}"
+    id='elementor-frontend-js'></script>
+  <script type='text/javascript' id='jet-elements-js-extra'>
+    var jetElements = { "ajaxUrl": "https:\/\/pravadafloorsinc.myshopify.com", "isMobile": "false", "templateApiUrl": "pravadafloorsinc.myshopify.com", "devMode": "false", "messages": { "invalidMail": "Please specify a valid e-mail" } };
+  </script>
+  <script type='text/javascript' src="{{ 'jet-elements.min.js' | asset_url }}" id='jet-elements-js'></script>
+  <script type='text/javascript' id='jet-tabs-frontend-js-extra'>
+    var JetTabsSettings = { "ajaxurl": "https:\/\/pravadafloorsinc.myshopify.com", "isMobile": "false", "templateApiUrl": "pravadafloorsinc.myshopify.com", "devMode": "false" };
+  </script>
+  <script type='text/javascript' src="{{ 'jet-tabs-frontend.min.js' | asset_url }}" id='jet-tabs-frontend-js'></script>
+  <script type='text/javascript' id='jet-tricks-frontend-js-extra'>
+    var JetTricksSettings = { "elements_data": { "sections": { "6fed5e3": { "view_more": false, "particles": "false", "particles_json": "" }, "bf576f1": { "view_more": false, "particles": "false", "particles_json": "" }, "3086add": { "view_more": false, "particles": "false", "particles_json": "" }, "000dafe": { "view_more": false, "particles": "false", "particles_json": "" }, "fe79298": { "view_more": false, "particles": "false", "particles_json": "" }, "edca5fd": { "view_more": false, "particles": "false", "particles_json": "" }, "7387636": { "view_more": false, "particles": "false", "particles_json": "" }, "e896229": { "view_more": false, "particles": "false", "particles_json": "" }, "70ede190": { "view_more": false, "particles": "false", "particles_json": "" }, "c98ff08": { "view_more": false, "particles": "false", "particles_json": "" }, "1fb782b": { "view_more": false, "particles": "false", "particles_json": "" }, "3e3b199": { "view_more": false, "particles": "false", "particles_json": "" }, "ea5fcb7": { "view_more": false, "particles": "false", "particles_json": "" }, "8dbbd72": { "view_more": false, "particles": "false", "particles_json": "" }, "9a4661a": { "view_more": false, "particles": "false", "particles_json": "" }, "4239fd7": { "view_more": false, "particles": "false", "particles_json": "" }, "2251b50": { "view_more": false, "particles": "false", "particles_json": "" }, "d23469a": { "view_more": false, "particles": "false", "particles_json": "" }, "bf0e7a8": { "view_more": false, "particles": "false", "particles_json": "" }, "50bab57": { "view_more": false, "particles": "false", "particles_json": "" }, "1641606": { "view_more": false, "particles": "false", "particles_json": "" }, "6159cf4": { "view_more": false, "particles": "false", "particles_json": "" }, "4b3d2a5": { "view_more": false, "particles": "false", "particles_json": "" }, "b8762e1": { "view_more": false, "particles": "false", "particles_json": "" }, "e38d081": { "view_more": false, "particles": "false", "particles_json": "" }, "bbf8765": { "view_more": false, "particles": "false", "particles_json": "" }, "775acd0": { "view_more": false, "particles": "false", "particles_json": "" }, "8430146": { "view_more": false, "particles": "false", "particles_json": "" }, "213279f": { "view_more": false, "particles": "false", "particles_json": "" }, "f710993": { "view_more": false, "particles": "false", "particles_json": "" }, "1419e2e": { "view_more": false, "particles": "false", "particles_json": "" }, "5fd4923": { "view_more": false, "particles": "false", "particles_json": "" }, "489a8f1": { "view_more": false, "particles": "false", "particles_json": "" }, "1d1298d": { "view_more": false, "particles": "false", "particles_json": "" }, "a91f154": { "view_more": false, "particles": "false", "particles_json": "" }, "bb611bb": { "view_more": false, "particles": "false", "particles_json": "" }, "079481c": { "view_more": false, "particles": "false", "particles_json": "" }, "4c54e9d": { "view_more": false, "particles": "false", "particles_json": "" }, "371f5297": { "view_more": false, "particles": "false", "particles_json": "" }, "80e21af": { "view_more": false, "particles": "false", "particles_json": "" }, "250e7089": { "view_more": false, "particles": "false", "particles_json": "" }, "03f271f": { "view_more": false, "particles": "false", "particles_json": "" }, "3f40cbe4": { "view_more": false, "particles": "false", "particles_json": "" }, "ed33aaa": { "view_more": false, "particles": "false", "particles_json": "" }, "63fd85e": { "view_more": false, "particles": "false", "particles_json": "" }, "59fcc64": { "view_more": false, "particles": "false", "particles_json": "" }, "6257198f": { "view_more": false, "particles": "false", "particles_json": "" }, "46cfa1e": { "view_more": false, "particles": "false", "particles_json": "" }, "a47dfef": { "view_more": false, "particles": "false", "particles_json": "" }, "7c60f132": { "view_more": false, "particles": "false", "particles_json": "" }, "54e94118": { "view_more": false, "particles": "false", "particles_json": "" }, "4262e73a": { "view_more": false, "particles": "false", "particles_json": "" }, "fbc18aa": { "view_more": false, "particles": "false", "particles_json": "" }, "27c5aa3": { "view_more": false, "particles": "false", "particles_json": "" }, "26265c8f": { "view_more": false, "particles": "false", "particles_json": "" }, "70a62c47": { "view_more": false, "particles": "false", "particles_json": "" }, "5fec920b": { "view_more": false, "particles": "false", "particles_json": "" }, "69a7bcfa": { "view_more": false, "particles": "false", "particles_json": "" }, "52957eba": { "view_more": false, "particles": "false", "particles_json": "" }, "2d37eaf3": { "view_more": false, "particles": "false", "particles_json": "" } }, "columns": [], "widgets": { "80dc730": [], "2280d8c9": [], "32f0ab74": [], "5f4dc980": [], "1053e5e9": [], "ee7a75f": [], "df1e828": [], "65f497f": [], "be9c64a": [], "dd4b96f": [], "58cd230": [], "ffe84bf": [], "95e9af7": [], "88ba844": [], "53a5dad": [], "ff2bade": [], "2b6a0f0": [], "6c1a50e": [], "e46a065": [], "54efe0e": [], "43d7382": [], "a10ab8d": [], "795e594": [], "99ffe83": [], "fe1751f": [], "467c0c9": [], "3ec1526": [], "2a36230": [], "2733b2c": [], "4eede7e": [], "65eb3f6": [], "ea05a8d": [], "4b2cbd6": [], "e640c25": [], "506463e": [], "2801e3c": [], "3bb8e2c": [], "4e6f2ec": [], "8b2f1b8": [], "017d018": [], "f48e3c2": [], "5dd79d6": [], "312f1a1": [], "43e2ac0": [], "de9cab6": [], "631c600": [], "d434538": [], "2497f27": [], "21d3787": [], "df5cc1b": [], "a8f4461": [], "6e485a9": [], "ea89005": [], "b121c75": [], "4da5a62": [], "eb726b2": [], "50c21a1": [], "9cfc260": [], "bb5615e": [], "714c34b": [], "1bcdb8f": [], "e1f9611": [], "85f1c44": [], "8b70285": [], "07c63d0": [], "04fa9f6": [], "3f312da": [], "edb03da": [], "5f8ca7e": [], "6dd4939": [], "86b7e54": [], "82f05b4": [], "172d04e": [], "61b6f20": [], "7b72bce": [], "3f68470": [], "d6fa593": [], "d941889": [], "481c2c7": [], "ddd4ca6": [], "27c8e9e": [], "a4bd8bf": [], "cc7a380": [], "c5daa75": [], "50ac7ad": [], "ec1f816": [], "f333811": [], "5814076": [], "edfe631": [], "6989e5b": [], "715150f": [], "01c27c1": [], "36ef690": [], "1bb5de3": [], "4e6a071": [], "d9efa81": [], "368cade": [], "07d4c69": [], "7038c03": [], "6b88b4c": [], "9357b95": [], "9c088df": [], "0a3330a": [], "e533a46": [], "268d873": [], "0d5d6bb": [], "43dbcf7d": [], "24212702": [], "a4fd64f": [], "30044ab": [], "b22569f": [], "b1718da": [], "76bcb12c": [], "36672050": [], "874bf75": [], "f8def30": [], "3cda748": [], "2c81c0e": [], "4a3a6036": [], "2cd5b5fa": [], "28cb510": [], "3d4e200": [], "16914df": [], "dd4e6d3": [], "a461f9b": [], "ea1e8c0": [], "9b34b1f": [], "9184916": [], "82e87a3": [], "f30813d": [], "1b2d2c4": [], "f5a93f9": [], "c0bdf7e": [], "7aaf2334": [], "beb8ff7": [], "934224b": [], "19f892f": [], "e1cdbae": [], "1f540565": [], "b0e8675": [], "2b614b12": [], "671bc832": [], "48a0d8e6": [], "48fcb8f4": [], "30933439": [], "72ca6fdd": [], "13c169b": [], "5040583": [], "69e669b": [], "e908dfa": [], "c27d2ec": [], "eb49850": [], "7aad88b1": [], "5e659fc": [], "3947b296": [], "29429574": [], "1599bba8": [], "612e9193": [], "4ef01b34": [], "14329cd": [], "635ae1e": [], "3713f3f4": [], "2cbfa7": [], "53f064ae": [], "188ef025": [], "17e58299": [], "39fdac8c": [], "d2a4eae": [], "e662ac7": [], "133aef7f": [], "1c0153f": [], "8c9229c": [], "a60652d": [], "1175ec6a": [], "78d75cb6": [], "71f4ff1e": [], "8d8ed6a": [], "385eeac7": [] } } };
+  </script>
+  <script type='text/javascript' src="{{ 'jet-tricks-frontend.js' | asset_url }}" id='jet-tricks-frontend-js'></script>
+
+  {% include 'cart-drawer' %}
+  <ul hidden>
+    <li id="a11y-refresh-page-message">{{ 'general.accessibility.refresh_page' | t }}</li>
+    <li id="a11y-selection-message">{{ 'general.accessibility.selection_help' | t }}</li>
+  </ul>
+  <script src="https://zooomyapps.com/wishlist/ZooomyColl.js" data-shop-id="pravadafloorsinc.myshopify.com"
+    data-cus-id="{{customer.id}}"></script>
+</body>
+
+</html>
