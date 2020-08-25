@@ -249,9 +249,8 @@
   <script src="https://kit.fontawesome.com/6a2495ce17.js" crossorigin="anonymous"></script>
 
   {% render 'pagefly-header' %}
- 
-{% render 'pagefly-header' %}
- </head> 
+
+ </head>
 
 <body id="{{ page_title | handle }}"
   class="{% if customer %}customer-logged-in {% endif %}template-{% if request.page_type != blank %}{{ request.page_type | handle }}{% else %}none{% endif %} data-animations">

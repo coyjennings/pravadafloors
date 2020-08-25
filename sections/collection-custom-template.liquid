@@ -1,0 +1,359 @@
+{%- assign limit = section.settings.products | times: section.settings.rows -%}
+{%- assign totalProducts = collection.products.size -%}
+
+
+<link rel='stylesheet' id='single-collection-inline' href="{{ 'single-collection-inline.css' | asset_url }}"
+    type='text/css' media='all' />
+
+<div data-elementor-type="product-archive" data-elementor-id="3647"
+    class="elementor elementor-3647 elementor-location-archive product" data-elementor-settings="[]">
+    <div class="elementor-inner">
+        <div class="elementor-section-wrap">
+            <section
+                class="has_ae_slider elementor-element elementor-element-bfe2690 elementor-section-height-min-height elementor-section-full_width elementor-section-height-default elementor-section-items-middle ae-bg-gallery-type-default elementor-section elementor-top-section"
+                data-id="bfe2690" data-element_type="section"
+                style="background-image:url('{{ collection.metafields.Archive_Banner_Image.archive_banner_image }}')"
+                data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+                <div class="elementor-background-overlay"></div>
+                <div class="elementor-container elementor-column-gap-default">
+                    <div class="elementor-row">
+                        <div class="has_ae_slider elementor-element elementor-element-3153c60 ae-bg-gallery-type-default elementor-column elementor-col-100 elementor-top-column"
+                            data-id="3153c60" data-element_type="column">
+                            <div class="elementor-column-wrap  elementor-element-populated">
+                                <div class="elementor-widget-wrap">
+                                    <div class="elementor-element elementor-element-acaee84 elementor-widget elementor-widget-image"
+                                        data-id="acaee84" data-element_type="widget" data-widget_type="image.default">
+                                        <div class="elementor-widget-container">
+                                            <div class="elementor-image">
+                                                <img src={{ collection.metafields.Logo_for_ArchivePage.logo_for_archivepage }}
+                                                    class="attachment-full size-full" alt="" /> </div>
+                                        </div>
+                                    </div>
+                                    <div class="elementor-element elementor-element-5a51872 elementor-widget elementor-widget-text-editor"
+                                        data-id="5a51872" data-element_type="widget"
+                                        data-widget_type="text-editor.default">
+                                        <div class="elementor-widget-container">
+                                            <div class="elementor-text-editor elementor-clearfix"></div>
+                                        </div>
+                                    </div>
+                                    <div class="elementor-element elementor-element-784603d gc-elevate-text elementor-widget elementor-widget-text-editor"
+                                        data-id="784603d" data-element_type="widget"
+                                        data-widget_type="text-editor.default">
+                                        <div class="elementor-widget-container">
+                                            <div class="elementor-text-editor elementor-clearfix">
+                                                {{ collection.metafields.Category_Label.category_label }}</div>
+                                        </div>
+                                    </div>
+                                    <div class="elementor-element elementor-element-9d38174 elementor-drop-cap-yes elementor-drop-cap-view-default elementor-widget elementor-widget-text-editor"
+                                        data-id="9d38174" data-element_type="widget"
+                                        data-settings="{&quot;drop_cap&quot;:&quot;yes&quot;}"
+                                        data-widget_type="text-editor.default">
+                                        <div class="elementor-widget-container">
+                                            <div class="elementor-text-editor elementor-clearfix">{{ collection.title }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section
+                class="has_ae_slider elementor-element elementor-element-baf02f5 elementor-section-full_width elementor-section-height-default elementor-section-height-default ae-bg-gallery-type-default elementor-section elementor-top-section"
+                data-id="baf02f5" data-element_type="section">
+                <div class="elementor-container elementor-column-gap-default">
+                    <div class="elementor-row">
+                        <div class="has_ae_slider elementor-element elementor-element-9437200 ae-bg-gallery-type-default elementor-column elementor-col-100 elementor-top-column"
+                            data-id="9437200" data-element_type="column">
+                            <div class="elementor-column-wrap  elementor-element-populated">
+                                <div class="elementor-widget-wrap">
+                                    <section
+                                        class="has_ae_slider elementor-element elementor-element-af88450 elementor-section-full_width elementor-section-height-default elementor-section-height-default ae-bg-gallery-type-default elementor-section elementor-inner-section"
+                                        data-id="af88450" data-element_type="section">
+                                        <div class="elementor-container elementor-column-gap-default">
+                                            <div class="elementor-row">
+                                                <div class="has_ae_slider elementor-element elementor-element-a11a2c1 ae-bg-gallery-type-default elementor-column elementor-col-50 elementor-inner-column"
+                                                    data-id="a11a2c1" data-element_type="column">
+                                                    <div class="elementor-column-wrap  elementor-element-populated">
+                                                        <div class="elementor-widget-wrap">
+                                                            <div class="elementor-element elementor-element-b4495d0 elementor-widget elementor-widget-image"
+                                                                data-id="b4495d0" data-element_type="widget"
+                                                                data-widget_type="image.default">
+                                                                <div class="elementor-widget-container">
+                                                                    <div class="elementor-image">
+                                                                        <img width="2000" height="1500"
+                                                                            src={{collection.metafields.Feature_Image.feature_image}}
+                                                                            class="attachment-full size-full"
+                                                                            alt="AFRICAN WALNUT - Heritage Collection by Pravada Floors"
+                                                                            srcset=""
+                                                                            sizes="(max-width: 2000px) 100vw, 2000px" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="has_ae_slider elementor-element elementor-element-0578c07 ae-bg-gallery-type-default elementor-column elementor-col-50 elementor-inner-column"
+                                                    data-id="0578c07" data-element_type="column">
+                                                    <div class="elementor-column-wrap  elementor-element-populated">
+                                                        <div class="elementor-widget-wrap">
+                                                            <div class="elementor-element elementor-element-49fb9dc elementor-widget elementor-widget-heading"
+                                                                data-id="49fb9dc" data-element_type="widget"
+                                                                data-widget_type="heading.default">
+                                                                <div class="elementor-widget-container">
+                                                                    <h2
+                                                                        class="elementor-heading-title elementor-size-default">
+                                                                        {{ collection.title }}</h2>
+                                                                </div>
+                                                            </div>
+                                                            <div class="elementor-element elementor-element-428de73 elementor-widget elementor-widget-text-editor"
+                                                                data-id="428de73" data-element_type="widget"
+                                                                data-widget_type="text-editor.default">
+                                                                <div class="elementor-widget-container">
+                                                                    <div
+                                                                        class="elementor-text-editor elementor-clearfix">
+                                                                        {{ collection.metafields.Italic_Content.italic_content }}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="elementor-element elementor-element-159bdf1 elementor-widget elementor-widget-text-editor"
+                                                                data-id="159bdf1" data-element_type="widget"
+                                                                data-widget_type="text-editor.default">
+                                                                <div class="elementor-widget-container">
+                                                                    <div
+                                                                        class="elementor-text-editor elementor-clearfix">
+                                                                        <p>{{ collection.description }}</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="elementor-element elementor-element-2842fda elementor-widget elementor-widget-text-editor"
+                                                                data-id="2842fda" data-element_type="widget"
+                                                                data-widget_type="text-editor.default">
+                                                                <div class="elementor-widget-container">
+                                                                    <div
+                                                                        class="elementor-text-editor elementor-clearfix">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section
+                class="has_ae_slider elementor-element elementor-element-0c01d05 elementor-section-boxed elementor-section-height-default elementor-section-height-default ae-bg-gallery-type-default elementor-section elementor-top-section"
+                data-id="0c01d05" data-element_type="section">
+                <div class="elementor-container elementor-column-gap-default">
+                    <div class="elementor-row">
+                        <div class="has_ae_slider elementor-element elementor-element-ea07ac4 ae-bg-gallery-type-default elementor-column elementor-col-100 elementor-top-column"
+                            data-id="ea07ac4" data-element_type="column">
+                            <div class="elementor-column-wrap  elementor-element-populated">
+                                <div class="elementor-widget-wrap">
+                                    <div class="elementor-element elementor-element-9d9cc6f elementor-products-grid elementor-wc-products elementor-show-pagination-border-yes elementor-widget elementor-widget-wc-archive-products"
+                                        data-id="9d9cc6f" data-element_type="widget"
+                                        data-widget_type="wc-archive-products.default">
+                                        <div class="elementor-widget-container">
+                                            <div class="woocommerce columns-3 ">
+                                                <div class="wgl-woocommerce-sorting">
+                                                    <div class="woocommerce-notices-wrapper"></div>
+                                                    <p class="woocommerce-result-count">
+                                                        {{totalProducts | prepend: 'Showing all ' | append: ' results' }}
+                                                        Showing all 4 results</p>
+                                                    <form class="woocommerce-ordering" method="get">
+                                                        <select name="orderby" class="orderby" aria-label="Shop order">
+                                                            <option value="popularity">Sort by popularity</option>
+                                                            <option value="date" selected='selected'>Sort by latest
+                                                            </option>
+                                                            <option value="price">Sort by price: low to high
+                                                            </option>
+                                                            <option value="price-desc">Sort by price: high to low
+                                                            </option>
+                                                        </select>
+                                                        <input type="hidden" name="paged" value="1" />
+                                                    </form>
+                                                </div>
+                                                <div class="wgl-products-catalog wgl-products-wrapper columns-3">
+                                                    <div data-slug="" class="wpf-search-container">
+                                                        <ul class="wgl-products products appear-animation anim-fade-in">
+                                                            {% for product in collection.products %}
+                                                            <li
+                                                                class="product type-product post-11548 status-publish first instock product_cat-heritage product_tag-dark product_tag-exotics product_tag-glossy product_tag-handscrapped product_tag-warm has-post-thumbnail taxable shipping-taxable purchasable product-type-simple">
+                                                                <div class="products-post">
+                                                                    <div class="products-post_wrapper">
+                                                                        <div class='woo_product_image shop_media'>
+                                                                            <div class='picture'>
+                                                                                <a class='woo_post-link'
+                                                                                    href={{ product.url | within: collection }}>
+                                                                                    <div class="product-img-wrap-one c380"
+                                                                                        style="background-image: url('{{ product.featured_image.src | product_img_url: 'large' }}'); background-repeat: no-repeat; background-position: center; background-size: cover;">
+                                                                                        <div
+                                                                                            style="text-align: center;">
+                                                                                            <h3 class="changeblack"
+                                                                                                style="font-size: 30px;paddin-bottom:0; color:white;">
+                                                                                                {{ product.title }}
+                                                                                            </h3>
+                                                                                            <p class="changeblack"
+                                                                                                style="color:white;">
+                                                                                                {{ collection.title }}
+                                                                                            </p>
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                    <div class="product-content-x-img-wrap-two c380"
+                                                                                        style="background: url('{{ product.metafields.secondary_image.secondary_image }}'); background-repeat: no-repeat; background-position: center; background-size: cover; text-align:center;">
+
+                                                                                        <div class="changeblack">
+                                                                                            <div
+                                                                                                class="tinv-wraper woocommerce tinv-wishlist tinvwl-shortcode-add-to-cart">
+                                                                                                <a role="button"
+                                                                                                    class="tinvwl_add_to_wishlist_button tinvwl-icon-heart no-txt  tinvwl-position-after ftinvwl-animated"
+                                                                                                    data-tinv-wl-list=""
+                                                                                                    data-tinv-wl-product="11548"
+                                                                                                    data-tinv-wl-productvariation="0"
+                                                                                                    data-tinv-wl-productvariations="[0]"
+                                                                                                    data-tinv-wl-producttype="simple"
+                                                                                                    data-tinv-wl-action="add"></a>
+                                                                                                <div
+                                                                                                    class="tinvwl-tooltip">
+                                                                                                    Add to Wishlist
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+
+                                                                                        <a>
+                                                                                            <i class="mb-prodID mb-products-pop icon icon-moodboard"
+                                                                                                alt="11548"
+                                                                                                aria-hidden="true"
+                                                                                                style="font-size:30px;color:white;margin-left: 5px; "></i></a>
+
+
+                                                                                    </div>
+                                                                                    <style>
+                                                                                        .tinv-wishlist .tinvwl_add_to_wishlist_button.tinvwl-icon-heart:before {
+                                                                                            font-size: 33px;
+                                                                                        }
+
+                                                                                        .tinvwl_add_to_wishlist_button:hover {
+                                                                                            color: white !important;
+                                                                                        }
+
+                                                                                        .tinvwl_add_to_wishlist-text {
+                                                                                            display: none;
+                                                                                        }
+
+                                                                                        .icon-moodboard {
+                                                                                            cursor: pointer;
+                                                                                        }
+
+                                                                                        ul.products {
+                                                                                            display: inline-flex !important;
+                                                                                        }
+
+                                                                                        @media only screen and (min-width: 600px) {
+                                                                                            ul.products li.product {
+                                                                                                width: auto !important;
+                                                                                                display: flex !important;
+                                                                                                margin: 10px !important;
+                                                                                            }
+                                                                                        }
+
+                                                                                        @media only screen and (max-width: 600px) {
+                                                                                            ul.products li.product {
+                                                                                                display: flex !important;
+                                                                                                margin: 20px auto !important;
+                                                                                            }
+                                                                                        }
+
+                                                                                        .tinv-wraper {
+                                                                                            position: absolute;
+                                                                                            top: 240px;
+                                                                                            left: 183px !important;
+                                                                                        }
+                                                                                    </style>
+
+
+
+
+
+                                                                                </a></div>
+                                                                        </div>
+                                                                        <span class="price">
+                                                                            <span
+                                                                                class="woocommerce-Price-amount amount">
+                                                                                <span
+                                                                                    class="woocommerce-Price-currencySymbol">&#36;</span>
+                                                                                5.00
+                                                                            </span>
+                                                                            <small
+                                                                                class="woocommerce-price-suffix">$</small></span>
+                                                                        <div
+                                                                            class="tinv-wraper woocommerce tinv-wishlist tinvwl-after-add-to-cart tinvwl-loop-button-wrapper">
+                                                                            <a role="button"
+                                                                                class="tinvwl_add_to_wishlist_button tinvwl-add-hide tinvwl-icon-heart no-txt  tinvwl-position-after"
+                                                                                data-tinv-wl-list=""
+                                                                                data-tinv-wl-product="11548"
+                                                                                data-tinv-wl-productvariation="0"
+                                                                                data-tinv-wl-productvariations="[0]"
+                                                                                data-tinv-wl-producttype="simple"
+                                                                                data-tinv-wl-action="add"></a>
+                                                                            <div class="tinvwl-tooltip">Add to
+                                                                                Wishlist</div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            {% endfor %}
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section
+                class="has_ae_slider elementor-element elementor-element-b959019 elementor-section-boxed elementor-section-height-default elementor-section-height-default ae-bg-gallery-type-default elementor-section elementor-top-section"
+                data-id="b959019" data-element_type="section">
+                <div class="elementor-container elementor-column-gap-default">
+                    <div class="elementor-row">
+                        <div class="has_ae_slider elementor-element elementor-element-fc573ef ae-bg-gallery-type-default elementor-column elementor-col-100 elementor-top-column"
+                            data-id="fc573ef" data-element_type="column">
+                            <div class="elementor-column-wrap  elementor-element-populated">
+                                <div class="elementor-widget-wrap">
+                                    <div class="elementor-element elementor-element-c5aa0f0 gc-back-col-btn elementor-widget elementor-widget-premium-addon-button"
+                                        data-id="c5aa0f0" data-element_type="widget"
+                                        data-widget_type="premium-addon-button.default">
+                                        <div class="elementor-widget-container">
+
+                                            <div class="premium-button-container">
+                                                <a class="premium-button premium-button-lg premium-button-none"
+                                                    href="/collections/">
+                                                    <div class="premium-button-text-icon-wrapper">
+                                                        <span>Back to CollectionS</span>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
