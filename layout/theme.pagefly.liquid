@@ -104,6 +104,8 @@ PLEASE REMOVE ONLY AFTER YOU UNINSTALLED THE PAGEFLY APP.
   <link rel='stylesheet' id='wc-block-style-css' href="{{ 'style-woocommerce.css' | asset_url }}" type='text/css'
     media='all' />
   <link rel='stylesheet' id='ae-pro-css-css' href="{{ 'ae-pro.min.css' | asset_url }}" type='text/css' media='all' />
+  <link rel='stylesheet' id='photoswipe-css' href="{{ 'photoswipe.min.css' | asset_url }}" type='text/css' media='all' />
+  <link rel='stylesheet' id='photoswipe-default-skin-css' href="{{ 'default-skin.min.css' | asset_url }}" type='text/css' media='all' />
   <link rel='stylesheet' id='woocommerce-layout-css' href="{{ 'woocommerce-layout.css' | asset_url }}" type='text/css'
     media='all' />
   <link rel='stylesheet' id='woocommerce-smallscreen-css' href="{{ 'woocommerce-smallscreen.css' | asset_url }}"
@@ -122,7 +124,7 @@ PLEASE REMOVE ONLY AFTER YOU UNINSTALLED THE PAGEFLY APP.
     media='all' />
   <link rel='stylesheet' id='flaticon-css' href="{{ 'flaticon.css' | asset_url }}" type='text/css' media='all' />
   <link rel='stylesheet' id='stoni-main-css' href="{{ 'main.css' | asset_url }}" type='text/css' media='all' />
-  <link rel='stylesheet' id='stoni-main-css' href="{{ 'stoni-main-inline.css' | asset_url }}" type='text/css'
+  <link rel='stylesheet' id='stoni-main-inline-css' href="{{ 'stoni-main-inline.css' | asset_url }}" type='text/css'
     media='all' />
   <link rel='stylesheet' id='swipebox-css' href="{{ 'swipebox.min.css' | asset_url }}" type='text/css' media='all' />
   <link rel='stylesheet' id='jet-elements-css' href="{{ 'jet-elements.css' | asset_url }}" type='text/css'
@@ -177,6 +179,63 @@ PLEASE REMOVE ONLY AFTER YOU UNINSTALLED THE PAGEFLY APP.
   <link rel='stylesheet' id='elementor-icons-prvd-css' href="{{ 'prvd.css' | asset_url }}" type='text/css'
     media='all' />
   <script type='text/javascript' src="{{ 'jquery.js' | asset_url }}" id='jquery-js'></script>
+
+  <!-- <script type='text/javascript' id='jquery-js-after'>
+    window.scope_array = [];
+    window.backend = 0;
+    jQuery.cachedScript = function (url, options) {
+      // Allow user to set any option except for dataType, cache, and url.
+      options = jQuery.extend(options || {}, {
+        dataType: "script",
+        cache: true,
+        url: url
+      });
+      // Return the jqXHR object so we can chain callbacks.
+      return jQuery.ajax(options);
+    };
+    jQuery(window).on("elementor/frontend/init", function () {
+      elementorFrontend.hooks.addAction("frontend/element_ready/global", function ($scope, $) {
+        if ("undefined" == typeof $scope) {
+          return;
+        }
+        if ($scope.hasClass("uael-particle-yes")) {
+          window.scope_array.push($scope);
+          $scope.find(".uael-particle-wrapper").addClass("js-is-enabled");
+        } else {
+          return;
+        }
+        if (elementorFrontend.isEditMode() && $scope.find(".uael-particle-wrapper").hasClass("js-is-enabled") && window.backend == 0) {
+          var uael_url = uael_script.uael_particles_url;
+
+          jQuery.cachedScript(uael_url);
+          window.backend = 1;
+        } else if (elementorFrontend.isEditMode()) {
+          var uael_url = uael_script.uael_particles_url;
+          jQuery.cachedScript(uael_url).done(function () {
+            var flag = true;
+          });
+        }
+      });
+    });
+    jQuery(document).ready(function () {
+      if (jQuery.find(".uael-particle-yes").length < 1) {
+        return;
+      }
+      var uael_url = uael_script.uael_particles_url;
+      jQuery.cachedScript = function (url, options) {
+        // Allow user to set any option except for dataType, cache, and url.
+        options = jQuery.extend(options || {}, {
+          dataType: "script",
+          cache: true,
+          url: url
+        });
+        // Return the jqXHR object so we can chain callbacks.
+        return jQuery.ajax(options);
+      };
+      jQuery.cachedScript(uael_url);
+    });
+  </script> -->
+
   <script type='text/javascript' src="{{ 'cookie.js' | asset_url }}" id='cookie-js'></script>
   <script type='text/javascript' src="{{ 'perfect-scrollbar.min.js' | asset_url }}" id='perfect-scrollbar-js'></script>
   <script type='text/javascript' src="{{ 'jquery.swipebox.min.js' | asset_url }}" id='swipebox-js'></script>
@@ -194,9 +253,7 @@ PLEASE REMOVE ONLY AFTER YOU UNINSTALLED THE PAGEFLY APP.
   <script src="https://kit.fontawesome.com/6a2495ce17.js" crossorigin="anonymous"></script>
 
   {% render 'pagefly-header' %}
- 
-{% render 'pagefly-header' %}
- </head> 
+</head>
 
 <body id="{{ page_title | handle }}"
   class="{% if customer %}customer-logged-in {% endif %}template-{% if request.page_type != blank %}{{ request.page_type | handle }}{% else %}none{% endif %} data-animations"><div class="pagefly-container">{{ content_for_layout }}</div></body>

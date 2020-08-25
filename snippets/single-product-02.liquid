@@ -46,8 +46,8 @@
                                                     <div class="elementor-widget-container">
                                                         <div class="elementor-image">
                                                             <figure class="wp-caption">
-                                                                <a href="https://pravada.webounces.com/warranty/">
-                                                                    <img src="https://pravada.webounces.com/wp-content/uploads/2020/01/icon-warranty-35-product-page-100X100.svg"
+                                                                <a href={{product.metafields.warranty_page.warranty_page}}>
+                                                                    <img src={{product.metafields.icon.icon-warranty}}
                                                                         class="attachment-full size-full" alt=""
                                                                         loading="lazy" /> </a>
                                                                 <figcaption
@@ -70,8 +70,8 @@
                                                     <div class="elementor-widget-container">
                                                         <div class="elementor-image">
                                                             <figure class="wp-caption">
-                                                                <a href="https://pravada.webounces.com/sustainability/">
-                                                                    <img src="https://pravada.webounces.com/wp-content/uploads/2020/01/icon-carb-compliant-product-page-100X100.svg"
+                                                                <a href={{product.metafields.compliance_page.compliance_page}}>
+                                                                    <img src={{product.metafields.icon.icon-compliance}}
                                                                         class="attachment-full size-full" alt=""
                                                                         loading="lazy" /> </a>
                                                                 <figcaption
@@ -95,8 +95,8 @@
                                                         <div class="elementor-image">
                                                             <figure class="wp-caption">
                                                                 <a
-                                                                    href="https://pravada.webounces.com/quality-passion/">
-                                                                    <img src="https://pravada.webounces.com/wp-content/uploads/2020/01/icon-high-variance-product-page-100X100.svg"
+                                                                    href={{product.metafields.board_variance_page.board_variance_page}}>
+                                                                    <img src={{product.metafields.icon.icon-variance}}
                                                                         class="attachment-full size-full" alt=""
                                                                         loading="lazy" /> </a>
                                                                 <figcaption
@@ -120,8 +120,8 @@
                                                         <div class="elementor-image">
                                                             <figure class="wp-caption">
                                                                 <a
-                                                                    href="https://pravada.webounces.com/care-maintenance/">
-                                                                    <img src="https://pravada.webounces.com/wp-content/uploads/2020/01/icon-medium-sensitivity-product-page-100X100.svg"
+                                                                    href={{product.metafields.sensitivity_page.sensitivity_page}}>
+                                                                    <img src={{product.metafields.icon.icon-sensitivity}}
                                                                         class="attachment-full size-full" alt=""
                                                                         loading="lazy" /> </a>
                                                                 <figcaption
@@ -145,8 +145,8 @@
                                                         <div class="elementor-image">
                                                             <figure class="wp-caption">
                                                                 <a
-                                                                    href="https://pravada.webounces.com/care-maintenance/">
-                                                                    <img src="https://pravada.webounces.com/wp-content/uploads/2020/01/icon-not-radiant-approved-product-page-100X100.svg"
+                                                                    href={{product.metafields.radiant_approve_page.radiant_approve_page}}>
+                                                                    <img src={{product.metafields.icon.icon-Radiant}}
                                                                         class="attachment-full size-full" alt=""
                                                                         loading="lazy" /> </a>
                                                                 <figcaption
@@ -173,52 +173,47 @@
                             class="has_ae_slider elementor-element elementor-element-1af26e8 elementor-section-boxed elementor-section-height-default elementor-section-height-default ae-bg-gallery-type-default elementor-section elementor-inner-section"
                             data-id="1af26e8" data-element_type="section">
                             <div class="elementor-container elementor-column-gap-default">
-                                <div class="elementor-row">
-                                    <div class="has_ae_slider elementor-element elementor-element-b58c338 ae-bg-gallery-type-default elementor-column elementor-col-50 elementor-inner-column"
-                                        data-id="b58c338" data-element_type="column">
-                                        <div class="elementor-column-wrap  elementor-element-populated">
-                                            <div class="elementor-widget-wrap">
-                                                <div class="elementor-element elementor-element-60f0293 gc-wl-prodpage elementor-widget elementor-widget-shortcode"
-                                                    data-id="60f0293" data-element_type="widget"
-                                                    data-widget_type="shortcode.default">
-                                                    <div class="elementor-widget-container">
-                                                        <div class="elementor-shortcode">
-                                                            <div
-                                                                class="tinv-wraper woocommerce tinv-wishlist tinvwl-after-add-to-cart tinvwl-loop-button-wrapper">
-                                                                <a role="button"
-                                                                    class="tinvwl_add_to_wishlist_button tinvwl-add-hide tinvwl-icon-heart no-txt  tinvwl-position-after"
-                                                                    data-tinv-wl-list="" data-tinv-wl-product="11526"
-                                                                    data-tinv-wl-productvariation="0"
-                                                                    data-tinv-wl-productvariations="[0]"
-                                                                    data-tinv-wl-producttype="simple"
-                                                                    data-tinv-wl-action="add"></a>
-                                                                <div class="tinvwl-tooltip">Add to
-                                                                    Wishlist</div>
-                                                            </div>
+                            <div class="elementor-row">
+                                <div class="has_ae_slider elementor-element elementor-element-b58c338 ae-bg-gallery-type-default elementor-column elementor-col-50 elementor-inner-column"
+                                    data-id="b58c338" data-element_type="column">
+                                    <div class="elementor-column-wrap  elementor-element-populated">
+                                        <div class="elementor-widget-wrap">
+                                            <div class="elementor-element elementor-element-60f0293 gc-wl-prodpage elementor-widget elementor-widget-shortcode"
+                                                data-id="60f0293" data-element_type="widget" data-widget_type="shortcode.default">
+                                                <div class="elementor-widget-container">
+                                                    <div class="elementor-shortcode">
+                                                        <div
+                                                            class="tinv-wraper woocommerce tinv-wishlist tinvwl-after-add-to-cart tinvwl-loop-button-wrapper">
+                                                            <a role="button"
+                                                                class="tinvwl_add_to_wishlist_button tinvwl-icon-heart no-txt  tinvwl-position-after"
+                                                                data-tinv-wl-list="[{&quot;ID&quot;:227,&quot;title&quot;:&quot;Default wishlist&quot;,&quot;url&quot;:&quot;https://pravada.webounces.com/favorites/D94A8F/&quot;,&quot;in&quot;:false}]"
+                                                                data-tinv-wl-product="11526" data-tinv-wl-productvariation="0"
+                                                                data-tinv-wl-productvariations="[0]" data-tinv-wl-producttype="simple"
+                                                                data-tinv-wl-action="addto"></a>
+                                                            <div class="tinvwl-tooltip">Add to Wishlist</div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="has_ae_slider elementor-element elementor-element-64bd379 gc-mb-col ae-bg-gallery-type-default elementor-column elementor-col-50 elementor-inner-column"
-                                        data-id="64bd379" data-element_type="column">
-                                        <div class="elementor-column-wrap  elementor-element-populated">
-                                            <div class="elementor-widget-wrap">
-                                                <div class="elementor-element elementor-element-7cb898f gc-mb-wid elementor-widget elementor-widget-shortcode"
-                                                    data-id="7cb898f" data-element_type="widget"
-                                                    data-widget_type="shortcode.default">
-                                                    <div class="elementor-widget-container">
-                                                        <i class="mb-prodID mb-products-pop icon icon-moodboard"
-                                                            alt="11526"
-                                                            style="font-size: 25px; padding: 5px; border: 1px solid black; display: inline-block; top: 5px;"></i>
-                                                        <div class="elementor-shortcode"></div>
-                                                    </div>
+                                </div>
+                                <div class="has_ae_slider elementor-element elementor-element-64bd379 gc-mb-col ae-bg-gallery-type-default elementor-column elementor-col-50 elementor-inner-column"
+                                    data-id="64bd379" data-element_type="column">
+                                    <div class="elementor-column-wrap  elementor-element-populated">
+                                        <div class="elementor-widget-wrap">
+                                            <div class="elementor-element elementor-element-7cb898f gc-mb-wid elementor-widget elementor-widget-shortcode"
+                                                data-id="7cb898f" data-element_type="widget" data-widget_type="shortcode.default">
+                                                <div class="elementor-widget-container">
+                                                    <i class="mb-prodID mb-products-pop icon icon-moodboard pum-trigger" alt="11526"
+                                                        style="font-size: 25px; padding: 5px; border: 1px solid black; display: inline-block; top: 5px; cursor: pointer;"></i>
+                                                    <div class="elementor-shortcode"></div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
                             </div>
                         </section>
                     </div>

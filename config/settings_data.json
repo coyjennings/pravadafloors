@@ -126,7 +126,7 @@
           "image": "shopify:\/\/shop_images\/image_intro_homepage_pravada-floors-website_3.png",
           "image_crop": "square",
           "alignment": "center center",
-          "title": "DESIGN IS THE ROOT OF OUR QUALITY",
+          "title": "DESIGN, THE ROOT OF OUR QUALITY",
           "text": "<p>We design stylish, high-quality floors with you in mind<\/p>",
           "use_second_button": true,
           "button_label": "OUR PRODUCTS",
@@ -207,8 +207,8 @@
       "feature-row-1": {
         "type": "feature-row",
         "settings": {
-          "size": "medium",
-          "background_color": "#f3f4f3",
+          "size": "small",
+          "background_color": "#8e8e8e",
           "image": "",
           "image_crop": "none",
           "alignment": "center center",
@@ -278,7 +278,7 @@
       "featured-product": {
         "type": "featured-product",
         "settings": {
-          "featured_product": "",
+          "featured_product": "provence",
           "show_quantity_selector": false,
           "show_variant_labels": true,
           "show_vendor": false,
@@ -334,11 +334,11 @@
         "type": "product-template",
         "settings": {
           "show_quantity_selector": false,
-          "show_variant_labels": true,
+          "show_variant_labels": false,
           "show_vendor": false,
           "enable_payment_button": false,
           "show_share_buttons": true,
-          "enable_video_looping": false,
+          "enable_video_looping": true,
           "hide_variant_media": true
         }
       },
@@ -347,7 +347,7 @@
         "settings": {
           "show_product_recommendations": true,
           "heading": "You may also like",
-          "show_spacing": false,
+          "show_spacing": true,
           "show_vendor": true
         }
       },

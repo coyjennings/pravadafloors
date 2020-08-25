@@ -1429,7 +1429,7 @@ div[data-widget_type="image-carousel.default"] * {
     position: absolute;
     display: flex;
     top: 20px;
-    left: 20px;
+    left: -50px !important;
 }
 
 /* End custom CSS */
@@ -1450,7 +1450,7 @@ div[data-widget_type="image-carousel.default"] * {
 
     #prowid,
     #prowid div {
-        max-height: 900px !important;
+        max-height: 750px !important;
     }
 }
 
@@ -1508,22 +1508,11 @@ div[data-widget_type="image-carousel.default"] * {
         xleft: 50px;
         align-content: flex-end;
     }
-
-    .swiper-pagination {
-        position: absolute;
-        display: flex;
-        top: 20px;
-        left: 20px;
-    }
 }
 
 /* End custom CSS */
-.elementor-3853 .elementor-element.elementor-element-89c0cd1:not(.elementor-motion-effects-element-type-background),
-.elementor-3853 .elementor-element.elementor-element-89c0cd1>.elementor-motion-effects-container>.elementor-motion-effects-layer {
-    background-image: url("https://pravada.webounces.com/wp-content/uploads/2020/04/product_ENG_AFRICAN-WALNUT_Heritage-Collection_Pravada-Floors_96dpi_1.jpg");
-}
 
 .elementor-3853 .elementor-element.elementor-element-21a33e94:not(.elementor-motion-effects-element-type-background),
 .elementor-3853 .elementor-element.elementor-element-21a33e94>.elementor-motion-effects-container>.elementor-motion-effects-layer {
-    background-image: url("https://pravada.webounces.com/wp-content/uploads/2020/01/banner-CTA-FIND-DEALER-pravada-website-96dpi-1.jpg");
+    background-image: url("https://cdn.shopify.com/s/files/1/0422/9274/0261/files/banner-CTA-FIND-DEALER-pravada-website-96dpi-1.jpg?v=1598295191");
 }

@@ -533,6 +533,7 @@ li.collection-list:nth-child(4) {
     font-family: "Raleway", Sans-serif !important;
     background: transparent !important;
     font-style: unset !important;
+    margin: 0 !important;
 }
 
 .gc-speci-tab th.woocommerce-product-attributes-item__label {
@@ -541,6 +542,7 @@ li.collection-list:nth-child(4) {
 
 .gc-speci-tab table.shop_attributes th {
     width: 200px !important;
+    font-weight: 700;
 }
 
 
@@ -1780,7 +1782,7 @@ div.wpforms-container-full.application-form .wpforms-form button[type=submit]:ho
 p.ymal-width {
     width: 100%;
     max-width: 300px;
-    margin: -15px auto 0;
+    margin: -15px auto 0 !important;
     background: #fff;
 }
 

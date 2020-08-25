@@ -3,7 +3,7 @@
  * @version 1.20.3
  * @link https://wordpress.org/plugins/ti-woocommerce-wishlist/
  */
-@font-face{font-family:'tinvwl-webfont';src:url("../fonts/tinvwl-webfont.eot?xu2uyi");src:url("../fonts/tinvwl-webfont.eot?xu2uyi#iefix") format("embedded-opentype"),url("../fonts/tinvwl-webfont.ttf?xu2uyi") format("truetype"),url("../fonts/tinvwl-webfont.woff?xu2uyi") format("woff"),url("../fonts/tinvwl-webfont.svg?xu2uyi#tinvwl-webfont") format("svg");font-weight:normal;font-style:normal}
+@font-face{font-family:'tinvwl-webfont';src:url("https://cdn.shopify.com/s/files/1/0422/9274/0261/files/tinvwl-webfont.eot?v=1598282982");src:url("https://cdn.shopify.com/s/files/1/0422/9274/0261/files/tinvwl-webfont.eot?v=1598282982") format("embedded-opentype"),url("https://cdn.shopify.com/s/files/1/0422/9274/0261/files/tinvwl-webfont.ttf?v=1598282983") format("truetype"),url("https://cdn.shopify.com/s/files/1/0422/9274/0261/files/tinvwl-webfont.woff?v=1598282983") format("woff"),url("https://cdn.shopify.com/s/files/1/0422/9274/0261/files/tinvwl-webfont.svg?v=1598282982") format("svg");font-weight:normal;font-style:normal}
 .ftinvwl{font-family:'tinvwl-webfont' !important;speak:none;font-style:normal;font-weight:normal;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 .ftinvwl-twitter:before{content:"\f099"}
 .ftinvwl-facebook:before{content:"\f09a"}

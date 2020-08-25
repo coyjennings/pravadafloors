@@ -13,33 +13,15 @@
                             data-id="77ead1e" data-element_type="widget" data-widget_type="image.default">
                             <div class="elementor-widget-container">
                                 <div class="elementor-image">
-                                    <img src="https://pravada.webounces.com/wp-content/uploads/2020/01/logo-Heritage-Collection-Pravada-Floors_300x200-white.svg"
+                                    <img src={{product.metafields.collection_logo.collection_logo}}
                                         class="attachment-full size-full" alt="" loading="lazy" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="elementor-element elementor-element-eedda7d gc-product-nav elementor-widget elementor-widget-post-navigation"
-                            data-id="eedda7d" data-element_type="widget" data-widget_type="post-navigation.default">
-                            <div class="elementor-widget-container">
-                                <div class="elementor-post-navigation elementor-grid">
-                                    <div class="elementor-post-navigation__prev elementor-post-navigation__link">
-                                    </div>
-                                    <div class="elementor-post-navigation__next elementor-post-navigation__link">
-                                        <a href="https://pravada.webounces.com/product/heritage-brown/" rel="next"><span
-                                                class="elementor-post-navigation__link__next"><span
-                                                    class="post-navigation__next--label">Next
-                                                    Product</span></span><span
-                                                class="post-navigation__arrow-wrapper post-navigation__arrow-next"><i
-                                                    class="fa fa-angle-right" aria-hidden="true"></i><span
-                                                    class="elementor-screen-only">Next</span></span></a>
-                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="elementor-element elementor-element-6a49fd6 elementor-widget elementor-widget-text-editor"
                             data-id="6a49fd6" data-element_type="widget" data-widget_type="text-editor.default">
                             <div class="elementor-widget-container">
-                                <div class="elementor-text-editor elementor-clearfix">EXOTICS</div>
+                                <div class="elementor-text-editor elementor-clearfix">{{product.metafields.subtitle.subtitle}}</div>
                             </div>
                         </div>
                         <div class="elementor-element elementor-element-c711693 elementor-drop-cap-yes elementor-drop-cap-view-default elementor-widget elementor-widget-text-editor"
@@ -47,8 +29,7 @@
                             data-settings="{&quot;drop_cap&quot;:&quot;yes&quot;}"
                             data-widget_type="text-editor.default">
                             <div class="elementor-widget-container">
-                                <div class="elementor-text-editor elementor-clearfix">AFRICAN WALNUT
-                                </div>
+                                <div class="elementor-text-editor elementor-clearfix">{{ product.title }}</div>
                             </div>
                         </div>
                     </div>
