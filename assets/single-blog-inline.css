@@ -634,11 +634,6 @@
     text-align: center;
 }
 
-/* .elementor-4284 .elementor-element.elementor-element-55605f9:not(.elementor-motion-effects-element-type-background),
-.elementor-4284 .elementor-element.elementor-element-55605f9>.elementor-motion-effects-container>.elementor-motion-effects-layer {
-    background-image: url("https://pravadafloors.webounces.com/wp-content/uploads/2020/01/sidebar-img.jpg");
-} */
-
 .elementor-4284 .elementor-element.elementor-element-55605f9 {
     transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
     margin-top: 0px;

@@ -1,0 +1,106 @@
+<link rel='stylesheet' id='blog-archive-inline-css' href="{{ 'blog-archive-inline.css' | asset_url }}" type='text/css'
+    media='all' />
+<div data-elementor-type="archive" data-elementor-id="9852" class="elementor elementor-9852 elementor-location-archive"
+    data-elementor-settings="[]">
+    <div class="elementor-inner">
+        <div class="elementor-section-wrap">
+            <section
+                class="has_ae_slider elementor-element elementor-element-7ea295ab elementor-section-boxed elementor-section-height-default elementor-section-height-default ae-bg-gallery-type-default elementor-section elementor-top-section"
+                data-id="7ea295ab" data-element_type="section"
+                data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+                <div class="elementor-container elementor-column-gap-default">
+                    <div class="elementor-row">
+                        <div class="has_ae_slider elementor-element elementor-element-bcafb2b ae-bg-gallery-type-default elementor-column elementor-col-100 elementor-top-column"
+                            data-id="bcafb2b" data-element_type="column">
+                            <div class="elementor-column-wrap  elementor-element-populated">
+                                <div class="elementor-widget-wrap">
+                                    <div class="elementor-element elementor-element-13028201 elementor-widget elementor-widget-image"
+                                        data-id="13028201" data-element_type="widget" data-widget_type="image.default">
+                                        <div class="elementor-widget-container">
+                                            <div class="elementor-image">
+                                                <img width="70" height="55"
+                                                    src="https://cdn.shopify.com/s/files/1/0422/9274/0261/files/pravada-logomark_black.png?v=1598460410"
+                                                    class="attachment-large size-large" alt="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="elementor-element elementor-element-3a068c13 elementor-widget elementor-widget-heading"
+                                        data-id="3a068c13" data-element_type="widget"
+                                        data-widget_type="heading.default">
+                                        <div class="elementor-widget-container">
+                                            <h2 class="elementor-heading-title elementor-size-default">
+                                                {{ blog.title }}
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="elementor-element elementor-element-39ac1338 elementor-widget elementor-widget-text-editor"
+                                        data-id="39ac1338" data-element_type="widget"
+                                        data-widget_type="text-editor.default">
+                                        <div class="elementor-widget-container">
+                                            <div class="elementor-text-editor elementor-clearfix">
+                                                {{blog.metafields.blog_description.blog_description}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+<div class="wgl-container">
+    <div class="row">
+        <div id='main-content' class="wgl_col-12">
+            <section class="wgl_cpt_section">
+                <div class="wgl-portfolio" id="portfolio_module_5f37f464ab88c">
+                    <div class="wgl-portfolio_wrapper">
+                        <div class="wgl-portfolio_container container-grid row isotope portfolio_columns-3"
+                            style="margin-right:-15px; margin-left:-15px; margin-bottom:-30px;">
+
+                            {% for article in blog.articles %}
+                            <article class="wgl-portfolio-list_item item wgl_col-4 projects"
+                                style="padding-right:15px; padding-left:15px; padding-bottom:30px;">
+                                <div class="aspect-ratio"
+                                style="background-image: url('{{ article.image.src | img_url: '450x450' }}'); background-size: cover;">
+                                    <div class="portfolio-bg wgl-portfolio-item_wrapper inside_image sub_layer_animation"
+                                        >
+                                        <div class="wgl-portfolio-item_image">
+                                            <!-- <img src={{ article.image.src | img_url: '450x450' }} alt="" /> -->
+                                        </div>
+                                        <div class="wgl-portfolio-item_description">
+                                            <div class="wgl-portfolio-item_description-inner">
+                                                <div class="wgl-portfolio-item_title">
+                                                    <h4 class="title">
+                                                        <a href={{article.url}} target="_blank">
+                                                            {{ article.title }}
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div class="wgl-portfolio-item_meta">
+                                                    <span class="post_cats">
+                                                        <a href={{blog.url}} class="portfolio-category">
+                                                            {{ blog.title }}
+                                                        </a>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href={{article.url}} class='portfolio_link single_link'>
+                                            <i class='portfolio_link-icon flaticon-right-arrow'></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </article>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
