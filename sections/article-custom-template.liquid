@@ -329,7 +329,11 @@
                                                                             <span
                                                                                 class="elementor-button-content-wrapper">
                                                                                 <span class="elementor-button-text">
+                                                                                    {% if article.metafields.blog_learn_more.name %}
                                                                                     {{article.metafields.blog_learn_more.name}}
+                                                                                    {% else %}
+                                                                                    Learn More
+                                                                                    {% endif %}
                                                                                 </span>
                                                                             </span>
                                                                         </a>
@@ -550,8 +554,12 @@
                                     <section
                                         class="has_ae_slider elementor-element elementor-element-55605f9 gc- elementor-section-boxed elementor-section-height-default elementor-section-height-default ae-bg-gallery-type-default elementor-section elementor-inner-section"
                                         data-id="55605f9" data-element_type="section"
+                                        data-settings="{&quot;background_background&quot;:&quot;classic&quot;}"
+                                        {% if article.metafields.blog_collection.featured_image %}
                                         style="background-image: url('{{article.metafields.blog_collection.featured_image}}'); background-size: cover;"
-                                        data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+                                        {% else %}
+                                        style="background-image: url('https://cdn.shopify.com/s/files/1/0422/9274/0261/files/banner_ad_LE-SOLEIL-pravada-website-96dpi.jpg?v=1598438924'); background-size: cover;"
+                                        {% endif %}>
                                         <div class="elementor-container elementor-column-gap-default">
                                             <div class="elementor-row">
                                                 <div class="has_ae_slider elementor-element elementor-element-fb18a75 ae-bg-gallery-type-default elementor-column elementor-col-100 elementor-inner-column"
@@ -573,7 +581,11 @@
                                                                 <div class="elementor-widget-container">
                                                                     <div class="elementor-image">
                                                                         <img width="300" height="200"
+                                                                            {% if article.metafields.blog_collection.featured_logo %}
                                                                             src={{article.metafields.blog_collection.featured_logo}}
+                                                                            {% else %}
+                                                                            src="https://cdn.shopify.com/s/files/1/0422/9274/0261/t/7/assets/acf.logo-Le-Soleil-Collection-Pravada-Floors_300x200-white.png?v=1598378332"
+                                                                            {% endif %}
                                                                             class="attachment-full size-full" alt="" />
                                                                     </div>
                                                                 </div>
@@ -592,9 +604,11 @@
                                                                 data-widget_type="button.default">
                                                                 <div class="elementor-widget-container">
                                                                     <div class="elementor-button-wrapper">
-                                                                        <a href={{article.metafields.blog_collection.featured_link}}
-                                                                            class="elementor-button-link elementor-button elementor-size-sm"
-                                                                            role="button">
+                                                                        <a class="elementor-button-link elementor-button elementor-size-sm"
+                                                                            {% if article.metafields.blog_collection.featured_link %}
+                                                                            href={{article.metafields.blog_collection.featured_link}}
+                                                                            {% else %} href="/collections/le-soleil"
+                                                                            {% endif %} role="button">
                                                                             <span
                                                                                 class="elementor-button-content-wrapper">
                                                                                 <span

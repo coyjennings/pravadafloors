@@ -526,3 +526,13 @@ ul.products {
 .elementor-3647 .elementor-element.elementor-element-9d38174 {
     color: #ffffff;
 }
+
+.elementor-9852 .elementor-element.elementor-element-3a068c13 .elementor-heading-title.all-products {
+    font-size: 48px;
+}
+
+@media only screen and (max-width: 600px) {
+    .elementor-9852 .elementor-element.elementor-element-3a068c13 .elementor-heading-title.all-products {
+        font-size: 32px;
+    }
+}

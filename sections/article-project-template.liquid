@@ -111,7 +111,7 @@
                                                                     <div class="elementor-image">
                                                                         <a href={{article.metafields.first_image.full}}>
                                                                             <img src={{article.metafields.first_image.full}}
-                                                                                alt="" />
+                                                                                alt="" title="" />
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -278,6 +278,7 @@
                                                                                 <a href={{ gallery_image }}>
                                                                                     <figure class="swiper-slide-inner">
                                                                                         <img class="swiper-slide-image"
+                                                                                            alt="" title=""
                                                                                             src={{ gallery_image }} />
                                                                                     </figure>
                                                                                 </a>
@@ -328,7 +329,11 @@
                                                                             <span
                                                                                 class="elementor-button-content-wrapper">
                                                                                 <span class="elementor-button-text">
-                                                                                    {{article.metafields.learn_more.name}}
+                                                                                    {% if article.metafields.learn_more.name %}
+                                                                                        {{article.metafields.learn_more.name}}
+                                                                                    {% else %}
+                                                                                        Learn More
+                                                                                    {% endif %}
                                                                                 </span>
                                                                             </span>
                                                                         </a>
@@ -513,7 +518,11 @@
                                                                         class="elementor-text-editor elementor-clearfix">
                                                                         <a href={{article.metafields.interior_designer.link}}
                                                                             target="_blank">
+                                                                            {% if article.metafields.interior_designer.name %}
                                                                             {{article.metafields.interior_designer.name}}
+                                                                            {% else %}
+                                                                            N/A
+                                                                            {% endif %}
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -526,7 +535,11 @@
                                                                         class="elementor-text-editor elementor-clearfix">
                                                                         <a href={{article.metafields.architects_name_link.architects_name_link}}
                                                                             target="_blank">
+                                                                            {% if article.metafields.architects_name.architects_name %}
                                                                             {{article.metafields.architects_name.architects_name}}
+                                                                            {% else %}
+                                                                            N/A
+                                                                            {% endif %}
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -537,7 +550,11 @@
                                                                 <div class="elementor-widget-container">
                                                                     <div
                                                                         class="elementor-text-editor elementor-clearfix">
+                                                                        {% if article.metafields.builder_name.builder_name %}
                                                                         {{article.metafields.builder_name.builder_name}}
+                                                                        {% else %}
+                                                                        N/A
+                                                                        {% endif %}
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -547,7 +564,11 @@
                                                                 <div class="elementor-widget-container">
                                                                     <div
                                                                         class="elementor-text-editor elementor-clearfix">
+                                                                        {% if article.metafields.location.location %}
                                                                         {{article.metafields.location.location}}
+                                                                        {% else %}
+                                                                        N/A
+                                                                        {% endif %}
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -558,7 +579,11 @@
                                                                 <div class="elementor-widget-container">
                                                                     <div
                                                                         class="elementor-text-editor elementor-clearfix">
+                                                                        {% if article.metafields.completion.year %}
                                                                         {{article.metafields.completion.year}}
+                                                                        {% else %}
+                                                                        N/A
+                                                                        {% endif %}
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -568,7 +593,11 @@
                                                                 <div class="elementor-widget-container">
                                                                     <div
                                                                         class="elementor-text-editor elementor-clearfix">
+                                                                        {% if article.metafields.photography.name %}
                                                                         {{article.metafields.photography.name}}
+                                                                        {% else %}
+                                                                        N/A
+                                                                        {% endif %}
                                                                     </div>
                                                                 </div>
                                                             </div>

@@ -47,72 +47,17 @@
                                             <div class="elementor-swiper">
                                                 <div class="elementor-main-swiper swiper-container">
                                                     <div class="swiper-wrapper">
-                                                        <div class="swiper-slide">
-                                                            <a href="/collection/artistique/">
-                                                                <div class="elementor-carousel-image"
-                                                                    style="background-image: url(https://pravada.webounces.com/wp-content/uploads/2020/01/logo-Artistique-Collection-Pravada-Floors_300x200-black.svg)">
+                                                        {% for collection in collections %}
+                                                            {% if collection.title contains 'Collection' %}
+                                                                <div class="swiper-slide">
+                                                                    <a href={{collection.url}}>
+                                                                        <div class="elementor-carousel-image"
+                                                                            style="background-image: url('{{collection.metafields.Logo_for_ProductPage.logo_for_productpage}}')">
+                                                                        </div>
+                                                                    </a>
                                                                 </div>
-                                                            </a> </div>
-                                                        <div class="swiper-slide">
-                                                            <a href="/collection/canvas/">
-                                                                <div class="elementor-carousel-image"
-                                                                    style="background-image: url(https://pravada.webounces.com/wp-content/uploads/2020/01/logo-Canvas-Collection-Pravada-Floors_300x200-black.svg)">
-                                                                </div>
-                                                            </a> </div>
-                                                        <div class="swiper-slide">
-                                                            <a href="/collection/decor/">
-                                                                <div class="elementor-carousel-image"
-                                                                    style="background-image: url(https://pravada.webounces.com/wp-content/uploads/2020/01/logo-Decor-Collection-Pravada-Floors_300x200-black.svg)">
-                                                                </div>
-                                                            </a> </div>
-                                                        <div class="swiper-slide">
-                                                            <a href="/collection/ferme-chic/">
-                                                                <div class="elementor-carousel-image"
-                                                                    style="background-image: url(https://pravada.webounces.com/wp-content/uploads/2020/01/logo-Ferme-Chic-Collection-Pravada-Floors_300x200-black.svg)">
-                                                                </div>
-                                                            </a> </div>
-                                                        <div class="swiper-slide">
-                                                            <a href="/collection/haute-couleur/">
-                                                                <div class="elementor-carousel-image"
-                                                                    style="background-image: url(https://pravada.webounces.com/wp-content/uploads/2020/01/logo-Haute-Couleur-Collection-Pravada-Floors_300x200-black.svg)">
-                                                                </div>
-                                                            </a> </div>
-                                                        <div class="swiper-slide">
-                                                            <a href="/collection/le-soleil/">
-                                                                <div class="elementor-carousel-image"
-                                                                    style="background-image: url(https://pravada.webounces.com/wp-content/uploads/2020/01/logo-Le-Soleil-Collection-Pravada-Floors_300x200-black.svg)">
-                                                                </div>
-                                                            </a> </div>
-                                                        <div class="swiper-slide">
-                                                            <a href="/evolutionz/">
-                                                                <div class="elementor-carousel-image"
-                                                                    style="background-image: url(https://pravada.webounces.com/wp-content/uploads/2020/01/logo-Evolutionz-Collection-Pravada-Floors_300x200-black.svg)">
-                                                                </div>
-                                                            </a> </div>
-                                                        <div class="swiper-slide">
-                                                            <a href="/collection/nauticor/">
-                                                                <div class="elementor-carousel-image"
-                                                                    style="background-image: url(https://pravada.webounces.com/wp-content/uploads/2020/01/logo-Nauticor-Collection-Pravada-Floors_300x200-black.svg)">
-                                                                </div>
-                                                            </a> </div>
-                                                        <div class="swiper-slide">
-                                                            <a href="/collection/pure-touch/">
-                                                                <div class="elementor-carousel-image"
-                                                                    style="background-image: url(https://pravada.webounces.com/wp-content/uploads/2020/01/logo-Pure-Touch-Collection-Pravada-Floors_300x200-black.svg)">
-                                                                </div>
-                                                            </a> </div>
-                                                        <div class="swiper-slide">
-                                                            <a href="/collection/designer-series/">
-                                                                <div class="elementor-carousel-image"
-                                                                    style="background-image: url(https://pravada.webounces.com/wp-content/uploads/2020/01/logo-Designer-Collection-Pravada-Floors_300x200-black.svg)">
-                                                                </div>
-                                                            </a> </div>
-                                                        <div class="swiper-slide">
-                                                            <a href="/collection/evolve-series/">
-                                                                <div class="elementor-carousel-image"
-                                                                    style="background-image: url(https://pravada.webounces.com/wp-content/uploads/2020/01/logo-Evolve-Collection-Pravada-Floors_300x200-black.svg)">
-                                                                </div>
-                                                            </a> </div>
+                                                            {% endif %}
+                                                        {% endfor %}
                                                     </div>
                                                 </div>
                                             </div>
@@ -382,7 +327,7 @@
                                         data-id="d2a4eae" data-element_type="widget" data-widget_type="image.default">
                                         <div class="elementor-widget-container">
                                             <div class="elementor-image">
-                                                <img src={{ section.settings.footer_logo }}
+                                                <img src={{ section.settings.footer_logo | img_url: 'master' }}
                                                     class="attachment-full size-full" alt="" loading="lazy" />
                                             </div>
                                         </div>

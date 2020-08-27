@@ -183,134 +183,114 @@
                                                 <div class="wgl-products-catalog wgl-products-wrapper columns-3">
                                                     <div data-slug="" class="wpf-search-container">
                                                         <ul class="wgl-products products appear-animation anim-fade-in">
-                                                            {% for product in collection.products %}
-                                                            <li
-                                                                class="product type-product post-11548 status-publish first instock product_cat-heritage product_tag-dark product_tag-exotics product_tag-glossy product_tag-handscrapped product_tag-warm has-post-thumbnail taxable shipping-taxable purchasable product-type-simple">
-                                                                <div class="products-post">
-                                                                    <div class="products-post_wrapper">
-                                                                        <div class='woo_product_image shop_media'>
-                                                                            <div class='picture'>
-                                                                                <a class='woo_post-link'
-                                                                                    href={{ product.url | within: collection }}>
-                                                                                    <div class="product-img-wrap-one c380"
-                                                                                        style="background-image: url('{{ product.featured_image.src | product_img_url: 'large' }}'); background-repeat: no-repeat; background-position: center; background-size: cover;">
-                                                                                        <div
-                                                                                            style="text-align: center;">
-                                                                                            <h3 class="changeblack"
-                                                                                                style="font-size: 30px;paddin-bottom:0; color:white;">
-                                                                                                {{ product.title }}
-                                                                                            </h3>
-                                                                                            <p class="changeblack"
-                                                                                                style="color:white;">
-                                                                                                {{ collection.title }}
-                                                                                            </p>
-                                                                                        </div>
-                                                                                    </div>
-
-                                                                                    <div class="product-content-x-img-wrap-two c380"
-                                                                                        style="background: url('{{ product.metafields.secondary_image.secondary_image }}'); background-repeat: no-repeat; background-position: center; background-size: cover; text-align:center;">
-
-                                                                                        <div class="changeblack">
-                                                                                            <div
-                                                                                                class="tinv-wraper woocommerce tinv-wishlist tinvwl-shortcode-add-to-cart">
-                                                                                                <a role="button"
-                                                                                                    class="tinvwl_add_to_wishlist_button tinvwl-icon-heart no-txt  tinvwl-position-after ftinvwl-animated"
-                                                                                                    data-tinv-wl-list=""
-                                                                                                    data-tinv-wl-product="11548"
-                                                                                                    data-tinv-wl-productvariation="0"
-                                                                                                    data-tinv-wl-productvariations="[0]"
-                                                                                                    data-tinv-wl-producttype="simple"
-                                                                                                    data-tinv-wl-action="add"></a>
-                                                                                                <div
-                                                                                                    class="tinvwl-tooltip">
-                                                                                                    Add to Wishlist
+                                                            {% paginate collection.products by 1000 %}
+                                                                {% for product in collection.products %}
+                                                                    <li
+                                                                        class="product type-product post-11548 status-publish first instock product_cat-heritage product_tag-dark product_tag-exotics product_tag-glossy product_tag-handscrapped product_tag-warm has-post-thumbnail taxable shipping-taxable purchasable product-type-simple">
+                                                                        <div class="products-post">
+                                                                            <div class="products-post_wrapper">
+                                                                                <div class='woo_product_image shop_media'>
+                                                                                    <div class='picture'>
+                                                                                        <a class='woo_post-link' href={{ product.url | within: collection }}>
+                                                                                            <div class="product-img-wrap-one c380"
+                                                                                                style="background-image: url('{{ product.featured_image.src | product_img_url: 'large' }}'); background-repeat: no-repeat; background-position: center; background-size: cover;">
+                                                                                                <div style="text-align: center;">
+                                                                                                    <h3 class="changeblack" style="font-size: 30px;paddin-bottom:0; color:white;">
+                                                                                                        {{ product.title }}
+                                                                                                    </h3>
+                                                                                                    <p class="changeblack" style="color:white;">
+                                                                                                        {{ collection.title }}
+                                                                                                    </p>
                                                                                                 </div>
                                                                                             </div>
-                                                                                        </div>
 
-                                                                                        <a>
-                                                                                            <i class="mb-prodID mb-products-pop icon icon-moodboard"
-                                                                                                alt="11548"
-                                                                                                aria-hidden="true"
-                                                                                                style="font-size:30px;color:white;margin-left: 5px; "></i></a>
+                                                                                            <div class="product-content-x-img-wrap-two c380"
+                                                                                                style="background: url('{{ product.metafields.secondary_image.secondary_image }}'); background-repeat: no-repeat; background-position: center; background-size: cover; text-align:center;">
 
+                                                                                                <div class="changeblack">
+                                                                                                    <div class="tinv-wraper woocommerce tinv-wishlist tinvwl-shortcode-add-to-cart">
+                                                                                                        <a role="button"
+                                                                                                            class="tinvwl_add_to_wishlist_button tinvwl-icon-heart no-txt  tinvwl-position-after ftinvwl-animated"
+                                                                                                            data-tinv-wl-list="" data-tinv-wl-product="11548"
+                                                                                                            data-tinv-wl-productvariation="0" data-tinv-wl-productvariations="[0]"
+                                                                                                            data-tinv-wl-producttype="simple" data-tinv-wl-action="add"></a>
+                                                                                                        <div class="tinvwl-tooltip">
+                                                                                                            Add to Wishlist
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
 
-                                                                                    </div>
-                                                                                    <style>
-                                                                                        .tinv-wishlist .tinvwl_add_to_wishlist_button.tinvwl-icon-heart:before {
-                                                                                            font-size: 33px;
-                                                                                        }
-
-                                                                                        .tinvwl_add_to_wishlist_button:hover {
-                                                                                            color: white !important;
-                                                                                        }
-
-                                                                                        .tinvwl_add_to_wishlist-text {
-                                                                                            display: none;
-                                                                                        }
-
-                                                                                        .icon-moodboard {
-                                                                                            cursor: pointer;
-                                                                                        }
-
-                                                                                        ul.products {
-                                                                                            display: inline-flex !important;
-                                                                                        }
-
-                                                                                        @media only screen and (min-width: 600px) {
-                                                                                            ul.products li.product {
-                                                                                                width: auto !important;
-                                                                                                display: flex !important;
-                                                                                                margin: 10px !important;
-                                                                                            }
-                                                                                        }
-
-                                                                                        @media only screen and (max-width: 600px) {
-                                                                                            ul.products li.product {
-                                                                                                display: flex !important;
-                                                                                                margin: 20px auto !important;
-                                                                                            }
-                                                                                        }
-
-                                                                                        .tinv-wraper {
-                                                                                            position: absolute;
-                                                                                            top: 240px;
-                                                                                            left: 183px !important;
-                                                                                        }
-                                                                                    </style>
+                                                                                                <a>
+                                                                                                    <i class="mb-prodID mb-products-pop icon icon-moodboard" alt="11548" aria-hidden="true"
+                                                                                                        style="font-size:30px;color:white;margin-left: 5px; "></i></a>
 
 
+                                                                                            </div>
+                                                                                            <style>
+                                                                                                .tinv-wishlist .tinvwl_add_to_wishlist_button.tinvwl-icon-heart:before {
+                                                                                                    font-size: 33px;
+                                                                                                }
 
+                                                                                                .tinvwl_add_to_wishlist_button:hover {
+                                                                                                    color: white !important;
+                                                                                                }
 
+                                                                                                .tinvwl_add_to_wishlist-text {
+                                                                                                    display: none;
+                                                                                                }
 
-                                                                                </a></div>
+                                                                                                .icon-moodboard {
+                                                                                                    cursor: pointer;
+                                                                                                }
+
+                                                                                                ul.products {
+                                                                                                    display: inline-flex !important;
+                                                                                                }
+
+                                                                                                @media only screen and (min-width: 600px) {
+                                                                                                    ul.products li.product {
+                                                                                                        width: auto !important;
+                                                                                                        display: flex !important;
+                                                                                                        margin: 10px !important;
+                                                                                                    }
+                                                                                                }
+
+                                                                                                @media only screen and (max-width: 600px) {
+                                                                                                    ul.products li.product {
+                                                                                                        display: flex !important;
+                                                                                                        margin: 20px auto !important;
+                                                                                                    }
+                                                                                                }
+
+                                                                                                .tinv-wraper {
+                                                                                                    position: absolute;
+                                                                                                    top: 240px;
+                                                                                                    left: 183px !important;
+                                                                                                }
+                                                                                            </style>
+
+                                                                                        </a></div>
+                                                                                </div>
+                                                                                <span class="price">
+                                                                                    <span class="woocommerce-Price-amount amount">
+                                                                                        <span class="woocommerce-Price-currencySymbol">&#36;</span>
+                                                                                        5.00
+                                                                                    </span>
+                                                                                    <small class="woocommerce-price-suffix">$</small></span>
+                                                                                <div class="tinv-wraper woocommerce tinv-wishlist tinvwl-after-add-to-cart tinvwl-loop-button-wrapper">
+                                                                                    <a role="button"
+                                                                                        class="tinvwl_add_to_wishlist_button tinvwl-add-hide tinvwl-icon-heart no-txt  tinvwl-position-after"
+                                                                                        data-tinv-wl-list="" data-tinv-wl-product="11548" data-tinv-wl-productvariation="0"
+                                                                                        data-tinv-wl-productvariations="[0]" data-tinv-wl-producttype="simple"
+                                                                                        data-tinv-wl-action="add"></a>
+                                                                                    <div class="tinvwl-tooltip">Add to
+                                                                                        Wishlist</div>
+                                                                                </div>
+                                                                            </div>
                                                                         </div>
-                                                                        <span class="price">
-                                                                            <span
-                                                                                class="woocommerce-Price-amount amount">
-                                                                                <span
-                                                                                    class="woocommerce-Price-currencySymbol">&#36;</span>
-                                                                                5.00
-                                                                            </span>
-                                                                            <small
-                                                                                class="woocommerce-price-suffix">$</small></span>
-                                                                        <div
-                                                                            class="tinv-wraper woocommerce tinv-wishlist tinvwl-after-add-to-cart tinvwl-loop-button-wrapper">
-                                                                            <a role="button"
-                                                                                class="tinvwl_add_to_wishlist_button tinvwl-add-hide tinvwl-icon-heart no-txt  tinvwl-position-after"
-                                                                                data-tinv-wl-list=""
-                                                                                data-tinv-wl-product="11548"
-                                                                                data-tinv-wl-productvariation="0"
-                                                                                data-tinv-wl-productvariations="[0]"
-                                                                                data-tinv-wl-producttype="simple"
-                                                                                data-tinv-wl-action="add"></a>
-                                                                            <div class="tinvwl-tooltip">Add to
-                                                                                Wishlist</div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                            {% endfor %}
+                                                                    </li>
+                                                                {% endfor %}
+                                                            {% endpaginate %}
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -341,7 +321,7 @@
                                                 <a class="premium-button premium-button-lg premium-button-none"
                                                     href="/pages/all-collections">
                                                     <div class="premium-button-text-icon-wrapper">
-                                                        <span>Back to CollectionS</span>
+                                                        <span>Back to Collections</span>
                                                     </div>
                                                 </a>
                                             </div>
