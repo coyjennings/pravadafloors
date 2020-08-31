@@ -1432,10 +1432,10 @@ div[data-widget_type="image-carousel.default"] * {
     left: -50px !important;
 }
 
-/* End custom CSS */
-/* Start custom CSS for section, class: .elementor-element-aacf16e */
-.elementor-3853 .elementor-element.elementor-element-aacf16e .elementor-col-50 {
-    max-height: 800px;
+@media only screen and (max-width: 600px) {
+    .swiper-pagination {
+        left: -200px !important;
+    }
 }
 
 /* End custom CSS */
@@ -1447,7 +1447,6 @@ div[data-widget_type="image-carousel.default"] * {
 /* End custom CSS */
 /* Start custom CSS for section, class: .elementor-element-a9007c2 */
 @media only screen and (min-width: 600px) {
-
     #prowid,
     #prowid div {
         max-height: 750px !important;

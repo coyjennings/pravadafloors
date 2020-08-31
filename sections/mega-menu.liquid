@@ -333,7 +333,7 @@
                                                                                                                                                 <form
                                                                                                                                                     class="elementor-search-form"
                                                                                                                                                     role="search"
-                                                                                                                                                    action="https://pravada.webounces.com"
+                                                                                                                                                    action="{{ routes.search_url }}"
                                                                                                                                                     method="get">
 
                                                                                                                                                     <div
@@ -342,9 +342,9 @@
                                                                                                                                                             placeholder="search"
                                                                                                                                                             class="elementor-search-form__input"
                                                                                                                                                             type="search"
-                                                                                                                                                            name="s"
+                                                                                                                                                            name="q"
                                                                                                                                                             title="Search"
-                                                                                                                                                            value="">
+                                                                                                                                                            value="{{ search.terms | escape }}">
                                                                                                                                                         <button
                                                                                                                                                             class="elementor-search-form__submit"
                                                                                                                                                             type="submit"

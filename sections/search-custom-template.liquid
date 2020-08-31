@@ -1,0 +1,129 @@
+<link rel='stylesheet' id='search-result-inline-css' href="{{ 'search-result-inline.css' | asset_url }}" type='text/css'
+    media='all' />
+
+{% paginate search.results by 100 %}
+
+<header class="section-header section-header--small text-center">
+    {% if search.performed %}
+    <h1 class="section-header__title h2">{{ 'general.search.search_results_title' | t }}</h1>
+    <div class="section-header__description">
+        {{ 'general.search.results_count_html' | t: count: search.results_count, terms: search.terms }}
+    </div>
+    {% else %}
+    <h1 class="section-header__title h2">{{ 'general.search.title' | t }}</h1>
+    <div class="search-template__search-bar">
+        {% include 'search-bar' %}
+    </div>
+    {% endif %}
+</header>
+
+{% if search.performed %}
+
+<div data-elementor-type="archive" data-elementor-id="15326"
+    class="elementor elementor-15326 elementor-location-archive" data-elementor-settings="[]">
+    <div class="elementor-inner">
+        <div class="elementor-section-wrap">
+            <section
+                class="has_ae_slider elementor-element elementor-element-785bf96b elementor-section-boxed elementor-section-height-default elementor-section-height-default ae-bg-gallery-type-default elementor-section elementor-top-section"
+                data-id="785bf96b" data-element_type="section">
+                <div class="elementor-container elementor-column-gap-default">
+                    <div class="elementor-row">
+                        <div class="has_ae_slider elementor-element elementor-element-5cd61950 ae-bg-gallery-type-default elementor-column elementor-col-100 elementor-top-column"
+                            data-id="5cd61950" data-element_type="column">
+                            <div class="elementor-column-wrap  elementor-element-populated">
+                                <div class="elementor-widget-wrap">
+                                    <div class="elementor-element elementor-element-38da645b elementor-posts--thumbnail-left elementor-grid-3 elementor-grid-tablet-2 elementor-grid-mobile-1 elementor-widget elementor-widget-archive-posts"
+                                        data-id="38da645b" data-element_type="widget"
+                                        data-settings="{&quot;archive_classic_row_gap&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:30,&quot;sizes&quot;:[]},&quot;archive_classic_columns&quot;:&quot;3&quot;,&quot;archive_classic_columns_tablet&quot;:&quot;2&quot;,&quot;archive_classic_columns_mobile&quot;:&quot;1&quot;}"
+                                        data-widget_type="archive-posts.archive_classic">
+                                        <div class="elementor-widget-container">
+                                            <div
+                                                class="elementor-posts-container elementor-posts elementor-posts--skin-classic elementor-grid">
+                                                {% for item in search.results %}
+                                                {% if item.object_type == 'article' %}
+                                                <article
+                                                    class="elementor-post elementor-grid-item post-13791 post type-post status-publish format-standard has-post-thumbnail hentry category-tips-and-advice tag-care tag-maintenance tag-technical tag-tips">
+                                                    {% if item.image %}
+                                                    <a class="elementor-post__thumbnail__link" href={{ item.url }}>
+                                                        <div class="elementor-post__thumbnail">
+                                                            <img src="{{ item.image.src | img_url: 'large' }}"
+                                                                class="attachment-full size-full" alt="" srcset=""
+                                                                sizes="(max-width: 2000px) 100vw, 2000px" />
+                                                        </div>
+                                                    </a>
+                                                    {% endif %}
+                                                    <div class="elementor-post__text">
+                                                        <h4 class="elementor-post__title">
+                                                            <a href={{ item.url }}>{{ item.title }}</a>
+                                                        </h4>
+                                                        <div class="elementor-post__excerpt">
+                                                            <p>
+                                                                {{ item.excerpt_or_content | truncatewords: 25 }}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </article>
+                                                {% elsif item.object_type == 'page' %}
+                                                <article
+                                                    class="elementor-post elementor-grid-item post-13791 post type-post status-publish format-standard has-post-thumbnail hentry category-tips-and-advice tag-care tag-maintenance tag-technical tag-tips">
+                                                    <div class="elementor-post__text">
+                                                        <h4 class="elementor-post__title">
+                                                            <a href={{ item.url }}>{{ item.title }}</a>
+                                                        </h4>
+                                                        <div class="elementor-post__excerpt">
+                                                            <p>
+                                                                {{ item.content | truncatewords: 25 }}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </article>
+                                                {% else %}
+                                                <article
+                                                    class="elementor-post elementor-grid-item post-13791 post type-post status-publish format-standard has-post-thumbnail hentry category-tips-and-advice tag-care tag-maintenance tag-technical tag-tips">
+                                                    {% if item.featured_image %}
+                                                    <a class="elementor-post__thumbnail__link" href={{ item.url }}>
+                                                        <div class="elementor-post__thumbnail">
+                                                            <img src="{{ item.featured_image | img_url: 'large' }}" class="attachment-full size-full" alt="" srcset=""
+                                                                sizes="(max-width: 2000px) 100vw, 2000px" />
+                                                        </div>
+                                                    </a>
+                                                    {% endif %}
+                                                    <div class="elementor-post__text">
+                                                        <h4 class="elementor-post__title">
+                                                            <a href={{ item.url }}>{{ item.title }}</a>
+                                                        </h4>
+                                                        <div class="elementor-post__excerpt">
+                                                            <p>
+                                                                {{ item.description | truncatewords: 25 }}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </article>
+                                                {% endif %}
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+{% if paginate.pages > 1 %}
+<div class="card-list__sub-actions">
+    {% include 'pagination' %}
+</div>
+{% endif %}
+
+<div
+    class="text-center card-list__sub-actions{% if product_count == 0 %} card-list__sub-actions--no-results{% endif %}">
+    {% include 'search-bar' %}
+</div>
+{% endif %}
+
+{% endpaginate %}
