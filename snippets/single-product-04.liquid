@@ -59,6 +59,7 @@
                                                                 <div class=gc-single-prod-col>
                                                                     <div class="gc-single-prod-desc">
                                                                         <h2 class="gc-single-prod-name">{{ product.title }}</h2>
+                                                                        {% include 'ZooomyListWishlistProduct' %}
                                                                         <h4 class="gc-single-prod-cat">
                                                                             {% for collection in product.collections %}
                                                                                 {% if collection.title contains 'Collection' %}

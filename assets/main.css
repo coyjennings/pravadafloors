@@ -7047,7 +7047,7 @@ body ol > li {
 
 body ol > li:before {
   /* https://www.w3.org/Style/Examples/007/color-bullets.en.html */
-  content: "." counter(li);
+/*   content: "." counter(li); */
   position: absolute;
   z-index: 1;
   left: 0;

@@ -84,12 +84,6 @@ h3,
 h4,
 h5,
 h6,
-h1 span,
-h2 span,
-h3 span,
-h4 span,
-h5 span,
-h6 span,
 h1 a,
 h2 a,
 h3 a,
@@ -226,12 +220,6 @@ h3,
 h4,
 h5,
 h6,
-h1 span,
-h2 span,
-h3 span,
-h4 span,
-h5 span,
-h6 span,
 h1 a,
 h2 a,
 h3 a,
@@ -1148,54 +1136,42 @@ ol.commentlist:after {
     background: #ffffff;
 }
 
-h1,
-h1 a,
-h1 span {
+h1 {
     font-family: Raleway;
     font-weight: 500;
     font-size: 48px;
     line-height: 56px;
 }
 
-h2,
-h2 a,
-h2 span {
+h2 {
     font-family: Raleway;
     font-weight: 500;
     font-size: 42px;
     line-height: 48px;
 }
 
-h3,
-h3 a,
-h3 span {
+h3 {
     font-family: Raleway;
     font-weight: 500;
     font-size: 38px;
     line-height: 46px;
 }
 
-h4,
-h4 a,
-h4 span {
+h4 {
     font-family: Raleway;
     font-weight: 500;
     font-size: 24px;
     line-height: 38px;
 }
 
-h5,
-h5 a,
-h5 span {
+h5 {
     font-family: Raleway;
     font-weight: 500;
     font-size: 24px;
     line-height: 28px;
 }
 
-h6,
-h6 a,
-h6 span {
+h6 {
     font-family: Raleway;
     font-weight: 500;
     font-size: 20px;

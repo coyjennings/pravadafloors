@@ -250,7 +250,9 @@
 
   {% render 'pagefly-header' %}
 
- </head>
+  
+{% render 'pagefly-header' %}
+ </head> 
 
 <body id="{{ page_title | handle }}"
   class="{% if customer %}customer-logged-in {% endif %}template-{% if request.page_type != blank %}{{ request.page_type | handle }}{% else %}none{% endif %} data-animations">
@@ -451,6 +453,7 @@
   </ul>
   <script src="https://zooomyapps.com/wishlist/ZooomyColl.js" data-shop-id="pravadafloorsinc.myshopify.com"
     data-cus-id="{{customer.id}}"></script>
+<script src="https://zooomyapps.com/wishlist/ZooomyColl.js" data-shop-id="pravadafloorsinc.myshopify.com" data-cus-id="{{customer.id}}"></script>
 </body>
 
 </html>
