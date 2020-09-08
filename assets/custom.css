@@ -43,14 +43,6 @@ a#elementor-menu-cart__toggle_button i {
     color: black !important;
 }
 
-#logopop {
-    content: url("https://pravada.webounces.com/wp-content/uploads/2020/04/pravada-logomark_black.png");
-    max-width: 100px;
-    width: 100%;
-    margin: auto;
-    padding-bottom: 10px;
-}
-
 .cmm4e.cmm4e-theme-default-menu-skin-461836 {
     background: transparent;
 }
@@ -59,10 +51,6 @@ a#elementor-menu-cart__toggle_button i {
 .search-col img {
     vertical-align: middle;
     max-width: 50%;
-}
-
-.fa-star:before {
-    content: url(https://pravada.webounces.com/wp-content/uploads/2020/02/moodboard-header.png);
 }
 
 .cmm4e.cmm4e-theme-default-menu-skin-461836>.cmm4e-menu-item:hover,
@@ -238,28 +226,6 @@ div[submit-success]>.wpforms-confirmation-container-full:not(.wpforms-redirectio
     border: 1px solid #fff;
 }
 
-#ct-mbs-start-over:before {
-    content: url(https://pravada.webounces.com/wp-content/uploads/2020/03/start-over-ic-black.png);
-    position: absolute;
-    top: 5px;
-}
-
-#ct-mbs-start-over:after {
-    content: url(https://pravada.webounces.com/wp-content/uploads/2020/03/start-over-ic-white.png);
-    position: absolute;
-    top: 5px;
-}
-
-#ct-mbs-share:before {
-    content: url(https://pravada.webounces.com/wp-content/uploads/2020/03/share-ic-black.png);
-    top: 7px;
-}
-
-#ct-mbs-share:after {
-    content: url(https://pravada.webounces.com/wp-content/uploads/2020/03/share-ic-white.png);
-    top: 7px;
-}
-
 .gc-related-prod .ae-grid-item {
     padding: 0 calc(80px/2) !important;
 }
@@ -303,11 +269,6 @@ div[submit-success]>.wpforms-confirmation-container-full:not(.wpforms-redirectio
 
 .services-icon {
     padding-bottom: 10px;
-}
-
-.product-nav-sec .fa-angle-right:before {
-    content: url(https://pravada.webounces.com/wp-content/uploads/2020/03/ARROW.png);
-    vertical-align: -webkit-baseline-middle;
 }
 
 .products-col:before {
@@ -383,11 +344,6 @@ div[submit-success]>.wpforms-confirmation-container-full:not(.wpforms-redirectio
     top: -20px;
     left: -30px;
     font-size: 12px;
-}
-
-.product-nav-sec .fa-angle-left:before {
-    content: url(https://pravada.webounces.com/wp-content/uploads/2020/03/ARROW-left.png);
-    vertical-align: -webkit-baseline-middle;
 }
 
 .gc-services-animation .jet-image-accordion__desc p {
@@ -686,18 +642,6 @@ div#impress_client h1 {
     border: 1px solid #fff !important;
     max-width: 750px;
     margin: auto;
-}
-
-.gc-logo-slider i.eicon-chevron-right {
-    content: url(https://pravada.webounces.com/wp-content/uploads/2020/03/ARROW.png);
-    width: 25px;
-    height: 40px;
-}
-
-.gc-logo-slider i.eicon-chevron-left {
-    content: url(https://pravada.webounces.com/wp-content/uploads/2020/03/ARROW-left.png);
-    width: 25px;
-    height: 40px;
 }
 
 .gc-toggle-sec .wgl-accordion_icon {
@@ -1047,102 +991,13 @@ a.dl-images-btn:hover {
     vertical-align: middle;
 }
 
-.gc-atc-btn-col .elementor-button-icon i:before {
-    content: url(https://pravada.webounces.com/wp-content/uploads/2020/03/add-to-cart-1.png) !important;
-    vertical-align: middle !important;
-    position: relative;
-    top: 2px;
-}
-
-.gc-search-sec:before {
-    content: url(https://pravada.webounces.com/wp-content/uploads/2020/06/triangle.png);
-    position: absolute;
-    top: -20px;
-    right: calc(50% - 39%);
-    transform: rotate(62deg);
-}
-
 .gc-search-sec {
     position: relative;
 }
 
 
-
-/**Testimonial Slider**/
-
-.testi-col {
-    display: inline-block !important;
-}
-
-.testi-col-one {
-    width: 30% !important;
-}
-
-.search-col .menu-item-arrow.fa.fa-angle-down {
-    display: none;
-}
-
-.gc-elevate-text {
-    margin-bottom: 0 !important;
-}
-
-.testi-col-two {
-    width: 70% !important;
-    padding-left: 120px !important;
-}
-
-.testi-wrap {
-    display: flex !important;
-    align-items: center !important;
-}
-
-.testi-content p {
-    font-family: "Playfair Display", Sans-serif !important;
-    color: #000 !important;
-    text-align: center !important;
-    font-size: 18px !important;
-    margin-bottom: 0 !important;
-}
-
-.white .sa_owl_theme .owl-nav .owl-prev {
-    background: rgba(0, 0, 0, 0) url(../images/icon_prev.png) no-repeat center center !important;
-    filter: invert(1);
-}
-
-.white .sa_owl_theme .owl-nav .owl-next {
-    background: rgba(0, 0, 0, 0) url(../images/icon_next.png) no-repeat center center !important;
-    filter: invert(1);
-}
-
-#slider_3364 .sa_hover_container {
-    min-height: unset !important;
-    padding-bottom: 0 !important;
-}
-
-#slider_3364.sa_owl_theme .owl-dots {
-    display: none !important;
-}
-
 .services-section .service-item_content {
     position: relative;
-}
-
-.services-section .service-item:nth-child(1) .service-item_title:before {
-    content: url(https://pravada.webounces.com/wp-content/uploads/2020/01/get-inspired.png);
-    position: relative;
-    display: block;
-}
-
-.services-section .service-item:nth-child(2) .service-item_title:before {
-    content: url(https://pravada.webounces.com/wp-content/uploads/2020/01/buy-icon.png);
-    position: relative;
-    display: block;
-}
-
-.services-section .service-item:nth-child(3) .service-item_title:before {
-    content: url(https://pravada.webounces.com/wp-content/uploads/2020/01/download.png);
-    position: relative;
-    display: block;
 }
 
 .cmm4e-sub-panel.cmm4e-content-container {
@@ -1165,12 +1020,6 @@ a.dl-images-btn:hover {
 
 .product-nav-sec .elementor-widget-text-editor {
     margin: 0;
-}
-
-.gc-product-list .ajax-load-more-wrap.grey .alm-load-more-btn:after {
-    content: url(https://pravada.webounces.com/wp-content/uploads/2020/01/ARROW.png);
-    display: block;
-    padding-top: 8px;
 }
 
 .gc-sr-blurb .elementor-image-box-content {
@@ -1402,11 +1251,6 @@ div.wpforms-container-full.bam-form .wpforms-form .wpforms-field {
     border: unset;
 }
 
-.gc-readmore-accordion .elementor-tab-title a:nth-child(2):after {
-    content: url(https://pravada.webounces.com/wp-content/uploads/2020/02/read-more-btn.png);
-    display: block;
-    padding-top: 7px;
-}
 
 .gc-app-form-acc .theplus-accordion-item {
     margin-bottom: 18px !important;
@@ -1553,11 +1397,6 @@ div.wpforms-container-full.application-form .wpforms-form button[type=submit]:ho
     font-size: 16px !important;
 }
 
-.gc-post-nav .fa-caret-right:before {
-    content: url(https://pravada.webounces.com/wp-content/uploads/2020/02/arrow-post.jpg);
-}
-
-
 /***PRODUCT FILTER***/
 
 .gc-pfilter-sec .wpf_form .wpf_layout_horizontal.wpf_items_wrapper .wpf_item .wpf_item_name:after {
@@ -1646,34 +1485,7 @@ div.wpforms-container-full.application-form .wpforms-form button[type=submit]:ho
 }
 
 .gc-pfilter-sec .wpf_item input[type="checkbox"]:checked+label {
-    color: #fff !important;
-}
-
-.gc-any-type .wpf_item.wpf_item_pa_any-shade,
-.gc-any-type .wpf_item.wpf_item_pa_any-color,
-.gc-any-type .wpf_item.wpf_item_pa_any-texture,
-.gc-any-type .wpf_item.wpf_item_pa_any-style,
-
-.gc-any-shade .wpf_item.wpf_item_pa_any-type,
-.gc-any-shade .wpf_item.wpf_item_pa_any-color,
-.gc-any-shade .wpf_item.wpf_item_pa_any-texture,
-.gc-any-shade .wpf_item.wpf_item_pa_any-style,
-
-.gc-any-color .wpf_item.wpf_item_pa_any-shade,
-.gc-any-color .wpf_item.wpf_item_pa_any-type,
-.gc-any-color .wpf_item.wpf_item_pa_any-texture,
-.gc-any-color .wpf_item.wpf_item_pa_any-style,
-
-.gc-any-texture .wpf_item.wpf_item_pa_any-shade,
-.gc-any-texture .wpf_item.wpf_item_pa_any-color,
-.gc-any-texture .wpf_item.wpf_item_pa_any-type,
-.gc-any-texture .wpf_item.wpf_item_pa_any-style,
-
-.gc-any-style .wpf_item.wpf_item_pa_any-shade,
-.gc-any-style .wpf_item.wpf_item_pa_any-color,
-.gc-any-style .wpf_item.wpf_item_pa_any-texture,
-.gc-any-style .wpf_item.wpf_item_pa_any-type {
-    display: none !important;
+    color: #fff;
 }
 
 
@@ -1714,15 +1526,6 @@ div.wpforms-container-full.application-form .wpforms-form button[type=submit]:ho
 .tax-product_cat .product-content-img-wrap-two {
     padding: 30px 20px;
     min-height: 100px;
-}
-
-
-.fa-home:before {
-    content: url(https://pravada.webounces.com/wp-content/uploads/2020/02/moodboard-header.png) !important;
-    position: absolute;
-    top: -7px;
-    left: 0;
-    right: 0;
 }
 
 .gc-ex-notes-sec .widget-image-caption {
@@ -1844,13 +1647,13 @@ a.dl-images-btn {
     position: relative;
     line-height: 1em;
     font-weight: 500;
-    background: url("https://pravada.webounces.com/wp-content/uploads/2020/02/dl-icon.png");
+    background: url("https://cdn.shopify.com/s/files/1/0422/9274/0261/files/dl-icon.png?v=1599463480");
     background-repeat: no-repeat;
     background-position: center left 4%;
 }
 
 a.dl-images-btn:hover {
-    background-image: url("https://pravada.webounces.com/wp-content/uploads/2020/04/dl-icon-white.png") !important;
+    background-image: url("https://cdn.shopify.com/s/files/1/0422/9274/0261/files/dl-icon-white.png?v=1599463480") !important;
     background-repeat: no-repeat !important;
     background-position: center left 4% !important;
 }
@@ -1965,11 +1768,6 @@ ul.field-ul {
 }
 
 
-.gc-eq-btn .fa-calculator:before {
-    content: url(https://pravada.webounces.com/wp-content/uploads/2020/03/calculator-icon.png);
-    vertical-align: middle;
-}
-
 .calc-container ul li:before {
     display: none;
 }
@@ -2024,13 +1822,6 @@ ul.field-ul label {
     text-align: right;
 }
 
-.gc-atc-btn .fa-cart-plus:before {
-    content: url(https://pravada.webounces.com/wp-content/uploads/2020/03/add-to-cart-1.png);
-    position: relative;
-    top: 2px;
-}
-
-
 
 /*****Product Slider****/
 
@@ -2057,27 +1848,13 @@ ul.field-ul label {
     padding: 10px 20px 10px 10px;
 }
 
-.gc-slider-prod .product-slider-content h4:before {
-    content: url(custom-icon-logomark-pravada.svg);
-    position: absolute;
-    top: 15px;
-    right: 10px;
-}
-
 .gc-related-prod .collection-list-wrap p {
     left: 12px;
 }
 
 .gc-related-prod .product-slider-content {
-    padding: 10px 40px 10px 10px !important;
+    padding: 10px 10px 10px 10px !important;
     bottom: 50px !important;
-}
-
-.gc-related-prod .product-slider-content:before {
-    content: url(custom-icon-logomark-pravada.svg);
-    position: absolute;
-    top: 15px;
-    right: 10px;
 }
 
 .item.product-slider-wrap {
@@ -2104,18 +1881,6 @@ ul.field-ul label {
 
 .product-slider .owl-next {
     right: -3rem !important;
-}
-
-.product-slider .owl-prev span {
-    content: url(https://pravada.webounces.com/wp-content/uploads/2020/03/ARROW-left.png);
-    width: 25px;
-    height: 40px;
-}
-
-.product-slider .owl-next span {
-    content: url(https://pravada.webounces.com/wp-content/uploads/2020/03/ARROW.png);
-    width: 25px;
-    height: 40px;
 }
 
 .product-slider .owl-nav.disabled {
@@ -2157,12 +1922,6 @@ ul.field-ul label {
     background: #fff !important;
     color: #000 !important;
 }
-
-/*.gc-dealer-text:before {
-content: url(https://pravada.webounces.com/wp-content/uploads/2020/03/ARROW.png);
-position: absolute;
-right: -20px;
-}*/
 
 .gc-dealer-text {
     position: relative;
@@ -2259,14 +2018,6 @@ right: -20px;
 .c-slider .owl-nav button.owl-prev {
     position: relative;
     left: -30px;
-}
-
-.c-slider button.owl-prev span {
-    content: url(https://pravada.webounces.com/wp-content/uploads/2020/03/ARROW-left.png);
-}
-
-.c-slider button.owl-next span {
-    content: url(https://pravada.webounces.com/wp-content/uploads/2020/03/ARROW.png);
 }
 
 .c-slider .owl-nav button.owl-next {
@@ -2502,18 +2253,6 @@ right: -20px;
 
 @media only screen and (max-width: 767px) {
 
-    .gc-logo-slider i.eicon-chevron-right {
-        content: url(https://pravada.webounces.com/wp-content/uploads/2020/03/ARROW.png);
-        width: 15px;
-        height: 20px;
-    }
-
-    .gc-logo-slider i.eicon-chevron-left {
-        content: url(https://pravada.webounces.com/wp-content/uploads/2020/03/ARROW-left.png);
-        width: 15px;
-        height: 20px;
-    }
-
     .gc-ig-widget .elementor-swiper-button-prev,
     .gc-ig-widget .elementor-swiper-button-next {
         font-size: 20px !important;
@@ -2719,18 +2458,6 @@ right: -20px;
 
     .gc-prod-tab .ae-woo-tab-title.ae-woo-tab-mobile-title.active:before {
         display: block !important;
-    }
-
-    .gc-prod-tab .ae-woo-tab-title.ae-woo-tab-mobile-title.active:before {
-        content: url(https://pravada.webounces.com/wp-content/uploads/2020/02/product-tab-arrow.png);
-        display: block !important;
-        width: auto;
-        height: auto;
-        position: absolute;
-        left: 0;
-        right: 0 !important;
-        bottom: -20px;
-        z-index: 1;
     }
 
     .gc-prod-tab .ae-woo-tab-title.ae-woo-tab-mobile-title.active {

@@ -479,6 +479,7 @@
               "pravada_logo": "shopify:\/\/shop_images\/logo-pravada.png",
               "pravada_description": "Premium Real Hardwood Floors you will live on and love for generations.",
               "pravada_collection_links": "pravada-collection-menu",
+              "pravada_type_links": "pravada-type-menu",
               "products_background": "shopify:\/\/shop_images\/banner-EVOLUTIONZ-pravada-website-96dpi.jpg",
               "products_center_text": "…redefine the look of floors.",
               "products_center_button": "shopify:\/\/collections\/all",
@@ -486,8 +487,9 @@
               "evolutionz_logo": "shopify:\/\/shop_images\/logo-pravada-evolutionz-300x100.png",
               "evolutionz_description": "Created with you in mind. Durable styles including water-resistant flooring designed to fit your lifestyle.",
               "evolutionz_collection_links": "evolutionz-collection-menu",
-              "products_color_links": "color-tone-menu",
-              "products_type_links": "type-menu"
+              "evolutionz_type_links": "type-menu",
+              "evolutionz_accessories_links": "evolutionz-accessories-menu",
+              "products_color_links": "color-tone-menu"
             }
           },
           "1598026285855": {

@@ -806,7 +806,7 @@
                                                     <li id="menu-item-16413"
                                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children uael-has-submenu uael-creative-menu">
                                                         <div class="uael-has-submenu-container"><a
-                                                                href="https://pravada.webounces.com/collections/"
+                                                                href="/pages/all-collections"
                                                                 class="uael-sub-menu-item">Pravada
                                                                 Engineered Collections<span
                                                                     class='uael-menu-toggle sub-arrow uael-menu-child-1'><i
@@ -826,7 +826,7 @@
                                                     <li id="menu-item-16414"
                                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children uael-has-submenu uael-creative-menu">
                                                         <div class="uael-has-submenu-container"><a
-                                                                href="https://pravada.webounces.com/evolutionz/"
+                                                                href="/pages/evolutionz"
                                                                 class="uael-sub-menu-item">Evolutionz
                                                                 Collections<span
                                                                     class='uael-menu-toggle sub-arrow uael-menu-child-1'><i
@@ -1123,7 +1123,7 @@
                                                     <li id="menu-item-16413"
                                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children uael-has-submenu uael-creative-menu">
                                                         <div class="uael-has-submenu-container"><a
-                                                                href="https://pravada.webounces.com/collections/"
+                                                                href="/pages/all-collections"
                                                                 class="uael-sub-menu-item">Pravada
                                                                 Engineered Collections<span
                                                                     class='uael-menu-toggle sub-arrow uael-menu-child-1'><i
@@ -1142,12 +1142,14 @@
                                                     </li>
                                                     <li id="menu-item-16414"
                                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children uael-has-submenu uael-creative-menu">
-                                                        <div class="uael-has-submenu-container"><a
-                                                                href="https://pravada.webounces.com/evolutionz/"
-                                                                class="uael-sub-menu-item">Evolutionz
-                                                                Collections<span
-                                                                    class='uael-menu-toggle sub-arrow uael-menu-child-1'><i
-                                                                        class='fa'></i></span></a></div>
+                                                        <div class="uael-has-submenu-container">
+                                                            <a href="/pages/evolutionz" class="uael-sub-menu-item">
+                                                                Evolutionz Collections
+                                                                <span class='uael-menu-toggle sub-arrow uael-menu-child-1'>
+                                                                    <i class='fa'></i>
+                                                                </span>
+                                                            </a>
+                                                        </div>
                                                         <ul class="sub-menu">
                                                             {% for block in section.blocks %}
                                                             {% if block.type == 'products' %}
@@ -1534,6 +1536,11 @@
                     "label": "Pravada Collection Menu"
                 },
                 {
+                    "type": "link_list",
+                    "id": "pravada_type_links",
+                    "label": "Pravada Type Menu"
+                },
+                {
                     "type": "image_picker",
                     "id": "products_background",
                     "label": "Products Center Background"
@@ -1571,13 +1578,18 @@
                 },
                 {
                     "type": "link_list",
-                    "id": "products_color_links",
-                    "label": "Products Color Menu"
+                    "id": "evolutionz_type_links",
+                    "label": "Evolutionz Type Menu"
                 },
                 {
                     "type": "link_list",
-                    "id": "products_type_links",
-                    "label": "Products Type Menu"
+                    "id": "evolutionz_accessories_links",
+                    "label": "Evolutionz Accessories Menu"
+                },
+                {
+                    "type": "link_list",
+                    "id": "products_color_links",
+                    "label": "Products Color Menu"
                 }
             ]
         },

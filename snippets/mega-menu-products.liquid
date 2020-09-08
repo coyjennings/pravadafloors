@@ -53,7 +53,7 @@
                           data-id="54efe0e" data-element_type="widget" data-widget_type="icon.default">
                           <div class="elementor-widget-container">
                             <div class="elementor-icon-wrapper">
-                              <a class="elementor-icon" href="/collections/">
+                              <a class="elementor-icon" href="/pages/all-collections/">
                                 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
                                   viewBox="0 0 200 37.23">
                                   <path
@@ -232,7 +232,7 @@
                                           <ul class="ae-term-skin-list ae-icon-list-items ae-list-vertical">
                                             {% for block in section.blocks %}
                                             {% if block.type == 'products' %}
-                                            {% for link in linklists[block.settings.products_type_links].links %}
+                                            {% for link in linklists[block.settings.pravada_type_links].links %}
                                             <li class="ae-icon-list-item ae-term-list-item">
                                               <div class="ae-term-list-item-inner ae-icon-list-text">
                                                 <div class="ae-term-title-wrapper">
@@ -348,7 +348,7 @@
                           data-id="65eb3f6" data-element_type="widget" data-widget_type="icon.default">
                           <div class="elementor-widget-container">
                             <div class="elementor-icon-wrapper">
-                              <a class="elementor-icon" href="/collections/">
+                              <a class="elementor-icon" href="/pages/all-collections/">
                                 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
                                   viewBox="0 0 200 51.73">
                                   <path
@@ -513,11 +513,24 @@
                                       </div>
                                     </div>
                                     <div
-                                      class="elementor-element elementor-element-2801e3c elementor-widget elementor-widget-heading"
-                                      data-id="2801e3c" data-element_type="widget" data-widget_type="heading.default">
+                                      class="elementor-element elementor-element-e640c25 elementor-nav-menu--dropdown-none elementor-nav-menu--indicator-classic elementor-widget elementor-widget-nav-menu"
+                                      data-id="e640c25" data-element_type="widget" data-settings="{&quot;layout&quot;:&quot;vertical&quot;}"
+                                      data-widget_type="nav-menu.default">
                                       <div class="elementor-widget-container">
-                                        <span class="elementor-heading-title elementor-size-default"><a
-                                            href="https://pravada.webounces.com/soundblocker/">SoundBlocker</a></span>
+                                        <nav role="navigation"
+                                          class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-underline e--animation-none">
+                                          <ul id="menu-1-e640c25" class="elementor-nav-menu sm-vertical">
+                                            {% for block in section.blocks %}
+                                            {% if block.type == 'products' %}
+                                            {% for link in linklists[block.settings.evolutionz_accessories_links].links %}
+                                            <li class="menu-item menu-item-type-custom menu-item-object-custom">
+                                              <a href={{ link.url }} class="elementor-item">{{ link.title | escape }}</a>
+                                            </li>
+                                            {% endfor %}
+                                            {% endif %}
+                                            {% endfor %}
+                                          </ul>
+                                        </nav>
                                       </div>
                                     </div>
                                   </div>
@@ -593,7 +606,7 @@
                                           <ul id="menu-1-f48e3c2" class="elementor-nav-menu sm-vertical">
                                             {% for block in section.blocks %}
                                             {% if block.type == 'products' %}
-                                            {% for link in linklists[block.settings.products_type_links].links %}
+                                            {% for link in linklists[block.settings.evolutionz_type_links].links %}
                                             <li class="menu-item menu-item-type-custom menu-item-object-custom">
                                               <a href={{ link.url }} class="elementor-item">{{ link.title | escape }}</a>
                                             </li>
