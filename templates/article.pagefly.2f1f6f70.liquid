@@ -1,0 +1,329 @@
+<article> <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400|Oswald:400|Roboto:400|Playfair+Display:400|Raleway:400,500,600,700|Playfair+Display:700&display=swap"><link rel="stylesheet" href="https://cdn.pagefly.io/pagefly/2.15.6/css/main-style.css?t=20210106160155"><link rel="stylesheet" href="{{ 'pagefly.2f1f6f70.css' | asset_url }}">
+		  <div class="__pf" id="__pf"><div data-pf-type="Body" class="sc-pRgDJ fzXWJx pf-2014e5f8"><div data-pf-type="Layout" class="pf-23372014"><div data-container="false" class="sc-pZopv bjKdkd pf-1a621a74 article-header" data-pf-type="Section"><div class="sc-pIvhh gtZHgp" style="background-color: rgba(0, 0, 0, 0.15);"></div><div class="sc-pQQXS iWCqut"><div class="sc-qPjXN eYzxUD pf-7560c004 pf-r pf-r-eh" data-pf-type="Row" style="--pf-s-lg:15px; --pf-s-md:15px; --pf-s-sm:15px; --pf-s-xs:15px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-85eeb57e" data-pf-type="Column"><h2 data-pf-type="Heading" class="sc-oTLFK lcHmGL pf-3a25ce86"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-9f812214">{{ article.title }}</span></h2><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-22140b59"><span class="elementor-divider-separator"></span>
+
+<style>
+  span.elementor-divider-separator {
+	display: inline-block;
+	width: 1px;
+	margin: 25px auto;
+	background-color: #ffffff;
+	height: 100px;
+  }
+  @media screen and (max-width: 768px) {
+	span.elementor-divider-separator {
+	  height: 50px;
+	  margin: 5px auto;
+	}
+  }
+  .article-header {
+	background-image: url('{{ article.image | img_url: "master" }}');
+  }
+  .article-sidebar {
+	background-image: url('{{ article.metafields.blog_collection.featured_image }}');
+  }
+</style></div><h3 data-pf-type="Heading" class="sc-oTLFK lcHmGL pf-439980e6"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-0c7d4399">{{article.metafields.blog_type.blog_type}}</span></h3></div></div></div></div></div><div data-container="true" class="sc-pZopv bjKdkd pf-09fbafb7" data-pf-type="Section"><div class="sc-pQQXS iWCqut" style="max-width: 1300px;"><div class="sc-qPjXN eYzxUD pf-564009fb pf-r pf-r-eh pf-sm--hidden pf-xs--hidden" data-pf-type="Row" style="--pf-s-lg:0px; --pf-s-md:0px; --pf-s-sm:0px; --pf-s-xs:0px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--undefined pf-c-md--8 pf-c-lg--8"><div class="sc-pkUyL fTyjzF pf-1a741a65" data-pf-type="Column"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-afb78ccf">{{ article.content }}</div><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-0f2db369"><a href="{{article.metafields.blog_learn_more.link}}" target="_self" data-pf-type="Button" class="sc-pZdvY kuwSuz pf-2586d41f"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-883e2586">{{article.metafields.blog_learn_more.name}}</span></a></div><div class="sc-qPjXN eYzxUD pf-75866f45 pf-r pf-r-align--cm" data-pf-type="Row" style="--pf-s-lg:0px; --pf-s-md:0px; --pf-s-sm:0px; --pf-s-xs:0px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--6 pf-c-md--6 pf-c-lg--6"><div class="sc-pkUyL fTyjzF pf-d41f94d9" data-pf-type="Column"><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-96cf9e1a"><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-a96e11f2"><h3 data-pf-type="Heading" class="sc-oTLFK lcHmGL pf-7649cb5e"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-01cb9839">Share:</span></h3></div><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-07882efc"><style>
+  .share-btn {
+	background-color: #232323;
+	margin: 0 5px;
+	border-radius: 50%;
+	color: #ffffff;
+  }
+  .share-btn__icon {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  .share-btn__icon a {
+	color: #ffffff;
+  }
+  i.fab {
+	font-size: 16px;
+	padding: 10px;
+  }
+</style>
+
+<div class="share-btn">
+  <span class="share-btn__icon">
+	<a target="_blank" href="//www.facebook.com/sharer.php?u={{ shop.url | append: article.url }}">
+	  <i class="fab fa-facebook" aria-hidden="true"></i>
+	</a>	
+  </span>
+</div></div><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-ce542404"><div class="share-btn">
+  <span class="share-btn__icon">
+	<a target="_blank" href="//twitter.com/share?text={{ article.title | default: page_description | url_param_escape }}&url={{ shop.url | append: article.url }}">
+	  <i class="fab fa-twitter" aria-hidden="true"></i>
+	</a>	
+  </span>
+</div></div><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-2efcce54"><div class="share-btn">
+  <span class="share-btn__icon">
+	<a target="_blank" href="//pinterest.com/pin/create/button/?url={{ shop.url | append: article.url }}&media={{ article.image | img_url: '1024x1024' }}&description={{ article.title | default: page_description | url_param_escape }}">
+	  <i class="fab fa-pinterest" aria-hidden="true"></i>
+	</a>	
+  </span>
+</div></div></div></div></div><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--6 pf-c-md--6 pf-c-lg--6"><div class="sc-pkUyL fTyjzF pf-94d97586" data-pf-type="Column"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-2404869d">{%- if blog.next_article -%}
+<div class="post-navigation" style="text-align: right;">
+  <a href="{{blog.next_article}}" rel="next">
+	  <span class="post-navigation-title">
+		Next Article
+	  </span>
+  </a>
+</div>
+{%- endif -%}</div></div></div></div><div class="sc-qPjXN eYzxUD pf-adb395e2 pf-r pf-r-align--cm" data-pf-type="Row" style="--pf-s-lg:0px; --pf-s-md:0px; --pf-s-sm:0px; --pf-s-xs:0px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-e932bbed" data-pf-type="Column"><h3 data-pf-type="Heading" class="sc-oTLFK lcHmGL pf-b78ae932"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-895bb78a">RELATED BLOGS</span></h3><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-bbed127f">{% assign i = 0 %}
+{% for project in blog.articles %}
+{% if project.id != article.id %}
+{% assign t = i | plus: 1 %}
+{% assign i = t %}
+{% if t <= 3 %}
+<div class="proj-container pagefly" style="background-image: url('{{ project.image | img_url: 'large' }}')">
+<a href="{{project.url}}">
+  <div class="proj-contents pagefly">
+	<h4>{{ blog.title }}</h4>
+	<h3>{{ project.title }}</h3>
+	<p>By {{ project.author }}</p>
+  </div>
+</a>
+</div>
+{% endif %}
+{% endif %}
+{% endfor %}
+
+<style>
+  .pagefly.proj-container {
+	width: 29%;
+    float: left;
+    margin: 0 15px;
+    padding: 70px 10px 70px;
+    text-align: center;
+    background-blend-mode: overlay;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 265px;
+  }
+  .pagefly.proj-contents h4 {
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #fff;
+    line-height: 1em;
+    font-weight: 300 !important;
+    padding-bottom: 28px;
+    z-index: 2;
+  }
+  .pagefly.proj-contents h4::before {
+    content: "";
+    background: rgb(255, 255, 255);
+    width: 20px;
+    height: 1px;
+    position: absolute;
+    top: 5px;
+    left: 15px;
+  }
+  .pagefly.proj-contents h4::after {
+    content: "";
+    background: rgb(255, 255, 255);
+    width: 20px;
+    height: 1px;
+    position: absolute;
+    top: 5px;
+    right: 15px;
+  }
+  .pagefly.proj-contents h3 {
+    font-size: 18px;
+    color: #fff;
+    line-height: 1em;
+    padding-bottom: 17px;
+    text-transform: uppercase;
+	font-weight: 600;
+  }
+  .pagefly.proj-contents p {
+    margin-bottom: 0 !important;
+    color: #fff;
+  }
+</style></div></div></div></div></div></div><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--4 pf-c-md--4 pf-c-lg--4"><div class="sc-pkUyL fTyjzF pf-1a655640" data-pf-type="Column"><div class="sc-qPjXN eYzxUD pf-5b5c15d4 pf-r pf-r-align--cm pf-r-ew article-sidebar" data-pf-type="Row" style="--pf-s-lg:0px; --pf-s-md:15px; --pf-s-sm:0px; --pf-s-xs:15px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--6 pf-c-md--6 pf-c-lg--6"><div class="sc-pkUyL fTyjzF pf-67dd5c79" data-pf-type="Column"><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-8ccf53a5"><p data-pf-type="Paragraph2" class="sc-pkvvt cbrLgP pf-9aff446f"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-b27e9aff">NEW COLLECTION</span></p><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-ade480b1"><img width="300" height="200" src="{{article.metafields.blog_collection.featured_logo}}" alt="article collection logo" style="padding: 0 0 23px 0; margin: 0 0 20px 0;"></div><p data-pf-type="Paragraph2" class="sc-pkvvt cbrLgP pf-9e22831b"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-ca829e22">By Pravada Floors</span></p><a href="{{article.metafields.blog_collection.featured_link}}" target="_self" data-pf-type="Button" class="sc-pZdvY kuwSuz pf-1be267dd"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-39951be2">View</span></a></div></div></div></div><div class="sc-qPjXN eYzxUD pf-09b10fd1 pf-r pf-r-align--cm pf-r-ew" data-pf-type="Row" style="--pf-s-lg:0px; --pf-s-md:15px; --pf-s-sm:0px; --pf-s-xs:15px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--6 pf-c-md--6 pf-c-lg--6"><div class="sc-pkUyL fTyjzF pf-fd5709b1" data-pf-type="Column"><h3 data-pf-type="Heading" class="sc-oTLFK lcHmGL pf-6a052091"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-2fab6a05">TAGS</span></h3><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-2091163d"><div class="tagcloud">
+  {% for tag in article.tags %}
+  <a href="{{ tag | prepend: '/blogs/news/tagged/' }}" class="tag-cloud-link">
+	{{ tag }}
+  </a>
+  {% endfor %}
+</div>
+
+<style>
+  .tagcloud a.tag-cloud-link {
+	position: relative;
+    z-index: 1;
+    display: inline-block;
+	border: solid 1px #232323;
+	color: #232323;
+	padding: 0 16px;
+	margin: 0 10px 10px 0;
+	font-family: Raleway;
+	font-size: 13px;
+	font-weight: 500px;
+	line-height: 26px;
+	transition: all 0.4s;
+    text-transform: lowercase;
+  }
+  .tagcloud a.tag-cloud-link:hover {
+	color: #ffffff;
+	background-color: #000000;
+  }
+</style></div></div></div></div></div></div></div><div class="sc-qPjXN eYzxUD pf-82187463 pf-r pf-r-ew pf-lg--hidden pf-md--hidden" data-pf-type="Row" style="--pf-s-lg:0px; --pf-s-md:0px; --pf-s-sm:0px; --pf-s-xs:0px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--undefined pf-c-md--8 pf-c-lg--8"><div class="sc-pkUyL fTyjzF pf-72bd214a" data-pf-type="Column"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-3ec405e1">{{ article.content }}</div><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-ecf27c89"><a href="{{article.metafields.blog_learn_more.link}}" target="_self" data-pf-type="Button" class="sc-pZdvY kuwSuz pf-896ed07d"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-ab50e086">{{article.metafields.blog_learn_more.name}}</span></a></div><div class="sc-qPjXN eYzxUD pf-650d72bd pf-r pf-r-align--cm" data-pf-type="Row" style="--pf-s-lg:0px; --pf-s-md:0px; --pf-s-sm:0px; --pf-s-xs:0px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--6 pf-c-md--6 pf-c-lg--6"><div class="sc-pkUyL fTyjzF pf-7a9b650d" data-pf-type="Column"><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-28de1c88"><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-7c899551"><h3 data-pf-type="Heading" class="sc-oTLFK lcHmGL pf-d07d3b8c"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-5d03a78a">Share:</span></h3></div><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-a78a0abf"><style>
+  .share-btn {
+	background-color: #232323;
+	margin: 0 5px;
+	border-radius: 50%;
+	color: #ffffff;
+  }
+  .share-btn__icon {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  .share-btn__icon a {
+	color: #ffffff;
+  }
+  i.fab {
+	font-size: 16px;
+	padding: 10px;
+  }
+</style>
+
+<div class="share-btn">
+  <span class="share-btn__icon">
+	<a target="_blank" href="//www.facebook.com/sharer.php?u={{ shop.url | append: article.url }}">
+	  <i class="fab fa-facebook" aria-hidden="true"></i>
+	</a>	
+  </span>
+</div></div><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-0abfae51"><div class="share-btn">
+  <span class="share-btn__icon">
+	<a target="_blank" href="//twitter.com/share?text={{ article.title | default: page_description | url_param_escape }}&url={{ shop.url | append: article.url }}">
+	  <i class="fab fa-twitter" aria-hidden="true"></i>
+	</a>	
+  </span>
+</div></div><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-ae511ea1"><div class="share-btn">
+  <span class="share-btn__icon">
+	<a target="_blank" href="//pinterest.com/pin/create/button/?url={{ shop.url | append: article.url }}&media={{ article.image | img_url: '1024x1024' }}&description={{ article.title | default: page_description | url_param_escape }}">
+	  <i class="fab fa-pinterest" aria-hidden="true"></i>
+	</a>	
+  </span>
+</div></div></div></div></div><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--6 pf-c-md--6 pf-c-lg--6"><div class="sc-pkUyL fTyjzF pf-3b8c9887" data-pf-type="Column"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-1ea18511">{%- if blog.next_article -%}
+<div class="post-navigation" style="text-align: right;">
+  <a href="{{blog.next_article}}" rel="next">
+	  <span class="post-navigation-title">
+		Next Article
+	  </span>
+  </a>
+</div>
+{%- endif -%}</div></div></div></div><div class="sc-qPjXN eYzxUD pf-1c887a9b pf-r pf-r-align--cm" data-pf-type="Row" style="--pf-s-lg:0px; --pf-s-md:0px; --pf-s-sm:0px; --pf-s-xs:0px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-955128de" data-pf-type="Column"><h3 data-pf-type="Heading" class="sc-oTLFK lcHmGL pf-9887ecf2"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-d67cc7f7">RELATED BLOGS</span></h3><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-c7f7896e">{% assign i = 0 %}
+{% for project in blog.articles %}
+{% if project.id != article.id %}
+{% assign t = i | plus: 1 %}
+{% assign i = t %}
+{% if t <= 3 %}
+<div class="proj-container pagefly" style="background-image: url('{{ project.image | img_url: 'large' }}')">
+<a href="{{project.url}}">
+  <div class="proj-contents pagefly">
+	<h4>{{ blog.title }}</h4>
+	<h3>{{ project.title }}</h3>
+	<p>By {{ project.author }}</p>
+  </div>
+</a>
+</div>
+{% endif %}
+{% endif %}
+{% endfor %}
+
+<style>
+  .pagefly.proj-container {
+	width: 29%;
+    float: left;
+    margin: 0 15px;
+    padding: 70px 10px 70px;
+    text-align: center;
+    background-blend-mode: overlay;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 265px;
+  }
+  .pagefly.proj-contents h4 {
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #fff;
+    line-height: 1em;
+    font-weight: 300 !important;
+    padding-bottom: 28px;
+    z-index: 2;
+  }
+  .pagefly.proj-contents h4::before {
+    content: "";
+    background: rgb(255, 255, 255);
+    width: 20px;
+    height: 1px;
+    position: absolute;
+    top: 5px;
+    left: 15px;
+  }
+  .pagefly.proj-contents h4::after {
+    content: "";
+    background: rgb(255, 255, 255);
+    width: 20px;
+    height: 1px;
+    position: absolute;
+    top: 5px;
+    right: 15px;
+  }
+  .pagefly.proj-contents h3 {
+    font-size: 18px;
+    color: #fff;
+    line-height: 1em;
+    padding-bottom: 17px;
+    text-transform: uppercase;
+	font-weight: 600;
+  }
+  .pagefly.proj-contents p {
+    margin-bottom: 0 !important;
+    color: #fff;
+  }
+  @media only screen and (max-width: 767px) {
+	.pagefly.proj-container {
+		width: 100%;
+		max-width: 300px;
+		margin: 0px auto 20px;
+		float: unset;
+	}
+  }
+</style></div></div></div></div></div></div></div><div class="sc-qPjXN eYzxUD pf-d20bbb6f pf-r pf-r-eh pf-r-ew pf-lg--hidden pf-md--hidden" data-pf-type="Row" style="--pf-s-lg:15px; --pf-s-md:15px; --pf-s-sm:15px; --pf-s-xs:15px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--4 pf-c-md--4 pf-c-lg--4"><div class="sc-pkUyL fTyjzF pf-9a2981b8" data-pf-type="Column"><div class="sc-qPjXN eYzxUD pf-376b9a29 pf-r pf-r-align--cm pf-r-ew article-sidebar" data-pf-type="Row" style="--pf-s-lg:0px; --pf-s-md:15px; --pf-s-sm:0px; --pf-s-xs:15px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--6 pf-c-md--6 pf-c-lg--6"><div class="sc-pkUyL fTyjzF pf-37c79464" data-pf-type="Column"><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-71827715"><p data-pf-type="Paragraph2" class="sc-pkvvt cbrLgP pf-d7f3c512"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-e53f7719">NEW COLLECTION</span></p><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-771921a3"><img width="300" height="200" src="{{article.metafields.blog_collection.featured_logo}}" alt="article collection logo" style="padding: 0 0 23px 0; margin: 0 0 20px 0;"></div><p data-pf-type="Paragraph2" class="sc-pkvvt cbrLgP pf-c5129520"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-acffd640">By Pravada Floors</span></p><a href="{{article.metafields.blog_collection.featured_link}}" target="_self" data-pf-type="Button" class="sc-pZdvY kuwSuz pf-952040a5"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-ad47663c">View</span></a></div></div></div></div><div class="sc-qPjXN eYzxUD pf-9464376b pf-r pf-r-align--cm pf-r-ew" data-pf-type="Row" style="--pf-s-lg:0px; --pf-s-md:15px; --pf-s-sm:0px; --pf-s-xs:15px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--6 pf-c-md--6 pf-c-lg--6"><div class="sc-pkUyL fTyjzF pf-771537c7" data-pf-type="Column"><h3 data-pf-type="Heading" class="sc-oTLFK lcHmGL pf-40a57182"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-ab29af05">TAGS</span></h3><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-af05d7f3"><div class="tagcloud">
+  {% for tag in article.tags %}
+  <a href="{{ tag | prepend: '/blogs/news/tagged/' }}" class="tag-cloud-link">
+	{{ tag }}
+  </a>
+  {% endfor %}
+</div>
+
+<style>
+  .tagcloud a.tag-cloud-link {
+	position: relative;
+    z-index: 1;
+    display: inline-block;
+	border: solid 1px #232323;
+	color: #232323;
+	padding: 0 16px;
+	margin: 0 10px 10px 0;
+	font-family: Raleway;
+	font-size: 13px;
+	font-weight: 500px;
+	line-height: 26px;
+	transition: all 0.4s;
+    text-transform: lowercase;
+  }
+  .tagcloud a.tag-cloud-link:hover {
+	color: #ffffff;
+	background-color: #000000;
+  }
+</style></div></div></div></div></div></div></div></div></div></div></div></div><script>
+					window.__pagefly_setting__={"baseURL":"https://apps.pagefly.io","analyticsURL":"https://analytics.pagefly.io","isBackend":false,"cdnURL":"https://cdn.pagefly.io","pageflyVersion":"2.15.6","shopDomain":"pravadafloorsinc.myshopify.com","elementData":{},"pageTitle":"News Post Template","pageType":"blog","pageId":"2f1f6f70-40a8-4d16-9483-1cdf442667fa","lazyLoad":false,"imageLazyLoad":true,"nativeImageLazyLoad":true,"trackingIDs":[],"shopifyProxyPath":"/a/pf_preview","updatedTime":"2021-01-07T00:25:53.032Z"};
+					window.__pagefly_setting__.moneyFormat = {{shop.money_format | json}}
+				</script><script src="https://cdn.pagefly.io/pagefly/2.15.6/core/helper.js?t=20210106160155" defer></script> </article>

@@ -1,0 +1,184 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400|Oswald:400|Roboto:400|Raleway:400,500|Playfair+Display:400|Playfair+Display:700&display=swap"><link rel="stylesheet" href="https://cdn.pagefly.io/pagefly/2.16.2/css/main-style.css?t=20210121150121"><link rel="stylesheet" href="{{ 'pagefly.fe895d2e.css' | asset_url }}">
+		  <div class="__pf" id="__pf"><div data-pf-type="Body" class="sc-pRgDJ fzXWJx pf-5e2bce5c"><div data-pf-type="Layout" class="pf-bc5e2bce"><div data-container="true" class="sc-pZopv bjKdkd pf-0f34a6e5 collection-hero" data-pf-type="Section"><div class="sc-pQQXS iWCqut" style="max-width: 1170px;"><div class="sc-qPjXN eYzxUD pf-13a80f34 pf-r pf-r-eh" data-pf-type="Row" style="--pf-s-lg:15px; --pf-s-md:15px; --pf-s-sm:15px; --pf-s-xs:15px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-b6856b3f" data-pf-type="Column"><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-cbb6856b"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-a55f646c"><img src="{{collection.metafields.Logo_for_ArchivePage.logo_for_archivepage}}" class="collection-logo" alt="">
+
+<style>
+  .collection-hero {
+	background-image:url('{{collection.metafields.Archive_Banner_Image.archive_banner_image}}');
+  }
+  .collection-logo {
+	width: 25%;
+    filter: brightness( 100% ) contrast( 100% ) saturate( 100% ) blur( 0px ) hue-rotate( 0deg );
+  }
+  @media only screen and (max-width: 600px) {
+	.collection-logo {
+	  width: 50%;
+	}
+  }
+  .collection-label, .collection-title {
+	color: {{collection.metafields.collection-archive.color}};
+  }
+</style></div><p data-pf-type="Paragraph2" class="sc-pkvvt cbrLgP pf-d4ab0ca1 collection-label"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-646c75cb">{{ collection.metafields.Category_Label.category_label }}</span></p><h3 data-pf-type="Heading" class="sc-oTLFK lcHmGL pf-354f755c collection-title"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-75cbb685">{{ collection.title }}</span></h3></div></div></div></div></div></div><div data-container="false" class="sc-pZopv bjKdkd pf-7bea9118" data-pf-type="Section"><div class="sc-pQQXS iWCqut"><div class="sc-qPjXN eYzxUD pf-575d7bea pf-r pf-r-eh" data-pf-type="Row" style="--pf-s-lg:0px; --pf-s-md:0px; --pf-s-sm:0px; --pf-s-xs:0px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--6 pf-c-lg--6"><div class="sc-pkUyL fTyjzF pf-e531fe67" data-pf-type="Column"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-856b3fed"><img src="{{collection.metafields.Feature_Image.feature_image}}" class="collection-featured-image" alt="Collection Featured Image"></div></div></div><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--6 pf-c-lg--6"><div class="sc-pkUyL fTyjzF pf-5aad575d" data-pf-type="Column"><h3 data-pf-type="Heading" class="sc-oTLFK lcHmGL pf-4953eb37"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-3feddd42">{{ collection.title }}</span></h3><p data-pf-type="Paragraph2" class="sc-pkvvt cbrLgP pf-28d04b0f"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-dd42e11c">{{ collection.metafields.Italic_Content.italic_content }}</span></p><p data-pf-type="Paragraph2" class="sc-pkvvt cbrLgP pf-fb245aad"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-e11c11a3">{{ collection.description }}</span></p><a href="{{collection.metafields.Collateral.Collateral}}" target="_blank" data-pf-type="Button" class="sc-pZdvY kuwSuz pf-3abbf1fc"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-a8e63abb">learn more</span></a></div></div></div></div></div><div data-container="true" class="sc-pZopv bjKdkd pf-4cf654bc" data-pf-type="Section"><div class="sc-pQQXS iWCqut" style="max-width: 1170px;"><div class="sc-qPjXN eYzxUD pf-e14cf654 pf-r pf-r-eh" data-pf-type="Row" style="--pf-s-lg:15px; --pf-s-md:15px; --pf-s-sm:15px; --pf-s-xs:15px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-a3e14cf6" data-pf-type="Column"><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-11a3e14c"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-1c11a3e1"><ul class="wgl-products products">
+    {% paginate collection.products by 1000 %}
+    {% for product in collection.products %}
+    <li class="type-product">
+        <div class="products-post">
+            <div class="picture">
+                <a href="{{product.url | within: collection}}">
+                    <div class="product-img" style="background-image: url('{{ product.featured_image.src | product_img_url: 'large' }}'); background-repeat: no-repeat; background-position: center; background-size: cover;">
+                        <div style="text-align: center;">
+                            <h3 class="product-title" style="font-size: 30px;paddin-bottom:0; color:white;">
+                                {{ product.title }}
+                            </h3>
+                            <p class="product-collection-title" style="color:white;">
+                                {{ collection.title }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="product-img product-collection-sec-bg" style="background: url('{{ product.metafields.secondary_image.secondary_image }}'); background-repeat: no-repeat; background-position: center; background-size: cover; text-align:center;">
+
+                        <div class="collection-wishlist">
+                            <!-- include 'wishlist-button-collection' with '{{ product.id }}' -->
+                        </div>
+
+                        <div class="collection-form">
+                            {% assign item_added_fav = false %}
+                            {% for item in cart.items %}
+                            {% if item.id == product.variants.first.id %}
+                            {% assign item_added_fav = true %}
+                            {% break %}
+                            {% endif %}
+                            {% endfor %}
+
+                            <form method="post" action="/cart/add">
+                                <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+                                <input min="1" type="number" name="quantity" class="quantity" value="1">
+                                <button type="submit" class="collection-add-to-cart">
+                                    {% if item_added_fav == true %}
+                                    <i class="fas fa-shopping-bag" id="shopping-bag"></i>
+                                    {% else %}
+                                    <i class="fal fa-shopping-bag" id="shopping-bag"></i>
+                                    {% endif %}
+                                </button>
+                            </form>
+                        </div>
+
+                    </div>
+                </a>
+            </div>
+        </div>
+    </li>
+    {% endfor %}
+    {% endpaginate %}
+    <style>
+		@media only screen and (min-width: 600px) {
+		  .products {
+			grid-column-gap: 30px;
+			grid-row-gap: 30px;
+		  }
+		}
+	  	
+        .collection-wishlist button.wk-button-collection {
+            top: 40px;
+		  	opacity: 1;
+		  	position: relative;
+		  	color: #ffffff;
+		  	left: 3px;
+        }
+		.collection-wishlist button.wk-button-collection .wk-icon {
+			width: 30px;
+			height: 30px;
+		}
+
+        button[type="submit"].collection-add-to-cart {
+            color: white;
+            border: none !important;
+            font-size: 30px !important;
+            padding: 0 !important;
+        }
+
+        button[type="submit"].collection-add-to-cart:hover {
+            background-color: transparent;
+        }
+
+        .collection-form {
+            position: absolute;
+            top: 260px;
+            left: 159px;
+        }
+
+        .collection-form .quantity {
+            border: none !important;
+            display: none !important;
+        }
+
+        @media only screen and (min-width: 390px) {
+            .product-img {
+                width: 340px !important;
+                height: 170px !important;
+			  	display: flex;
+				align-items: center;
+				justify-content: center;
+            }
+        }
+
+        @media only screen and (max-width: 389px) {
+		  	.product-img {
+			  	height: 175px !important;
+    			width: 350px !important;
+			  	display: flex;
+				align-items: center;
+				justify-content: center;
+            }
+            .collection-wishlist .swym-button {
+                top: 43px;
+            }
+
+            .collection-form {
+                top: 268px;
+                left: 164px;
+            }
+        }
+	  	
+		.product-collection-sec-bg {
+			display: block;
+		}
+
+        .product-collection-sec-bg .woo_post-link {
+            position: absolute !important;
+            top: 220px;
+            left: 150px;
+        }
+
+        .product-collection-sec-bg .mb-prodID {
+            left: 152px;
+            top: 280px;
+        }
+
+        ul.products {
+            display: inline-flex !important;
+        }
+
+        @media only screen and (min-width: 600px) {
+            ul.products li.type-product {
+                width: auto !important;
+                margin: 10px !important;
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            ul.products li.type-product {
+                margin: 20px auto !important;
+            }
+        }
+
+        .tinv-wraper {
+            position: absolute;
+            top: 240px;
+            left: 183px !important;
+        }
+    </style>
+</ul></div></div></div></div></div></div></div><div data-container="true" class="sc-pZopv bjKdkd pf-54bc5e2b" data-pf-type="Section"><div class="sc-pQQXS iWCqut" style="max-width: 1170px;"><div class="sc-qPjXN eYzxUD pf-f654bc5e pf-r pf-r-eh" data-pf-type="Row" style="--pf-s-lg:15px; --pf-s-md:15px; --pf-s-sm:15px; --pf-s-xs:15px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-2b353ebc" data-pf-type="Column"><img sizes="(min-width: 992px) 1200px, (min-width: 768px) and (max-width: 991px) 800px, 400px" srcset="https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-081946e8--LogoDesigned-in-CanadaDec2020black.svg?v=1607971999 1200w, https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-081946e8--LogoDesigned-in-CanadaDec2020black.svg?v=1607971999 800w, https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-081946e8--LogoDesigned-in-CanadaDec2020black.svg?v=1607971999 400w" class="sc-qZtVr dLIPjF pf-e5522b35" data-pf-type="Image2"></div></div></div></div></div></div></div></div><script>
+					window.__pagefly_setting__={"baseURL":"https://apps.pagefly.io","analyticsURL":"https://analytics.pagefly.io","isBackend":false,"cdnURL":"https://cdn.pagefly.io","pageflyVersion":"2.16.2","shopDomain":"pravadafloorsinc.myshopify.com","elementData":{},"pageTitle":"collection - WITH BUTTON","pageType":"collection","pageId":"fe895d2e-d7d4-4b0c-a135-4f755c13a80f","lazyLoad":false,"imageLazyLoad":false,"nativeImageLazyLoad":true,"trackingIDs":[],"shopifyProxyPath":"/a/pf_preview","updatedTime":"2021-01-21T23:43:08.114Z"};
+					window.__pagefly_setting__.moneyFormat = {{shop.money_format | json}}
+				</script><script src="https://cdn.pagefly.io/pagefly/2.16.2/core/helper.js?t=20210121150121" defer></script>

@@ -87,6 +87,9 @@
           <div class="navigation__container">
             <ul class="navigation__links">
               {% for link in linklists[section.settings.primary_navigation].links%}
+                {%- comment %}<locksmith:b0d2>{% endcomment -%}
+                  {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, subject_parent: linklists[section.settings.primary_navigation], variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                {%- comment %}</locksmith:b0d2>{% endcomment -%}
                 {% assign child_list_handle = link.title | handleize %}
                 {% if link.links != blank %}
                   <li class="navigation__link navigation__has-sublinks navigation__has-sublinks--collapsed navigation__entrance-animation">
@@ -98,6 +101,9 @@
                     <div class="navigation__sublinks-container">
                       <ul class="navigation__sublinks">
                         {% for childlink in link.links %}
+                          {%- comment %}<locksmith:fb77>{% endcomment -%}
+                            {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: childlink, subject_parent: link, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                          {%- comment %}</locksmith:fb77>{% endcomment -%}
                           <li class="navigation__sublink{% if childlink.links != blank %} navigation__has-sublinks navigation__has-sublinks--collapsed{% endif %}">
                             {% if childlink.links != blank %}
                               <button class="navigation__expand-sublinks navigation__expand-sublinks--third-level" aria-expanded="{% if link.active %}true{% else %}false{% endif %}">
@@ -108,6 +114,9 @@
                               <div class="navigation__sublinks-container">
                                 <ul class="navigation__sublinks navigation__sublinks--third-level">
                                   {% for grandchildlink in childlink.links %}
+                                    {%- comment %}<locksmith:876b>{% endcomment -%}
+                                      {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: grandchildlink, subject_parent: childlink, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                                    {%- comment %}</locksmith:876b>{% endcomment -%}
                                     <li class="navigation__sublink--third-level">
                                       <a href="{{ grandchildlink.url }}"{% if grandchildlink.active %} aria-current="page"{% endif %}>{{ grandchildlink.title | escape }}</a>
                                     </li>
@@ -154,6 +163,9 @@
                 {% endif %}
               {% endif %}
               {% for link in linklists[section.settings.secondary_navigation].links %}
+                {%- comment %}<locksmith:1f88>{% endcomment -%}
+                  {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, subject_parent: linklists[section.settings.secondary_navigation], variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                {%- comment %}</locksmith:1f88>{% endcomment -%}
                 <li class="navigation__link navigation__link--secondary navigation__entrance-animation{% if link.active %} navigation__link--active{% endif %}">
                   <a href="{{ link.url }}">{{ link.title }}</a>
                 </li>

@@ -1,0 +1,194 @@
+<article> <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400|Oswald:400|Roboto:400|Playfair+Display:400|Raleway:400&display=swap"><link rel="stylesheet" href="https://cdn.pagefly.io/pagefly/2.13.11/css/main-style.css?t=20200919100938"><link rel="stylesheet" href="{{ 'pagefly.a2f997ac.scss.css' | asset_url }}">
+		  <div class="__pf" id="__pf"><div data-pf-type="Body" class="sc-pRgDJ fzXWJx pf-912d5528"><div data-pf-type="Layout" class="pf-f5df912d"><div data-container="false" class="sc-pZopv bjKdkd pf-9aaef92f pf-bg-lazy" data-pf-type="Section"><div class="sc-pQQXS iWCqut"><div class="sc-qPjXN eYzxUD pf-2baf9aae pf-r pf-r-eh" data-pf-type="Row" style="--pf-s-lg:15px; --pf-s-md:15px; --pf-s-sm:15px; --pf-s-xs:15px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-f2c02baf" data-pf-type="Column"><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-6132ce99"><h1 data-pf-type="Heading" class="sc-oTLFK lcHmGL pf-602da278"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-0ecc1193">CELEBRATE LIVING</span></h1></div><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-ce99f2c0"><h2 data-pf-type="Heading" class="sc-oTLFK lcHmGL pf-a2786132"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-c8cf602d">with fine designing</span></h2></div></div></div></div></div></div><div data-container="true" class="sc-pZopv bjKdkd pf-adc56de2" data-pf-type="Section"><div class="sc-pQQXS iWCqut" style="max-width: 850px;"><div class="sc-qPjXN eYzxUD pf-18d9adc5 pf-r pf-r-eh" data-pf-type="Row" style="--pf-s-lg:15px; --pf-s-md:15px; --pf-s-sm:15px; --pf-s-xs:15px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-497b18d9" data-pf-type="Column"><img sizes="(min-width: 992px) 1200px, (min-width: 768px) and (max-width: 991px) 800px, 400px" data-srcset="https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-2daf40e3--pravada-logomarkblack.png?v=1599026715 1200w, https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-2daf40e3--pravada-logomarkblack.png?v=1599026715 800w, https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-2daf40e3--pravada-logomarkblack.png?v=1599026715 400w" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="sc-qZtVr dLIPjF pf-f92f7014 pf-img-lazy" data-pf-type="Image2"><h4 data-pf-type="Heading" class="sc-oTLFK lcHmGL pf-80b328f4"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-da27cc19">{{ blog.title }}</span></h4><p data-pf-type="Paragraph2" class="sc-pkvvt cbrLgP pf-28f4497b"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-b60080b3">{{blog.metafields.blog_description.blog_description}}</span></p></div></div></div></div></div><div data-container="true" class="sc-pZopv bjKdkd pf-25739e76" data-pf-type="Section"><div class="sc-pQQXS iWCqut" style="max-width: 1200px;"><div class="sc-qPjXN eYzxUD pf-c3222573 pf-r pf-r-eh" data-pf-type="Row" style="--pf-s-lg:0px; --pf-s-md:0px; --pf-s-sm:0px; --pf-s-xs:0px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-e181c322" data-pf-type="Column"><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-abfde181"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-6de2abfd">
+        <div class="project-blog">
+          <div class="container">
+            {% for article in blog.articles %}
+            <div class="box" style="background-image: url('{{ article.image.src | img_url: 'x600' }}');">
+              <div class="content">
+                <div class="meta">
+                  <h3><a href="{{article.url}}">{{ article.title }}</a></h3>
+                  <span><a href="{{blog.url}}">{{ blog.title }}</a></span>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <style>
+          .project-blog {
+            display: flex;
+            justify-content: center;
+            align-self: center;
+            min-height: 550px;
+          }
+
+          .container {
+            position: relative;
+            max-width: 1000px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-template-rows: minmax(50px, auto);
+            margin: 0px;
+            grid-auto-flow: dense;
+          }
+
+          .container .box {
+            background-size: cover;
+            background-position: center;
+            display: grid;
+            font-size: 20px;
+            place-items: center;
+            text-align: center;
+            color: #fff;
+            transition: 0.5s;
+            margin: 2px;
+          }
+
+          .container .box a {
+            width: 100%;
+            height: 100%;
+          }
+
+          .container .box .content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            transition: 0.5s;
+          }
+
+          .container .box:hover .content {
+            background-color: rgba(55, 55, 55, 0.8);
+            cursor: pointer;
+          }
+
+          .container .box .content .meta {
+            position: relative;
+            justify-content: center;
+            align-self: center;
+            align-items: center;
+            width: 100%;
+            opacity: 0;
+          }
+
+          .container .box:hover .content .meta {
+            opacity: 1;
+          }
+
+          .container .box .content .meta h3 a {
+            font-family: "Raleway", Sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.2;
+          }
+
+          .container .box .content .meta span a {
+            font-size: 16px;
+            font-weight: 300;
+            color: #000000;
+          }
+
+          @media only screen and (max-width: 600px) {
+            .container {
+              display: block;
+              margin: 20px;
+            }
+
+            .container .box {
+              margin-bottom: 20px;
+            }
+
+            .container .box .content {
+              padding: 150px 0;
+            }
+          }
+        </style>
+
+
+        {% for article in blog.articles %}
+        {% assign t = i | plus: 1 %}
+        {% assign i = t %}
+        {% assign z = i | modulo:4 %}
+
+
+        {% if z == 1 %}
+        <style>
+          .container .box:nth-child({{i}}) {
+            grid-column: span 2;
+            grid-row: span 2;
+          }
+        </style>
+        {% elsif z == 2 %}
+        <style>
+          .container .box:nth-child({{i}}) {
+            grid-column: span 1;
+            grid-row: span 2;
+          }
+        </style>
+        {% elsif z == 3 %}
+        <style>
+          .container .box:nth-child({{i}}) {
+            grid-column: span 1;
+            grid-row: span 1;
+          }
+        </style>
+        {% elsif z == 0 %}
+        <style>
+          .container .box:nth-child({{i}}) {
+            grid-column: span 1;
+            grid-row: span 1;
+          }
+        </style>
+        {% endif %}
+        {% endfor %}
+      </div></div></div></div></div></div></div><div data-container="true" class="sc-pZopv bjKdkd pf-dc60a89a" data-pf-type="Section"><div class="sc-pQQXS iWCqut" style="max-width: 850px;"><div class="sc-qPjXN eYzxUD pf-c447c019 pf-r pf-r-eh" data-pf-type="Row" style="--pf-s-lg:15px; --pf-s-md:15px; --pf-s-sm:15px; --pf-s-xs:15px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-5a88c447" data-pf-type="Column"><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-a89a5a88"><p data-pf-type="Paragraph2" class="sc-pkvvt cbrLgP pf-9256461a"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-f95c9256">FEATURED ON</span></p></div></div></div></div><div class="sc-qPjXN eYzxUD pf-9d50dc60 pf-r pf-r-eh" data-pf-type="Row" style="--pf-s-lg:15px; --pf-s-md:15px; --pf-s-sm:15px; --pf-s-xs:15px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-094e9d50" data-pf-type="Column"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-57c80101"><link rel="stylesheet" href="{{ 'jcarousel.responsive.css' | asset_url }}" type="text/css" media="all">
+
+<script type="text/javascript" src="{{ 'jquery.jcarousel.min.js' | asset_url }}"></script>
+<script type="text/javascript" src="{{ 'jcarousel.responsive.js' | asset_url }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jcarousel/0.3.9/jquery.jcarousel-autoscroll.js" integrity="sha512-RpCZspsevCAqB67FKXBF/Tpn98UT8Olstiwb8I0P9M8923E6XyhXyaatNJcUeAzW9sY3ZPtydsqDQHiQYWLRlQ==" crossorigin="anonymous"></script>
+
+<div class="jcarousel-wrapper">
+  <div class="jcarousel">
+	<ul>
+	  <li><img src="https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-bb6c12b0--logo-luxe-e1588372830109.png?v=1600280862" alt="Image 1"></li>
+	  <li><img src="https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-6c12b00f--chatelaine-logo.png?v=1600280890" alt="Image 2" style="padding-top: 25px;"></li>
+	  <li><img src="https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-12b00f4d--style-at-home-logo.png?v=1600280908" alt="Image 3"></li>
+	</ul>
+  </div>
+
+  <p class="jcarousel-pagination"></p>
+</div>
+
+<style>
+  .jcarousel-wrapper {
+	border: none !important;
+	box-shadow: 0 0 #000 !important;
+  }
+  .jcarousel img {
+    display: block;
+    max-width: 100%;
+    height: auto !important;
+	margin: auto;
+  }
+</style>
+
+<script>
+jQuery(document).ready(function() {
+    jQuery('.jcarousel')
+        .jcarousel({
+            // Core configuration goes here
+        })
+        .jcarouselAutoscroll({
+            interval: 3000,
+            target: '+=1',
+            autostart: true
+        })
+    ;
+});
+</script>
+</div></div></div></div></div></div><div data-container="false" class="sc-pZopv bjKdkd pf-0660c7bf" data-pf-type="Section"><div class="sc-pQQXS iWCqut"><div class="sc-qPjXN eYzxUD pf-4e850660 pf-r pf-r-eh" data-pf-type="Row" style="--pf-s-lg:15px; --pf-s-md:15px; --pf-s-sm:15px; --pf-s-xs:15px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-004a4e85" data-pf-type="Column"><img sizes="(min-width: 992px) 1200px, (min-width: 768px) and (max-width: 991px) 800px, 400px" data-srcset="https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-2daf40e3--pravada-logomarkblack.png?v=1599026715 1200w, https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-2daf40e3--pravada-logomarkblack.png?v=1599026715 800w, https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-2daf40e3--pravada-logomarkblack.png?v=1599026715 400w" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="sc-qZtVr dLIPjF pf-9e769c9f pf-img-lazy" data-pf-type="Image2"><p data-pf-type="Paragraph2" class="sc-pkvvt cbrLgP pf-73f08c9b"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-d4e17d6d">SHOP</span></p><h4 data-pf-type="Heading" class="sc-oTLFK lcHmGL pf-8c9bb165"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-0c0f050f">MAKE THEM YOURS!</span></h4><a href="/pages/find-a-dealer" target="_self" data-pf-type="Button" class="sc-pZdvY kuwSuz pf-b165004a"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-270e73f0">Find a Dealer</span></a></div></div></div></div></div></div></div></div><script>
+					window.__pagefly_setting__={"baseURL":"https://apps.pagefly.io","analyticsURL":"https://analytics.pagefly.io","isBackend":false,"cdnURL":"https://cdn.pagefly.io","pageflyVersion":"2.13.11","shopDomain":"pravadafloorsinc.myshopify.com","elementData":{},"pageTitle":"Media Project Template","pageType":"blog","pageId":"a2f997ac-70cc-4aa9-847c-0039225f1070","lazyLoad":false,"imageLazyLoad":true,"nativeImageLazyLoad":true,"trackingIDs":[]};
+					window.__pagefly_setting__.moneyFormat = {{shop.money_format | json}}
+				</script><script src="https://cdn.pagefly.io/pagefly/2.13.11/core/helper.js?t=20200919100938" defer></script> </article>

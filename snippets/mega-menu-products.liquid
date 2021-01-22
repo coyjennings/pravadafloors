@@ -53,7 +53,11 @@
                           data-id="54efe0e" data-element_type="widget" data-widget_type="icon.default">
                           <div class="elementor-widget-container">
                             <div class="elementor-icon-wrapper">
-                              <a class="elementor-icon" href="/pages/all-collections/">
+                              {% for block in section.blocks %}
+                              {% if block.type == 'products' %}
+                              <a class="elementor-icon" href="{{ block.settings.engineered_link }}">
+                              {% endif %}
+                              {% endfor %}
                                 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
                                   viewBox="0 0 200 37.23">
                                   <path
@@ -147,6 +151,9 @@
                                             {% for block in section.blocks %}
                                             {% if block.type == 'products' %}
                                             {% for link in linklists[block.settings.pravada_collection_links].links %}
+                                            {%- comment %}<locksmith:6138>{% endcomment -%}
+                                              {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, subject_parent: linklists[block.settings.pravada_collection_links], variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                                            {%- comment %}</locksmith:6138>{% endcomment -%}
                                             <li class="menu-item menu-item-type-custom menu-item-object-custom">
                                               <a href={{ link.url }}
                                                 class="elementor-item">{{ link.title | escape }}</a>
@@ -185,7 +192,10 @@
                                           <ul class="ae-term-skin-list ae-icon-list-items ae-list-vertical">
                                             {% for block in section.blocks %}
                                             {% if block.type == 'products' %}
-                                            {% for link in linklists[block.settings.products_color_links].links %}
+                                            {% for link in linklists[block.settings.pravada_products_color_links].links %}
+                                            {%- comment %}<locksmith:eeda>{% endcomment -%}
+                                              {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, subject_parent: linklists[block.settings.pravada_products_color_links], variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                                            {%- comment %}</locksmith:eeda>{% endcomment -%}
                                             <li class="ae-icon-list-item ae-term-list-item">
                                               <div class="ae-term-list-item-inner ae-icon-list-text">
                                                 <div class="ae-term-title-wrapper">
@@ -233,6 +243,9 @@
                                             {% for block in section.blocks %}
                                             {% if block.type == 'products' %}
                                             {% for link in linklists[block.settings.pravada_type_links].links %}
+                                            {%- comment %}<locksmith:5384>{% endcomment -%}
+                                              {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, subject_parent: linklists[block.settings.pravada_type_links], variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                                            {%- comment %}</locksmith:5384>{% endcomment -%}
                                             <li class="ae-icon-list-item ae-term-list-item">
                                               <div class="ae-term-list-item-inner ae-icon-list-text">
                                                 <div class="ae-term-title-wrapper">
@@ -285,7 +298,7 @@
                             <div class="elementor-text-editor elementor-clearfix">
                               <p>
                                 <img class="alignnone  wp-image-16764"
-                                  src="https://cdn.shopify.com/s/files/1/0422/9274/0261/files/logo-Pravada-Floors-logomark-footer-300X300.svg?v=1597867706"
+                                  src="https://cdn.shopify.com/s/files/1/0422/9274/0261/files/logo-Pravada-Floors-logomark-footer-300X238.svg?v=1602455283"
                                   alt="" width="99" height="79" /><br /><br />
                                 {% for block in section.blocks %}
                                 {% if block.type == 'products' %}
@@ -348,7 +361,11 @@
                           data-id="65eb3f6" data-element_type="widget" data-widget_type="icon.default">
                           <div class="elementor-widget-container">
                             <div class="elementor-icon-wrapper">
-                              <a class="elementor-icon" href="/pages/all-collections/">
+                              {% for block in section.blocks %}
+                              {% if block.type == 'products' %}
+                              <a class="elementor-icon" href={{ block.settings.evolutionz_link }}>
+                              {% endif %}
+                              {% endfor %}
                                 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
                                   viewBox="0 0 200 51.73">
                                   <path
@@ -493,6 +510,9 @@
                                             {% for block in section.blocks %}
                                             {% if block.type == 'products' %}
                                             {% for link in linklists[block.settings.evolutionz_collection_links].links %}
+                                            {%- comment %}<locksmith:58cf>{% endcomment -%}
+                                              {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, subject_parent: linklists[block.settings.evolutionz_collection_links], variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                                            {%- comment %}</locksmith:58cf>{% endcomment -%}
                                             <li class="menu-item menu-item-type-custom menu-item-object-custom">
                                               <a href={{ link.url }} class="elementor-item">{{ link.title | escape }}</a>
                                             </li>
@@ -523,6 +543,9 @@
                                             {% for block in section.blocks %}
                                             {% if block.type == 'products' %}
                                             {% for link in linklists[block.settings.evolutionz_accessories_links].links %}
+                                            {%- comment %}<locksmith:1196>{% endcomment -%}
+                                              {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, subject_parent: linklists[block.settings.evolutionz_accessories_links], variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                                            {%- comment %}</locksmith:1196>{% endcomment -%}
                                             <li class="menu-item menu-item-type-custom menu-item-object-custom">
                                               <a href={{ link.url }} class="elementor-item">{{ link.title | escape }}</a>
                                             </li>
@@ -560,7 +583,10 @@
                                           <ul class="ae-term-skin-list ae-icon-list-items ae-list-vertical">
                                             {% for block in section.blocks %}
                                             {% if block.type == 'products' %}
-                                            {% for link in linklists[block.settings.products_color_links].links %}
+                                            {% for link in linklists[block.settings.evolutionz_products_color_links].links %}
+                                            {%- comment %}<locksmith:a852>{% endcomment -%}
+                                              {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, subject_parent: linklists[block.settings.evolutionz_products_color_links], variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                                            {%- comment %}</locksmith:a852>{% endcomment -%}
                                             <li class="ae-icon-list-item ae-term-list-item">
                                               <div class="ae-term-list-item-inner ae-icon-list-text">
                                                 <div class="ae-term-title-wrapper">
@@ -607,6 +633,9 @@
                                             {% for block in section.blocks %}
                                             {% if block.type == 'products' %}
                                             {% for link in linklists[block.settings.evolutionz_type_links].links %}
+                                            {%- comment %}<locksmith:facd>{% endcomment -%}
+                                              {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, subject_parent: linklists[block.settings.evolutionz_type_links], variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                                            {%- comment %}</locksmith:facd>{% endcomment -%}
                                             <li class="menu-item menu-item-type-custom menu-item-object-custom">
                                               <a href={{ link.url }} class="elementor-item">{{ link.title | escape }}</a>
                                             </li>

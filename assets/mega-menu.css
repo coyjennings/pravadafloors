@@ -708,7 +708,7 @@ body:not(.rtl) .elementor-3228 .elementor-element.elementor-element-fe1751f.ae-t
 
 .elementor-3228 .elementor-element.elementor-element-4eede7e>.elementor-widget-container {
     margin: 0px 0px 0px 0px;
-    padding: 0px 0px 0px 0px;
+    padding: 12px 10px;
 }
 
 .elementor-3228 .elementor-element.elementor-element-4eede7e>.tippy-popper .tippy-tooltip .tippy-content {
@@ -2668,7 +2668,7 @@ body:not(.rtl) .elementor-3228 .elementor-element.elementor-element-4e6f2ec.ae-t
 
 .elementor-3590 .elementor-element.elementor-element-294d841>.elementor-element-populated {
     border-style: solid;
-    border-width: 0px 0px 0px 1px;
+    border-width: 0px;
     transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
     margin: 0px 0px 0px 0px;
     padding: 20px 0px 20px 0px;
@@ -2729,7 +2729,7 @@ body:not(.rtl) .elementor-3228 .elementor-element.elementor-element-4e6f2ec.ae-t
     }
 
     .elementor-3590 .elementor-element.elementor-element-294d841 {
-        width: 30.7%;
+        width: 30.782%;
     }
 }
 
@@ -2741,4 +2741,72 @@ body:not(.rtl) .elementor-3228 .elementor-element.elementor-element-4e6f2ec.ae-t
     .elementor-3590 .elementor-element.elementor-element-294d841 {
         width: 100%;
     }
+}
+
+/* Mega Menu Header Icons */
+
+.mega-menu-icons {
+    align-content: center !important;
+    align-items: center !important;
+}
+
+.mega-menu-header-icon a i {
+    font-size: 18px;
+    color: #000000;
+}
+
+.mega-menu-header-icon a i.fa-heart {
+    margin-top: 5px;
+}
+
+.mega-menu-header-icon {
+    padding: 0 5px;
+}
+
+@media(max-width:800px) {
+    .mega-menu-header-icon {
+        padding: 0 3px;
+    }
+}
+
+.elementor-widget-wrap.mega-menu-icons {
+    margin-right: 50px;
+}
+
+.elementor-row.mega-menu-icons-ts {
+    margin-left: 50px;
+}
+
+@media(max-width:1230px) {
+    .elementor-widget-wrap.mega-menu-icons {
+        margin-right: 20px;
+    }
+
+    .elementor-row.mega-menu-icons-ts {
+        margin-left: 20px;
+    }
+}
+
+@media(max-width:999px) {
+    .elementor-widget-wrap.mega-menu-icons {
+        margin-right: 0px;
+        margin-left: 20px;
+    }
+
+    .mega-menu-header-icon a i {
+        font-size: 20px;
+    }
+}
+
+#menu-search {
+    justify-content: flex-start;
+}
+
+#menu-search #cmm4e-menu-item-3688 {
+    padding: 0;
+    margin: 0 !important;
+}
+
+#menu-search #cmm4e-menu-item-3688 a i {
+    font-size: 16px;
 }

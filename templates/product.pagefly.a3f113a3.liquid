@@ -1,0 +1,588 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400|Oswald:400|Roboto:400|Playfair+Display:400|Raleway:400&display=swap"><link rel="stylesheet" href="https://cdn.pagefly.io/pagefly/2.14.6/css/main-style.css?t=20201028141003"><link rel="stylesheet" href="{{ 'pagefly.a3f113a3.css' | asset_url }}">
+		  <script>
+	window.__pageflyProducts = window.__pageflyProducts || {};
+	window.__pageflyProducts["{{product.id}}"] = {
+					id: {{product.id | json }},
+					handle: {{product.handle | json }},
+					title: {{product.title | json }},
+					type: {{product.type | json }},
+					url: {{product.url | json }},
+					vendor: {{product.vendor | json }},
+					variants: {{product.variants | json }},
+					options: {{product.options | json }},
+					media: {{product.media | json }},
+					has_only_default_variant: {{product.has_only_default_variant | json }},
+					options_with_values: {{product.options_with_values | json }},
+					selected_variant: {{product.selected_variant | json }},
+					selected_or_first_available_variant: {{product.selected_or_first_available_variant | json }},
+					tags: {{product.tags | json }},
+					template_suffix: {{product.template_suffix | json }},
+					featured_image: {{product.featured_image | json }},
+					featured_media: {{product.featured_media | json }},
+					images: {{product.images | json }}
+				};
+	</script><div class="__pf" id="__pf" data-section-id="product-template" data-section-type="product-template"><div data-pf-type="Body" class="sc-pRgDJ fzXWJx pf-eb8e8369"><div data-pf-type="Layout" class="pf-48eb8e83"><div data-container="false" class="sc-pZopv bjKdkd pf-50a6ad66" data-pf-type="Section"><div class="sc-pQQXS iWCqut"><div class="sc-qPjXN eYzxUD pf-18d96012 pf-r pf-r-eh" data-pf-type="Row" style="--pf-s-lg:15px; --pf-s-md:15px; --pf-s-sm:15px; --pf-s-xs:15px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-5818d960" data-pf-type="Column"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-545818d9">{% for collection in product.collections %}
+  {%- comment %}<locksmith:8c00>{% endcomment -%}
+    {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: collection, subject_parent: product, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+  {%- comment %}</locksmith:8c00>{% endcomment -%}
+  {% if collection.title contains 'Collection' %}
+  	<img src="{{collection.metafields.Logo_for_ProductPage.logo_for_productpage}}" class="product-collection-logo" alt="">
+  {% endif %}
+{% endfor %}
+<style>
+  .product-collection-logo {
+	width: 20%;
+	filter: brightness(0%) contrast(100%) saturate(100%) blur(0px) hue-rotate(0deg);
+  }
+  @media (max-width: 999px) {
+	.product-collection-logo {
+	  width: 50%;
+	}
+  }
+  #product-metadata {
+	background-color: {{product.metafields.header_bgcolor.header_bgcolor}};
+  }
+  #product-header {
+	background-image: url("{{product.metafields.secondary_image.secondary_image}}");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center bottom;
+  }
+  .product-collection-title {
+	font-size: 16px;
+	font-family: 'Playfair Display';
+	text-align: center;
+	color: #fff;
+	font-weight: 400 !important;
+	text-transform: uppercase;
+  }
+  .product-attribute {
+	font-size: 16px;
+	font-family: 'Raleway';
+	color: #000000;
+	font-weight: 400;
+	margin: 0 !important;
+	padding: 0 0 13px 0;
+  }
+  .product-attribute-header {
+	font-size: 16px;
+	font-family: 'Raleway';
+	color: #000000;
+	font-weight: 700;
+	margin: 0 !important;
+	padding: 0 0 13px 0;
+	text-transform: uppercase;
+  }
+  table.product-data {
+	border-collapse: collapse;
+	width: 100%;
+	text-align: center;
+  }
+
+  .product-data td, .product-data th {
+	border: none;
+	text-align: left;
+  }
+  .product-data td.product-mouldings-title {
+	font-size: 14px;
+	font-family: 'Raleway';
+	color: #000000;
+	font-weight: 700;
+	text-align: center;
+	margin: 0 !important;
+  }
+  .product-data td.product-mouldings-img {
+	padding: 10px;
+	width: 20%;
+  }
+  #product-att-mouldings:before {
+	content: 'MOULDINGS';
+	position: absolute;
+	width: 120px;
+	font-family: 'Raleway';
+	font-weight: bold;
+	transform: rotate(-90deg);
+	top: 165px;
+	left: -60px;
+	background: #f1f1f1;
+	z-index: 1;
+	text-align: center;
+	font-size: 18px;
+  }
+  .product-mouldings-specs {
+	width: 100%;
+    max-width: 250px;
+    padding: 12px 10px;
+    font-size: 16px;
+    font-weight: 600;
+	font-family: 'Raleway';
+	background-color: #000000;
+	color: #ffffff;
+	text-align: center;
+	margin: 10px 0;
+  }
+  #product-underlay:before {
+	content: 'UNDERLAY';
+	position: absolute;
+	width: 120px;
+	font-family: 'Raleway';
+	font-weight: bold;
+	transform: rotate(-90deg);
+	top: 165px;
+	left: -60px;
+	background: #f1f1f1;
+	z-index: 1;
+	text-align: center;
+	font-size: 18px;
+  }
+  @media (max-width: 600px) {
+	#product-underlay:before {
+	  top: 90px;
+  	}
+  }
+</style></div></div></div></div><div class="sc-qPjXN eYzxUD pf-1273c94b pf-r pf-r-eh" data-pf-type="Row" style="--pf-s-lg:15px; --pf-s-md:15px; --pf-s-sm:15px; --pf-s-xs:15px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-601273c9" data-pf-type="Column"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-d9601273"><div class="product-subtitle">{{ product.metafields.subtitle.subtitle }}</div>
+<style>
+  .product-subtitle {
+	padding-bottom: 20px;
+	color: #000000;
+    font-family: "Raleway", Sans-serif;
+    font-weight: 500;
+  }
+</style></div><h3 data-product-type="title" data-product-id="{{ product.id }}" data-pf-type="ProductText" class="sc-qPzgd jYlxvS pf-a3c8e877">{{ product.title }}</h3></div></div></div></div></div><div data-container="true" class="sc-pZopv bjKdkd pf-d35383e6" data-pf-type="Section"><div class="sc-pQQXS iWCqut" style="max-width: 1170px;"><div class="sc-qPjXN eYzxUD pf-1291d353 pf-r pf-r-eh" data-pf-type="Row" style="--pf-s-lg:15px; --pf-s-md:15px; --pf-s-sm:15px; --pf-s-xs:15px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-68a21291" data-pf-type="Column"><div data-product-id="{{ product.id }}" data-pf-type="ProductBox" class="sc-pjGtN lgnAIx pf-352f68a2"> {% if product != null %}{% form 'product', product, data-productid: product.id, class: "pf-product-form pf-form-f1352f68" %}<div class="sc-qPjXN eYzxUD pf-0ff1352f pf-r pf-r-eh" data-pf-type="Row" style="--pf-s-lg:15px; --pf-s-md:15px; --pf-s-sm:15px; --pf-s-xs:15px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--6 pf-c-md--6 pf-c-lg--6"><div class="sc-pkUyL fTyjzF pf-3ffead83" data-pf-type="Column"><div data-product-id="{{ product.id }}" data-pf-type="ProductImage2" class="sc-pYATD geuAXS pf-be0abbb7">{% assign images = product.images %}<div spacing="[object Object]" class="sc-pIvzE cKaoOu"><div data-pf-type="MasterImage" class="sc-pAayJ fOa-DwG"><img src="{{ product.featured_image | img_url: 'x527.25', scale: 2 }}" alt="{{ product.featured_image.alt }}" draggable="false">{% assign _product = product %}<div data-pf-type="ProductImagePagination" class="sc-oUbIU kkgvSC">{% for i in (1..images.size) %}<span></span>{% endfor %}</div></div><div class="sc-pkURi jKvUwv {% if 5 < images.size %}arrow-all{%endif%}{% if 5 < images.size %} arrow-laptop{%endif%}{% if 5 < images.size %} arrow-tablet{%endif%}"><div data-pf-type="ProductImageList" class="sc-psQTH ITnEo">{% assign pf_all = '' %}{% assign pf_laptop = '' %}{% assign pf_tablet = '' %}{% assign pf_mobile = '' %}{% for i in (0..images.size) limit:images.size %}{% assign image = images[i] %}{% if true %}{% if i > 4 %}{% assign pf_all = 'all_hd' %}{% endif  %}{% if i > 4 %}{% assign pf_laptop = 'laptop_hd' %}{% endif  %}{% if i > 4 %}{% assign pf_tablet = 'tablet_hd' %}{% endif  %}{% if i > 4 %}{% assign pf_mobile = 'mobile_hd' %}{% endif  %}{% endif  %}<div class="sc-qPkqk kuHLLu pf-83e6dfb5 {{pf_all}} {{pf_laptop}} {{pf_tablet}} {{pf_mobile}}" data-img-id="{{ image.id }}" data-pf-type="ImageItem"><img src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt }}" draggable="false"></div>{% endfor %} </div>{% if true %}<div data-pf-nav="prev" class="sc-pbXLt hyMGOk"><i class="fa fa-angle-left"></i></div><div data-pf-nav="next" class="sc-pbXLt hyMGOk"><i class="fa fa-angle-right"></i></div>{% endif  %}</div></div></div></div></div><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--6 pf-c-md--6 pf-c-lg--6"><div class="sc-pkUyL fTyjzF pf-309e0ff1" data-pf-type="Column"><h3 data-product-type="title" data-product-id="{{ product.id }}" data-pf-type="ProductText" class="sc-qPzgd jYlxvS pf-4cb69cb2">{{ product.title }}</h3><div data-product-type="price" data-product-id="{{ product.id }}" data-pf-type="ProductText" class="sc-pcLzI gJGZti pf-9cb2f5c3">{{ product.variants[0].price | money }}</div><div data-product-id="{{ product.id }}" data-combined="true" data-display="dropdown" data-label="true" data-pf-type="ProductVariant" class="sc-pQfSI jGpWza pf-f5c3f8d0" style="--pf-s-lg:16px; --pf-s-md:16px; --pf-s-sm:8px; --pf-s-xs:8px;"><div class="pf-p-variant"><select name="id" data-productid="{{ product.id }}">{% for variant in product.variants %}<option value="{{ variant.id }}">{{ variant.title }} - {% if variant.available != true %}Sold Out {% else %} {{ variant.price | money }} {% endif %}</option>{% endfor %}</select></div></div><div data-show-button="true" data-more="" data-less="" data-product-type="content" data-product-id="{{ product.id }}" data-pf-type="ProductText" class="sc-pcLzI gJGZti pf-f8d0bfba">{{ product.content }}</div><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-ad83309e"><div data-product-id="{{ product.id }}" size="40" data-pf-type="ProductQuantity" class="sc-pQQAz daLzjN pf-bfbac5c8"><button data-quantity-action="decrease" data-quantity-disabled="true" type="button">-</button><input min="1" type="number" data-hidespinner="true" name="quantity" value="1"><button type="button" data-quantity-action="increase">+</button></div><button data-product-id="{{ product.id }}" data-checkout="same" class="sc-pcjuG uJAsR pf-90da8136" data-soldout="Sold out" data-adding="Adding..." data-added="Thank you!" type="button" data-pf-type="ProductATC"><span>ORDER</span></button></div><a class="sc-pYbQl dqXhNs pf-81363ffe" data-product-id="{{ product.id }}" href="{{ product.url }}" data-pf-type="ProductViewDetails"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-e86606ea">View details</span></a></div></div></div>{% endform %}{% endif %}</div></div></div></div></div></div><div data-container="false" class="sc-pZopv bjKdkd pf-7e41f621" data-pf-type="Section"><div class="sc-pQQXS iWCqut"><div class="sc-qPjXN eYzxUD pf-d6e97e41 pf-r pf-r-align--cm pf-r-ew" data-pf-type="Row" style="--pf-s-lg:0px; --pf-s-md:0px; --pf-s-sm:0px; --pf-s-xs:0px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-53609f9a" data-pf-type="Column"><img sizes="(min-width: 992px) 1200px, (min-width: 768px) and (max-width: 991px) 800px, 400px" srcset="https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-5f23382f--productENGNUDE-ROCHEHaute-Couleur-CollectionPravada-Floors96dpi6.jpg?v=1600063977 1200w, https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-5f23382f--productENGNUDE-ROCHEHaute-Couleur-CollectionPravada-Floors96dpi6_800x600.jpg?v=1600063977&resized 800w, https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-5f23382f--productENGNUDE-ROCHEHaute-Couleur-CollectionPravada-Floors96dpi6_400x300.jpg?v=1600063977&resized 400w" class="sc-qZtVr dLIPjF pf-4753609f" data-pf-type="Image2"></div></div><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-dc45d6e9" data-pf-type="Column"><p data-pf-type="Paragraph2" class="sc-pkvvt cbrLgP pf-9dbb7c03"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-9f9a8f6d">Ready For Your Next Project?</span></p><p data-pf-type="Paragraph2" class="sc-pkvvt cbrLgP pf-0c911cdc"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-8f6dda19">Get Inspired!</span></p><p data-pf-type="Paragraph2" class="sc-pkvvt cbrLgP pf-275ee101"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-da196b0c">View projects featuring Pravada floors</span></p><a href="/blogs/media-projects/" target="_self" data-pf-type="Button" class="sc-pZdvY kuwSuz pf-aa2bdc45"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-6b0c03a5">Projects</span></a></div></div></div></div></div><div data-container="false" class="sc-pZopv bjKdkd pf-abeaf8be" data-pf-type="Section"><div class="sc-pQQXS iWCqut"><div class="sc-qPjXN eYzxUD pf-a502aed2 pf-r pf-r-eh" data-pf-type="Row" style="--pf-s-lg:0px; --pf-s-md:0px; --pf-s-sm:0px; --pf-s-xs:0px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-03a502ae" data-pf-type="Column"><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-21947a39"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-0c03a502"><svg id="logomark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 79.43">
+  <path d="M100,34.47c-.12.7-.22,1.4-.37,2.09a15.3,15.3,0,0,1-6.82,10.23A15.69,15.69,0,0,1,85.32,49,17,17,0,0,1,76.82,47a1.57,1.57,0,0,0-.6-.16H58.63a.71.71,0,0,0-.53.23q-3.78,5.55-7.52,11.11a.57.57,0,0,0-.07.17h42.4v4.37H91V60.36H58.73V71.13H77.58v2H58.73V88.05H62v2H52.78v-2h3.94V73.14H52.77v-2h3.95V60.35l-.44,0H49.51a.71.71,0,0,0-.66.36c-2.35,3.5-4.75,7-7.06,10.49C40.34,73.38,39,75.69,37.65,78a36,36,0,0,1-7,8.48,17.45,17.45,0,0,1-7.73,4.12l-1,.23h-3a.55.55,0,0,0-.15-.08A12.62,12.62,0,0,1,11,86.51a19,19,0,0,1-5-13.65,13.74,13.74,0,0,1,3.15-8.71,14.31,14.31,0,0,1,7.85-4.63A20.68,20.68,0,0,0,19.42,59a9.85,9.85,0,0,1,3.39-.64h24.8a.66.66,0,0,0,.65-.29q3.66-5.46,7.35-10.9a3.2,3.2,0,0,0,.19-.34H0v-2H8.33V35H7.76L0,35V33a1.26,1.26,0,0,0,.27,0c2.59,0,5.17,0,7.76,0a1.57,1.57,0,0,0,.3,0V13.34l-.34,0H.31a1.67,1.67,0,0,0-.31,0v-2H45.89l1,.23a8.82,8.82,0,0,1,5.89,5.13,15.4,15.4,0,0,1,1.14,9.67,12.81,12.81,0,0,1-1.52,4.18A8.48,8.48,0,0,1,44.58,35H10.35V44.8H56.84a.76.76,0,0,0,.54-.28q5.16-7.59,10.29-15.2c1.5-2.21,2.9-4.51,4.56-6.61,3.28-4.14,7.43-6.71,12.93-6.51a14.8,14.8,0,0,1,7.34,2.07,15.55,15.55,0,0,1,7,10.2c.2.84.32,1.69.47,2.54ZM10.34,33.06h.72q16.73,0,33.45,0a6.54,6.54,0,0,0,6.21-3.67,13.09,13.09,0,0,0,.49-11.22,8.25,8.25,0,0,0-2.52-3.52,7.18,7.18,0,0,0-4.77-1.35q-16.55,0-33.08,0l-.5,0Zm6.14,28.65a.35.35,0,0,0-.14,0,11.22,11.22,0,0,0-7.46,6.6,14.35,14.35,0,0,0-.65,8.57,16.07,16.07,0,0,0,5.64,9.6A9.83,9.83,0,0,0,22,88.67a14.43,14.43,0,0,0,6.36-3,31,31,0,0,0,7.24-8.23c1.56-2.5,3-5.07,4.63-7.54,1.88-2.9,3.86-5.73,5.8-8.59l.6-.92H27l.4.35a6.53,6.53,0,0,1,1.25,8,6.8,6.8,0,0,1-6.32,3.23c-4.49-.08-7-4-6.42-8A19.09,19.09,0,0,1,16.48,61.71ZM74.21,44.79l-.57-.74a7.06,7.06,0,0,1-.48-.73,6.76,6.76,0,0,1,.08-7.58A7.48,7.48,0,0,1,86.33,37.8,6.74,6.74,0,0,1,84.65,45a6.66,6.66,0,0,1-3.21,1.64l.42.14a11.58,11.58,0,0,0,4.76.17,12.06,12.06,0,0,0,9-5.63A15.85,15.85,0,0,0,96.16,25a12.62,12.62,0,0,0-14.71-6.46,14.48,14.48,0,0,0-8.23,6.11c-4.53,6.57-9,13.2-13.42,19.81a1.57,1.57,0,0,0-.14.29Zm4.49,0v0c.66,0,1.34,0,2-.14a4.41,4.41,0,0,0,4-4.7A5.22,5.22,0,0,0,78,34.84a4.77,4.77,0,0,0-4,5,6.56,6.56,0,0,0,2,4,2.37,2.37,0,0,0,2.24.91A1.45,1.45,0,0,1,78.7,44.8ZM21.91,60.92c-.42,0-.85,0-1.27,0a2,2,0,0,0-1.19.38A5.13,5.13,0,0,0,19.59,69a4.91,4.91,0,0,0,5.11.46A4.24,4.24,0,0,0,26.64,63,4.8,4.8,0,0,0,21.91,60.92Z" transform="translate(0 -11.35)"></path>
+</svg>
+<style>
+  svg#logomark {
+	width: 100px;
+  }
+  @media (max-width: 800px) {
+	svg#logomark {
+	  width: 50px;
+	}
+  }
+</style></div></div></div></div></div><div class="sc-qPjXN eYzxUD pf-e2ede76f pf-r pf-r-eh" data-pf-type="Row" style="--pf-s-lg:0px; --pf-s-md:0px; --pf-s-sm:0px; --pf-s-xs:0px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-d281b46a" data-pf-type="Column"><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-a244e2e2"><p data-pf-type="Paragraph2" class="sc-pkvvt cbrLgP pf-5f98a244"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-aed281b4">You might also like</span></p></div></div></div></div><div class="sc-qPjXN eYzxUD pf-4b059d63 pf-r pf-r-eh" data-pf-type="Row" style="--pf-s-lg:0px; --pf-s-md:0px; --pf-s-sm:0px; --pf-s-xs:0px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--6 pf-c-md--3 pf-c-lg--3"><div class="sc-pkUyL fTyjzF pf-6f378aef" data-pf-type="Column"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-81b46ac1">
+{% for collection in product.collections %}
+    {%- comment %}<locksmith:3785>{% endcomment -%}
+      {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: collection, subject_parent: product, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+    {%- comment %}</locksmith:3785>{% endcomment -%}
+    {% if collection.title contains 'Evolutionz Brand' %}
+	  {% capture index %}{{ 'now' | date: '%S' | times: collection.products.size | divided_by: 60 }}{% endcapture %}	  
+	  {% for related-product in collection.products offset:index limit: 1 %}
+		{%- comment %}<locksmith:8467>{% endcomment -%}
+		  {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: related-product, subject_parent: collection, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+		{%- comment %}</locksmith:8467>{% endcomment -%}
+		<a href="{{related-product.url}}">
+		  </a><div class="related-product" style="position: relative; background-image: url('{{related-product.featured_image | img_url: 'master'}}')"><a href="{{related-product.url}}">
+			{% if related-product.metafields.product_label.product_label | strip != "" %}
+			  <div style="position: relative;">
+			  <p class="product-label">
+				{{related-product.metafields.product_label.product_label}}
+			  </p>
+			</div>
+			{% endif %}
+
+			</a><div class="related-product-info"><a href="{{related-product.url}}">
+			  </a><div class="related-product-title"><a href="{{related-product.url}}">
+				</a><a href="{{related-product.url}}">
+					{{related-product.title}}
+				</a>
+			  </div>
+			  <div class="related-product-collection">
+				{% for related-collection in related-product.collections %}
+				  {%- comment %}<locksmith:9063>{% endcomment -%}
+				    {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: related-collection, subject_parent: related-product, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+				  {%- comment %}</locksmith:9063>{% endcomment -%}
+				  {% if related-collection.title contains 'Collection' %}
+					<a href="{{related-collection.url}}">
+					  {{related-collection.title}}
+					</a>
+				  {% endif %}
+				{% endfor %}
+			  </div>
+			</div>  
+		  </div>
+		
+	  {% endfor %}
+    {% endif %}
+{% endfor %}
+
+<style>
+  .related-product {
+	height: 485px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+  }
+  @media (max-width: 1200px) {
+	.related-product {
+	  height: 365px;
+	}
+  }
+  .related-product:hover {
+	transform: scale(1.1);
+  }
+  .product-label {
+	font-family: "Raleway", Sans-serif;
+	text-transform: uppercase;
+	background-color: #000000;
+	color: #ffffff;
+	font-size: 12px;
+	width: 100px;
+	font-weight: 500;
+	padding: 3px;
+	position: absolute;
+	top: 40px;
+	transform: rotate(-90deg);
+	text-align: center;
+	margin-bottom: 0 !important;
+	left: 12px;
+	display: inline-block;
+  }
+  .related-product-info {
+	background-color: rgba(255, 255, 255, 0.32);
+	padding: 10px;
+	bottom: 50px;
+	position: absolute;
+	width: 100%;
+  }
+  .related-product-title {
+	font-family: "Raleway", Sans-serif;
+	text-transform: uppercase;
+	color: #000000;
+	font-size: 16px;
+	font-weight: 700;
+	padding: 0 0 5px 0;
+  }
+   .related-product-collection {
+	font-family: "Raleway", Sans-serif;
+	color: #000000;
+	font-size: 16px;
+	font-weight: 400;
+  }
+</style></div></div></div><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--6 pf-c-md--3 pf-c-lg--3"><div class="sc-pkUyL fTyjzF pf-efd8dd71" data-pf-type="Column"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-b46ac1a3">
+{% for collection in product.collections %}
+    {%- comment %}<locksmith:314e>{% endcomment -%}
+      {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: collection, subject_parent: product, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+    {%- comment %}</locksmith:314e>{% endcomment -%}
+    {% if collection.title contains 'Evolutionz Brand' %}
+	  {% capture index %}{{ 'now' | date: '%S' | times: collection.products.size | divided_by: 60 }}{% endcapture %}
+		{% assign x-index = index | plus: 1 | modulo: collection.products.size %}
+	  {% for related-product in collection.products offset:x-index limit: 1 %}
+		{%- comment %}<locksmith:aa9d>{% endcomment -%}
+		  {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: related-product, subject_parent: collection, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+		{%- comment %}</locksmith:aa9d>{% endcomment -%}
+		<a href="{{related-product.url}}">
+		  </a><div class="related-product" style="position: relative; background-image: url('{{related-product.featured_image | img_url: 'master'}}')"><a href="{{related-product.url}}">
+			{% if related-product.metafields.product_label.product_label | strip != "" %}
+			  <div style="position: relative;">
+			  <p class="product-label">
+				{{related-product.metafields.product_label.product_label}}
+			  </p>
+			</div>
+			{% endif %}
+
+			</a><div class="related-product-info"><a href="{{related-product.url}}">
+			  </a><div class="related-product-title"><a href="{{related-product.url}}">
+				</a><a href="{{related-product.url}}">
+					{{related-product.title}}
+				</a>
+			  </div>
+			  <div class="related-product-collection">
+				{% for related-collection in related-product.collections %}
+				  {%- comment %}<locksmith:8a20>{% endcomment -%}
+				    {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: related-collection, subject_parent: related-product, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+				  {%- comment %}</locksmith:8a20>{% endcomment -%}
+				  {% if related-collection.title contains 'Collection' %}
+					<a href="{{related-collection.url}}">
+					  {{related-collection.title}}
+					</a>
+				  {% endif %}
+				{% endfor %}
+			  </div>
+			</div>  
+		  </div>
+		
+	  {% endfor %}
+    {% endif %}
+{% endfor %}
+</div></div></div><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--6 pf-c-md--3 pf-c-lg--3"><div class="sc-pkUyL fTyjzF pf-7145435b" data-pf-type="Column"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-6ac1a346">
+{% for collection in product.collections %}
+    {%- comment %}<locksmith:dca0>{% endcomment -%}
+      {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: collection, subject_parent: product, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+    {%- comment %}</locksmith:dca0>{% endcomment -%}
+    {% if collection.title contains 'Evolutionz Brand' %}
+	  {% capture index %}{{ 'now' | date: '%S' | times: collection.products.size | divided_by: 60 }}{% endcapture %}
+		{% assign x-index = index | plus: 2 | modulo: collection.products.size %}
+	  {% for related-product in collection.products offset:x-index limit: 1 %}
+		{%- comment %}<locksmith:111c>{% endcomment -%}
+		  {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: related-product, subject_parent: collection, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+		{%- comment %}</locksmith:111c>{% endcomment -%}
+		<a href="{{related-product.url}}">
+		  </a><div class="related-product" style="position: relative; background-image: url('{{related-product.featured_image | img_url: 'master'}}')"><a href="{{related-product.url}}">
+			{% if related-product.metafields.product_label.product_label | strip != "" %}
+			  <div style="position: relative;">
+			  <p class="product-label">
+				{{related-product.metafields.product_label.product_label}}
+			  </p>
+			</div>
+			{% endif %}
+
+			</a><div class="related-product-info"><a href="{{related-product.url}}">
+			  </a><div class="related-product-title"><a href="{{related-product.url}}">
+				</a><a href="{{related-product.url}}">
+					{{related-product.title}}
+				</a>
+			  </div>
+			  <div class="related-product-collection">
+				{% for related-collection in related-product.collections %}
+				  {%- comment %}<locksmith:f84b>{% endcomment -%}
+				    {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: related-collection, subject_parent: related-product, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+				  {%- comment %}</locksmith:f84b>{% endcomment -%}
+				  {% if related-collection.title contains 'Collection' %}
+					<a href="{{related-collection.url}}">
+					  {{related-collection.title}}
+					</a>
+				  {% endif %}
+				{% endfor %}
+			  </div>
+			</div>  
+		  </div>
+		
+	  {% endfor %}
+    {% endif %}
+{% endfor %}
+</div></div></div><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--6 pf-c-md--3 pf-c-lg--3"><div class="sc-pkUyL fTyjzF pf-5bfa4b05" data-pf-type="Column"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-c1a346d9">
+{% for collection in product.collections %}
+    {%- comment %}<locksmith:85ab>{% endcomment -%}
+      {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: collection, subject_parent: product, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+    {%- comment %}</locksmith:85ab>{% endcomment -%}
+    {% if collection.title contains 'Evolutionz Brand' %}
+	  {% capture index %}{{ 'now' | date: '%S' | times: collection.products.size | divided_by: 60 }}{% endcapture %}
+		{% assign x-index = index | plus: 3 | modulo: collection.products.size %}
+	  {% for related-product in collection.products offset:x-index limit: 1 %}
+		{%- comment %}<locksmith:059c>{% endcomment -%}
+		  {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: related-product, subject_parent: collection, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+		{%- comment %}</locksmith:059c>{% endcomment -%}
+		<a href="{{related-product.url}}">
+		  </a><div class="related-product" style="position: relative; background-image: url('{{related-product.featured_image | img_url: 'master'}}')"><a href="{{related-product.url}}">
+			{% if related-product.metafields.product_label.product_label | strip != "" %}
+			  <div style="position: relative;">
+			  <p class="product-label">
+				{{related-product.metafields.product_label.product_label}}
+			  </p>
+			</div>
+			{% endif %}
+
+			</a><div class="related-product-info"><a href="{{related-product.url}}">
+			  </a><div class="related-product-title"><a href="{{related-product.url}}">
+				</a><a href="{{related-product.url}}">
+					{{related-product.title}}
+				</a>
+			  </div>
+			  <div class="related-product-collection">
+				{% for related-collection in related-product.collections %}
+				  {%- comment %}<locksmith:1045>{% endcomment -%}
+				    {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: related-collection, subject_parent: related-product, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+				  {%- comment %}</locksmith:1045>{% endcomment -%}
+				  {% if related-collection.title contains 'Collection' %}
+					<a href="{{related-collection.url}}">
+					  {{related-collection.title}}
+					</a>
+				  {% endif %}
+				{% endfor %}
+			  </div>
+			</div>  
+		  </div>
+		
+	  {% endfor %}
+    {% endif %}
+{% endfor %}
+</div></div></div></div><div class="sc-qPjXN eYzxUD pf-02f7abea pf-r pf-r-eh" data-pf-type="Row" style="--pf-s-lg:0px; --pf-s-md:0px; --pf-s-sm:0px; --pf-s-xs:0px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-d9896a5d" data-pf-type="Column"><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-5c5d6e02"><p data-pf-type="Paragraph2" class="sc-pkvvt cbrLgP pf-fbd65c5d"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-46d9896a">DISCLAIMER: Wood is a natural product, therefore, each plank has its own unique characteristics. These images may not adequately reflect all the natural features and appearance of the wood, including, but not limited to: mineral streaks, knots and color/tone variations which will appear over a larger area. Product availability and specifications are subject to change without notice. Customers are advised to visit a dealer to view samples in person. To find a dealer, visit pravadafloors.com/dealer-locator. Flooring that has been installed will be deemed inspected and accepted by customer.</span></p></div></div></div></div></div></div><div data-container="false" class="sc-pZopv bjKdkd pf-f57f6873" data-pf-type="Section"><div class="sc-pQQXS iWCqut"><div class="sc-qPjXN eYzxUD pf-5f63f57f pf-r pf-r-eh pf-r-ew" data-pf-type="Row" style="--pf-s-lg:15px; --pf-s-md:15px; --pf-s-sm:15px; --pf-s-xs:15px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-ace83c55" data-pf-type="Column"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-896a5dfe"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 99.47" style="width: 50px; margin-bottom: 20px;">
+  <defs>
+	<style>
+	  .cls-1 {
+		fill: #fff;
+	  }
+	</style>
+  </defs>
+  <g id="find_a_dealer_white" data-name="find a dealer white">
+	<path class="cls-1" d="M97.3,83.5,75,61.35l.3-.5A39.37,39.37,0,0,0,80.2,33.51C78.41,22.65,72.78,13.86,63.47,7.38A40.94,40.94,0,0,0,13,10.85,40.35,40.35,0,0,0,5.77,61.31,38.17,38.17,0,0,0,27.5,78.61c12,3.78,23.4,2.54,33.88-3.66l1.11,1.1c7,6.92,13.86,13.76,20.72,20.64a10,10,0,0,0,7.23,3h.17a10,10,0,0,0,8.67-6A9.54,9.54,0,0,0,97.3,83.5Zm-35-17.32-2.35,1.61c-.48.33-1,.64-1.51,1C49.5,74.2,39.79,75.33,29.58,72.1A31.46,31.46,0,0,1,11.67,57.81a33.53,33.53,0,0,1,5.92-41.92A34,34,0,0,1,59.53,13,31.84,31.84,0,0,1,73.42,34.61a32.81,32.81,0,0,1-4,22.8c-.47.82-1,1.62-1.58,2.42l-1.67,2.35M42.42,59.82H38.33V55c-2.78-.54-5.61-.4-8-2.14l1.28-4.44c2.26.61,4.39,1.29,6.57,1.75a6.44,6.44,0,0,0,4.46-.72c2.26-1.2,1.79-4.53.15-5.5a44.48,44.48,0,0,0-4.35-2.22C36,40.64,33.52,39.67,32,37.43c-2.49-3.74-1.55-9.21,3.62-11.61.81-.38,1.67-.66,2.61-1V20.4h4.42v4l6.66,1.71-1.27,4.41c-2.52-.39-4.86-.8-7.21-1.1a4.33,4.33,0,0,0-1.86.32,2.75,2.75,0,0,0-2,2.66,3.51,3.51,0,0,0,1.44,2.55c2.28,1.35,4.76,2.39,7.14,3.59,4.88,2.45,6.46,8.1,3.4,12.38a9.32,9.32,0,0,1-5.54,3.75c-.76.18-1.07.49-1,1.28C42.46,57.17,42.42,58.45,42.42,59.82Z" transform="translate(0 -0.27)"></path>
+  </g>
+</svg></div><p data-pf-type="Paragraph2" class="sc-pkvvt cbrLgP pf-b4a54860"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-5dfeb0a9">View this product in person</span></p><h4 data-pf-type="Heading" class="sc-oTLFK lcHmGL pf-79665319"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-b0a9f6ac">find a dealer</span></h4><a href="/pages/dealer-locator" target="_self" data-pf-type="Button" class="sc-pZdvY kuwSuz pf-1145825f"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-f6ace83c">Pravada near me</span></a></div></div></div></div></div><div data-container="false" class="sc-pZopv bjKdkd pf-0172acb9" data-pf-type="Section"><div class="sc-pQQXS iWCqut"><div class="sc-qPjXN eYzxUD pf-de48eb8e pf-r pf-r-eh" data-pf-type="Row" style="--pf-s-lg:15px; --pf-s-md:15px; --pf-s-sm:15px; --pf-s-xs:15px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-b4aa01de" data-pf-type="Column"><img sizes="(min-width: 992px) 1200px, (min-width: 768px) and (max-width: 991px) 800px, 400px" srcset="https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-2daf40e3--pravada-logomarkblack.png?v=1599026715 1200w, https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-2daf40e3--pravada-logomarkblack.png?v=1599026715 800w, https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-2daf40e3--pravada-logomarkblack.png?v=1599026715 400w" class="sc-qZtVr dLIPjF pf-687364b0" data-pf-type="Image2"><p data-pf-type="Paragraph2" class="sc-pkvvt cbrLgP pf-8db7cd49"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-3c55e2ea">Got questions?</span></p><h4 data-pf-type="Heading" class="sc-oTLFK lcHmGL pf-48030a91"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-e2ea88b4">Reach out!</span></h4><a href="/pages/contacts" target="_self" data-pf-type="Button" class="sc-pZdvY kuwSuz pf-138af8d7"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-88b4aa01">Contact us</span></a></div></div><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-01de48eb" data-pf-type="Column"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-aa01de48"><script type="text/javascript" src="https://cdn.shopify.com/s/files/1/0422/9274/0261/files/FileSaver.min.js?v=1600634528"></script>
+
+<script>
+    let btnDownload = document.getElementById("download-images");
+    {% for image in product.images %}
+    btnDownload.addEventListener("click", () => {
+        let imagePath = "{{ image.src | product_img_url: 'master' }}";
+        saveAs(imagePath, "{{product.title}}");
+    });
+    {% endfor %}
+
+</script>
+
+
+<!-- Estimate Quantities Modal -->
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div>
+            <h1>Material Calculator</h1>
+            <p>The material calculator makes it easier for you to determine the amount of material needed (inc.
+                cutting waste), which you need for the relevant room. Pravada assumes no guarantee that the
+                calculation is correct.</p>
+        </div>
+
+        <div class="room-size"><i class="far fa-circle"><span>Enter room size</span></i></div>
+        <div class="field-con">
+            <label>ft²</label>
+
+            <input id="room-size-field" class="room-size-field" type="number" name="FirstNum" placeholder="Enter room size (e.g. 130)">
+        </div>
+
+        <div>
+            <h3>Quantity Needed</h3>
+
+            <p class="quantity"><span id="quantity-size">0</span>Cartons</p>
+        </div>
+
+    </div>
+
+</div>
+
+<style>
+    /* The Modal (background) */
+    .modal {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Stay in place */
+        z-index: 100;
+        /* Sit on top */
+        padding-top: 15%;
+        /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Full width */
+        height: 100%;
+        /* Full height */
+        overflow: auto;
+        /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0, 0.4);
+        font-family: "Raleway", Sans-serif;
+    }
+
+    /* Modal Content */
+    .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        max-width: 700px;
+        padding: 50px 40px;
+        text-align: center;
+	  	width: 90%;
+    }
+  
+  	@media (max-width: 600px) {
+	  .modal-content {
+		padding: 20px;
+	  }
+	}
+
+    .modal-content h1 {
+        font-size: 30px;
+        color: #000000;
+    }
+
+    .modal-content h3 {
+        padding: 20px 0;
+        font-size: 18px;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    .room-size {
+        text-align: left;
+        padding: 10px 0;
+    }
+
+    .room-size span {
+        font-family: "Raleway", Sans-serif;
+        padding: 0 5px;
+    }
+
+    .field-con {
+        position: relative;
+    }
+
+    .field-con label {
+        margin: 0;
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        font-size: 16px;
+    }
+
+    .room-size-field {
+        padding: 10px !important;
+        border: solid 1px #000000 !important;
+    }
+
+    #quantity-size {
+        padding: 0 5px;
+    }
+
+    .quantity {
+        font-size: 30px;
+        font-weight: 600;
+    }
+</style>
+
+<script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("estimate-quantities-btn");
+
+    // When the user clicks the button, open the modal
+    btn.onclick = function () {
+        modal.style.display = "block";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+
+    function calcFunction() {
+        var size = document.getElementById("room-size-field").value;
+
+		var box_temp_size = "{{product.metafields.Coverage.Coverage}}";
+		var box_size = box_temp_size.substring(0, box_temp_size.indexOf("f"));
+
+		console.log(box_size);
+		var quantity = Math.ceil(size / box_size / 0.95);
+        // alert(quantity);
+        document.getElementById("quantity-size").innerHTML = quantity;
+    }
+
+    var input = document.getElementById("room-size-field");
+
+    input.addEventListener("keyup", function (event) {
+        event.preventDefault();
+	  	calcFunction();
+    });
+</script></div></div></div></div></div></div></div></div></div><script>
+					window.__pagefly_setting__={"baseURL":"https://apps.pagefly.io","analyticsURL":"https://analytics.pagefly.io","isBackend":false,"cdnURL":"https://cdn.pagefly.io","pageflyVersion":"2.14.6","shopDomain":"pravadafloorsinc.myshopify.com","elementData":{"pf-be0abbb7":{"listPosition":2,"limit":{"all":5,"laptop":5,"tablet":5,"mobile":5},"spacing":{"all":"0px","laptop":"10px","tablet":"10px","mobile":"10px"},"listLayout":1,"hoverAction":0,"onHover":0,"clickAction":0,"imageSource":"featured","_type":"ProductImage2"},"pf-dfb5be0a":{"applyCondition":false,"collectionSource":"all","collectionIds":[],"tags":"","_type":"ProductBadge"}},"pageTitle":"display racks","pageType":"product","pageId":"a3f113a3-e930-43c8-a877-50a6ad669e9f","lazyLoad":false,"imageLazyLoad":false,"nativeImageLazyLoad":true,"trackingIDs":[],"shopifyProxyPath":"/a/pf_preview","updatedTime":"2020-10-28T21:20:19.952Z"};
+					window.__pagefly_setting__.moneyFormat = {{shop.money_format | json}}
+				</script><script src="https://cdn.pagefly.io/pagefly/2.14.6/core/helper.js?t=20201028141003" defer></script><script type="application/json" id="ProductJson-product-template">
+    {{ product | json }}
+  </script>

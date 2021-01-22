@@ -1,0 +1,1019 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400|Oswald:400|Roboto:400|Playfair+Display:400|Raleway:400,500,700&display=swap"><link rel="stylesheet" href="https://cdn.pagefly.io/pagefly/2.14.15/css/main-style.css?t=20201214141211"><link rel="stylesheet" href="{{ 'pagefly.279116e3.css' | asset_url }}">
+		  <script>
+	window.__pageflyProducts = window.__pageflyProducts || {};
+	window.__pageflyProducts["{{product.id}}"] = {
+					id: {{product.id | json }},
+					handle: {{product.handle | json }},
+					title: {{product.title | json }},
+					type: {{product.type | json }},
+					url: {{product.url | json }},
+					vendor: {{product.vendor | json }},
+					variants: {{product.variants | json }},
+					options: {{product.options | json }},
+					media: {{product.media | json }},
+					has_only_default_variant: {{product.has_only_default_variant | json }},
+					options_with_values: {{product.options_with_values | json }},
+					selected_variant: {{product.selected_variant | json }},
+					selected_or_first_available_variant: {{product.selected_or_first_available_variant | json }},
+					tags: {{product.tags | json }},
+					template_suffix: {{product.template_suffix | json }},
+					featured_image: {{product.featured_image | json }},
+					featured_media: {{product.featured_media | json }},
+					images: {{product.images | json }}
+				};
+	</script><div class="__pf" id="__pf" data-section-id="product-template" data-section-type="product-template"><div data-pf-type="Body" class="sc-pRgDJ fzXWJx pf-30becaad"><div data-pf-type="Layout" class="pf-2da430be"><div data-container="false" class="sc-pZopv bjKdkd pf-18a3feca" data-pf-type="Section"><div class="sc-pQQXS iWCqut"><div class="sc-qPjXN eYzxUD pf-d4eba17f pf-r pf-r-eh" data-pf-type="Row" style="--pf-s-lg:15px; --pf-s-md:15px; --pf-s-sm:15px; --pf-s-xs:15px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-1e60d4eb" data-pf-type="Column"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-c8543161">{% for collection in product.collections %}
+  {%- comment %}<locksmith:45c3>{% endcomment -%}
+    {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: collection, subject_parent: product, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+  {%- comment %}</locksmith:45c3>{% endcomment -%}
+  {% if collection.title contains 'Collection' %}
+  	<img src="{{collection.metafields.Logo_for_ProductPage.logo_for_productpage}}" class="product-collection-logo" alt="">
+  {% endif %}
+{% endfor %}
+<style>
+  .product-collection-logo {
+	width: 20%;
+	filter: brightness(0%) contrast(100%) saturate(100%) blur(0px) hue-rotate(0deg);
+  }
+  @media (max-width: 999px) {
+	.product-collection-logo {
+	  width: 50%;
+	}
+  }
+  #product-metadata {
+	background-color: {{product.metafields.header_bgcolor.header_bgcolor}};
+  }
+  #product-header {
+	background-image: url("{{product.metafields.secondary_image.secondary_image}}");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center bottom;
+  }
+  .product-collection-title {
+	font-size: 16px;
+	font-family: 'Playfair Display';
+	text-align: center;
+	color: #fff;
+	font-weight: 400 !important;
+	text-transform: uppercase;
+  }
+  .product-attribute {
+	font-size: 16px;
+	font-family: 'Raleway';
+	color: #000000;
+	font-weight: 400;
+	margin: 0 !important;
+	padding: 0 0 13px 0;
+  }
+  .product-attribute-header {
+	font-size: 16px;
+	font-family: 'Raleway';
+	color: #000000;
+	font-weight: 700;
+	margin: 0 !important;
+	padding: 0 0 13px 0;
+	text-transform: uppercase;
+  }
+  table.product-data {
+	border-collapse: collapse;
+	width: 100%;
+	text-align: center;
+  }
+
+  .product-data td, .product-data th {
+	border: none;
+	text-align: left;
+  }
+  .product-data td.product-mouldings-title {
+	font-size: 14px;
+	font-family: 'Raleway';
+	color: #000000;
+	font-weight: 700;
+	text-align: center;
+	margin: 0 !important;
+  }
+  .product-data td.product-mouldings-img {
+	padding: 10px;
+	width: 20%;
+  }
+  #product-att-mouldings:before {
+	content: 'MOULDINGS';
+	position: absolute;
+	width: 120px;
+	font-family: 'Raleway';
+	font-weight: bold;
+	transform: rotate(-90deg);
+	top: 165px;
+	left: -60px;
+	background: #f1f1f1;
+	z-index: 1;
+	text-align: center;
+	font-size: 18px;
+  }
+  .product-mouldings-specs {
+	width: 100%;
+    max-width: 250px;
+    padding: 12px 10px;
+    font-size: 16px;
+    font-weight: 600;
+	font-family: 'Raleway';
+	background-color: #000000;
+	color: #ffffff;
+	text-align: center;
+	margin: 10px 0;
+  }
+  #product-underlay:before {
+	content: 'UNDERLAY';
+	position: absolute;
+	width: 120px;
+	font-family: 'Raleway';
+	font-weight: bold;
+	transform: rotate(-90deg);
+	top: 165px;
+	left: -60px;
+	background: #f1f1f1;
+	z-index: 1;
+	text-align: center;
+	font-size: 18px;
+  }
+  @media (max-width: 600px) {
+	#product-underlay:before {
+	  top: 90px;
+  	}
+  }
+</style></div></div></div></div><div class="sc-qPjXN eYzxUD pf-ba4495c4 pf-r pf-r-eh" data-pf-type="Row" style="--pf-s-lg:15px; --pf-s-md:15px; --pf-s-sm:15px; --pf-s-xs:15px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-ae65ba44" data-pf-type="Column"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-3161ae65"><div class="product-subtitle">{{ product.metafields.subtitle.subtitle }}</div>
+<style>
+  .product-subtitle {
+	padding-bottom: 20px;
+	color: #000000;
+    font-family: "Raleway", Sans-serif;
+    font-weight: 500;
+  }
+</style></div><h3 data-product-type="title" data-product-id="{{ product.id }}" data-pf-type="ProductText" class="sc-qPzgd jYlxvS pf-95c4a1f5">{{ product.title }}</h3></div></div></div></div></div><div data-container="false" class="sc-pZopv bjKdkd pf-f5ccc9dc" data-pf-type="Section"><div class="sc-pQQXS iWCqut"><div class="sc-qPjXN eYzxUD pf-97a73a18 pf-r pf-r-align--cm pf-r-ew pf-lg--hidden pf-md--hidden" data-pf-type="Row" style="--pf-s-lg:0px; --pf-s-md:0px; --pf-s-sm:0px; --pf-s-xs:0px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-78774b86" data-pf-type="Column"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-ae4be1d1"><a href="{{ product.metafields.warranty_page.warranty_page | prepend: '/pages/' | prepend: shop.secure_url }}">
+	<img src="{{ product.metafields.icon.icon-warranty }}" class="product-five-icons" alt="">
+</a>
+</div><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-e1d1b8a4"><a href="{{ product.metafields.compliance_page.compliance_page | prepend: '/pages/' | prepend: shop.secure_url }}">
+	<img src="{{ product.metafields.icon.icon-compliance }}" class="product-five-icons" alt="">
+</a>
+</div><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-b8a4d91f"><a href="{{ product.metafields.board_variance_page.board_variance_page | prepend: '/pages/' | prepend: shop.secure_url }}">
+	<img src="{{ product.metafields.icon.icon-variance }}" class="product-five-icons" alt="">
+</a>
+</div><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-d91f86b0"><a href="{{ product.metafields.sensitivity_page.sensitivity_page | prepend: '/pages/' | prepend: shop.secure_url }}">
+	<img src="{{ product.metafields.icon.icon-sensitivity }}" class="product-five-icons" alt="">
+</a>
+</div><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-86b0c8b1"><a href="{{ product.metafields.radiant_approve_page.radiant_approve_page | prepend: '/pages/' | prepend: shop.secure_url }}">
+	<img src="{{ product.metafields.icon.icon-Radiant }}" class="product-five-icons" alt="">
+</a>
+</div></div></div></div><div class="sc-qPjXN eYzxUD pf-c1d8f5cc pf-r pf-r-align--cm" data-pf-type="Row" style="--pf-s-lg:0px; --pf-s-md:0px; --pf-s-sm:0px; --pf-s-xs:0px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--5 pf-c-md--4 pf-c-lg--4"><div class="sc-pkUyL fTyjzF pf-3a189123" data-pf-type="Column"><a href="/collections" target="_self" data-pf-type="Button" class="sc-pZdvY kuwSuz pf-4b86cfb8"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-78aeeeea">Back to Collections</span></a></div></div><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-xs--hidden pf-c-sm--4 pf-sm--hidden pf-c-md--4 pf-c-lg--4"><div class="sc-pkUyL fTyjzF pf-8ec3c1d8" data-pf-type="Column"><div class="sc-qPjXN eYzxUD pf-9123f6cc pf-r pf-r-align--cm pf-r-ew" data-pf-type="Row" style="--pf-s-lg:0px; --pf-s-md:0px; --pf-s-sm:0px; --pf-s-xs:0px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-xs--hidden pf-c-sm--3 pf-sm--hidden pf-c-md--3 pf-c-lg--3"><div class="sc-pkUyL fTyjzF pf-cfb800e1" data-pf-type="Column"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-eeea873d"><a href="{{ product.metafields.warranty_page.warranty_page | prepend: '/pages/' | prepend: shop.secure_url }}">
+	<img src="{{ product.metafields.icon.icon-warranty }}" class="product-five-icons" alt="">
+</a>
+<style>
+  .product-five-icons {
+	width: 100%;
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  }
+  
+  @media (max-width: 991px) {
+	.product-five-icons {
+	  max-width: 55px !important;
+	}	
+  }  
+</style></div></div></div><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--3 pf-c-md--3 pf-c-lg--3"><div class="sc-pkUyL fTyjzF pf-00e18890" data-pf-type="Column"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-873d2f17"><a href="{{ product.metafields.compliance_page.compliance_page | prepend: '/pages/' | prepend: shop.secure_url }}">
+	<img src="{{ product.metafields.icon.icon-compliance }}" class="product-five-icons" alt="">
+</a>
+</div></div></div><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--3 pf-c-md--3 pf-c-lg--3"><div class="sc-pkUyL fTyjzF pf-88901d89" data-pf-type="Column"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-2f17c651"><a href="{{ product.metafields.board_variance_page.board_variance_page | prepend: '/pages/' | prepend: shop.secure_url }}">
+	<img src="{{ product.metafields.icon.icon-variance }}" class="product-five-icons" alt="">
+</a>
+</div></div></div><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--3 pf-c-md--3 pf-c-lg--3"><div class="sc-pkUyL fTyjzF pf-1d899b08" data-pf-type="Column"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-c65163dc"><a href="{{ product.metafields.sensitivity_page.sensitivity_page | prepend: '/pages/' | prepend: shop.secure_url }}">
+	<img src="{{ product.metafields.icon.icon-sensitivity }}" class="product-five-icons" alt="">
+</a>
+</div></div></div><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--3 pf-c-md--3 pf-c-lg--3"><div class="sc-pkUyL fTyjzF pf-9b088d66" data-pf-type="Column"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-63dc06db"><a href="{{ product.metafields.radiant_approve_page.radiant_approve_page | prepend: '/pages/' | prepend: shop.secure_url }}">
+	<img src="{{ product.metafields.icon.icon-Radiant }}" class="product-five-icons" alt="">
+</a>
+</div></div></div></div></div></div><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--6 pf-c-md--4 pf-c-lg--4"><div class="sc-pkUyL fTyjzF pf-f6cc8ec3" data-pf-type="Column"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-06db062f"><!-- include 'wishlist-button-product' with '{{ product.id }}' -->
+<style>
+  .product-page.icon {
+	width: 40px;
+	height: 40px;
+	vertical-align: middle;
+	font-size: 25px;
+	padding: 5px;
+	border: 0px solid white;
+	display: inline-block;
+	cursor: pointer;
+	margin-left: 5px;
+	margin-right: 5px;
+  }
+  #add-cart-icon {
+	margin-right: 0 !important;
+  }
+  #add-cart-icon:before {
+	font-family: "Font Awesome 5 Pro";
+	font-weight: 900;
+  }
+  button.wk-button-product {
+	margin: 0 !important;
+  }
+  button.wk-button-product .wk-icon {
+	top: 0;
+	margin: 0 10px 0 0;
+	width: 28px;
+    height: 28px;
+  }
+  
+</style></div><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-9c766d18">{% assign item_added_fav = false %}
+{% for item in cart.items %}
+  {% if item.id == product.variants.first.id %}
+	{% assign item_added_fav = true %}
+	{% break %}
+  {% endif %}
+{% endfor %}
+
+<form method="post" action="/cart/add" class="single-product-cart">
+  <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+  <input min="1" type="number" name="quantity" class="quantity" value="1" style="display:none;">
+  <button type="submit" class="collection-add-to-cart">
+	{% if item_added_fav == true %}
+	<i class="fas fa-shopping-bag" id="shopping-bag"></i>
+	{% else %}
+	<i class="fal fa-shopping-bag" id="shopping-bag"></i>
+	{% endif %}
+  </button>
+</form>
+
+<style>
+  button.collection-add-to-cart {
+	border: none !important;
+    padding: 0 !important;
+    font-size: 28px !important;
+  }
+  button.collection-add-to-cart:hover {
+	color: #000000;
+	background-color: #ffffff;
+  }
+  form.single-product-cart .ajaxified-cart-feedback.success {
+	display: none;
+  }
+</style></div></div></div></div></div></div><div data-container="false" class="sc-pZopv bjKdkd pf-b9a87b52" data-pf-type="Section"><div class="sc-pQQXS iWCqut"><div class="sc-qPjXN eYzxUD pf-7b8eb9a8 pf-r pf-r-eh" data-pf-type="Row" style="--pf-s-lg:0px; --pf-s-md:0px; --pf-s-sm:0px; --pf-s-xs:0px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--7 pf-c-lg--7"><div class="sc-pkUyL fTyjzF pf-7b5276b2" data-pf-type="Column"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-d4ed7ab3"><div class="product-slider">
+  <div class="slideshow-container">
+	
+	{% for image in product.images %}
+	<div class="mySlides fade" style="background-image: url('{{ image.src | product_img_url: 'x1000' }}')">
+	</div>
+	{% endfor %}
+
+  </div>
+
+  <div class="item-dot">
+	<div class="item-dot-number">
+	  {% for image in product.images %}
+		{% assign t = i | plus: 1 %}
+		{% assign i = t %}
+	  	<span class="dot" onclick="currentSlide({{ i }})"></span>
+	  {% endfor %}
+	</div>
+  </div>
+</div>
+
+<style>
+  .pf-d4ed7ab3 {
+	position: relative;
+    width: 100%;
+    padding-top: 80%;
+  }
+  .product-slider {
+	position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+  }
+  .mySlides {
+	display: none;
+	height: 100%;
+	background-size: 100% 100%;
+    background-repeat: round;
+  }
+
+  /* Slideshow container */
+  .slideshow-container {
+	width: 100%;
+	position: relative;
+	margin: auto;
+	height: 100%;
+  }
+
+  /* Next & previous buttons */
+  .prev,
+  .next {
+	cursor: pointer;
+	width: auto;
+	color: #000000;
+	font-weight: bold;
+	font-size: 18px;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
+	text-transform: uppercase;
+  }
+
+  /* Position the "next button" to the right */
+  .next {
+	border-radius: 3px 0 0 3px;
+  }
+
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+	color: #ffffff;
+  }
+
+  /* The dots/bullets/indicators */
+  .dot {
+	cursor: pointer;
+	height: 20px;
+	width: 20px;
+	margin: 0 2px;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+	font-family: Raleway;
+	font-weight: 700;
+	font-size: 18px;
+	border: 1px solid #ffffff;
+  }
+
+  .active.dot,
+  .dot:hover {
+	background: #ffffff;
+  }
+
+  /* Fading animation */
+  .fade {
+	-webkit-animation-name: fade;
+	-webkit-animation-duration: 1.5s;
+	animation-name: fade;
+	animation-duration: 1.5s;
+  }
+
+  @-webkit-keyframes fade {
+	from {
+	  opacity: .4
+	}
+
+	to {
+	  opacity: 1
+	}
+  }
+
+  @keyframes fade {
+	from {
+	  opacity: .4
+	}
+
+	to {
+	  opacity: 1
+	}
+  }
+
+  /* On smaller screens, decrease text size */
+  @media only screen and (max-width: 300px) {
+
+	.prev,
+	.next,
+	.text {
+	  font-size: 11px
+	}
+  }
+
+  .item-dot {
+	text-align: center;
+	position: absolute;
+	bottom: 5%;
+	width: 100%;
+  }
+
+  .gallery-image {
+	width: 100%;
+	max-height: 100%;
+	vertical-align: middle;
+  }
+</style>
+
+<script>
+
+  var slideIndex = 1;
+  showSlides(slideIndex);
+
+  function plusSlides(n) {
+	showSlides(slideIndex += n);
+  }
+
+  function currentSlide(n) {
+	showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+	var i;
+	var slides = document.getElementsByClassName("mySlides");
+	var dots = document.getElementsByClassName("dot");
+	if (n > slides.length) { slideIndex = 1 }
+	if (n < 1) { slideIndex = slides.length }
+	for (i = 0; i < slides.length; i++) {
+	  slides[i].style.display = "none";
+	}
+	for (i = 0; i < dots.length; i++) {
+	  dots[i].className = dots[i].className.replace(" active", "");
+	}
+	slides[slideIndex - 1].style.display = "block";
+	dots[slideIndex - 1].className += " active";
+  }
+</script></div></div></div><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--5 pf-c-lg--5"><div class="sc-pkUyL fTyjzF pf-76b2a0b9" id="product-header" data-pf-type="Column"><div class="sc-qPjXN eYzxUD pf-c6c11186 pf-r pf-r-eh" id="product-metadata" data-pf-type="Row" style="--pf-s-lg:0px; --pf-s-md:0px; --pf-s-sm:15px; --pf-s-xs:0px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--5 pf-c-sm--4 pf-c-md--4 pf-c-lg--4"><div class="sc-pkUyL fTyjzF pf-e0e86771" data-pf-type="Column"><img sizes="(min-width: 992px) 1200px, (min-width: 768px) and (max-width: 991px) 800px, 400px" data-srcset="https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-ff66a2a4--LOGOMARKcutprod-gallery-01.png?v=1599993976 1200w, https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-ff66a2a4--LOGOMARKcutprod-gallery-01_800x898.png?v=1599993976&resized 800w, https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-ff66a2a4--LOGOMARKcutprod-gallery-01_400x449.png?v=1599993976&resized 400w" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="sc-qZtVr dLIPjF pf-56ff66a2 pf-img-lazy" data-pf-type="Image2"></div></div><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--7 pf-c-sm--8 pf-c-md--8 pf-c-lg--8"><div class="sc-pkUyL fTyjzF pf-6771c6c1" data-pf-type="Column"><h3 data-product-type="title" data-product-id="{{ product.id }}" data-pf-type="ProductText" class="sc-qPzgd jYlxvS pf-52747b80">{{ product.title }}</h3><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-11865274"><h4 class="product-collection-title">
+  {% for collection in product.collections %}
+  {%- comment %}<locksmith:ebb0>{% endcomment -%}
+    {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: collection, subject_parent: product, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+  {%- comment %}</locksmith:ebb0>{% endcomment -%}
+  {% if collection.title contains 'Collection' %}
+  {{collection.title }}
+  {% endif %}
+  {% endfor %}
+</h4></div><div data-show-button="true" data-more="" data-less="" data-product-type="content" data-product-id="{{ product.id }}" data-pf-type="ProductText" class="sc-pcLzI gJGZti pf-7b8056ff">{{ product.content }}</div></div></div></div></div></div></div></div></div><div data-container="false" class="sc-pZopv bjKdkd pf-5bc04846" data-pf-type="Section"><div class="sc-pQQXS iWCqut"><div class="sc-qPjXN eYzxUD pf-280c5bc0 pf-r pf-r-eh" data-pf-type="Row" style="--pf-s-lg:0px; --pf-s-md:0px; --pf-s-sm:0px; --pf-s-xs:0px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-efc4280c" data-pf-type="Column"><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-d57eefc4"><div mode="view" data-pf-type="Tabs2" class="sc-pCOPB fhcpFs pf-0f91d57e"><div data-pf-type="TabsMenu" class="sc-pcZmk fLYRsF pf-88e3dc5f"><button type="button" data-pf-tab-active="true" class="sc-pTHXP eCRKMr pf-760aca79 pf-anchor" data-pf-type="TabHeader"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-51a52904">Specifications</span></button><button type="button" data-pf-tab-active="false" class="sc-pTHXP eCRKMr pf-ca797152 pf-anchor" data-pf-type="TabHeader"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-881a9b0b">Documentation</span></button><button type="button" data-pf-tab-active="false" class="sc-pTHXP eCRKMr pf-715230ab pf-anchor" data-pf-type="TabHeader"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-216e0803">Accessories</span></button></div><div data-pf-type="TabContentWrapper" class="sc-pKLCU LdczL pf-91b50f91"><div data-pf-type="TabsContent" class="sc-qbELi eXHXkH pf-ac1191b5"><div class="sc-qPjXN eYzxUD pf-052fd574 pf-r" data-pf-type="Row" style="--pf-s-lg:15px; --pf-s-md:15px; --pf-s-sm:5px; --pf-s-xs:5px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--6 pf-c-md--4 pf-c-lg--4"><div class="sc-pkUyL fTyjzF pf-c15ee8ff" data-pf-type="Column"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-e89079d6"><table class="product-data">
+  <tbody><tr>
+    <td class="product-attribute-header">Product Number</td>
+    <td class="product-attribute">{%- assign current_variant = product.selected_or_first_available_variant -%}
+<span>{{ current_variant.sku }}</span></td>
+  </tr>
+  <tr>
+    <td class="product-attribute-header">Species</td>
+    <td class="product-attribute">{{product.metafields.woodspecies.woodspecies}}</td>
+  </tr>
+  <tr>
+    <td class="product-attribute-header">Plank Width</td>
+    <td class="product-attribute">{{product.metafields.plankwidth.plankwidth}}</td>
+  </tr>
+  <tr>
+    <td class="product-attribute-header">Length</td>
+    <td class="product-attribute">{{product.metafields.planklength.planklength}}</td>
+  </tr>
+  <tr>
+    <td class="product-attribute-header">Thickness</td>
+    <td class="product-attribute">{{product.metafields.plankthickness.plankthickness}}</td>
+  </tr>
+  <tr>
+    <td class="product-attribute-header">Veneer Thickness</td>
+    <td class="product-attribute">{{product.metafields.veneerthickness.veneerthickness}}</td>
+  </tr>
+</tbody></table></div></div></div><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--6 pf-c-md--4 pf-c-lg--4"><div class="sc-pkUyL fTyjzF pf-e8fffefc" data-pf-type="Column"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-27ebaee8"><table class="product-data">
+  <tbody><tr>
+    <td class="product-attribute-header">Finishing Coat</td>
+    <td class="product-attribute">{{product.metafields.finishcoat.finishcoat}}</td>
+  </tr>
+  <tr>
+    <td class="product-attribute-header">Texture</td>
+    <td class="product-attribute">{{product.metafields.texture.texture}}</td>
+  </tr>
+  <tr>
+    <td class="product-attribute-header">Gloss</td>
+    <td class="product-attribute">{{product.metafields.gloss.gloss}}</td>
+  </tr>
+  <tr>
+    <td class="product-attribute-header">Install</td>
+    <td class="product-attribute">{{product.metafields.install.install}}</td>
+  </tr>
+  <tr>
+    <td class="product-attribute-header">Coverage/Box</td>
+    <td class="product-attribute">{{product.metafields.Coverage.Coverage}}</td>
+  </tr>
+    <tr>
+    <td class="product-attribute-header">Stock Type</td>
+    <td class="product-attribute">{{product.metafields.stock.type}}</td>
+  </tr>
+</tbody></table>
+
+
+</div></div></div><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--4 pf-c-lg--4"><div class="sc-pkUyL fTyjzF pf-fefc052f" data-pf-type="Column"><img sizes="(min-width: 992px) 1200px, (min-width: 768px) and (max-width: 991px) 800px, 400px" data-srcset="https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-081946e8--LogoDesigned-in-CanadaDec2020black.svg?v=1607971999 1200w, https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-081946e8--LogoDesigned-in-CanadaDec2020black.svg?v=1607971999 800w, https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-081946e8--LogoDesigned-in-CanadaDec2020black.svg?v=1607971999 400w" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="sc-qZtVr dLIPjF pf-cba036b1 pf-img-lazy" data-pf-type="Image2"><a id="estimate-quantities-btn" data-pf-type="Button" class="sc-pZdvY kuwSuz pf-5a939e2c"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-9a8302b3">Estimate Quantities</span></a><a href="{{product.metafields.download.download-images}}" target="_self" id="download-images" data-pf-type="Button" class="sc-pZdvY kuwSuz pf-d0c6c15e"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-37f0d0c6">Download Images</span></a></div></div></div></div><div data-pf-type="TabsContent" class="sc-qbELi eXHXkH pf-e5688d59"><div class="sc-qPjXN eYzxUD pf-62af1c6e pf-r pf-r-eh" data-pf-type="Row" style="--pf-s-lg:15px; --pf-s-md:15px; --pf-s-sm:15px; --pf-s-xs:15px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--3 pf-c-md--3 pf-c-lg--3"><div class="sc-pkUyL fTyjzF pf-a2e12c4d" data-pf-type="Column"><a data-action="url" href="{{product.metafields.download.download-specsheet}}" target="_blank" data-pf-type="Image2" class="sc-pzLqt jakOsZ pf-1c6eb43c"><img sizes="(min-width: 992px) 1200px, (min-width: 768px) and (max-width: 991px) 800px, 400px" data-srcset="https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-6eb43c04--ful-spec-dl.png?v=1600018657 1200w, https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-6eb43c04--ful-spec-dl.png?v=1600018657 800w, https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-6eb43c04--ful-spec-dl.png?v=1600018657 400w" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="sc-qZtVr dLIPjF pf-img-lazy"></a></div></div><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--3 pf-c-md--3 pf-c-lg--3"><div class="sc-pkUyL fTyjzF pf-8820071d" data-pf-type="Column"><a data-action="url" href="{{product.metafields.download.download-installation}}" target="_blank" data-pf-type="Image2" class="sc-pzLqt jakOsZ pf-cb968820"><img sizes="(min-width: 992px) 1200px, (min-width: 768px) and (max-width: 991px) 800px, 400px" data-srcset="https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-20071d6a--how-to-install-img.png?v=1600018799 1200w, https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-20071d6a--how-to-install-img.png?v=1600018799 800w, https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-20071d6a--how-to-install-img.png?v=1600018799 400w" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="sc-qZtVr dLIPjF pf-img-lazy"></a></div></div><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--3 pf-c-md--3 pf-c-lg--3"><div class="sc-pkUyL fTyjzF pf-43eda5aa" data-pf-type="Column"><a data-action="url" href="{{product.metafields.download.download-care}}" target="_blank" data-pf-type="Image2" class="sc-pzLqt jakOsZ pf-9f2a43ed"><img sizes="(min-width: 992px) 1200px, (min-width: 768px) and (max-width: 991px) 800px, 400px" data-srcset="https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-071d6a2b--care-main-img.png?v=1600018938 1200w, https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-071d6a2b--care-main-img.png?v=1600018938 800w, https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-071d6a2b--care-main-img.png?v=1600018938 400w" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="sc-qZtVr dLIPjF pf-img-lazy"></a></div></div><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--3 pf-c-md--3 pf-c-lg--3"><div class="sc-pkUyL fTyjzF pf-87f363ec" data-pf-type="Column"><a data-action="url" href="{{product.metafields.download.download-warranty}}" target="_blank" data-pf-type="Image2" class="sc-pzLqt jakOsZ pf-f0a087f3"><img sizes="(min-width: 992px) 1200px, (min-width: 768px) and (max-width: 991px) 800px, 400px" data-srcset="https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-1d6a2b2a--warranty-info.png?v=1600018984 1200w, https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-1d6a2b2a--warranty-info.png?v=1600018984 800w, https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-1d6a2b2a--warranty-info.png?v=1600018984 400w" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="sc-qZtVr dLIPjF pf-img-lazy"></a></div></div></div></div><div data-pf-type="TabsContent" class="sc-qbELi eXHXkH pf-8d59760a"><div class="sc-qPjXN eYzxUD pf-5e0be61c pf-r pf-r-eh" data-pf-type="Row" style="--pf-s-lg:15px; --pf-s-md:15px; --pf-s-sm:15px; --pf-s-xs:15px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--8 pf-c-lg--8"><div class="sc-pkUyL fTyjzF pf-2b2ab5a3" id="product-att-mouldings" data-pf-type="Column"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-e61cd07e"><table class="product-data desktop">
+  <tbody><tr>
+    <td class="product-mouldings-img"><img src="https://cdn.shopify.com/s/files/1/0422/9274/0261/files/stair-nose-moulding-01.png?v=1598291840"></td>
+	<td class="product-mouldings-img"><img src="https://cdn.shopify.com/s/files/1/0422/9274/0261/files/t-moulding-01.png?v=1598291840"></td>
+	<td class="product-mouldings-img"><img src="https://cdn.shopify.com/s/files/1/0422/9274/0261/files/base-shoe-moulding-01-e1585057253769.png?v=1598291840"></td>
+	<td class="product-mouldings-img"><img src="https://cdn.shopify.com/s/files/1/0422/9274/0261/files/flush-reducer-moulding-01.png?v=1598291840"></td>
+    <td class="product-mouldings-img"><img src="https://cdn.shopify.com/s/files/1/0422/9274/0261/files/end-cap-moulding-01.png?v=1598291840"></td>
+  </tr>
+  <tr>
+    <td class="product-mouldings-title">STAIR NOSE</td>
+	<td class="product-mouldings-title">T-MOULDING</td>
+	<td class="product-mouldings-title">BASE SHOE</td>
+	<td class="product-mouldings-title">FLUSH REDUCER</td>
+    <td class="product-mouldings-title">END CAP</td>
+  </tr>
+</tbody></table>
+
+<table class="product-data mobile">
+  <tbody><tr>
+    <td class="product-mouldings-img">
+	  <img src="https://cdn.shopify.com/s/files/1/0422/9274/0261/files/stair-nose-moulding-01.png?v=1598291840">
+	</td>
+  </tr>
+  <tr>
+    <td class="product-mouldings-title">STAIR NOSE</td>
+  </tr>
+  <tr>
+	<td class="product-mouldings-img">
+	  <img src="https://cdn.shopify.com/s/files/1/0422/9274/0261/files/t-moulding-01.png?v=1598291840">
+	</td>
+  </tr>
+  <tr>
+	<td class="product-mouldings-title">T-MOULDING</td>
+  </tr>
+  <tr>
+	<td class="product-mouldings-img">
+	  <img src="https://cdn.shopify.com/s/files/1/0422/9274/0261/files/base-shoe-moulding-01-e1585057253769.png?v=1598291840">
+	</td>
+  </tr>
+  <tr>
+	<td class="product-mouldings-title">BASE SHOE</td>
+  </tr>
+  <tr>
+	<td class="product-mouldings-img">
+	  <img src="https://cdn.shopify.com/s/files/1/0422/9274/0261/files/flush-reducer-moulding-01.png?v=1598291840">
+	</td>
+  </tr>
+  <tr>
+	<td class="product-mouldings-title">FLUSH REDUCER</td>
+  </tr>
+  <tr>
+    <td class="product-mouldings-img">
+	  <img src="https://cdn.shopify.com/s/files/1/0422/9274/0261/files/end-cap-moulding-01.png?v=1598291840">
+	</td>
+  </tr>  
+  <tr>
+    <td class="product-mouldings-title">END CAP</td>
+  </tr>
+</tbody></table>
+
+<style>
+  @media (max-width: 600px) {
+	.product-data.desktop {
+	  display:none;
+	}
+	.product-data.mobile .product-mouldings-img {
+	  width: 100%;
+	}
+  }
+  @media (min-width: 601px) {
+	.product-data.mobile {
+	  display:none;
+	}
+  }
+</style></div><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-d07ee61b"><table class="product-data desktop" style="margin: 20px 0px;">
+  <tbody><tr>
+    <td class="product-attribute" style="width: 70%;">DISCLAIMER: Mouldings are made to order. For more information, please download spec sheet and contact us for ordering. <u>Learn More</u>.</td>
+	<td>
+	  <div class="product-mouldings-specs">
+		<a href="https://cdn.shopify.com/s/files/1/0422/9274/0261/files/PRAVADA_FLOORS_-_Specification-Sheet_Artistique_Canvas_Le-Soleil_MOULDINGS.pdf?v=1600020899" target="_blank" style="color: #ffffff">Moulding Specs</a>
+	  </div>
+	</td>
+  </tr>
+</tbody></table>
+
+<table class="product-data mobile" style="margin: 20px 0px;">
+  <tbody><tr>
+    <td class="product-attribute" style="width: 100%;">DISCLAIMER: Mouldings are made to order. For more information, please download spec sheet and contact us for ordering. <u>Learn More</u>.</td>
+  </tr>
+  <tr>
+	<td>
+	  <div class="product-mouldings-specs">
+		<a href="https://cdn.shopify.com/s/files/1/0422/9274/0261/files/PRAVADA_FLOORS_-_Specification-Sheet_Artistique_Canvas_Le-Soleil_MOULDINGS.pdf?v=1600020899" target="_blank" style="color: #ffffff">Moulding Specs</a>
+	  </div>
+	</td>
+  </tr>
+</tbody></table></div></div></div><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--4 pf-c-lg--4"><div class="sc-pkUyL fTyjzF pf-b5a35e0b" id="product-underlay" data-pf-type="Column"><a data-action="url" href="/pages/soundblocker" target="_self" data-pf-type="Image2" class="sc-pzLqt jakOsZ pf-d1cf095a"><img sizes="(min-width: 992px) 1200px, (min-width: 768px) and (max-width: 991px) 800px, 400px" data-srcset="https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-cf095ac8--soundlocker-logo.png?v=1600061537 1200w, https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-cf095ac8--soundlocker-logo_800x290.png?v=1600061537&resized 800w, https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-cf095ac8--soundlocker-logo_400x145.png?v=1600061537&resized 400w" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="sc-qZtVr dLIPjF pf-img-lazy"></a><p data-pf-type="Paragraph2" class="sc-pkvvt cbrLgP pf-f1b027b7"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-52f6f1b0">Fanfold non-allergenic, soundproofing and moisture barrier underlayment. <span style="text-decoration-line: underline;"><a href="/pages/soundblocker">Learn More</a></span>.</span></p></div></div></div></div></div></div></div></div></div></div></div></div><div data-container="false" class="sc-pZopv bjKdkd pf-ec554000" data-pf-type="Section"><div class="sc-pQQXS iWCqut"><div class="sc-qPjXN eYzxUD pf-249eec55 pf-r pf-r-align--cm pf-r-ew" data-pf-type="Row" style="--pf-s-lg:0px; --pf-s-md:0px; --pf-s-sm:0px; --pf-s-xs:0px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-48d0249e" data-pf-type="Column"><img sizes="(min-width: 992px) 1200px, (min-width: 768px) and (max-width: 991px) 800px, 400px" data-srcset="https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-5f23382f--productENGNUDE-ROCHEHaute-Couleur-CollectionPravada-Floors96dpi6.jpg?v=1600063977 1200w, https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-5f23382f--productENGNUDE-ROCHEHaute-Couleur-CollectionPravada-Floors96dpi6_800x600.jpg?v=1600063977&resized 800w, https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-5f23382f--productENGNUDE-ROCHEHaute-Couleur-CollectionPravada-Floors96dpi6_400x300.jpg?v=1600063977&resized 400w" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="sc-qZtVr dLIPjF pf-495f2338 pf-img-lazy" data-pf-type="Image2"></div></div><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-20b2495f" data-pf-type="Column"><p data-pf-type="Paragraph2" class="sc-pkvvt cbrLgP pf-89bc8ff6"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-d99589bc">Ready For Your Next Project?</span></p><p data-pf-type="Paragraph2" class="sc-pkvvt cbrLgP pf-66ad4107"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-b23366ad">Get Inspired!</span></p><p data-pf-type="Paragraph2" class="sc-pkvvt cbrLgP pf-35018b14"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-a3453501">View projects featuring Pravada floors</span></p><a href="/blogs/media-projects/" target="_self" data-pf-type="Button" class="sc-pZdvY kuwSuz pf-742c2c89"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-c6e8742c">Projects</span></a></div></div></div></div></div><div data-container="false" class="sc-pZopv bjKdkd pf-52b55198" data-pf-type="Section"><div class="sc-pQQXS iWCqut"><div class="sc-qPjXN eYzxUD pf-2ee652b5 pf-r pf-r-eh" data-pf-type="Row" style="--pf-s-lg:0px; --pf-s-md:0px; --pf-s-sm:0px; --pf-s-xs:0px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-891e2ee6" data-pf-type="Column"><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-1703891e"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-5198e1db"><svg id="logomark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 79.43">
+  <path d="M100,34.47c-.12.7-.22,1.4-.37,2.09a15.3,15.3,0,0,1-6.82,10.23A15.69,15.69,0,0,1,85.32,49,17,17,0,0,1,76.82,47a1.57,1.57,0,0,0-.6-.16H58.63a.71.71,0,0,0-.53.23q-3.78,5.55-7.52,11.11a.57.57,0,0,0-.07.17h42.4v4.37H91V60.36H58.73V71.13H77.58v2H58.73V88.05H62v2H52.78v-2h3.94V73.14H52.77v-2h3.95V60.35l-.44,0H49.51a.71.71,0,0,0-.66.36c-2.35,3.5-4.75,7-7.06,10.49C40.34,73.38,39,75.69,37.65,78a36,36,0,0,1-7,8.48,17.45,17.45,0,0,1-7.73,4.12l-1,.23h-3a.55.55,0,0,0-.15-.08A12.62,12.62,0,0,1,11,86.51a19,19,0,0,1-5-13.65,13.74,13.74,0,0,1,3.15-8.71,14.31,14.31,0,0,1,7.85-4.63A20.68,20.68,0,0,0,19.42,59a9.85,9.85,0,0,1,3.39-.64h24.8a.66.66,0,0,0,.65-.29q3.66-5.46,7.35-10.9a3.2,3.2,0,0,0,.19-.34H0v-2H8.33V35H7.76L0,35V33a1.26,1.26,0,0,0,.27,0c2.59,0,5.17,0,7.76,0a1.57,1.57,0,0,0,.3,0V13.34l-.34,0H.31a1.67,1.67,0,0,0-.31,0v-2H45.89l1,.23a8.82,8.82,0,0,1,5.89,5.13,15.4,15.4,0,0,1,1.14,9.67,12.81,12.81,0,0,1-1.52,4.18A8.48,8.48,0,0,1,44.58,35H10.35V44.8H56.84a.76.76,0,0,0,.54-.28q5.16-7.59,10.29-15.2c1.5-2.21,2.9-4.51,4.56-6.61,3.28-4.14,7.43-6.71,12.93-6.51a14.8,14.8,0,0,1,7.34,2.07,15.55,15.55,0,0,1,7,10.2c.2.84.32,1.69.47,2.54ZM10.34,33.06h.72q16.73,0,33.45,0a6.54,6.54,0,0,0,6.21-3.67,13.09,13.09,0,0,0,.49-11.22,8.25,8.25,0,0,0-2.52-3.52,7.18,7.18,0,0,0-4.77-1.35q-16.55,0-33.08,0l-.5,0Zm6.14,28.65a.35.35,0,0,0-.14,0,11.22,11.22,0,0,0-7.46,6.6,14.35,14.35,0,0,0-.65,8.57,16.07,16.07,0,0,0,5.64,9.6A9.83,9.83,0,0,0,22,88.67a14.43,14.43,0,0,0,6.36-3,31,31,0,0,0,7.24-8.23c1.56-2.5,3-5.07,4.63-7.54,1.88-2.9,3.86-5.73,5.8-8.59l.6-.92H27l.4.35a6.53,6.53,0,0,1,1.25,8,6.8,6.8,0,0,1-6.32,3.23c-4.49-.08-7-4-6.42-8A19.09,19.09,0,0,1,16.48,61.71ZM74.21,44.79l-.57-.74a7.06,7.06,0,0,1-.48-.73,6.76,6.76,0,0,1,.08-7.58A7.48,7.48,0,0,1,86.33,37.8,6.74,6.74,0,0,1,84.65,45a6.66,6.66,0,0,1-3.21,1.64l.42.14a11.58,11.58,0,0,0,4.76.17,12.06,12.06,0,0,0,9-5.63A15.85,15.85,0,0,0,96.16,25a12.62,12.62,0,0,0-14.71-6.46,14.48,14.48,0,0,0-8.23,6.11c-4.53,6.57-9,13.2-13.42,19.81a1.57,1.57,0,0,0-.14.29Zm4.49,0v0c.66,0,1.34,0,2-.14a4.41,4.41,0,0,0,4-4.7A5.22,5.22,0,0,0,78,34.84a4.77,4.77,0,0,0-4,5,6.56,6.56,0,0,0,2,4,2.37,2.37,0,0,0,2.24.91A1.45,1.45,0,0,1,78.7,44.8ZM21.91,60.92c-.42,0-.85,0-1.27,0a2,2,0,0,0-1.19.38A5.13,5.13,0,0,0,19.59,69a4.91,4.91,0,0,0,5.11.46A4.24,4.24,0,0,0,26.64,63,4.8,4.8,0,0,0,21.91,60.92Z" transform="translate(0 -11.35)"></path>
+</svg>
+<style>
+  svg#logomark {
+	width: 100px;
+  }
+  @media (max-width: 800px) {
+	svg#logomark {
+	  width: 50px;
+	}
+  }
+</style></div></div></div></div></div><div class="sc-qPjXN eYzxUD pf-6e26ffd9 pf-r pf-r-eh" data-pf-type="Row" style="--pf-s-lg:0px; --pf-s-md:0px; --pf-s-sm:0px; --pf-s-xs:0px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-0b616e26" data-pf-type="Column"><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-f5340b61"><p data-pf-type="Paragraph2" class="sc-pkvvt cbrLgP pf-483b7f3b"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-b466483b">You might also like</span></p></div></div></div></div><div class="sc-qPjXN eYzxUD pf-e73197da pf-r pf-r-eh" data-pf-type="Row" style="--pf-s-lg:0px; --pf-s-md:0px; --pf-s-sm:0px; --pf-s-xs:0px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--6 pf-c-md--3 pf-c-lg--3"><div class="sc-pkUyL fTyjzF pf-0f6be731" data-pf-type="Column"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-4285c4f2">
+{% for collection in product.collections %}
+    {%- comment %}<locksmith:aebc>{% endcomment -%}
+      {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: collection, subject_parent: product, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+    {%- comment %}</locksmith:aebc>{% endcomment -%}
+    {% if collection.title contains 'Engineered' %}
+	  {% capture index %}{{ 'now' | date: '%S' | times: collection.products.size | divided_by: 60 }}{% endcapture %}	  
+	  {% for related-product in collection.products offset:index limit: 1 %}
+		  {%- comment %}<locksmith:6313>{% endcomment -%}
+		    {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: related-product, subject_parent: collection, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+		  {%- comment %}</locksmith:6313>{% endcomment -%}
+		  <div class="related-product" style="position: relative; background-image: url('{{related-product.featured_image | img_url: 'master'}}')" onclick="window.location='{{related-product.url}}';">
+			{% if related-product.metafields.product_label.product_label | strip != "" %}
+			  <div style="position: relative;">
+			  <p class="product-label">
+				{{related-product.metafields.product_label.product_label}}
+			  </p>
+			</div>
+			{% endif %}
+
+			<div class="related-product-info">
+			  <div class="related-product-title">
+				<a href="{{related-product.url}}">
+					{{related-product.title}}
+				</a>
+			  </div>
+			  <div class="related-product-collection">
+				{% for related-collection in related-product.collections %}
+				  {%- comment %}<locksmith:4ece>{% endcomment -%}
+				    {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: related-collection, subject_parent: related-product, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+				  {%- comment %}</locksmith:4ece>{% endcomment -%}
+				  {% if related-collection.title contains 'Collection' %}
+					<a href="{{related-collection.url}}">
+					  {{related-collection.title}}
+					</a>
+				  {% endif %}
+				{% endfor %}
+			  </div>
+			</div>  
+		  </div>
+	  {% endfor %}
+    {% endif %}
+{% endfor %}
+
+<style>
+  .related-product {
+	height: 485px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+	cursor: pointer;
+  }
+  @media (max-width: 1200px) {
+	.related-product {
+	  height: 365px;
+	}
+  }
+  .related-product:hover {
+	transform: scale(1.1);
+  }
+  .product-label {
+	font-family: "Raleway", Sans-serif;
+	text-transform: uppercase;
+	background-color: #000000;
+	color: #ffffff;
+	font-size: 12px;
+	width: 100px;
+	font-weight: 500;
+	padding: 3px;
+	position: absolute;
+	top: 40px;
+	transform: rotate(-90deg);
+	text-align: center;
+	margin-bottom: 0 !important;
+	left: 12px;
+	display: inline-block;
+  }
+  .related-product-info {
+	background-color: rgba(255, 255, 255, 0.32);
+	padding: 10px;
+	bottom: 50px;
+	position: absolute;
+	width: 100%;
+  }
+  .related-product-title {
+	font-family: "Raleway", Sans-serif;
+	text-transform: uppercase;
+	color: #000000;
+	font-size: 16px;
+	font-weight: 700;
+	padding: 0 0 5px 0;
+  }
+   .related-product-collection {
+	font-family: "Raleway", Sans-serif;
+	color: #000000;
+	font-size: 16px;
+	font-weight: 400;
+  }
+</style></div></div></div><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--6 pf-c-md--3 pf-c-lg--3"><div class="sc-pkUyL fTyjzF pf-c0f1dc93" data-pf-type="Column"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-ebd5c0f1">
+{% for collection in product.collections %}
+    {%- comment %}<locksmith:1c4c>{% endcomment -%}
+      {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: collection, subject_parent: product, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+    {%- comment %}</locksmith:1c4c>{% endcomment -%}
+    {% if collection.title contains 'Engineered' %}
+	  {% capture index %}{{ 'now' | date: '%S' | times: collection.products.size | divided_by: 60 }}{% endcapture %}
+		{% assign x-index = index | plus: 1 | modulo: collection.products.size %}
+	  {% for related-product in collection.products offset:x-index limit: 1 %}
+		  {%- comment %}<locksmith:53a0>{% endcomment -%}
+		    {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: related-product, subject_parent: collection, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+		  {%- comment %}</locksmith:53a0>{% endcomment -%}
+		  <div class="related-product" style="position: relative; background-image: url('{{related-product.featured_image | img_url: 'master'}}')" onclick="window.location='{{related-product.url}}';">
+			{% if related-product.metafields.product_label.product_label | strip != "" %}
+			  <div style="position: relative;">
+			  <p class="product-label">
+				{{related-product.metafields.product_label.product_label}}
+			  </p>
+			</div>
+			{% endif %}
+
+			<div class="related-product-info">
+			  <div class="related-product-title">
+				<a href="{{related-product.url}}">
+					{{related-product.title}}
+				</a>
+			  </div>
+			  <div class="related-product-collection">
+				{% for related-collection in related-product.collections %}
+				  {%- comment %}<locksmith:55b1>{% endcomment -%}
+				    {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: related-collection, subject_parent: related-product, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+				  {%- comment %}</locksmith:55b1>{% endcomment -%}
+				  {% if related-collection.title contains 'Collection' %}
+					<a href="{{related-collection.url}}">
+					  {{related-collection.title}}
+					</a>
+				  {% endif %}
+				{% endfor %}
+			  </div>
+			</div>  
+		  </div>
+	  {% endfor %}
+    {% endif %}
+{% endfor %}
+</div></div></div><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--6 pf-c-md--3 pf-c-lg--3"><div class="sc-pkUyL fTyjzF pf-ef7756a7" data-pf-type="Column"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-a0a2ef77">
+{% for collection in product.collections %}
+    {%- comment %}<locksmith:0cc4>{% endcomment -%}
+      {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: collection, subject_parent: product, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+    {%- comment %}</locksmith:0cc4>{% endcomment -%}
+    {% if collection.title contains 'Engineered' %}
+	  {% capture index %}{{ 'now' | date: '%S' | times: collection.products.size | divided_by: 60 }}{% endcapture %}
+		{% assign x-index = index | plus: 2 | modulo: collection.products.size %}
+	  {% for related-product in collection.products offset:x-index limit: 1 %}
+		  {%- comment %}<locksmith:2201>{% endcomment -%}
+		    {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: related-product, subject_parent: collection, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+		  {%- comment %}</locksmith:2201>{% endcomment -%}
+		  <div class="related-product" style="position: relative; background-image: url('{{related-product.featured_image | img_url: 'master'}}')" onclick="window.location='{{related-product.url}}';">
+			{% if related-product.metafields.product_label.product_label | strip != "" %}
+			  <div style="position: relative;">
+			  <p class="product-label">
+				{{related-product.metafields.product_label.product_label}}
+			  </p>
+			</div>
+			{% endif %}
+
+			<div class="related-product-info">
+			  <div class="related-product-title">
+				<a href="{{related-product.url}}">
+					{{related-product.title}}
+				</a>
+			  </div>
+			  <div class="related-product-collection">
+				{% for related-collection in related-product.collections %}
+				  {%- comment %}<locksmith:2e35>{% endcomment -%}
+				    {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: related-collection, subject_parent: related-product, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+				  {%- comment %}</locksmith:2e35>{% endcomment -%}
+				  {% if related-collection.title contains 'Collection' %}
+					<a href="{{related-collection.url}}">
+					  {{related-collection.title}}
+					</a>
+				  {% endif %}
+				{% endfor %}
+			  </div>
+			</div>  
+		  </div>
+	  {% endfor %}
+    {% endif %}
+{% endfor %}
+</div></div></div><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--6 pf-c-md--3 pf-c-lg--3"><div class="sc-pkUyL fTyjzF pf-c7913074" data-pf-type="Column"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-c214c791">
+{% for collection in product.collections %}
+    {%- comment %}<locksmith:6c82>{% endcomment -%}
+      {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: collection, subject_parent: product, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+    {%- comment %}</locksmith:6c82>{% endcomment -%}
+    {% if collection.title contains 'Engineered' %}
+	  {% capture index %}{{ 'now' | date: '%S' | times: collection.products.size | divided_by: 60 }}{% endcapture %}
+		{% assign x-index = index | plus: 3 | modulo: collection.products.size %}
+	  {% for related-product in collection.products offset:x-index limit: 1 %}
+		  {%- comment %}<locksmith:ab45>{% endcomment -%}
+		    {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: related-product, subject_parent: collection, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+		  {%- comment %}</locksmith:ab45>{% endcomment -%}
+		  <div class="related-product" style="position: relative; background-image: url('{{related-product.featured_image | img_url: 'master'}}')" onclick="window.location='{{related-product.url}}';">
+			{% if related-product.metafields.product_label.product_label | strip != "" %}
+			  <div style="position: relative;">
+			  <p class="product-label">
+				{{related-product.metafields.product_label.product_label}}
+			  </p>
+			</div>
+			{% endif %}
+
+			<div class="related-product-info">
+			  <div class="related-product-title">
+				<a href="{{related-product.url}}">
+					{{related-product.title}}
+				</a>
+			  </div>
+			  <div class="related-product-collection">
+				{% for related-collection in related-product.collections %}
+				  {%- comment %}<locksmith:819c>{% endcomment -%}
+				    {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: related-collection, subject_parent: related-product, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+				  {%- comment %}</locksmith:819c>{% endcomment -%}
+				  {% if related-collection.title contains 'Collection' %}
+					<a href="{{related-collection.url}}">
+					  {{related-collection.title}}
+					</a>
+				  {% endif %}
+				{% endfor %}
+			  </div>
+			</div>  
+		  </div>
+	  {% endfor %}
+    {% endif %}
+{% endfor %}
+</div></div></div></div><div class="sc-qPjXN eYzxUD pf-d82e6b20 pf-r pf-r-eh" data-pf-type="Row" style="--pf-s-lg:0px; --pf-s-md:0px; --pf-s-sm:0px; --pf-s-xs:0px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-8170d82e" data-pf-type="Column"><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-74ad8170"><p data-pf-type="Paragraph2" class="sc-pkvvt cbrLgP pf-1edc2a6b"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-81451edc">DISCLAIMER: Wood is a natural product, therefore, each plank has its own unique characteristics. These images may not adequately reflect all the natural features and appearance of the wood, including, but not limited to: mineral streaks, knots and color/tone variations which will appear over a larger area. Product availability and specifications are subject to change without notice. Customers are advised to visit a dealer to view samples in person. To find a dealer, visit pravadafloors.com/dealer-locator. Flooring that has been installed will be deemed inspected and accepted by customer.</span></p></div></div></div></div></div></div><div data-container="false" class="sc-pZopv bjKdkd pf-6ede8928 pf-bg-lazy" data-pf-type="Section"><div class="sc-pQQXS iWCqut"><div class="sc-qPjXN eYzxUD pf-51c86ede pf-r pf-r-eh pf-r-ew" data-pf-type="Row" style="--pf-s-lg:15px; --pf-s-md:15px; --pf-s-sm:15px; --pf-s-xs:15px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-ca4b51c8" data-pf-type="Column"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-892804ca"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 99.47" style="width: 50px; margin-bottom: 20px;">
+  <defs>
+	<style>
+	  .cls-1 {
+		fill: #fff;
+	  }
+	</style>
+  </defs>
+  <g id="find_a_dealer_white" data-name="find a dealer white">
+	<path class="cls-1" d="M97.3,83.5,75,61.35l.3-.5A39.37,39.37,0,0,0,80.2,33.51C78.41,22.65,72.78,13.86,63.47,7.38A40.94,40.94,0,0,0,13,10.85,40.35,40.35,0,0,0,5.77,61.31,38.17,38.17,0,0,0,27.5,78.61c12,3.78,23.4,2.54,33.88-3.66l1.11,1.1c7,6.92,13.86,13.76,20.72,20.64a10,10,0,0,0,7.23,3h.17a10,10,0,0,0,8.67-6A9.54,9.54,0,0,0,97.3,83.5Zm-35-17.32-2.35,1.61c-.48.33-1,.64-1.51,1C49.5,74.2,39.79,75.33,29.58,72.1A31.46,31.46,0,0,1,11.67,57.81a33.53,33.53,0,0,1,5.92-41.92A34,34,0,0,1,59.53,13,31.84,31.84,0,0,1,73.42,34.61a32.81,32.81,0,0,1-4,22.8c-.47.82-1,1.62-1.58,2.42l-1.67,2.35M42.42,59.82H38.33V55c-2.78-.54-5.61-.4-8-2.14l1.28-4.44c2.26.61,4.39,1.29,6.57,1.75a6.44,6.44,0,0,0,4.46-.72c2.26-1.2,1.79-4.53.15-5.5a44.48,44.48,0,0,0-4.35-2.22C36,40.64,33.52,39.67,32,37.43c-2.49-3.74-1.55-9.21,3.62-11.61.81-.38,1.67-.66,2.61-1V20.4h4.42v4l6.66,1.71-1.27,4.41c-2.52-.39-4.86-.8-7.21-1.1a4.33,4.33,0,0,0-1.86.32,2.75,2.75,0,0,0-2,2.66,3.51,3.51,0,0,0,1.44,2.55c2.28,1.35,4.76,2.39,7.14,3.59,4.88,2.45,6.46,8.1,3.4,12.38a9.32,9.32,0,0,1-5.54,3.75c-.76.18-1.07.49-1,1.28C42.46,57.17,42.42,58.45,42.42,59.82Z" transform="translate(0 -0.27)"></path>
+  </g>
+</svg></div><p data-pf-type="Paragraph2" class="sc-pkvvt cbrLgP pf-391b5f09"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-a6966f3f">View this product in person</span></p><h4 data-pf-type="Heading" class="sc-oTLFK lcHmGL pf-5f095387"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-a21872a6">find a dealer</span></h4><a href="/pages/dealer-locator" target="_self" data-pf-type="Button" class="sc-pZdvY kuwSuz pf-5387ca4b"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-fafa391b">Pravada near me</span></a></div></div></div></div></div><div data-container="false" class="sc-pZopv bjKdkd pf-cce21703" data-pf-type="Section"><div class="sc-pQQXS iWCqut"><div class="sc-qPjXN eYzxUD pf-c444cce2 pf-r pf-r-eh" data-pf-type="Row" style="--pf-s-lg:15px; --pf-s-md:15px; --pf-s-sm:15px; --pf-s-xs:15px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-4b4cc444" data-pf-type="Column"><img sizes="(min-width: 992px) 1200px, (min-width: 768px) and (max-width: 991px) 800px, 400px" data-srcset="https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-eaa33ac4--logo-Pravada-Floors-logomark-black-100X100.svg?v=1607984363 1200w, https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-eaa33ac4--logo-Pravada-Floors-logomark-black-100X100.svg?v=1607984363 800w, https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-eaa33ac4--logo-Pravada-Floors-logomark-black-100X100.svg?v=1607984363 400w" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="sc-qZtVr dLIPjF pf-04ca01ea pf-img-lazy" data-pf-type="Image2"><p data-pf-type="Paragraph2" class="sc-pkvvt cbrLgP pf-5a6cd618"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-b5bdb037">Got questions?</span></p><h4 data-pf-type="Heading" class="sc-oTLFK lcHmGL pf-d61812ca"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-29e6f157">Reach out!</span></h4><a href="/pages/contacts" target="_self" data-pf-type="Button" class="sc-pZdvY kuwSuz pf-12ca4b4c"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-a0c05a6c">Contact us</span></a></div></div><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-fdde88b3" data-pf-type="Column"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-5357fdde"><script type="text/javascript" src="https://cdn.shopify.com/s/files/1/0422/9274/0261/files/FileSaver.min.js?v=1600634528"></script>
+
+<script>
+    let btnDownload = document.getElementById("download-images");
+    {% for image in product.images %}
+    btnDownload.addEventListener("click", () => {
+        let imagePath = "{{ image.src | product_img_url: 'master' }}";
+        saveAs(imagePath, "{{product.title}}");
+    });
+    {% endfor %}
+
+</script>
+
+
+<!-- Estimate Quantities Modal -->
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div>
+            <h1>Material Calculator</h1>
+            <p>The material calculator makes it easier for you to determine the amount of material needed (inc.
+                cutting waste), which you need for the relevant room. Pravada assumes no guarantee that the
+                calculation is correct.</p>
+        </div>
+
+        <div class="room-size"><i class="far fa-circle"><span>Enter room size</span></i></div>
+        <div class="field-con">
+            <label>ft²</label>
+
+            <input id="room-size-field" class="room-size-field" type="number" name="FirstNum" placeholder="Enter room size (e.g. 130)">
+        </div>
+
+        <div>
+            <h3>Quantity Needed</h3>
+
+            <p class="quantity"><span id="quantity-size">0</span>Cartons</p>
+        </div>
+
+    </div>
+
+</div>
+
+<style>
+    /* The Modal (background) */
+    .modal {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Stay in place */
+        z-index: 100;
+        /* Sit on top */
+        padding-top: 15%;
+        /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Full width */
+        height: 100%;
+        /* Full height */
+        overflow: auto;
+        /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0, 0.4);
+        font-family: "Raleway", Sans-serif;
+    }
+
+    /* Modal Content */
+    .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        max-width: 700px;
+        padding: 50px 40px;
+        text-align: center;
+	  	width: 90%;
+    }
+  
+  	@media (max-width: 600px) {
+	  .modal-content {
+		padding: 20px;
+	  }
+	}
+
+    .modal-content h1 {
+        font-size: 30px;
+        color: #000000;
+    }
+
+    .modal-content h3 {
+        padding: 20px 0;
+        font-size: 18px;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    .room-size {
+        text-align: left;
+        padding: 10px 0;
+    }
+
+    .room-size span {
+        font-family: "Raleway", Sans-serif;
+        padding: 0 5px;
+    }
+
+    .field-con {
+        position: relative;
+    }
+
+    .field-con label {
+        margin: 0;
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        font-size: 16px;
+    }
+
+    .room-size-field {
+        padding: 10px !important;
+        border: solid 1px #000000 !important;
+    }
+
+    #quantity-size {
+        padding: 0 5px;
+    }
+
+    .quantity {
+        font-size: 30px;
+        font-weight: 600;
+    }
+</style>
+
+<script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("estimate-quantities-btn");
+
+    // When the user clicks the button, open the modal
+    btn.onclick = function () {
+        modal.style.display = "block";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+
+    function calcFunction() {
+        var size = document.getElementById("room-size-field").value;
+
+		var box_temp_size = "{{product.metafields.Coverage.Coverage}}";
+		var box_size = box_temp_size.substring(0, box_temp_size.indexOf("f"));
+
+		console.log(box_size);
+		var quantity = Math.ceil(size / box_size / 0.95);
+        // alert(quantity);
+        document.getElementById("quantity-size").innerHTML = quantity;
+    }
+
+    var input = document.getElementById("room-size-field");
+
+    input.addEventListener("keyup", function (event) {
+        event.preventDefault();
+	  	calcFunction();
+    });
+</script></div></div></div></div></div></div></div></div></div><script>
+					window.__pagefly_setting__={"baseURL":"https://apps.pagefly.io","analyticsURL":"https://analytics.pagefly.io","isBackend":false,"cdnURL":"https://cdn.pagefly.io","pageflyVersion":"2.14.15","shopDomain":"pravadafloorsinc.myshopify.com","elementData":{},"pageTitle":"Engineered","pageType":"product","pageId":"279116e3-231b-46e6-958a-eb4eb4f11fae","lazyLoad":false,"imageLazyLoad":true,"nativeImageLazyLoad":true,"trackingIDs":[],"shopifyProxyPath":"/a/pf_preview","updatedTime":"2020-12-14T22:19:32.981Z"};
+					window.__pagefly_setting__.moneyFormat = {{shop.money_format | json}}
+				</script><script src="https://cdn.pagefly.io/pagefly/2.14.15/core/helper.js?t=20201214141211" defer></script><script type="application/json" id="ProductJson-product-template">
+    {{ product | json }}
+  </script>

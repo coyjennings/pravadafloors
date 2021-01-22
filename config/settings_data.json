@@ -31,19 +31,25 @@
     "social_youtube_link": "",
     "social_vimeo_link": "",
     "favicon": "shopify:\/\/shop_images\/logo-Pravada-Floors-logomark-black-100X100.png",
+    "app_wk_enabled": true,
+    "app_wk_login_required": false,
+    "app_wk_icon": "heart",
+    "app_wk_col_bg_shape": "square",
+    "app_wk_share_position": "top",
+    "app_wk_products_per_row": "4",
     "checkout_header_image": "",
-    "checkout_logo_image": "",
-    "checkout_logo_position": "left",
-    "checkout_logo_size": "medium",
-    "checkout_body_background_image": "",
+    "checkout_logo_image": "shopify:\/\/shop_images\/pravada-logo_highres_958b5b5e-7d3c-4612-9460-66dbc80de483.png",
+    "checkout_logo_position": "center",
+    "checkout_logo_size": "large",
+    "checkout_body_background_image": "shopify:\/\/shop_images\/PRAVADA-background-pravada-website.png",
     "checkout_body_background_color": "#fff",
     "checkout_input_background_color_mode": "white",
     "checkout_sidebar_background_image": "",
     "checkout_sidebar_background_color": "#f3f4f3",
-    "checkout_heading_font": "Helvetica Neue",
-    "checkout_body_font": "Helvetica Neue",
-    "checkout_accent_color": "#3c5629",
-    "checkout_button_color": "#3c5629",
+    "checkout_heading_font": "Playfair Display",
+    "checkout_body_font": "Raleway",
+    "checkout_accent_color": "#000000",
+    "checkout_button_color": "#000000",
     "checkout_error_color": "#a95232",
     "sections": {
       "header": {
@@ -463,7 +469,7 @@
           "pinterest": "https:\/\/www.pinterest.com\/pravadafloors",
           "facebook": "https:\/\/www.facebook.com\/pravadafloors",
           "linkedin": "https:\/\/ca.linkedin.com\/company\/pravadafloors",
-          "footer_logo": "shopify:\/\/shop_images\/icon-logomark-pravada-30x30-T.png",
+          "footer_logo": "shopify:\/\/shop_images\/logo-Pravada-Floors-logomark-footer-300X300.png",
           "address": "205-19365 22 Avenue <br>Surrey - BC | Canada <br>V3Z-3S6",
           "open_hours": "8am - 5pm (PDT)",
           "phone": "1-888-772-8232",
@@ -478,18 +484,21 @@
             "settings": {
               "pravada_logo": "shopify:\/\/shop_images\/logo-pravada.png",
               "pravada_description": "Premium Real Hardwood Floors you will live on and love for generations.",
+              "engineered_link": "shopify:\/\/pages\/collections",
               "pravada_collection_links": "pravada-collection-menu",
               "pravada_type_links": "pravada-type-menu",
+              "pravada_products_color_links": "color-tone-menu",
               "products_background": "shopify:\/\/shop_images\/banner-EVOLUTIONZ-pravada-website-96dpi.jpg",
               "products_center_text": "…redefine the look of floors.",
               "products_center_button": "shopify:\/\/collections\/all",
               "products_center_button_text": "View All Products",
               "evolutionz_logo": "shopify:\/\/shop_images\/logo-pravada-evolutionz-300x100.png",
               "evolutionz_description": "Created with you in mind. Durable styles including water-resistant flooring designed to fit your lifestyle.",
+              "evolutionz_link": "shopify:\/\/pages\/evolutionz",
               "evolutionz_collection_links": "evolutionz-collection-menu",
               "evolutionz_type_links": "type-menu",
               "evolutionz_accessories_links": "evolutionz-accessories-menu",
-              "products_color_links": "color-tone-menu"
+              "evolutionz_products_color_links": "evolutionz-color-tone-menu"
             }
           },
           "1598026285855": {
@@ -508,7 +517,7 @@
               "brand_link_description_03": "The craftsmanship behind our products.",
               "brand_link_04": "shopify:\/\/blogs\/media-projects",
               "brand_link_text_04": "Media & Projects",
-              "brand_link_description_04": "Articles, featured designs, floors and more…",
+              "brand_link_description_04": "Articles, featured designs, floors and more.",
               "brand_link_05": "shopify:\/\/pages\/our-story",
               "brand_link_text_05": "Our Story",
               "brand_link_description_05": "Learn a bit more about us and how we got here.",
@@ -516,9 +525,9 @@
               "brand_link_text_06": "Careers",
               "brand_link_description_06": "Are your skills right for our next project?",
               "brand_link_07": "shopify:\/\/pages\/showroom",
-              "brand_link_text_07": "Showroom",
-              "brand_link_description_07": "A fashion gallery-like design and feel<br>**COVID-19 limits current access**",
-              "brand_button_01": "shopify:\/\/pages\/find-a-dealer",
+              "brand_link_text_07": "Design Studio",
+              "brand_link_description_07": "A fashion gallery-like design and feel<br>**COVID-19 limits current access** Book Your Appointment",
+              "brand_button_01": "shopify:\/\/pages\/dealer-locator",
               "brand_button_text_01": "Find a Dealer",
               "brand_button_02": "shopify:\/\/pages\/contacts",
               "brand_button_text_02": "Contact Us"
@@ -566,16 +575,16 @@
               "design_link_02": "shopify:\/\/pages\/inspiration-gallery",
               "design_link_text_02": "Inspiration Gallery",
               "design_link_description_02": "View room scenes to get inspired for your next project",
-              "design_link_03": "shopify:\/\/pages\/find-a-dealer",
+              "design_link_03": "shopify:\/\/pages\/dealer-locator",
               "design_link_text_03": "Find a Dealer",
               "design_link_description_03": "locate one of our authorized dealers near you!",
               "design_link_04": "shopify:\/\/pages\/lookbook",
               "design_link_text_04": "Lookbook",
               "design_link_description_04": "Download a PDF or request a print version",
-              "design_link_05": "shopify:\/\/pages\/work-with-us",
+              "design_link_05": "shopify:\/\/pages\/designers",
               "design_link_text_05": "Designers & Architects",
               "design_link_description_05": "We would love to work with you!",
-              "design_link_06": "shopify:\/\/pages\/work-with-us",
+              "design_link_06": "shopify:\/\/pages\/dealers",
               "design_link_text_06": "Dealers",
               "design_link_description_06": "We would love to work with you!"
             }
@@ -588,12 +597,23 @@
           "1598035594624"
         ],
         "settings": {
-          "logo": "shopify:\/\/shop_images\/logo-pravada.png",
-          "find_dealer": "shopify:\/\/pages\/find-a-dealer",
-          "request_samples": "#",
-          "wishlist": "#",
-          "moodboard": "#"
+          "logo": "https:\/\/cdn.shopify.com\/s\/files\/1\/0422\/9274\/0261\/files\/logo-Pravada-Floors-main-header-400x75.svg?v=1602454955",
+          "find_dealer": "shopify:\/\/pages\/dealer-locator",
+          "wishlist": "#"
         }
+      },
+      "instafeed": {
+        "type": "instafeed",
+        "settings": {
+          "heading_font": "raleway_n4",
+          "heading_size": 20,
+          "feed_width": 100,
+          "html_area": "<!-- -->"
+        }
+      },
+      "404-template": {
+        "type": "404-template",
+        "settings": {}
       }
     },
     "content_for_index": [
@@ -868,16 +888,7 @@
         },
         "collection-template": {
           "type": "collection-template",
-          "settings": {
-            "products": "2",
-            "rows": "6",
-            "product_tags_enable": false,
-            "product_sorting_enable": false,
-            "collection_hero_image": false,
-            "collection_hero_image_parallax": false,
-            "show_spacing": false,
-            "show_vendor": true
-          }
+          "settings": {}
         },
         "1478026923193": {
           "type": "feature-row",
@@ -1331,16 +1342,7 @@
         },
         "collection-template": {
           "type": "collection-template",
-          "settings": {
-            "products": "2",
-            "rows": "6",
-            "product_tags_enable": false,
-            "product_sorting_enable": true,
-            "collection_hero_image": true,
-            "collection_hero_image_parallax": true,
-            "show_spacing": false,
-            "show_vendor": true
-          }
+          "settings": {}
         },
         "product-template": {
           "type": "product-template",
@@ -1702,16 +1704,7 @@
         },
         "collection-template": {
           "type": "collection-template",
-          "settings": {
-            "products": "2",
-            "rows": "4",
-            "product_tags_enable": false,
-            "product_sorting_enable": false,
-            "collection_hero_image": false,
-            "collection_hero_image_parallax": false,
-            "show_spacing": false,
-            "show_vendor": true
-          }
+          "settings": {}
         },
         "blog-template": {
           "type": "blog-template",

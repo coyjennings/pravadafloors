@@ -35,37 +35,96 @@
                     </svg> </div>
                 <div class="elementor-container elementor-column-gap-no">
                     <div class="elementor-row">
-                        <div class="has_ae_slider elementor-element elementor-element-3530a6e4 ae-bg-gallery-type-default elementor-column elementor-col-100 elementor-top-column"
-                            data-id="3530a6e4" data-element_type="column">
-                            <div class="elementor-column-wrap  elementor-element-populated">
-                                <div class="elementor-widget-wrap">
-                                    <div class="elementor-element elementor-element-5e659fc elementor-skin-carousel elementor-widget elementor-widget-media-carousel"
-                                        data-id="5e659fc" data-element_type="widget" id="mediadown"
-                                        data-settings="{&quot;slides_per_view&quot;:&quot;7&quot;,&quot;space_between&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:50,&quot;sizes&quot;:[]},&quot;slides_per_view_tablet&quot;:&quot;5&quot;,&quot;slides_per_view_mobile&quot;:&quot;3&quot;,&quot;space_between_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:25,&quot;sizes&quot;:[]},&quot;space_between_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:15,&quot;sizes&quot;:[]},&quot;skin&quot;:&quot;carousel&quot;,&quot;effect&quot;:&quot;slide&quot;,&quot;speed&quot;:500,&quot;autoplay&quot;:&quot;yes&quot;,&quot;autoplay_speed&quot;:5000,&quot;loop&quot;:&quot;yes&quot;,&quot;pause_on_hover&quot;:&quot;yes&quot;,&quot;pause_on_interaction&quot;:&quot;yes&quot;}"
-                                        data-widget_type="media-carousel.default">
-                                        <div class="elementor-widget-container">
-                                            <div class="elementor-swiper">
-                                                <div class="elementor-main-swiper swiper-container">
-                                                    <div class="swiper-wrapper">
-                                                        {% for collection in collections %}
-                                                            {% if collection.title contains 'Collection' %}
-                                                                <div class="swiper-slide">
-                                                                    <a href={{collection.url}}>
-                                                                        <div class="elementor-carousel-image"
-                                                                            style="background-image: url('{{collection.metafields.Logo_for_ProductPage.logo_for_productpage}}')">
-                                                                        </div>
-                                                                    </a>
-                                                                </div>
-                                                            {% endif %}
-                                                        {% endfor %}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                        <style>
+                            #basicSlider {
+                                position: relative;
+                                padding: 25px 0 15px 0;
+                            }
+
+                            #basicSlider .MS-content {
+                                white-space: nowrap;
+                                overflow: hidden;
+                                margin: 0 2%;
+                                height: 80px;
+                            }
+
+                            #basicSlider .MS-content .item {
+                                display: inline-block;
+                                width: calc(100% / 7);
+                                position: relative;
+                                vertical-align: top;
+                                overflow: hidden;
+                                height: 100%;
+                                white-space: normal;
+                                line-height: 80px;
+                                vertical-align: middle;
+                                padding: 0 25px;
+                            }
+
+                            @media (max-width: 991px) {
+                                #basicSlider .MS-content .item {
+                                    width: calc(100% / 5);
+                                    padding: 0 15px !important;
+                                }
+                                #basicSlider .MS-content {
+                                    height: 50px !important;
+                                }
+                                #basicSlider .MS-content .item a {
+                                    line-height: 50px !important;
+                                }
+
+                                #basicSlider .MS-content .item a img {
+                                    height: 45px !important;
+                                }
+                            }
+
+                            @media (max-width: 767px) {
+                                #basicSlider .MS-content .item {
+                                    width: calc(100% / 3);
+                                    padding: 0 10px !important;
+                                }
+                            }
+
+                            @media (max-width: 500px) {
+                                #basicSlider .MS-content .item {
+                                    width: calc(100% / 2);
+                                    padding: 0 5px !important;
+                                }
+                            }
+
+                            #basicSlider .MS-content .item a {
+                                line-height: 80px;
+                                vertical-align: middle;
+                            }
+
+                            #basicSlider .MS-content .item a img {
+                                width: 100%;
+                                height: 75px;
+                            }
+                        </style>
+                        <div id="basicSlider">
+                            <div class="MS-content">
+                                {% for collection in collections %}
+                                {%- comment %}<locksmith:26b1>{% endcomment -%}
+                                  {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: collection, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                                {%- comment %}</locksmith:26b1>{% endcomment -%}
+                                {% if collection.title contains 'Collection' %}
+                                    <div class="item">
+                                        <a href={{collection.url}} target="_blank">
+                                            <img src="{{collection.metafields.Logo_for_ProductPage.logo_for_productpage}}" alt="" />
+                                        </a>
                                     </div>
-                                </div>
+                                {% endif %}
+                                {% endfor %}
                             </div>
                         </div>
+                        <script type='text/javascript' src="{{ 'multislider.min.js' | asset_url }}" id='multislider-min-js'></script>
+                        <script>
+                            jQuery('#basicSlider').multislider({
+                                interval: 3000,
+                                duration: 750
+                            });
+                        </script>
                     </div>
                 </div>
             </section>
@@ -97,6 +156,9 @@
                                                 class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-none">
                                                 <ul id="menu-1-29429574" class="elementor-nav-menu sm-vertical">
                                                     {% for link in linklists[section.settings.footer_menu_1].links %}
+                                                    {%- comment %}<locksmith:7228>{% endcomment -%}
+                                                      {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, subject_parent: linklists[section.settings.footer_menu_1], variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                                                    {%- comment %}</locksmith:7228>{% endcomment -%}
                                                     <li class="menu-item menu-item-type-custom menu-item-object-custom">
                                                         <a href={{ link.url }} class="elementor-item">{{ link.title | escape }}</a>
                                                     </li>
@@ -130,6 +192,9 @@
                                                 class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-none">
                                                 <ul id="menu-1-612e9193" class="elementor-nav-menu sm-vertical">
                                                     {% for link in linklists[section.settings.footer_menu_2].links %}
+                                                    {%- comment %}<locksmith:3c01>{% endcomment -%}
+                                                      {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, subject_parent: linklists[section.settings.footer_menu_2], variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                                                    {%- comment %}</locksmith:3c01>{% endcomment -%}
                                                     <li class="menu-item menu-item-type-custom menu-item-object-custom">
                                                         <a href={{ link.url }} class="elementor-item">{{ link.title | escape }}</a>
                                                     </li>
@@ -163,6 +228,9 @@
                                                 class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-none">
                                                 <ul id="menu-1-14329cd" class="elementor-nav-menu sm-vertical">
                                                     {% for link in linklists[section.settings.footer_menu_3].links %}
+                                                    {%- comment %}<locksmith:4777>{% endcomment -%}
+                                                      {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, subject_parent: linklists[section.settings.footer_menu_3], variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                                                    {%- comment %}</locksmith:4777>{% endcomment -%}
                                                     <li class="menu-item menu-item-type-custom menu-item-object-custom">
                                                         <a href={{ link.url }} class="elementor-item">{{ link.title | escape }}</a>
                                                     </li>
@@ -195,6 +263,9 @@
                                                 class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-none">
                                                 <ul id="menu-1-3713f3f4" class="elementor-nav-menu sm-vertical">
                                                     {% for link in linklists[section.settings.footer_menu_4].links %}
+                                                    {%- comment %}<locksmith:b7a9>{% endcomment -%}
+                                                      {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, subject_parent: linklists[section.settings.footer_menu_4], variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                                                    {%- comment %}</locksmith:b7a9>{% endcomment -%}
                                                     <li class="menu-item menu-item-type-custom menu-item-object-custom">
                                                         <a href={{ link.url }} class="elementor-item">{{ link.title | escape }}</a>
                                                     </li>
@@ -227,6 +298,9 @@
                                                 class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-none">
                                                 <ul id="menu-1-53f064ae" class="elementor-nav-menu sm-vertical">
                                                     {% for link in linklists[section.settings.footer_menu_5].links %}
+                                                    {%- comment %}<locksmith:e68d>{% endcomment -%}
+                                                      {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, subject_parent: linklists[section.settings.footer_menu_5], variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                                                    {%- comment %}</locksmith:e68d>{% endcomment -%}
                                                     <li class="menu-item menu-item-type-custom menu-item-object-custom">
                                                         <a href={{ link.url }} class="elementor-item">{{ link.title | escape }}</a>
                                                     </li>
@@ -298,15 +372,20 @@
                                                                             <span
                                                                                 class="elementor-screen-only">Linkedin</span>
                                                                             <i class="fab fa-linkedin"></i> </a>
+                                                                      
+                                                                      </div>
                                                                     </div>
-                                                                </div>
+                                                          </div>
+                                                         <div class="elementor-image">
+                                                <img src="https://cdn.shopify.com/s/files/1/0422/9274/0261/files/Logo_Designed-in-Canada_Dec2020_white.svg?v=1607978070"
+                                                  width=125px>
                                                             </div>
-                                                        </div>
+                                                          </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </section>
+                                   </section>
                                 </div>
                             </div>
                         </div>
@@ -327,7 +406,7 @@
                                         data-id="d2a4eae" data-element_type="widget" data-widget_type="image.default">
                                         <div class="elementor-widget-container">
                                             <div class="elementor-image">
-                                                <img src={{ section.settings.footer_logo | img_url: 'master' }}
+                                                <img src={{ section.settings.footer_logo | img_url: '300x' }}
                                                     class="attachment-full size-full" alt="" loading="lazy" />
                                             </div>
                                         </div>
@@ -423,88 +502,6 @@
                                             </div>
                                         </div>
                                     </section>
-                                    <div class="elementor-element elementor-element-8c9229c elementor-widget elementor-widget-html"
-                                        data-id="8c9229c" data-element_type="widget" data-widget_type="html.default">
-                                        <div class="elementor-widget-container">
-                                            <script
-                                                src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-
-                                            <script>
-
-                                                jQuery(document).ready(function ($) {
-                                                    $('.owl-one').owlCarousel({
-                                                        loop: true,
-                                                        margin: 100,
-                                                        nav: true,
-                                                        responsive: {
-                                                            0: {
-                                                                items: 1
-                                                            },
-                                                            425: {
-                                                                items: 2
-                                                            },
-                                                            600: {
-                                                                items: 2
-                                                            },
-                                                            767: {
-                                                                items: 3
-                                                            },
-                                                            1000: {
-                                                                items: 4
-                                                            }
-                                                        }
-                                                    });
-                                                });
-                                            </script>
-
-
-
-                                            <script>
-                                                jQuery(document).ready(function ($) {
-                                                    $('.categories-slider').owlCarousel({
-                                                        loop: true,
-                                                        margin: 40,
-                                                        nav: true,
-                                                        responsive: {
-                                                            0: {
-                                                                items: 1
-                                                            },
-                                                            600: {
-                                                                items: 3
-                                                            },
-                                                            1000: {
-                                                                items: 4
-                                                            }
-                                                        }
-                                                    });
-                                                });
-
-                                                jQuery(".premium-gallery-img-desc").text(function (index, currentText) {
-                                                    return currentText.substr(0, 140) + '...';
-                                                });
-
-                                                jQuery("document").ready(function ($) {
-                                                    var logo = jQuery('.gc-header-logo .cmm4e-item-label img'),
-                                                        w = logo.width();
-                                                    jQuery(window).scroll(function () {
-                                                        if (jQuery(this).scrollTop() > 20) {
-                                                            logo.css({ "width": "247px" });
-                                                        } else {
-                                                            logo.css({ "width": "309px" });
-                                                        }
-                                                    });
-                                                });
-
-                                                jQuery(document).on("scroll", function () {
-                                                    if (jQuery(document).scrollTop() > 80) {
-                                                        jQuery(".elementor-3201 .elementor-element.elementor-element-7dce231e > .elementor-container").addClass("shrink-header");
-                                                    } else {
-                                                        jQuery(".elementor-3201 .elementor-element.elementor-element-7dce231e > .elementor-container").removeClass("shrink-header");
-                                                    }
-                                                });
-                                            </script>
-                                        </div>
-                                    </div>
                                     <div class="elementor-element elementor-element-a60652d elementor-widget elementor-widget-heading"
                                         data-id="a60652d" data-element_type="widget" data-widget_type="heading.default">
                                         <div class="elementor-widget-container">
@@ -590,796 +587,6 @@
     </div>
 </div>
 
-<div id="pum-18495"
-    class="pum pum-overlay pum-theme-10891 pum-theme-light-box-2 popmake-overlay pum-click-to-close click_open"
-    data-popmake="{&quot;id&quot;:18495,&quot;slug&quot;:&quot;added-to-cart-pop-up&quot;,&quot;theme_id&quot;:10891,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;cookie_name&quot;:&quot;&quot;,&quot;extra_selectors&quot;:&quot;.addedtocart&quot;}}],&quot;mobile_disabled&quot;:true,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:false,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;custom&quot;,&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;360px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;327px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;none&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:&quot;1&quot;,&quot;esc_press&quot;:&quot;1&quot;,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}"
-    role="dialog" aria-hidden="true">
-
-    <div id="popmake-18495" class="pum-container popmake theme-10891 size-custom">
-
-
-
-
-
-
-
-        <div class="pum-content popmake-content">
-            <div class="fm-modal">
-                <div class="tinv-modal-inner">
-                    <i class=" icon-cart" style="font-size:35px; position:relative; top:-20px;"></i></p>
-                    <div class="tinv-txt">Product added to basket.</div>
-                    <div class="tinvwl-buttons-group tinv-wishlist-clear"><a href="/sample-bag/"><button
-                                class="button tinvwl_button_view tinvwl-btn-onclick" type="button">
-                                <!--<i class="ftinvwl ftinvwl-heart-o"></i>-->View Sample Bag</button></a><br />
-                        <button class="button tinvwl_button_close hide-modal" type="button"><i
-                                class="ftinvwl ftinvwl-times"></i>Close</button></div>
-                    <div class="tinv-wishlist-clear"></div>
-                </div>
-            </div>
-        </div>
-
-
-
-
-        <button type="button" class="pum-close popmake-close" aria-label="Close">
-            × </button>
-
-    </div>
-
-</div>
-<div id="pum-10885"
-    class="pum pum-overlay pum-theme-10891 pum-theme-light-box-2 popmake-overlay pum-click-to-close click_open"
-    data-popmake="{&quot;id&quot;:10885,&quot;slug&quot;:&quot;moodboard-pop-up-added&quot;,&quot;theme_id&quot;:10891,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;cookie_name&quot;:&quot;&quot;,&quot;extra_selectors&quot;:&quot;.mb-products-pop&quot;}}],&quot;mobile_disabled&quot;:true,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:false,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;custom&quot;,&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;360px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;327px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;none&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:&quot;1&quot;,&quot;esc_press&quot;:&quot;1&quot;,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}"
-    role="dialog" aria-hidden="true">
-
-    <div id="popmake-10885" class="pum-container popmake theme-10891 size-custom">
-
-
-
-
-
-
-
-        <div class="pum-content popmake-content">
-            <div class="fm-modal">
-                <div class="tinv-modal-inner">
-                    <i class="icon icon-moodboard" style="font-size:35px;position: relative; top: -20px;"></i></p>
-                    <div class="tinv-txt">Product added in Moodboards</div>
-                    <div class="tinvwl-buttons-group tinv-wishlist-clear"><a href="/moodboard/"><button
-                                class="button tinvwl_button_view tinvwl-btn-onclick" type="button">
-                                <!--<i class="ftinvwl ftinvwl-heart-o"></i>-->View MOODBOARD</button></a><br />
-                        <button class="button tinvwl_button_close hide-modal" type="button"><i
-                                class="ftinvwl ftinvwl-times"></i>Close</button></div>
-                    <div class="tinv-wishlist-clear"></div>
-                </div>
-            </div>
-        </div>
-
-
-
-
-        <button type="button" class="pum-close popmake-close" aria-label="Close">
-            × </button>
-
-    </div>
-
-</div>
-<div id="pum-11800"
-    class="pum pum-overlay pum-theme-10891 pum-theme-light-box-2 popmake-overlay pum-click-to-close click_open"
-    data-popmake="{&quot;id&quot;:11800,&quot;slug&quot;:&quot;moodboard-pop-up-already-added&quot;,&quot;theme_id&quot;:10891,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;cookie_name&quot;:&quot;&quot;,&quot;extra_selectors&quot;:&quot;.mb-products-already&quot;}}],&quot;mobile_disabled&quot;:true,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:false,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;custom&quot;,&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;360px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;327px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;none&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:&quot;1&quot;,&quot;esc_press&quot;:&quot;1&quot;,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}"
-    role="dialog" aria-hidden="true">
-
-    <div id="popmake-11800" class="pum-container popmake theme-10891 size-custom">
-
-
-
-
-
-
-
-        <div class="pum-content popmake-content">
-            <div class="fm-modal">
-                <div class="tinv-modal-inner">
-                    <i class="icon icon-moodboard-fill" style="font-size:35px;position: relative; top: -20px;"></i>
-                    </p>
-                    <div class="tinv-txt">Product already in Moodboard</div>
-                    <div class="tinvwl-buttons-group tinv-wishlist-clear"><a href="/moodboard/"><button
-                                class="button tinvwl_button_view tinvwl-btn-onclick" type="button">
-                                <!--<i class="ftinvwl ftinvwl-heart-o"></i>-->View MOOD BOARD</button></a><br />
-                        <button class="button tinvwl_button_close hide-modal" type="button"><i
-                                class="ftinvwl ftinvwl-times"></i>Close</button></div>
-                    <div class="tinv-wishlist-clear"></div>
-                </div>
-            </div>
-        </div>
-
-
-
-
-        <button type="button" class="pum-close popmake-close" aria-label="Close">
-            × </button>
-
-    </div>
-
-</div>
-<div id="pum-8604"
-    class="pum pum-overlay pum-theme-16188 pum-theme-light-box-2-2 popmake-overlay pum-click-to-close click_open"
-    data-popmake="{&quot;id&quot;:8604,&quot;slug&quot;:&quot;login-pop-up&quot;,&quot;theme_id&quot;:16188,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;cookie_name&quot;:&quot;&quot;,&quot;extra_selectors&quot;:&quot;&quot;}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:false,&quot;scrollable_content&quot;:&quot;1&quot;,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;tiny&quot;,&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;350px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;600px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:&quot;1&quot;,&quot;location&quot;:&quot;center&quot;,&quot;position_from_trigger&quot;:&quot;1&quot;,&quot;position_top&quot;:&quot;100&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;x&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:&quot;1&quot;,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}"
-    role="dialog" aria-hidden="true">
-
-    <div id="popmake-8604"
-        class="pum-container popmake theme-16188 pum-responsive pum-responsive-tiny responsive size-tiny">
-
-
-
-
-
-
-
-        <div class="pum-content popmake-content">
-            <p><strong>
-                    <div class="woocommerce">
-                        <div class="woocommerce-notices-wrapper"></div>
-
-                        <h2>Login</h2>
-
-                        <form class="woocommerce-form woocommerce-form-login login" method="post">
-
-
-                            <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-                                <label for="username">Username or email address&nbsp;<span
-                                        class="required">*</span></label>
-                                <input type="text" class="woocommerce-Input woocommerce-Input--text input-text"
-                                    name="username" id="username" autocomplete="username" value="" /> </p>
-                            <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-                                <label for="password">Password&nbsp;<span class="required">*</span></label>
-                                <input class="woocommerce-Input woocommerce-Input--text input-text" type="password"
-                                    name="password" id="password" autocomplete="current-password" />
-                            </p>
-
-
-                            <p class="form-row">
-                                <label
-                                    class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme">
-                                    <input class="woocommerce-form__input woocommerce-form__input-checkbox"
-                                        name="rememberme" type="checkbox" id="rememberme" value="forever" />
-                                    <span>Remember me</span>
-                                </label>
-                                <input type="hidden" id="woocommerce-login-nonce" name="woocommerce-login-nonce"
-                                    value="c42edaa363" /><input type="hidden" name="_wp_http_referer" value="/" />
-                                <button type="submit" class="woocommerce-button button woocommerce-form-login__submit"
-                                    name="login" value="Log in">Log in</button>
-                            </p>
-                            <p class="woocommerce-LostPassword lost_password">
-                                <a href="https://pravada.webounces.com/my-account/lost-password/">Lost your
-                                    password?</a>
-                            </p>
-
-
-                        </form>
-
-
-                    </div>
-                </strong></p>
-        </div>
-
-
-
-
-        <button type="button" class="pum-close popmake-close" aria-label="Close">
-            x </button>
-
-    </div>
-
-</div>
-<div id="pum-8781"
-    class="pum pum-overlay pum-theme-5176 pum-theme-lightbox popmake-overlay pum-click-to-close click_open"
-    data-popmake="{&quot;id&quot;:8781,&quot;slug&quot;:&quot;wishlist-popup&quot;,&quot;theme_id&quot;:5176,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;cookie_name&quot;:&quot;&quot;,&quot;extra_selectors&quot;:&quot;.ctwish_popup&quot;}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:false,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;small&quot;,&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;100%&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:&quot;1&quot;,&quot;location&quot;:&quot;center&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:&quot;1&quot;,&quot;esc_press&quot;:&quot;1&quot;,&quot;f4_press&quot;:&quot;1&quot;},&quot;click_open&quot;:[]}}"
-    role="dialog" aria-hidden="true">
-
-    <div id="popmake-8781"
-        class="pum-container popmake theme-5176 pum-responsive pum-responsive-small responsive size-small">
-
-
-
-
-
-
-
-        <div class="pum-content popmake-content">
-
-            <div class="wishpopup"></div>
-        </div>
-
-
-
-
-        <button type="button" class="pum-close popmake-close" aria-label="Close">
-            × </button>
-
-    </div>
-
-</div>
-<div id="pum-9825"
-    class="pum pum-overlay pum-theme-5176 pum-theme-lightbox popmake-overlay pum-click-to-close click_open"
-    data-popmake="{&quot;id&quot;:9825,&quot;slug&quot;:&quot;language-translation-popup&quot;,&quot;theme_id&quot;:5176,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;extra_selectors&quot;:&quot;&quot;,&quot;cookie_name&quot;:null}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:false,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;custom&quot;,&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;600px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:&quot;1&quot;,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;x&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:&quot;1&quot;,&quot;esc_press&quot;:&quot;1&quot;,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}"
-    role="dialog" aria-hidden="true">
-
-    <div id="popmake-9825" class="pum-container popmake theme-5176 size-custom">
-
-
-
-
-
-
-
-        <div class="pum-content popmake-content">
-            <div data-elementor-type="page" data-elementor-id="9828" class="elementor elementor-9828"
-                data-elementor-settings="[]">
-                <div class="elementor-inner">
-                    <div class="elementor-section-wrap">
-                        <section
-                            class="has_ae_slider elementor-element elementor-element-6fed5e3 elementor-section-full_width elementor-section-height-default elementor-section-height-default ae-bg-gallery-type-default elementor-section elementor-top-section"
-                            data-id="6fed5e3" data-element_type="section">
-                            <div class="elementor-container elementor-column-gap-default">
-                                <div class="elementor-row">
-                                    <div class="has_ae_slider elementor-element elementor-element-221c392 ae-bg-gallery-type-default elementor-column elementor-col-100 elementor-top-column"
-                                        data-id="221c392" data-element_type="column">
-                                        <div class="elementor-column-wrap  elementor-element-populated">
-                                            <div class="elementor-widget-wrap">
-                                                <div class="elementor-element elementor-element-80dc730 elementor-widget elementor-widget-html"
-                                                    data-id="80dc730" data-element_type="widget"
-                                                    data-widget_type="html.default">
-                                                    <div class="elementor-widget-container">
-                                                        <!-- GTranslate: https://gtranslate.io/ -->
-                                                        <select onchange="doGTranslate(this);" class="notranslate"
-                                                            id="gtranslate_selector"
-                                                            aria-label="Website Language Selector">
-                                                            <option value="">Select Language</option>
-                                                            <option value="en|ar">Arabic</option>
-                                                            <option value="en|zh-CN">Chinese (Simplified)</option>
-                                                            <option value="en|nl">Dutch</option>
-                                                            <option value="en|en">English</option>
-                                                            <option value="en|fr">French</option>
-                                                            <option value="en|de">German</option>
-                                                            <option value="en|it">Italian</option>
-                                                            <option value="en|pt">Portuguese</option>
-                                                            <option value="en|ru">Russian</option>
-                                                            <option value="en|es">Spanish</option>
-                                                        </select>
-                                                        <style type="text/css">
-                                                            #goog-gt-tt {
-                                                                display: none !important;
-                                                            }
-
-                                                            .goog-te-banner-frame {
-                                                                display: none !important;
-                                                            }
-
-                                                            .goog-te-menu-value:hover {
-                                                                text-decoration: none !important;
-                                                            }
-
-                                                            .goog-text-highlight {
-                                                                background-color: transparent !important;
-                                                                box-shadow: none !important;
-                                                            }
-
-                                                            body {
-                                                                top: 0 !important;
-                                                            }
-
-                                                            #google_translate_element2 {
-                                                                display: none !important;
-                                                            }
-                                                        </style>
-
-                                                        <div id="google_translate_element2"></div>
-                                                        <script type="text/javascript">
-                                                            function googleTranslateElementInit2() { new google.translate.TranslateElement({ pageLanguage: 'en', autoDisplay: false }, 'google_translate_element2'); }
-                                                        </script>
-                                                        <script type="text/javascript"
-                                                            src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit2"></script>
-
-
-                                                        <script type="text/javascript">
-                                                            function GTranslateGetCurrentLang() { var keyValue = document['cookie'].match('(^|;) ?googtrans=([^;]*)(;|$)'); return keyValue ? keyValue[2].split('/')[2] : null; }
-                                                            function GTranslateFireEvent(element, event) { try { if (document.createEventObject) { var evt = document.createEventObject(); element.fireEvent('on' + event, evt) } else { var evt = document.createEvent('HTMLEvents'); evt.initEvent(event, true, true); element.dispatchEvent(evt) } } catch (e) { } }
-                                                            function doGTranslate(lang_pair) { if (lang_pair.value) lang_pair = lang_pair.value; if (lang_pair == '') return; var lang = lang_pair.split('|')[1]; if (GTranslateGetCurrentLang() == null && lang == lang_pair.split('|')[0]) return; var teCombo; var sel = document.getElementsByTagName('select'); for (var i = 0; i < sel.length; i++)if (/goog-te-combo/.test(sel[i].className)) { teCombo = sel[i]; break; } if (document.getElementById('google_translate_element2') == null || document.getElementById('google_translate_element2').innerHTML.length == 0 || teCombo.length == 0 || teCombo.innerHTML.length == 0) { setTimeout(function () { doGTranslate(lang_pair) }, 500) } else { teCombo.value = lang; GTranslateFireEvent(teCombo, 'change'); GTranslateFireEvent(teCombo, 'change') } }
-                                                        </script>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-
-
-
-        <button type="button" class="pum-close popmake-close" aria-label="Close">
-            x </button>
-
-    </div>
-
-</div>
-<div id="pum-8678" class="pum pum-overlay pum-theme-5176 pum-theme-lightbox popmake-overlay click_open"
-    data-popmake="{&quot;id&quot;:8678,&quot;slug&quot;:&quot;estimate-quantities&quot;,&quot;theme_id&quot;:5176,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;cookie_name&quot;:&quot;&quot;,&quot;extra_selectors&quot;:&quot;&quot;}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:false,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;custom&quot;,&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;600px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:&quot;1&quot;,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}"
-    role="dialog" aria-hidden="true">
-
-    <div id="popmake-8678" class="pum-container popmake theme-5176 size-custom">
-
-
-
-
-
-
-
-        <div class="pum-content popmake-content">
-            <div data-elementor-type="section" data-elementor-id="8715" class="elementor elementor-8715"
-                data-elementor-settings="[]">
-                <div class="elementor-inner">
-                    <div class="elementor-section-wrap">
-                        <section
-                            class="has_ae_slider elementor-element elementor-element-bf576f1 elementor-section-full_width elementor-section-height-default elementor-section-height-default ae-bg-gallery-type-default elementor-section elementor-top-section"
-                            data-id="bf576f1" data-element_type="section"
-                            data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-                            <div class="elementor-container elementor-column-gap-default">
-                                <div class="elementor-row">
-                                    <div class="has_ae_slider elementor-element elementor-element-304244b ae-bg-gallery-type-default elementor-column elementor-col-100 elementor-top-column"
-                                        data-id="304244b" data-element_type="column">
-                                        <div class="elementor-column-wrap  elementor-element-populated">
-                                            <div class="elementor-widget-wrap">
-                                                <div class="elementor-element elementor-element-2280d8c9 elementor-widget elementor-widget-heading"
-                                                    data-id="2280d8c9" data-element_type="widget"
-                                                    data-widget_type="heading.default">
-                                                    <div class="elementor-widget-container">
-                                                        <h2 class="elementor-heading-title elementor-size-default">
-                                                            Material Calculator</h2>
-                                                    </div>
-                                                </div>
-                                                <div class="elementor-element elementor-element-32f0ab74 elementor-widget elementor-widget-text-editor"
-                                                    data-id="32f0ab74" data-element_type="widget"
-                                                    data-widget_type="text-editor.default">
-                                                    <div class="elementor-widget-container">
-                                                        <div class="elementor-text-editor elementor-clearfix">The
-                                                            material calculator makes it easier for you to determine
-                                                            the amount of material needed (inc. cutting waste),
-                                                            which you need for the relevant room. Pravada assumes no
-                                                            guarantee that the calculation is correct.</div>
-                                                    </div>
-                                                </div>
-                                                <div class="elementor-element elementor-element-5f4dc980 gc-calc-tab elementor-widget elementor-widget-jet-tabs"
-                                                    data-id="5f4dc980" data-element_type="widget"
-                                                    data-widget_type="jet-tabs.default">
-                                                    <div class="elementor-widget-container">
-                                                        <div class="jet-tabs jet-tabs-position-top jet-tabs-fade-effect jet-tabs-ajax-template"
-                                                            data-settings="{&quot;activeIndex&quot;:0,&quot;event&quot;:&quot;click&quot;,&quot;autoSwitch&quot;:false,&quot;autoSwitchDelay&quot;:3000,&quot;ajaxTemplate&quot;:true}"
-                                                            role="tablist">
-                                                            <div class="jet-tabs__control-wrapper">
-                                                                <div id="jet-tabs-control-1591"
-                                                                    class="jet-tabs__control jet-tabs__control-icon-left elementor-menu-anchor active-tab"
-                                                                    data-tab="1" tabindex="1591" role="tab"
-                                                                    aria-controls="jet-tabs-content-1591"
-                                                                    aria-expanded="true" data-template-id="8804">
-                                                                    <div class="jet-tabs__control-inner">
-                                                                        <div class="jet-tabs__label-icon jet-tabs-icon">
-                                                                            <i class="fa fa-circle"
-                                                                                aria-hidden="true"></i></div>
-                                                                        <div class="jet-tabs__label-text">Enter room
-                                                                            size</div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="jet-tabs__content-wrapper">
-                                                                <div id="jet-tabs-content-1591"
-                                                                    class="jet-tabs__content active-content"
-                                                                    data-tab="1" role="tabpanel" aria-hidden="false"
-                                                                    data-template-id="8804">
-                                                                    <div class="jet-tabs-loader"></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <section
-                                                    class="has_ae_slider elementor-element elementor-element-000dafe elementor-section-full_width elementor-section-height-default elementor-section-height-default ae-bg-gallery-type-default elementor-section elementor-inner-section"
-                                                    data-id="000dafe" data-element_type="section">
-                                                    <div class="elementor-container elementor-column-gap-default">
-                                                        <div class="elementor-row">
-                                                            <div class="has_ae_slider elementor-element elementor-element-e999475 ae-bg-gallery-type-default elementor-column elementor-col-100 elementor-inner-column"
-                                                                data-id="e999475" data-element_type="column">
-                                                                <div
-                                                                    class="elementor-column-wrap  elementor-element-populated">
-                                                                    <div class="elementor-widget-wrap">
-                                                                        <div class="elementor-element elementor-element-ee7a75f gc-no-space elementor-widget elementor-widget-heading"
-                                                                            data-id="ee7a75f" data-element_type="widget"
-                                                                            data-widget_type="heading.default">
-                                                                            <div class="elementor-widget-container">
-                                                                                <h5
-                                                                                    class="elementor-heading-title elementor-size-default">
-                                                                                    Quantity Needed</h5>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="elementor-element elementor-element-df1e828 elementor-widget elementor-widget-heading"
-                                                                            data-id="df1e828" data-element_type="widget"
-                                                                            id="gc-estimate-result"
-                                                                            data-widget_type="heading.default">
-                                                                            <div class="elementor-widget-container">
-                                                                                <span
-                                                                                    class="elementor-heading-title elementor-size-default">0
-                                                                                    Cartons</span> </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </section>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-
-
-
-        <button type="button" class="pum-close popmake-close" aria-label="Close">
-            × </button>
-
-    </div>
-
-</div>
-<div id="pum-5181" class="pum pum-overlay pum-theme-5176 pum-theme-lightbox popmake-overlay click_open"
-    data-popmake="{&quot;id&quot;:5181,&quot;slug&quot;:&quot;moodboard-share&quot;,&quot;theme_id&quot;:5176,&quot;cookies&quot;:[],&quot;triggers&quot;:[{&quot;type&quot;:&quot;click_open&quot;,&quot;settings&quot;:{&quot;cookie_name&quot;:&quot;&quot;,&quot;extra_selectors&quot;:&quot;.mood-board-share&quot;}}],&quot;mobile_disabled&quot;:null,&quot;tablet_disabled&quot;:null,&quot;meta&quot;:{&quot;display&quot;:{&quot;stackable&quot;:false,&quot;overlay_disabled&quot;:false,&quot;scrollable_content&quot;:false,&quot;disable_reposition&quot;:false,&quot;size&quot;:&quot;micro&quot;,&quot;responsive_min_width&quot;:&quot;0%&quot;,&quot;responsive_min_width_unit&quot;:false,&quot;responsive_max_width&quot;:&quot;100%&quot;,&quot;responsive_max_width_unit&quot;:false,&quot;custom_width&quot;:&quot;640px&quot;,&quot;custom_width_unit&quot;:false,&quot;custom_height&quot;:&quot;380px&quot;,&quot;custom_height_unit&quot;:false,&quot;custom_height_auto&quot;:false,&quot;location&quot;:&quot;center top&quot;,&quot;position_from_trigger&quot;:false,&quot;position_top&quot;:&quot;100&quot;,&quot;position_left&quot;:&quot;0&quot;,&quot;position_bottom&quot;:&quot;0&quot;,&quot;position_right&quot;:&quot;0&quot;,&quot;position_fixed&quot;:false,&quot;animation_type&quot;:&quot;fade&quot;,&quot;animation_speed&quot;:&quot;350&quot;,&quot;animation_origin&quot;:&quot;center top&quot;,&quot;overlay_zindex&quot;:false,&quot;zindex&quot;:&quot;1999999999&quot;},&quot;close&quot;:{&quot;text&quot;:&quot;&quot;,&quot;button_delay&quot;:&quot;0&quot;,&quot;overlay_click&quot;:false,&quot;esc_press&quot;:false,&quot;f4_press&quot;:false},&quot;click_open&quot;:[]}}"
-    role="dialog" aria-hidden="true">
-
-    <div id="popmake-5181"
-        class="pum-container popmake theme-5176 pum-responsive pum-responsive-micro responsive size-micro">
-
-
-
-
-
-
-
-        <div class="pum-content popmake-content">
-            <div id="moodboard-form">
-
-                <div class='gf_browser_chrome gform_wrapper' id='gform_wrapper_1'><a id='gf_1' class='gform_anchor'></a>
-                    <form method='post' enctype='multipart/form-data' target='gform_ajax_frame_1' id='gform_1'
-                        action='/#gf_1'>
-                        <input type='hidden' class='gforms-pum'
-                            value='{"closepopup":false,"closedelay":0,"openpopup":false,"openpopup_id":0}' />
-                        <div class='gform_body'>
-                            <ul id='gform_fields_1'
-                                class='gform_fields top_label form_sublabel_below description_below'>
-                                <li id='field_1_1'
-                                    class='gfield gfield_html gfield_html_formatted gfield_no_follows_desc field_sublabel_below field_description_below gfield_visibility_visible'>
-                                    <div class="border-center">
-                                        <h4><span class="border-box-w">FROM</span></h4>
-                                    </div>
-                                </li>
-                                <li id='field_1_2'
-                                    class='gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible'>
-                                    <label class='gfield_label' for='input_1_2'>Your Name<span
-                                            class='gfield_required'>*</span></label>
-                                    <div class='ginput_container ginput_container_text'><input name='input_2'
-                                            id='input_1_2' type='text' value='' class='large' tabindex='49'
-                                            placeholder='Your Name' aria-required="true" aria-invalid="false" />
-                                    </div>
-                                </li>
-                                <li id='field_1_3'
-                                    class='gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible'>
-                                    <label class='gfield_label' for='input_1_3'>Your Email<span
-                                            class='gfield_required'>*</span></label>
-                                    <div class='ginput_container ginput_container_email'>
-                                        <input name='input_3' id='input_1_3' type='text' value='' class='large'
-                                            tabindex='50' placeholder='Your Email' aria-required="true"
-                                            aria-invalid="false" />
-                                    </div>
-                                </li>
-                                <li id='field_1_19'
-                                    class='gfield hidden-field unique-field-form field_sublabel_below field_description_below gfield_visibility_visible'>
-                                    <label class='gfield_label' for='input_1_19'>Moodboard URL</label>
-                                    <div class='ginput_container ginput_container_text'><input name='input_19'
-                                            id='input_1_19' type='text' value='' class='large' tabindex='51'
-                                            placeholder='http://' aria-invalid="false" /></div>
-                                </li>
-                                <li id='field_1_4'
-                                    class='gfield gfield_html gfield_html_formatted gfield_no_follows_desc field_sublabel_below field_description_below gfield_visibility_visible'>
-                                    <div class="border-center border-top">
-                                        <h4><span class="border-box-w">TO</span></h4>
-                                    </div>
-                                </li>
-                                <li id='field_1_5'
-                                    class='gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible'>
-                                    <label class='gfield_label' for='input_1_5'>Their Name<span
-                                            class='gfield_required'>*</span></label>
-                                    <div class='ginput_container ginput_container_text'><input name='input_5'
-                                            id='input_1_5' type='text' value='' class='large' tabindex='52'
-                                            placeholder='Their Name' aria-required="true" aria-invalid="false" />
-                                    </div>
-                                </li>
-                                <li id='field_1_6'
-                                    class='gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible'>
-                                    <label class='gfield_label' for='input_1_6'>Their Email<span
-                                            class='gfield_required'>*</span></label>
-                                    <div class='ginput_container ginput_container_email'>
-                                        <input name='input_6' id='input_1_6' type='text' value='' class='large'
-                                            tabindex='53' placeholder='Their Email' aria-required="true"
-                                            aria-invalid="false" />
-                                    </div>
-                                </li>
-                                <li id='field_1_18'
-                                    class='gfield gform_hidden field_sublabel_below field_description_below gfield_visibility_visible'>
-                                    <input name='input_18' id='input_1_18' type='hidden' class='gform_hidden'
-                                        aria-invalid="false" value='1' /></li>
-                            </ul>
-                        </div>
-                        <div class='gform_footer top_label'> <input type='submit' id='gform_submit_button_1'
-                                class='gform_button button' value='SHARE MOODBOARD' tabindex='54'
-                                onclick='if(window["gf_submitting_1"]){return false;}  window["gf_submitting_1"]=true;  '
-                                onkeypress='if( event.keyCode == 13 ){ if(window["gf_submitting_1"]){return false;} window["gf_submitting_1"]=true;  jQuery("#gform_1").trigger("submit",[true]); }' />
-                            <input type='hidden' name='gform_ajax'
-                                value='form_id=1&amp;title=&amp;description=&amp;tabindex=49' />
-                            <input type='hidden' class='gform_hidden' name='is_submit_1' value='1' />
-                            <input type='hidden' class='gform_hidden' name='gform_submit' value='1' />
-
-                            <input type='hidden' class='gform_hidden' name='gform_unique_id' value='' />
-                            <input type='hidden' class='gform_hidden' name='state_1'
-                                value='WyJbXSIsImU5ZDQzNmYwYTc0OWZkMjlhYTQ0NTZhZGE2ZjNmYmYwIl0=' />
-                            <input type='hidden' class='gform_hidden' name='gform_target_page_number_1'
-                                id='gform_target_page_number_1' value='0' />
-                            <input type='hidden' class='gform_hidden' name='gform_source_page_number_1'
-                                id='gform_source_page_number_1' value='1' />
-                            <input type='hidden' name='gform_field_values' value='' />
-
-                        </div>
-                    </form>
-                </div>
-                <iframe style='display:none;width:0px;height:0px;' src='about:blank' name='gform_ajax_frame_1'
-                    id='gform_ajax_frame_1'>This iframe contains the logic required to handle Ajax powered Gravity
-                    Forms.</iframe>
-                <script
-                    type='text/javascript'>jQuery(document).ready(function ($) { gformInitSpinner(1, 'https://pravada.webounces.com/wp-content/plugins/gravityforms/images/spinner.gif'); jQuery('#gform_ajax_frame_1').on('load', function () { var contents = jQuery(this).contents().find('*').html(); var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0; if (!is_postback) { return; } var form_content = jQuery(this).contents().find('#gform_wrapper_1'); var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_1').length > 0; var is_redirect = contents.indexOf('gformRedirect(){') >= 0; var is_form = form_content.length > 0 && !is_redirect && !is_confirmation; if (is_form) { jQuery('#gform_wrapper_1').html(form_content.html()); if (form_content.hasClass('gform_validation_error')) { jQuery('#gform_wrapper_1').addClass('gform_validation_error'); } else { jQuery('#gform_wrapper_1').removeClass('gform_validation_error'); } setTimeout(function () { /* delay the scroll by 50 milliseconds to fix a bug in chrome */ jQuery(document).scrollTop(jQuery('#gform_wrapper_1').offset().top); }, 50); if (window['gformInitDatepicker']) { gformInitDatepicker(); } if (window['gformInitPriceFields']) { gformInitPriceFields(); } var current_page = jQuery('#gform_source_page_number_1').val(); gformInitSpinner(1, 'https://pravada.webounces.com/wp-content/plugins/gravityforms/images/spinner.gif'); jQuery(document).trigger('gform_page_loaded', [1, current_page]); window['gf_submitting_1'] = false; } else if (!is_redirect) { var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html(); if (!confirmation_content) { confirmation_content = contents; } setTimeout(function () { jQuery('#gform_wrapper_1').replaceWith(confirmation_content); jQuery(document).scrollTop(jQuery('#gf_1').offset().top); jQuery(document).trigger('gform_confirmation_loaded', [1]); window['gf_submitting_1'] = false; }, 50); } else { jQuery('#gform_1').append(contents); if (window['gformRedirect']) { gformRedirect(); } } jQuery(document).trigger('gform_post_render', [1, current_page]); }); });</script>
-                <script
-                    type='text/javascript'> if (typeof gf_global == 'undefined') var gf_global = { "gf_currency_config": { "name": "U.S. Dollar", "symbol_left": "$", "symbol_right": "", "symbol_padding": "", "thousand_separator": ",", "decimal_separator": ".", "decimals": 2 }, "base_url": "https:\/\/pravada.webounces.com\/wp-content\/plugins\/gravityforms", "number_formats": [], "spinnerUrl": "https:\/\/pravada.webounces.com\/wp-content\/plugins\/gravityforms\/images\/spinner.gif" }; jQuery(document).bind('gform_post_render', function (event, formId, currentPage) {
-                            if (formId == 1) {
-                                if (typeof Placeholders != 'undefined') {
-                                    Placeholders.enable();
-                                }
-                            }
-                        }); jQuery(document).bind('gform_post_conditional_logic', function (event, formId, fields, isInit) { });</script>
-                <script
-                    type='text/javascript'> jQuery(document).ready(function () { jQuery(document).trigger('gform_post_render', [1, 1]) }); </script>
-            </div>
-        </div>
-
-
-
-
-        <button type="button" class="pum-close popmake-close" aria-label="Close">
-            × </button>
-
-    </div>
-
-</div>
-
-<style type="text/css">
-    /* FOOTER MOOD BOARD */
-    .fm-flex {
-        display: flex;
-        align-items: center;
-    }
-
-    #footer-moodboard p {
-        margin: 0;
-        font-weight: 600;
-    }
-
-    .fm-box li {
-        display: inline-block;
-        background-color: #f1f1f1;
-        width: 40px;
-        height: 40PX;
-        padding: 0;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        margin-right: 6px;
-    }
-
-    ul.fm-box {
-        padding: 8px 0 0 14px;
-        width: 88%;
-    }
-
-    .fm-left {
-        width: 100%;
-    }
-
-    .fm-container {
-        max-width: 98%;
-        margin: 0 auto;
-        padding: 0 30px;
-        position: relative;
-    }
-
-    #footer-moodboard,
-    .f-up-mb {
-        padding: 14px 0;
-        position: fixed;
-        width: 100%;
-        bottom: 0;
-        background-color: #fff;
-        z-index: 9;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-    }
-
-    #footer-moodboard input[type="submit"] {
-        padding: 0 20px;
-        height: 50px;
-    }
-
-    .remove-fm {
-        position: absolute;
-        right: -4px;
-        top: -6px;
-        line-height: 10px;
-        padding-bottom: 2px;
-        background-color: #000;
-        border-radius: 25px;
-        cursor: pointer;
-        width: 14px;
-        text-align: center;
-        border: 1px solid rgba(0, 0, 0, 0.2);
-        color: #fff;
-        font-size: 18px;
-        opacity: 0;
-        transition: all 250ms ease-in-out;
-    }
-
-    .fm-box li:last-child {
-        margin-right: 0;
-    }
-
-    .fm-inline {
-        display: inline-block;
-        align-items: center;
-        vertical-align: middle;
-    }
-
-    a.fm-item-link {
-        width: 100%;
-        position: absolute;
-        color: transparent;
-    }
-
-    a.fm-item-link:hover {
-        color: transparent;
-    }
-
-    .fm-box li:hover span {
-        opacity: 1;
-    }
-
-    .mb-icon {
-        position: absolute;
-        top: 4.5px;
-        padding: 10px 10px !important;
-        right: 4px;
-        border-bottom: 0 !important;
-    }
-
-    #footer-moodboard-form {
-        position: relative;
-    }
-
-    #footer-moodboard input[type="submit"] {
-        padding: 0 50px 0 20px;
-        background: url("https://cdn.shopify.com/s/files/1/0422/9274/0261/files/moodboard-no-border.png?v=1597878997");
-        background-repeat: no-repeat;
-        background-position: center right 5%;
-    }
-
-    #footer-moodboard input[type="submit"]:hover {
-        background-color: #000;
-        background-image: url("https://cdn.shopify.com/s/files/1/0422/9274/0261/files/moodboard-no-border-white.png?v=1597878997");
-    }
-
-    .close-container {
-        position: absolute;
-        right: 40px;
-        top: -44px;
-        background-color: #fff;
-        font-size: 26px;
-        transform: rotate(90deg);
-        padding: 8px 16px 8px;
-        border-radius: 25px;
-        box-shadow: -1px 0px 0px rgba(0, 0, 0, 0.40);
-        cursor: pointer;
-    }
-
-    .f-up-mb .close-container {
-        transform: rotate(-90deg);
-        text-align: center;
-        padding: 6px 14px 10px;
-        box-shadow: 1px 0px 1px rgba(0, 0, 0, 0.40);
-    }
-
-    @media screen and (max-width: 767px) {
-        #footer-moodboard-form {
-            max-width: 198px;
-            margin: 0 auto;
-        }
-    }
-</style>
-
-<div class="f-up-mb">
-    <div class="fm-container">
-        <div class="close-container up-mb">
-            <a class="hide-mb " href="#">&gt;</a>
-        </div>
-    </div>
-</div>
-<div id="footer-moodboard" class="">
-    <div class="fm-container">
-        <div class="close-container down-mb">
-            <a class="hide-mb" href="#">&gt;</a>
-        </div>
-    </div>
-    <div class="clearfix fm-container fm-flex">
-        <div class="fm-col fm-left">
-            <div class="">
-                <p class="fm-inline">Your Moodboard</p>
-
-                <ul class="fm-box fm-inline">
-                    <li> </li>
-                    <li> </li>
-                    <li> </li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="fm-col fm-right">
-            <form id="footer-moodboard-form" method="get" action="/moodboard">
-                <input type="submit" value="View Moodboard">
-            </form>
-        </div>
-    </div>
-
-
-    <form id="footer-mb-hidden" method="get" action="https://pravada.webounces.com/moodboard/">
-        <input type="hidden" name="m1" value="">
-        <input type="hidden" name="m2" value="">
-        <input type="hidden" name="m3" value="">
-        <input type="hidden" name="m4" value="">
-        <input type="hidden" name="m5" value="">
-        <input type="hidden" name="m6" value="">
-        <input type="hidden" name="m7" value="">
-        <input type="hidden" name="m8" value="">
-        <input type="hidden" name="m9" value="">
-        <input type="hidden" name="m10" value="">
-
-        <input type="submit" name="">
-    </form>
-
-</div>
 
 {% schema %}
 {

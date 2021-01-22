@@ -112,9 +112,11 @@ a:hover {
 
 /* ==================== ##General styles ==================== */
 ::-moz-selection {
-  color: #ffffff; }
+  color: #000000;
+}
 ::selection {
-  color: #ffffff; }
+  color: #000000;
+}
 
 /* input */
 body input:not([type='checkbox']):not([type='submit']),
@@ -318,7 +320,6 @@ textarea {
 input[type="submit"],
 button {
   display: inline-block;
-  height: 56px;
   margin-bottom: 0;
   border-width: 1px;
   border-style: solid;

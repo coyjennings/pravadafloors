@@ -46,7 +46,8 @@
                                         <h2 class="elementor-heading-title elementor-size-default">
                                           {% for block in section.blocks %}
                                           {% if block.type == 'design' %}
-                                          <a href={{ block.settings.design_link_01 }}>{{ block.settings.design_link_text_01 }}</a>
+                                          <a
+                                            href={{ block.settings.design_link_01 }}>{{ block.settings.design_link_text_01 }}</a>
                                           {% endif %}
                                           {% endfor %}
                                         </h2>
@@ -83,7 +84,8 @@
                                         <h2 class="elementor-heading-title elementor-size-default">
                                           {% for block in section.blocks %}
                                           {% if block.type == 'design' %}
-                                          <a href={{ block.settings.design_link_02 }}>{{ block.settings.design_link_text_02 }}</a>
+                                          <a
+                                            href={{ block.settings.design_link_02 }}>{{ block.settings.design_link_text_02 }}</a>
                                           {% endif %}
                                           {% endfor %}
                                         </h2>
@@ -128,7 +130,8 @@
                                         <h2 class="elementor-heading-title elementor-size-default">
                                           {% for block in section.blocks %}
                                           {% if block.type == 'design' %}
-                                          <a href={{ block.settings.design_link_03 }}>{{ block.settings.design_link_text_03 }}</a>
+                                          <a
+                                            href={{ block.settings.design_link_03 }}>{{ block.settings.design_link_text_03 }}</a>
                                           {% endif %}
                                           {% endfor %}
                                         </h2>
@@ -165,7 +168,8 @@
                                         <h2 class="elementor-heading-title elementor-size-default">
                                           {% for block in section.blocks %}
                                           {% if block.type == 'design' %}
-                                          <a href={{ block.settings.design_link_04 }}>{{ block.settings.design_link_text_04 }}</a>
+                                          <a
+                                            href={{ block.settings.design_link_04 }}>{{ block.settings.design_link_text_04 }}</a>
                                           {% endif %}
                                           {% endfor %}
                                         </h2>
@@ -210,7 +214,8 @@
                                         <h2 class="elementor-heading-title elementor-size-default">
                                           {% for block in section.blocks %}
                                           {% if block.type == 'design' %}
-                                          <a href={{ block.settings.design_link_05 }}>{{ block.settings.design_link_text_05 }}</a>
+                                          <a
+                                            href={{ block.settings.design_link_05 }}>{{ block.settings.design_link_text_05 }}</a>
                                           {% endif %}
                                           {% endfor %}
                                         </h2>
@@ -239,7 +244,8 @@
                                         <h2 class="elementor-heading-title elementor-size-default">
                                           {% for block in section.blocks %}
                                           {% if block.type == 'design' %}
-                                          <a href={{ block.settings.design_link_06 }}>{{ block.settings.design_link_text_06 }}</a>
+                                          <a
+                                            href={{ block.settings.design_link_06 }}>{{ block.settings.design_link_text_06 }}</a>
                                           {% endif %}
                                           {% endfor %}
                                         </h2>
@@ -264,6 +270,63 @@
                                   </div>
                                 </div>
                               </div>
+
+                              <!-- designer and dealer login button -->
+                              <div
+                                class="has_ae_slider elementor-element elementor-element-a058c08 ae-bg-gallery-type-default elementor-column elementor-col-100 elementor-inner-column"
+                                data-id="a058c08" data-element_type="column">
+                                <div class="elementor-column-wrap  elementor-element-populated">
+                                  <div class="elementor-widget-wrap">
+                                    <div class="member-login">
+                                      {% if shop.customer_accounts_enabled %}
+                                      {% if customer %}
+                                      <a href="{{ routes.account_url }}" class="member-login-btn">
+                                        <span>My account</span>
+                                      </a>
+                                      {% else %}
+                                      <a href="{{ routes.account_login_url }}" class="member-login-btn">
+                                        <span>login</span>
+                                      </a>
+                                      {% endif %}
+                                      {% endif %}
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <style>
+                                .member-login {
+                                  position: absolute;
+                                  bottom: 0;
+                                  right: -20px;
+                                  width: 100%;
+                                  max-width: 230px;
+                                }
+
+                                .member-login-btn {
+                                  display: block;
+                                  font-family: "Raleway", Sans-serif;
+                                  text-transform: uppercase;
+                                  color: #ffffff;
+                                  background-color: #000000;
+                                  border-style: solid;
+                                  border-width: 1px 1px 1px 1px;
+                                  border-color: #000000;
+                                  border-radius: 0px 0px 0px 0px;
+                                  width: 100% !important;
+                                  max-width: 230px !important;
+                                  font-size: 16px !important;
+                                  font-weight: 600;
+                                  padding: 12px 10px !important;
+                                  text-align: center;
+                                  margin-bottom: 50px;
+                                }
+
+                                .member-login-btn:hover {
+                                  color: #000000;
+                                  background-color: #ffffff;
+                                }
+                              </style>
                             </div>
                           </div>
                         </section>
@@ -278,24 +341,25 @@
                     {% if block.type == 'design' %}
                     <div class="elementor-column-wrap  elementor-element-populated"
                       style="background-image:url('{{ block.settings.design_background | img_url : '1000x' }}')" ​​​​​​>
-                    {% endif %}
-                    {% endfor %}
-                    <div class="elementor-column-wrap  elementor-element-populated">
-                      <div class="elementor-background-overlay">
-                      </div>
-                      <div class="elementor-widget-wrap">
-                        <div
-                          class="elementor-element elementor-element-edfe631 elementor-widget elementor-widget-text-editor"
-                          data-id="edfe631" data-element_type="widget" data-widget_type="text-editor.default">
-                          <div class="elementor-widget-container">
-                            <div class="elementor-text-editor elementor-clearfix">
-                              <p>
-                                {% for block in section.blocks %}
-                                {% if block.type == 'design' %}
-                                {{ block.settings.design_description }}
-                                {% endif %}
-                                {% endfor %}
-                              </p>
+                      {% endif %}
+                      {% endfor %}
+                      <div class="elementor-column-wrap  elementor-element-populated">
+                        <div class="elementor-background-overlay">
+                        </div>
+                        <div class="elementor-widget-wrap">
+                          <div
+                            class="elementor-element elementor-element-edfe631 elementor-widget elementor-widget-text-editor"
+                            data-id="edfe631" data-element_type="widget" data-widget_type="text-editor.default">
+                            <div class="elementor-widget-container">
+                              <div class="elementor-text-editor elementor-clearfix">
+                                <p>
+                                  {% for block in section.blocks %}
+                                  {% if block.type == 'design' %}
+                                  {{ block.settings.design_description }}
+                                  {% endif %}
+                                  {% endfor %}
+                                </p>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -303,7 +367,6 @@
                     </div>
                   </div>
                 </div>
-              </div>
             </section>
           </div>
         </div>

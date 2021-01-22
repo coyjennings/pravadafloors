@@ -1,0 +1,148 @@
+<article> <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400|Oswald:400|Roboto:400|Playfair+Display:400|Raleway:400&display=swap"><link rel="stylesheet" href="https://cdn.pagefly.io/pagefly/2.14.3/css/main-style.css?t=20201021091011"><link rel="stylesheet" href="{{ 'pagefly.425557aa.scss.css' | asset_url }}">
+		  <div class="__pf" id="__pf"><div data-pf-type="Body" class="sc-pRgDJ fzXWJx pf-45de4635"><div data-pf-type="Layout" class="pf-ea45de46"><div data-container="false" class="sc-pZopv bjKdkd pf-b8e6f437" data-pf-type="Section"><div class="sc-pQQXS iWCqut"><div class="sc-qPjXN eYzxUD pf-37e189c6 pf-r pf-r-eh" data-pf-type="Row" style="--pf-s-lg:15px; --pf-s-md:15px; --pf-s-sm:15px; --pf-s-xs:15px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-2637e189" data-pf-type="Column"><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-49caba14"><h1 data-pf-type="Heading" class="sc-oTLFK lcHmGL pf-b00049ca"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-c4df2626">Pravada Partnerships</span></h1></div><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-a026b655"><h2 data-pf-type="Heading" class="sc-oTLFK lcHmGL pf-7e0aa026"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-262637e1">DESIGN FOR THE FUTURE</span></h2></div></div></div></div></div></div><div data-container="true" class="sc-pZopv bjKdkd pf-1410e16b" data-pf-type="Section"><div class="sc-pQQXS iWCqut" style="max-width: 850px;"><div class="sc-qPjXN eYzxUD pf-d9455493 pf-r pf-r-eh" data-pf-type="Row" style="--pf-s-lg:15px; --pf-s-md:15px; --pf-s-sm:15px; --pf-s-xs:15px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-77d94554" data-pf-type="Column"><img sizes="(min-width: 992px) 1200px, (min-width: 768px) and (max-width: 991px) 800px, 400px" srcset="https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-2daf40e3--pravada-logomarkblack.png?v=1599026715 1200w, https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-2daf40e3--pravada-logomarkblack.png?v=1599026715 800w, https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-2daf40e3--pravada-logomarkblack.png?v=1599026715 400w" class="sc-qZtVr dLIPjF pf-f43746b3" data-pf-type="Image2"><h4 data-pf-type="Heading" class="sc-oTLFK lcHmGL pf-aec9f581"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-89c69a77">{{ blog.title }}</span></h4><p data-pf-type="Paragraph2" class="sc-pkvvt cbrLgP pf-bfb7b265"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-9a77d945">{{blog.metafields.blog_description.blog_description}}</span></p></div></div></div></div></div><div data-container="true" class="sc-pZopv bjKdkd pf-ab5fb3b0" data-pf-type="Section"><div class="sc-pQQXS iWCqut" style="max-width: 1200px;"><div class="sc-qPjXN eYzxUD pf-9540c7d0 pf-r pf-r-eh" data-pf-type="Row" style="--pf-s-lg:0px; --pf-s-md:0px; --pf-s-sm:0px; --pf-s-xs:0px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-939540c7" data-pf-type="Column"><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-54939540"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-45549395"><div class="project-blog">
+  <div class="container">
+	{% for article in blog.articles %}
+	<div class="box" style="background-image: url('{{ article.image.src | img_url: '600x600' }}');">
+		<div class="content">
+		  <div class="meta">
+			<h3><a href="{{article.url}}">{{ article.title }}</a></h3>
+			<span><a href="{{blog.url}}">{{ blog.title }}</a></span>
+		  </div>
+		</div>
+	</div>
+	{% endfor %}
+  </div>
+</div>
+
+<style>
+  .project-blog {
+	display: flex;
+	justify-content: center;
+	align-self: center;
+	min-height: 100vh;
+  }
+
+  .container {
+	position: relative;
+	max-width: 1000px;
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	grid-template-rows: minmax(50px, auto);
+	margin: 40px;
+	grid-auto-flow: dense;
+  }
+
+  .container .box {
+	background-size: cover;
+	background-position: center;
+	display: grid;
+	font-size: 20px;
+	place-items: center;
+	text-align: center;
+	color: #fff;
+	transition: 0.5s;
+	margin: 2px;
+  }
+
+  .container .box a {
+	width: 100%;
+	height: 100%;
+  }
+
+  .container .box .content {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	transition: 0.5s;
+  }
+
+  .container .box:hover .content {
+	background-color: rgba(55, 55, 55, 0.8);
+	cursor: pointer;
+  }
+
+  .container .box .content .meta {
+	position: relative;
+	justify-content: center;
+	align-self: center;
+	align-items: center;
+	width: 100%;
+	opacity: 0;
+  }
+  
+  .container .box:hover .content .meta {
+	opacity: 1;
+  }
+
+  .container .box .content .meta h3 a {
+	font-family: "Raleway", Sans-serif;
+	font-size: 18px;
+	font-weight: 700;
+	color: #ffffff;
+	line-height: 1.2;
+  }
+  
+  .container .box .content .meta span a {
+	font-size: 16px;
+    font-weight: 300;
+    color: #000000;
+  }
+
+  @media only screen and (max-width: 600px) {
+	.container {
+	  display: block;
+	  margin: 20px;
+	}
+
+	.container .box {
+	  margin-bottom: 20px;
+	}
+
+	.container .box .content {
+	  padding: 150px 0;
+	}
+  }
+</style>
+
+
+{% for article in blog.articles %}
+  {% assign t = i | plus: 1 %}
+  {% assign i = t %}
+  {% assign z = i | modulo:4 %}
+
+
+  {% if z == 1 %}
+	<style>
+	  .container .box:nth-child({{ i }}) {
+		grid-column: span 2;
+		grid-row: span 2;	
+	  }
+	</style>
+  {% elsif z == 2 %}
+	<style>
+	  .container .box:nth-child({{ i }}) {
+		grid-column: span 1;
+		grid-row: span 2;
+	  }
+	</style>
+  {% elsif z == 3 %}
+	<style>
+	  .container .box:nth-child({{ i }}) {
+		grid-column: span 1;
+		grid-row: span 1;
+	  }
+	</style>
+  {% elsif z == 0 %}
+	<style>
+	  .container .box:nth-child({{ i }}) {
+		grid-column: span 1;
+		grid-row: span 1;
+	  }
+	</style>
+  {% endif %}
+{% endfor %}
+</div></div></div></div></div></div></div><div data-container="false" class="sc-pZopv bjKdkd pf-40742b99" data-pf-type="Section"><div class="sc-pQQXS iWCqut"><div class="sc-qPjXN eYzxUD pf-30ea45de pf-r pf-r-eh" data-pf-type="Row" style="--pf-s-lg:15px; --pf-s-md:15px; --pf-s-sm:15px; --pf-s-xs:15px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-c730ea45" data-pf-type="Column"><img sizes="(min-width: 992px) 1200px, (min-width: 768px) and (max-width: 991px) 800px, 400px" srcset="https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-2daf40e3--pravada-logomarkblack.png?v=1599026715 1200w, https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-2daf40e3--pravada-logomarkblack.png?v=1599026715 800w, https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-2daf40e3--pravada-logomarkblack.png?v=1599026715 400w" class="sc-qZtVr dLIPjF pf-86a98a46" data-pf-type="Image2"><p data-pf-type="Paragraph2" class="sc-pkvvt cbrLgP pf-7a0b3b2d"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-23fd9457">SHOP</span></p><h4 data-pf-type="Heading" class="sc-oTLFK lcHmGL pf-16d50e4f"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-945796c7">MAKE THEM YOURS!</span></h4><a href="/pages/dealer-locator" target="_self" data-pf-type="Button" class="sc-pZdvY kuwSuz pf-6bde8724"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-96c730ea">Find a Dealer</span></a></div></div></div></div></div></div></div></div><script>
+					window.__pagefly_setting__={"baseURL":"https://apps.pagefly.io","analyticsURL":"https://analytics.pagefly.io","isBackend":false,"cdnURL":"https://cdn.pagefly.io","pageflyVersion":"2.14.3","shopDomain":"pravadafloorsinc.myshopify.com","elementData":{},"pageTitle":"Partnerships Blog Template","pageType":"blog","pageId":"425557aa-b000-49ca-ba14-7e0aa026b655","lazyLoad":false,"imageLazyLoad":false,"nativeImageLazyLoad":true,"trackingIDs":[],"shopifyProxyPath":"/a/pf_preview","updatedTime":"2020-10-21T17:12:21.002Z"};
+					window.__pagefly_setting__.moneyFormat = {{shop.money_format | json}}
+				</script><script src="https://cdn.pagefly.io/pagefly/2.14.3/core/helper.js?t=20201021091011" defer></script> </article>

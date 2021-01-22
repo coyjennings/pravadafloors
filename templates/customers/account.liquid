@@ -5,6 +5,7 @@
     <div class="section-header__btn">
       <a class="btn-link" href="{{ routes.account_logout_url }}">{{ 'layout.customer.log_out' | t }}</a>
     </div>
+    
   </header>
 
   <div class="grid grid--rows">
@@ -16,9 +17,10 @@
       <p>
         <a href="{{ routes.account_addresses_url }}" class="btn-link">{{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})</a>
       </p>
-
+     	
     </div>
     <div class="grid__item medium-up--four-fifths">
+      
       <h2 class="h4">{{ 'customer.orders.title' | t }}</h2>
 
       {% paginate customer.orders by 20 %}
@@ -57,14 +59,15 @@
       {% else %}
 
         <p>{{ 'customer.orders.none' | t }}</p>
-
       {% endif %}
       {% if paginate.pages > 1 %}
         {% include 'pagination' %}
       {% endif %}
       {% endpaginate %}
     </div>
+  
   </div>
-
-
+  <header class="section-header section-header--small text-center"> <h2 class="h4" > <a href="/pages/dealers" target="_self">DEALER PORTAL ACCESS</a>
+   <br> <a href="/pages/designers" target="_self" >DESIGNER PORTAL ACCESS</a>
+</h2> </header>
 </div>

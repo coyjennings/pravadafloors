@@ -1,0 +1,497 @@
+<article> <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400|Oswald:400|Roboto:400|Raleway:400,300&display=swap"><link rel="stylesheet" href="https://cdn.pagefly.io/pagefly/2.13.14/css/main-style.css?t=20200924170948"><link rel="stylesheet" href="{{ 'pagefly.c478ea18.scss.css' | asset_url }}">
+		  <div class="__pf" id="__pf"><div data-pf-type="Body" class="sc-pRgDJ fzXWJx pf-c94e2e16"><div data-pf-type="Layout" class="pf-37e9c94e"><div data-container="false" class="sc-pZopv bjKdkd pf-1ccc7964 article-header" data-pf-type="Section"><div class="sc-pIvhh gtZHgp" style="background-color: rgba(0, 0, 0, 0.15);"></div><div class="sc-pQQXS iWCqut"><div class="sc-qPjXN eYzxUD pf-1cac1ccc pf-r pf-r-eh" data-pf-type="Row" style="--pf-s-lg:15px; --pf-s-md:15px; --pf-s-sm:15px; --pf-s-xs:15px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-113c1cac" data-pf-type="Column"><p data-pf-type="Paragraph2" class="sc-pkvvt cbrLgP pf-6cb7cb63"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-495966c8">{{article.metafields.project_type.project_type}}</span></p><h2 data-pf-type="Heading" class="sc-oTLFK lcHmGL pf-cb63113c"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-f07389f7">{{ article.title }}</span></h2><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-89f76cb7"><span class="elementor-divider-separator"></span>
+
+<style>
+  span.elementor-divider-separator {
+	display: inline-block;
+	width: 1px;
+	margin: 25px auto;
+	background-color: #ffffff;
+	height: 100px;
+  }
+  @media screen and (max-width: 768px) {
+	span.elementor-divider-separator {
+	  height: 50px;
+	  margin: 5px auto;
+	}
+  }
+  .article-header {
+	background-image: url('{{ article.image | img_url: "master" }}');
+  }
+  .article-sidebar {
+	background-image: url('{{ article.metafields.blog_collection.featured_image }}');
+  }
+</style></div><p data-pf-type="Paragraph2" class="sc-pkvvt cbrLgP pf-8d22e625"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-5c798d22">DESIGN BY {{article.metafields.interior_designer.name}}</span></p></div></div></div></div></div><div data-container="true" class="sc-pZopv bjKdkd pf-5747d5ab" data-pf-type="Section"><div class="sc-pQQXS iWCqut" style="max-width: 1300px;"><div class="sc-qPjXN eYzxUD pf-b1efe1d6 pf-r pf-r-eh pf-sm--hidden pf-xs--hidden" data-pf-type="Row" style="--pf-s-lg:0px; --pf-s-md:0px; --pf-s-sm:0px; --pf-s-xs:0px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--undefined pf-c-md--8 pf-c-lg--8"><div class="sc-pkUyL fTyjzF pf-da8a2ff6" data-pf-type="Column"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-79642737">{{ article.content }}
+
+<link rel="stylesheet" href="{{ 'jcarousel.responsive.css' | asset_url }}" type="text/css" media="all">
+<script type="text/javascript" src="{{ 'jquery.jcarousel.min.js' | asset_url }}"></script>
+<script type="text/javascript" src="{{ 'jcarousel.responsive.js' | asset_url }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jcarousel/0.3.9/jquery.jcarousel-autoscroll.js" integrity="sha512-RpCZspsevCAqB67FKXBF/Tpn98UT8Olstiwb8I0P9M8923E6XyhXyaatNJcUeAzW9sY3ZPtydsqDQHiQYWLRlQ==" crossorigin="anonymous"></script>
+
+<div class="jcarousel-wrapper">
+  <div class="jcarousel">
+	<ul>
+	  {% assign gallery_images = article.metafields.second_content.images_gallery | split: ',' %}
+	  {% for gallery_image in gallery_images %}
+	  <li><img src="{{gallery_image}}" alt="Image 1"></li>
+	  {% endfor %}
+	</ul>
+  </div>
+  <p class="jcarousel-pagination"></p>
+</div>
+
+<style>
+  .jcarousel-wrapper {
+	border: none !important;
+	box-shadow: 0 0 #000 !important;
+  }
+  .jcarousel img {
+    display: block;
+    max-width: 100%;
+    height: auto !important;
+	margin: auto;
+  }
+</style>
+
+<script>
+jQuery(document).ready(function() {
+    jQuery('.jcarousel')
+        .jcarousel({
+            // Core configuration goes here
+        })
+        .jcarouselAutoscroll({
+            interval: 3000,
+            target: '+=1',
+            autostart: true
+        })
+    ;
+});
+</script></div><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-b3021a37"><a href="{{article.metafields.learn_more.link}}" target="_self" data-pf-type="Button" class="sc-pZdvY kuwSuz pf-488e165f"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-7ac586c4">{{article.metafields.learn_more.name}}</span></a></div><div class="sc-qPjXN eYzxUD pf-a520354c pf-r pf-r-ew" data-pf-type="Row" style="--pf-s-lg:0px; --pf-s-md:0px; --pf-s-sm:0px; --pf-s-xs:0px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--6 pf-c-md--6 pf-c-lg--6"><div class="sc-pkUyL fTyjzF pf-5fec2688" data-pf-type="Column"><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-c4374720"><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-1a37b3ee"><h3 data-pf-type="Heading" class="sc-oTLFK lcHmGL pf-165fdc78"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-562f2393">Share:</span></h3></div><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-2393082c"><style>
+  .share-btn {
+	background-color: #232323;
+	margin: 0 5px;
+	border-radius: 50%;
+	color: #ffffff;
+  }
+  .share-btn__icon {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  .share-btn__icon a {
+	color: #ffffff;
+  }
+  i.fab {
+	font-size: 16px;
+	padding: 10px;
+  }
+</style>
+
+<div class="share-btn">
+  <span class="share-btn__icon">
+	<a target="_blank" href="//www.facebook.com/sharer.php?u={{ shop.url | append: article.url }}">
+	  <i class="fab fa-facebook" aria-hidden="true"></i>
+	</a>	
+  </span>
+</div></div><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-082c20f1"><div class="share-btn">
+  <span class="share-btn__icon">
+	<a target="_blank" href="//twitter.com/share?text={{ article.title | default: page_description | url_param_escape }}&url={{ shop.url | append: article.url }}">
+	  <i class="fab fa-twitter" aria-hidden="true"></i>
+	</a>	
+  </span>
+</div></div><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-20f16fa3"><div class="share-btn">
+  <span class="share-btn__icon">
+	<a target="_blank" href="//pinterest.com/pin/create/button/?url={{ shop.url | append: article.url }}&media={{ article.image | img_url: '1024x1024' }}&description={{ article.title | default: page_description | url_param_escape }}">
+	  <i class="fab fa-pinterest" aria-hidden="true"></i>
+	</a>	
+  </span>
+</div></div></div></div></div></div><div class="sc-qPjXN eYzxUD pf-4720a949 pf-r pf-r-align--cm" data-pf-type="Row" style="--pf-s-lg:0px; --pf-s-md:0px; --pf-s-sm:0px; --pf-s-xs:0px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-b3eef4e4" data-pf-type="Column"><h3 data-pf-type="Heading" class="sc-oTLFK lcHmGL pf-fa177fa3"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-f8b1f80a">RELATED PROJECTS</span></h3><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-f80af624">{% assign i = 0 %}
+{% for project in blog.articles %}
+{% if project.id != article.id %}
+{% assign t = i | plus: 1 %}
+{% assign i = t %}
+{% if t <= 3 %}
+<div class="proj-container pagefly" style="background-image: url('{{ project.image | img_url: 'large' }}')">
+<a href="{{project.url}}">
+  <div class="proj-contents pagefly">
+	<h4>{{ blog.title }}</h4>
+	<h3>{{ project.title }}</h3>
+	<p>By {{ project.author }}</p>
+  </div>
+</a>
+</div>
+{% endif %}
+{% endif %}
+{% endfor %}
+
+<style>
+  .pagefly.proj-container {
+	width: 29%;
+    float: left;
+    margin: 0 15px;
+    padding: 70px 10px 70px;
+    text-align: center;
+    background-blend-mode: overlay;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 265px;
+  }
+  .pagefly.proj-contents h4 {
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #fff;
+    line-height: 1em;
+    font-weight: 300 !important;
+    padding-bottom: 28px;
+    z-index: 2;
+  }
+  .pagefly.proj-contents h4::before {
+    content: "";
+    background: rgb(255, 255, 255);
+    width: 20px;
+    height: 1px;
+    position: absolute;
+    top: 5px;
+    left: 15px;
+  }
+  .pagefly.proj-contents h4::after {
+    content: "";
+    background: rgb(255, 255, 255);
+    width: 20px;
+    height: 1px;
+    position: absolute;
+    top: 5px;
+    right: 15px;
+  }
+  .pagefly.proj-contents h3 {
+    font-size: 18px;
+    color: #fff;
+    line-height: 1em;
+    padding-bottom: 17px;
+    text-transform: uppercase;
+	font-weight: 600;
+  }
+  .pagefly.proj-contents p {
+    margin-bottom: 0 !important;
+    color: #fff;
+  }
+</style></div></div></div></div></div></div><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--4 pf-c-md--4 pf-c-lg--4"><div class="sc-pkUyL fTyjzF pf-354cf6c0" data-pf-type="Column"><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-6cbd57f2"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-284ff920"><table>
+  <tbody><tr>
+    <td class="side-title">Project Name</td>
+    <td class="side-content">{{ article.title }}</td>
+  </tr>
+  <tr>
+    <td class="side-title">Interior Designer</td>
+    <td class="side-content">{{article.metafields.interior_designer.name}}</td>
+  </tr>
+  <tr>
+    <td class="side-title">Architects</td>
+    <td class="side-content">{{article.metafields.architects_name.architects_name}}</td>
+  </tr>
+  <tr>
+    <td class="side-title">Builder</td>
+    <td class="side-content">{{article.metafields.builder_name.builder_name}}</td>
+  </tr>
+  <tr>
+    <td class="side-title">Location</td>
+    <td class="side-content">{{article.metafields.location.location}}</td>
+  </tr>
+  <tr>
+    <td class="side-title">Completion</td>
+    <td class="side-content">{{article.metafields.completion.year}}</td>
+  </tr>
+  <tr>
+    <td class="side-title">Photography</td>
+    <td class="side-content">{{article.metafields.photography.name}}</td>
+  </tr>
+</tbody></table>
+
+<style>
+  table {
+	font-family: "Raleway", Sans-serif;
+	font-size: 16px;
+	color: #000000;
+	border-collapse: collapse;
+	width: 100%;
+  }
+
+  tr:last-child td {
+	border-width: 0 !important;
+  }
+
+  td {
+	border-style: solid !important;
+	border-width: 0px 0px 1px 0px !important;
+	border-color: #000000 !important;
+	text-align: left;
+	padding: 20px 0 10px 0 !important;
+  }
+  .side-title {
+	font-weight: 600;
+  }
+  .side-content {
+	font-weight: 400;
+	text-align: right;
+  }
+  .side-collection {
+	background-image: url("{{article.metafields.product_featured.image}}");
+  }
+  ..side-collection:hover {
+	background-color: rgba(0,0,0,0.5);
+  }
+  .sidebar-overlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+  }
+  .sidebar-overlay:hover {
+	background-color: rgba(0, 0, 0, 0.3);
+	transition-duration: 1500ms;
+  }
+</style></div><div data-href="{{article.metafields.product_featured.link}}" data-target="_self" data-pf-type="Block" class="sc-oUbqx bgMQOP pf-4dc4fcdd side-collection"><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-67910fb5 sidebar-overlay"></div><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-63bfdd48"><h3 data-pf-type="Heading" class="sc-oTLFK lcHmGL pf-80813c41"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-46a6f3c2">{{article.metafields.product_feature.name}}</span></h3><p data-pf-type="Paragraph2" class="sc-pkvvt cbrLgP pf-3c41f6d0"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-09563f2c">{{article.metafields.product_featured.collection_name}}</span></p><a href="{{article.metafields.product_featured.link}}" target="_self" data-pf-type="Button" class="sc-pZdvY kuwSuz pf-f6d063bf"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-ee0a8081">See Product</span></a></div></div></div></div></div></div><div class="sc-qPjXN eYzxUD pf-e1d65747 pf-r pf-r-ew pf-lg--hidden pf-md--hidden" data-pf-type="Row" style="--pf-s-lg:0px; --pf-s-md:0px; --pf-s-sm:0px; --pf-s-xs:0px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--undefined pf-c-md--8 pf-c-lg--8"><div class="sc-pkUyL fTyjzF pf-2ff6a7c7" data-pf-type="Column"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-9087587f">{{ article.content }}
+
+<link rel="stylesheet" href="{{ 'jcarousel.responsive.css' | asset_url }}" type="text/css" media="all">
+<script type="text/javascript" src="{{ 'jquery.jcarousel.min.js' | asset_url }}"></script>
+<script type="text/javascript" src="{{ 'jcarousel.responsive.js' | asset_url }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jcarousel/0.3.9/jquery.jcarousel-autoscroll.js" integrity="sha512-RpCZspsevCAqB67FKXBF/Tpn98UT8Olstiwb8I0P9M8923E6XyhXyaatNJcUeAzW9sY3ZPtydsqDQHiQYWLRlQ==" crossorigin="anonymous"></script>
+
+<div class="jcarousel-wrapper">
+  <div class="jcarousel">
+	<ul>
+	  {% assign gallery_images = article.metafields.second_content.images_gallery | split: ',' %}
+	  {% for gallery_image in gallery_images %}
+	  <li><img src="{{gallery_image}}" alt="Image 1"></li>
+	  {% endfor %}
+	</ul>
+  </div>
+  <p class="jcarousel-pagination"></p>
+</div>
+
+<style>
+  .jcarousel-wrapper {
+	border: none !important;
+	box-shadow: 0 0 #000 !important;
+  }
+  .jcarousel img {
+    display: block;
+    max-width: 100%;
+    height: auto !important;
+	margin: auto;
+  }
+</style>
+
+<script>
+jQuery(document).ready(function() {
+    jQuery('.jcarousel')
+        .jcarousel({
+            // Core configuration goes here
+        })
+        .jcarouselAutoscroll({
+            interval: 3000,
+            target: '+=1',
+            autostart: true
+        })
+    ;
+});
+</script></div><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-93fd10bd"><a href="{{article.metafields.learn_more.link}}" target="_self" data-pf-type="Button" class="sc-pZdvY kuwSuz pf-47f8484e"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-e1ae60b4">{{article.metafields.learn_more.name}}</span></a></div><div class="sc-qPjXN eYzxUD pf-f6c0e196 pf-r" data-pf-type="Row" style="--pf-s-lg:0px; --pf-s-md:0px; --pf-s-sm:0px; --pf-s-xs:0px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--6 pf-c-md--6 pf-c-lg--6"><div class="sc-pkUyL fTyjzF pf-c3dde063" data-pf-type="Column"><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-4ac07edc"><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-10bd1145"><h3 data-pf-type="Heading" class="sc-oTLFK lcHmGL pf-484efb23"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-7e087f90">Share:</span></h3></div><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-7f909445"><style>
+  .share-btn {
+	background-color: #232323;
+	margin: 0 5px;
+	border-radius: 50%;
+	color: #ffffff;
+  }
+  .share-btn__icon {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  .share-btn__icon a {
+	color: #ffffff;
+  }
+  i.fab {
+	font-size: 16px;
+	padding: 10px;
+  }
+</style>
+
+<div class="share-btn">
+  <span class="share-btn__icon">
+	<a target="_blank" href="//www.facebook.com/sharer.php?u={{ shop.url | append: article.url }}">
+	  <i class="fab fa-facebook" aria-hidden="true"></i>
+	</a>	
+  </span>
+</div></div><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-94455bea"><div class="share-btn">
+  <span class="share-btn__icon">
+	<a target="_blank" href="//twitter.com/share?text={{ article.title | default: page_description | url_param_escape }}&url={{ shop.url | append: article.url }}">
+	  <i class="fab fa-twitter" aria-hidden="true"></i>
+	</a>	
+  </span>
+</div></div><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-5beaa119"><div class="share-btn">
+  <span class="share-btn__icon">
+	<a target="_blank" href="//pinterest.com/pin/create/button/?url={{ shop.url | append: article.url }}&media={{ article.image | img_url: '1024x1024' }}&description={{ article.title | default: page_description | url_param_escape }}">
+	  <i class="fab fa-pinterest" aria-hidden="true"></i>
+	</a>	
+  </span>
+</div></div></div></div></div></div><div class="sc-qPjXN eYzxUD pf-7edc4a97 pf-r pf-r-align--cm" data-pf-type="Row" style="--pf-s-lg:0px; --pf-s-md:0px; --pf-s-sm:0px; --pf-s-xs:0px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-114547e9" data-pf-type="Column"><h3 data-pf-type="Heading" class="sc-oTLFK lcHmGL pf-3f671d73"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-d234d438">RELATED PROJECTS</span></h3><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-d4383875">{% assign i = 0 %}
+{% for project in blog.articles %}
+{% if project.id != article.id %}
+{% assign t = i | plus: 1 %}
+{% assign i = t %}
+{% if t <= 3 %}
+<div class="proj-container pagefly" style="background-image: url('{{ project.image | img_url: 'large' }}')">
+<a href="{{project.url}}">
+  <div class="proj-contents pagefly">
+	<h4>{{ blog.title }}</h4>
+	<h3>{{ project.title }}</h3>
+	<p>By {{ project.author }}</p>
+  </div>
+</a>
+</div>
+{% endif %}
+{% endif %}
+{% endfor %}
+
+<style>
+  .pagefly.proj-container {
+	width: 29%;
+    float: left;
+    margin: 0 15px;
+    padding: 70px 10px 70px;
+    text-align: center;
+    background-blend-mode: overlay;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 265px;
+  }
+  .pagefly.proj-contents h4 {
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #fff;
+    line-height: 1em;
+    font-weight: 300 !important;
+    padding-bottom: 28px;
+    z-index: 2;
+  }
+  .pagefly.proj-contents h4::before {
+    content: "";
+    background: rgb(255, 255, 255);
+    width: 20px;
+    height: 1px;
+    position: absolute;
+    top: 5px;
+    left: 15px;
+  }
+  .pagefly.proj-contents h4::after {
+    content: "";
+    background: rgb(255, 255, 255);
+    width: 20px;
+    height: 1px;
+    position: absolute;
+    top: 5px;
+    right: 15px;
+  }
+  .pagefly.proj-contents h3 {
+    font-size: 18px;
+    color: #fff;
+    line-height: 1em;
+    padding-bottom: 17px;
+    text-transform: uppercase;
+	font-weight: 600;
+  }
+  .pagefly.proj-contents p {
+    margin-bottom: 0 !important;
+    color: #fff;
+  }
+  @media only screen and (max-width: 767px) {
+	.pagefly.proj-container {
+		width: 100%;
+		max-width: 300px;
+		margin: 0px auto 20px;
+		float: unset;
+	}
+  }
+</style></div></div></div></div></div></div></div><div class="sc-qPjXN eYzxUD pf-a7c7b1ef pf-r pf-r-eh pf-r-ew pf-lg--hidden pf-md--hidden" data-pf-type="Row" style="--pf-s-lg:15px; --pf-s-md:15px; --pf-s-sm:0px; --pf-s-xs:0px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-fad55def" data-pf-type="Column"><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-4b29ad9a"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-ab2a3f77"><table>
+  <tbody><tr>
+    <td class="side-title">Project Name</td>
+    <td class="side-content">{{ article.title }}</td>
+  </tr>
+  <tr>
+    <td class="side-title">Interior Designer</td>
+    <td class="side-content">{{article.metafields.interior_designer.name}}</td>
+  </tr>
+  <tr>
+    <td class="side-title">Architects</td>
+    <td class="side-content">{{article.metafields.architects_name.architects_name}}</td>
+  </tr>
+  <tr>
+    <td class="side-title">Builder</td>
+    <td class="side-content">{{article.metafields.builder_name.builder_name}}</td>
+  </tr>
+  <tr>
+    <td class="side-title">Location</td>
+    <td class="side-content">{{article.metafields.location.location}}</td>
+  </tr>
+  <tr>
+    <td class="side-title">Completion</td>
+    <td class="side-content">{{article.metafields.completion.year}}</td>
+  </tr>
+  <tr>
+    <td class="side-title">Photography</td>
+    <td class="side-content">{{article.metafields.photography.name}}</td>
+  </tr>
+</tbody></table>
+
+<style>
+  table {
+	font-family: "Raleway", Sans-serif;
+	font-size: 16px;
+	color: #000000;
+	border-collapse: collapse;
+	width: 100%;
+  }
+
+  tr:last-child td {
+	border-width: 0 !important;
+  }
+
+  td {
+	border-style: solid !important;
+	border-width: 0px 0px 1px 0px !important;
+	border-color: #000000 !important;
+	text-align: left;
+	padding: 20px 0 10px 0 !important;
+  }
+  .side-title {
+	font-weight: 600;
+  }
+  .side-content {
+	font-weight: 400;
+	text-align: right;
+  }
+  .side-collection {
+	background-image: url("{{article.metafields.product_featured.image}}");
+  }
+  ..side-collection:hover {
+	background-color: rgba(0,0,0,0.5);
+  }
+  .sidebar-overlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+  }
+  .sidebar-overlay:hover {
+	background-color: rgba(0, 0, 0, 0.3);
+	transition-duration: 1500ms;
+  }
+</style></div><div data-href="{{article.metafields.product_featured.link}}" data-target="_self" data-pf-type="Block" class="sc-oUbqx bgMQOP pf-e4404b29 side-collection"><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-3f774bac sidebar-overlay"></div><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-b685e440"><h3 data-pf-type="Heading" class="sc-oTLFK lcHmGL pf-2833248d"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-a4e0d753">{{article.metafields.product_feature.name}}</span></h3><p data-pf-type="Paragraph2" class="sc-pkvvt cbrLgP pf-248d8a60"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-7f4df1ce">{{article.metafields.product_featured.collection_name}}</span></p><a href="{{article.metafields.product_featured.link}}" target="_self" data-pf-type="Button" class="sc-pZdvY kuwSuz pf-8a60b685"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-bcf22833">See Product</span></a></div></div></div></div></div></div></div></div></div></div></div><script>
+					window.__pagefly_setting__={"baseURL":"https://apps.pagefly.io","analyticsURL":"https://analytics.pagefly.io","isBackend":false,"cdnURL":"https://cdn.pagefly.io","pageflyVersion":"2.13.14","shopDomain":"pravadafloorsinc.myshopify.com","elementData":{},"pageTitle":"Project Post Template","pageType":"blog","pageId":"c478ea18-c520-40cd-b861-6f7254e73fe0","lazyLoad":false,"imageLazyLoad":true,"nativeImageLazyLoad":true,"trackingIDs":[],"shopifyProxyPath":"/a/pf_preview","updatedTime":"2020-09-24T23:15:10.614Z"};
+					window.__pagefly_setting__.moneyFormat = {{shop.money_format | json}}
+				</script><script src="https://cdn.pagefly.io/pagefly/2.13.14/core/helper.js?t=20200924170948" defer></script> </article>

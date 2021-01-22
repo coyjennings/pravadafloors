@@ -1,0 +1,250 @@
+<article> <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400|Oswald:400|Roboto:400|Playfair+Display:400|Raleway:400&display=swap"><link rel="stylesheet" href="https://cdn.pagefly.io/pagefly/2.13.16/css/main-style.css?t=20200927110949"><link rel="stylesheet" href="{{ 'pagefly.905955e3.scss.css' | asset_url }}">
+		  <div class="__pf" id="__pf"><div data-pf-type="Body" class="sc-pRgDJ fzXWJx pf-6665a7f4"><div data-pf-type="Layout" class="pf-10aa6665"><div data-container="false" class="sc-pZopv bjKdkd pf-359c4135 pf-bg-lazy" data-pf-type="Section"><div class="sc-pQQXS iWCqut"><div class="sc-qPjXN eYzxUD pf-b5e1359c pf-r pf-r-eh" data-pf-type="Row" style="--pf-s-lg:15px; --pf-s-md:15px; --pf-s-sm:15px; --pf-s-xs:15px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-d753b5e1" data-pf-type="Column"><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-febbd3a4"><h1 data-pf-type="Heading" class="sc-oTLFK lcHmGL pf-1c719967"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-9ebf2631">A LIFE FULL OF DESIGN SECRETS</span></h1></div><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-d3a4d753"><h2 data-pf-type="Heading" class="sc-oTLFK lcHmGL pf-9967febb"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-b15c1c71">behind whats trending</span></h2></div></div></div></div></div></div><div data-container="true" class="sc-pZopv bjKdkd pf-51459ed2" data-pf-type="Section"><div class="sc-pQQXS iWCqut" style="max-width: 850px;"><div class="sc-qPjXN eYzxUD pf-3a4c5145 pf-r pf-r-eh" data-pf-type="Row" style="--pf-s-lg:15px; --pf-s-md:15px; --pf-s-sm:15px; --pf-s-xs:15px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-e7cc3a4c" data-pf-type="Column"><img sizes="(min-width: 992px) 1200px, (min-width: 768px) and (max-width: 991px) 800px, 400px" data-srcset="https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-2daf40e3--pravada-logomarkblack.png?v=1599026715 1200w, https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-2daf40e3--pravada-logomarkblack.png?v=1599026715 800w, https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-2daf40e3--pravada-logomarkblack.png?v=1599026715 400w" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="sc-qZtVr dLIPjF pf-413595a5 pf-img-lazy" data-pf-type="Image2"><h4 data-pf-type="Heading" class="sc-oTLFK lcHmGL pf-d5c5a9d5"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-d471baab">{{ blog.title }}</span></h4><p data-pf-type="Paragraph2" class="sc-pkvvt cbrLgP pf-a9d5e7cc"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-834ed5c5">{{ blog.metafields.blog_description.blog_description }}</span></p></div></div></div></div></div><div data-container="false" class="sc-pZopv bjKdkd pf-eadca510" data-pf-type="Section"><div class="sc-pQQXS iWCqut"><div class="sc-qPjXN eYzxUD pf-ab87eadc pf-r pf-r-eh" data-pf-type="Row" style="--pf-s-lg:0px; --pf-s-md:0px; --pf-s-sm:0px; --pf-s-xs:0px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-d3a4ab87" data-pf-type="Column"><div data-pf-type="Block" class="sc-oUbqx bgMQOP pf-cbc3d3a4"><div data-pf-type="Custom.HTML" class="sc-pciXn kKVZfa pf-a51048bd">{% for article in blog.articles %}
+<article class="wgl_col-4 projects" style="padding-right:15px; padding-left:15px; padding-bottom:30px;">
+  <div class="product-content">
+	<div class="aspect-ratio" style="background-image: url('{{ article.image.src | img_url: '600x600' }}'); background-size: cover;">
+	  <div class="portfolio-bg">
+		<div class="projects-portfolio-item_description">
+		  <div class="projects-portfolio-item_description-inner">
+			<div class="projects-portfolio-item_meta">
+			  <span class="post_cats">
+				<a href="{{blog.url}}" class="projects-portfolio-category">
+				  {{ blog.title }}
+				</a>
+			  </span>
+			</div>
+			<div class="projects-portfolio-item_title">
+			  <h4 class="title">
+				<a href="{{article.url}}" target="_blank">
+				  {{ article.title }}
+				</a>
+			  </h4>
+			</div>
+		  </div>
+		</div>
+		<a href="{{article.url}}" class="projects_link">
+		  <i class="portfolio_link-icon flaticon-right-arrow"></i>
+		</a>
+	  </div>
+	</div>
+  </div>
+
+</article>
+{% endfor %}
+
+<style>
+  @media only screen and (min-width: 768px) {
+	.projects.wgl_col-4 {
+	  width: 33.33333333%;
+  	}
+  }
+
+  @media only screen and (max-width: 1024px) {
+	.projects.wgl_col-4 {
+	  width: 50%;
+  	}
+  }
+
+  @media only screen and (max-width: 767px) {
+	.projects.wgl_col-4 {
+	  width: 100%;
+  	}
+  }
+
+  .product-content {
+	overflow: hidden;
+	position: relative;
+  }
+
+  .product-content:hover .aspect-ratio {
+	-ms-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+
+  .projects .aspect-ratio {
+    width: 100%;
+    padding-top: 100%;
+	position: relative;
+	-webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+	-webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+  }
+
+  .projects .aspect-ratio:before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: block;
+	left: 0;
+	top: 0;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+	background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(202, 202, 202, 0) 24%, #3d3d3d 88%, #232323 100%);
+	background: -moz- oldlinear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(202, 202, 202, 0) 24%, #3d3d3d 88%, #232323 100%);
+	background: -o-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(202, 202, 202, 0) 24%, #3d3d3d 88%, #232323 100%);
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(202, 202, 202, 0) 24%, #3d3d3d 88%, #232323 100%);
+	opacity: 0.6;
+  }
+
+  .projects .aspect-ratio:after {
+	display: block;
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    -webkit-transition: all .45s ease;
+    -o-transition: all .45s ease;
+    -moz-transition: all .45s ease;
+    transition: all .45s ease;
+	background-color: rgba(2, 1, 1, 0.33);
+    opacity: 0.1;
+    visibility: visible;
+  }
+
+  .product-content:hover .aspect-ratio:after {
+	opacity: 1;
+  }
+
+  /* Extra small devices (phones, 600px and down) */
+  @media only screen and (max-width: 600px) {
+	  .portfolio-bg {
+		  height: 340px;
+	  }
+	  .projects .projects-portfolio-item_title .title {
+		  font-size: 20px;
+	  }
+  }
+
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 600px) {
+	  .portfolio-bg {
+		  height: 560px;
+	  }
+	  .projects .projects-portfolio-item_title .title {
+		  font-size: 24px;
+	  }
+  }
+
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+	  .portfolio-bg {
+		  height: 216px;
+	  }
+	  .projects .projects-portfolio-item_title .title {
+		  font-size: 24px;
+	  }
+  }
+
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+	  .portfolio-bg {
+		  height: 288.5px;
+	  }
+	  .projects .projects-portfolio-item_title .title {
+		  font-size: 24px;
+	  }
+  }
+
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1200px) {
+	  .portfolio-bg {
+		  height: 360px;
+	  }
+  }
+
+  .projects .portfolio-bg {
+    margin-top: -100%;
+  }
+
+  .projects .projects-portfolio-item_description {
+	width: calc(100% - 50px);
+	background-color: transparent;
+    height: auto;
+    left: 25px ;
+    bottom: 25px ;
+	align-items: flex-start ;
+    padding: 26px 30px ;
+	transform: translateY(10px) ;
+    text-align: left ;
+	position: absolute ;
+    z-index: 3 ;
+	transition: all 0.5s ;
+    overflow: hidden ;
+	opacity: 1 ;
+	display: flex ;
+  }
+
+  .projects .projects-portfolio-item_title {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 7px;
+  }
+
+  .projects-portfolio-category {
+	font-family: "Raleway";
+	font-size: 10px;
+	color: #ffffff;
+  }
+
+  .projects-portfolio-category:hover {
+	color: #000000;
+  }
+
+  .projects .projects-portfolio-item_title .title a {
+    color: #ffffff;
+	font-family: "Raleway";
+  }
+
+  .projects .projects-portfolio-item_title .title a:hover {
+	color: #000000;
+  }
+
+  .product-content:hover .projects-portfolio-item_title .title a {
+	font-weight: 400 !important;
+  }
+
+  .projects .projects-portfolio-item_title .title {
+	line-height: 1.2;
+  }
+
+  .projects .projects-portfolio-item_meta {
+    margin-bottom: 10px;
+	position: relative;
+    z-index: 2;
+    color: #c6c6c6;
+	font-size: 14px;
+    font-weight: 600;
+  }
+  .projects_link {
+	position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+    font-size: 24px;
+	display: flex;
+  }
+</style></div></div></div></div></div></div></div><div data-container="false" class="sc-pZopv bjKdkd pf-39c5cbc3" data-pf-type="Section"><div class="sc-pQQXS iWCqut"><div class="sc-qPjXN eYzxUD pf-8fbc39c5 pf-r pf-r-eh" data-pf-type="Row" style="--pf-s-lg:15px; --pf-s-md:15px; --pf-s-sm:15px; --pf-s-xs:15px;"><div class="sc-pbYdQ jklmHY pf-c pf-c-xs--12 pf-c-sm--12 pf-c-md--12 pf-c-lg--12"><div class="sc-pkUyL fTyjzF pf-4ccb8fbc" data-pf-type="Column"><img sizes="(min-width: 992px) 1200px, (min-width: 768px) and (max-width: 991px) 800px, 400px" data-srcset="https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-2daf40e3--pravada-logomarkblack.png?v=1599026715 1200w, https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-2daf40e3--pravada-logomarkblack.png?v=1599026715 800w, https://cdn.shopify.com/s/files/1/0422/9274/0261/t/5/assets/pf-2daf40e3--pravada-logomarkblack.png?v=1599026715 400w" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="sc-qZtVr dLIPjF pf-9ed21c09 pf-img-lazy" data-pf-type="Image2"><p data-pf-type="Paragraph2" class="sc-pkvvt cbrLgP pf-73953fd6"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-15d237eb">WE LOVE DESIGN</span></p><h4 data-pf-type="Heading" class="sc-oTLFK lcHmGL pf-3fd65549"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-f030c1ef">LOOKING FOR PROJECTS?</span></h4><a href="/blogs/media-projects" target="_self" data-pf-type="Button" class="sc-pZdvY kuwSuz pf-55494ccb"><span data-pf-type="Text" class="sc-ptSuy fnmilh pf-70297395">View Projects</span></a></div></div></div></div></div></div></div></div><script>
+					window.__pagefly_setting__={"baseURL":"https://apps.pagefly.io","analyticsURL":"https://analytics.pagefly.io","isBackend":false,"cdnURL":"https://cdn.pagefly.io","pageflyVersion":"2.13.16","shopDomain":"pravadafloorsinc.myshopify.com","elementData":{},"pageTitle":"News Blog Template","pageType":"blog","pageId":"905955e3-4234-46e0-bbee-73bd7a001741","lazyLoad":false,"imageLazyLoad":true,"nativeImageLazyLoad":true,"trackingIDs":[],"shopifyProxyPath":"/a/pf_preview","updatedTime":"2020-09-27T17:54:55.565Z"};
+					window.__pagefly_setting__.moneyFormat = {{shop.money_format | json}}
+				</script><script src="https://cdn.pagefly.io/pagefly/2.13.16/core/helper.js?t=20200927110949" defer></script> </article>

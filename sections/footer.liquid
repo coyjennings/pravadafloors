@@ -33,6 +33,9 @@
               {%- assign link_list = block.settings.link_list -%}
               <ul class="site-footer__linklist">
                 {% for link in linklists[link_list].links %}
+                  {%- comment %}<locksmith:fa9c>{% endcomment -%}
+                    {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: link, subject_parent: linklists[link_list], variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                  {%- comment %}</locksmith:fa9c>{% endcomment -%}
                   <li class="site-footer__linklist-item h6">
                     <a href="{{ link.url }}">{{ link.title }}</a>
                   </li>

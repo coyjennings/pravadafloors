@@ -21,13 +21,13 @@
     },
     "password_page": {
       "close_modal": "Close password login modal",
-      "login_form_heading": "Enter store using password",
+      "login_form_heading": "Enter using password",
       "login_form_password_label": "Password",
       "login_form_password_placeholder": "Your password",
       "login_form_submit": "Enter",
       "signup_form_email_label": "Email",
       "signup_form_success": "We will send you an email right before we open!",
-      "admin_link_html": "Are you the store owner? <a href=\"\/admin\" class=\"text-link\">Log in here<\/a>",
+      "admin_link_html": "Are you the owner? <a href=\"\/admin\" class=\"text-link\">Log in here<\/a>",
       "password_link": "Enter using password",
       "powered_by_shopify_html": "This shop will be powered by {{ shopify }}"
     },
@@ -62,7 +62,7 @@
     },
     "header": {
       "menu": "Menu",
-      "view_cart": "View cart"
+      "view_cart": "View Sample Bag"
     },
     "navigation": {
       "toggle_sublinks": "{{ link_title }} menu"
@@ -242,7 +242,7 @@
       "email": "Email",
       "password": "Password",
       "submit": "Create",
-      "cancel": "Return to Store"
+      "cancel": "Return to website"
     }
   },
   "homepage": {
@@ -251,7 +251,7 @@
       "product_vendor": "Product vendor",
       "product_title": "Example Product Title",
       "blog_title": "Your post's title",
-      "blog_excerpt": "Your store hasn’t published any blog posts yet. A blog can be used to talk about new product launches, tips, or other news you want to share with your customers. You can check out Shopify’s ecommerce blog for inspiration and advice for your own store and blog.",
+      "blog_excerpt": "You haven’t published any blog posts yet. A blog can be used to talk about new product launches, tips, or other news you want to share with your customers. You can check out Shopify’s ecommerce blog for inspiration and advice for your own store and blog.",
       "no_content": "This section doesn’t currently include any content. Add content to this section using the sidebar."
     }
   },
@@ -279,9 +279,9 @@
       "from_text_html": "From {{ price }}",
       "include_taxes": "Tax included.",
       "shipping_policy_html": "<a href=\"{{ link }}\">Shipping<\/a> calculated at checkout.",
-      "add_to_cart": "Add to Cart",
-      "item_added_to_cart": "Item added to cart!",
-      "view_cart": "View cart",
+      "add_to_cart": "Add to sample bag",
+      "item_added_to_cart": "Item added to sample bag!",
+      "view_cart": "View sample bag",
       "quantity": "Quantity",
       "unit_price": "Unit price",
       "view_in_space": "View in your space",
@@ -382,8 +382,13 @@
         "all_items_in_cart": "All {{ count }} {{ name }} are in your sample bag",
         "empty_update": "Cannot update empty sample bag",
         "generic_error": "Sample bag error",
-        "too_many_line_items_error": "Your sample bag can't contain more than {{ max }} items. "
+        "too_many_line_items_error": "Your sample bag can't contain more than {{ max }} items. ",
+        "changed": "Sample bag has changed",
+        "stock_problems_html": "One or more items are no longer available. We've provided an <ahref='{{ link }}'> updated sample bag <\/a>."
       }
+    },
+    "page_titles": {
+      "shopping_cart": "Sample Bag"
     }
   },
   "pagefly": {

@@ -1,0 +1,23 @@
+{%- layout none -%}
+{
+	"items": [
+		{%- for item in cart.items -%}
+		{
+		"id": {{ item.id | json }},
+		"collectionIds": [
+			{%- comment %}<locksmith:0992>{% endcomment -%}
+			  {%- assign locksmith_8f2c_forloop__size = 0 %}{%- for productCollection in item.product.collections -%}{% capture var %}{% render 'locksmith-variables', scope: 'subject', subject: productCollection, variable: 'transparent' %}{% endcapture %}{% if var == 'true' %}{% assign locksmith_8f2c_forloop__size = locksmith_8f2c_forloop__size | plus: 1 %}{% endif %}{% endfor %}{% assign locksmith_8f2c_forloop__index = nil -%}
+			{%- comment %}</locksmith:0992>{% endcomment -%}
+			{%- for productCollection in item.product.collections -%}
+				 {%- comment %}<locksmith:f611>{% endcomment -%}
+				   {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: productCollection, subject_parent: item.product, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% if locksmith_8f2c_forloop__index == nil %}{% assign locksmith_8f2c_forloop__index = 1 %}{% assign locksmith_8f2c_forloop__index0 = 0 %}{% else %}{% assign locksmith_8f2c_forloop__index = locksmith_8f2c_forloop__index | plus: 1 %}{% assign locksmith_8f2c_forloop__index0 = locksmith_8f2c_forloop__index0 | plus: 1 %}{% endif %}{% if locksmith_8f2c_forloop__index == 1 %}{% assign locksmith_8f2c_forloop__first = true %}{% else %}{% assign locksmith_8f2c_forloop__first = false %}{% endif %}{% if locksmith_8f2c_forloop__index == locksmith_8f2c_forloop__size %}{% assign locksmith_8f2c_forloop__last = true %}{% else %}{% assign locksmith_8f2c_forloop__last = false %}{% endif %}{% assign locksmith_8f2c_forloop__rindex = locksmith_8f2c_forloop__size | minus: locksmith_8f2c_forloop__index | minus: 1 %}{% assign locksmith_8f2c_forloop__rindex0 = locksmith_8f2c_forloop__size | minus: locksmith_8f2c_forloop__index0 | minus: 1 %}{% else %}{% continue %}{% endif -%}
+				 {%- comment %}</locksmith:f611>{% endcomment -%}
+				 {{ productCollection.id | json }}
+
+			{% unless locksmith_8f2c_forloop__last %},{% endunless %}
+			{% endfor %}
+		]
+		}{% unless forloop.last %},{% endunless %}
+		{%- endfor -%}
+	]
+}

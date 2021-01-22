@@ -1,3 +1,7 @@
+{%- comment %}<locksmith:b172>{% endcomment -%}
+  {%- if search.results %}{% paginate search.results by 100 %}{% assign locksmith_search__results_count = 0 %}{% for result in search.results %}{% capture var %}{% render 'locksmith-variables', scope: 'subject', subject: result, subject_parent: search, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif %}{% assign locksmith_search__results_count = locksmith_search__results_count | plus: 1 %}{% endfor %}{% endpaginate %}{% endif -%}
+{%- comment %}</locksmith:b172>{% endcomment -%}
+
 <link rel='stylesheet' id='search-result-inline-css' href="{{ 'search-result-inline.css' | asset_url }}" type='text/css'
     media='all' />
 
@@ -7,7 +11,7 @@
     {% if search.performed %}
     <h1 class="section-header__title h2">{{ 'general.search.search_results_title' | t }}</h1>
     <div class="section-header__description">
-        {{ 'general.search.results_count_html' | t: count: search.results_count, terms: search.terms }}
+        {{ 'general.search.results_count_html' | t: count: locksmith_search__results_count, terms: search.terms }}
     </div>
     {% else %}
     <h1 class="section-header__title h2">{{ 'general.search.title' | t }}</h1>
@@ -40,6 +44,9 @@
                                             <div
                                                 class="elementor-posts-container elementor-posts elementor-posts--skin-classic elementor-grid">
                                                 {% for item in search.results %}
+                                                {%- comment %}<locksmith:f8a8>{% endcomment -%}
+                                                  {%- capture var %}{% render 'locksmith-variables', scope: 'subject', subject: item, subject_parent: search, variable: 'transparent' %}{% endcapture %}{% if var == "true" %}{% else %}{% continue %}{% endif -%}
+                                                {%- comment %}</locksmith:f8a8>{% endcomment -%}
                                                 {% if item.object_type == 'article' %}
                                                 <article
                                                     class="elementor-post elementor-grid-item post-13791 post type-post status-publish format-standard has-post-thumbnail hentry category-tips-and-advice tag-care tag-maintenance tag-technical tag-tips">
@@ -58,7 +65,7 @@
                                                         </h4>
                                                         <div class="elementor-post__excerpt">
                                                             <p>
-                                                                {{ item.excerpt_or_content | truncatewords: 25 }}
+                                                                {{ item.excerpt_or_content | strip_html | truncatewords: 25 }}
                                                             </p>
                                                         </div>
                                                     </div>
@@ -72,19 +79,18 @@
                                                         </h4>
                                                         <div class="elementor-post__excerpt">
                                                             <p>
-                                                                {{ item.content | truncatewords: 25 }}
+                                                                {{ item.content | strip_html | truncatewords: 25 }}
                                                             </p>
                                                         </div>
                                                     </div>
                                                 </article>
-                                                {% else %}
+                                                {% else item.object_type == 'product' %}
                                                 <article
                                                     class="elementor-post elementor-grid-item post-13791 post type-post status-publish format-standard has-post-thumbnail hentry category-tips-and-advice tag-care tag-maintenance tag-technical tag-tips">
                                                     {% if item.featured_image %}
                                                     <a class="elementor-post__thumbnail__link" href={{ item.url }}>
                                                         <div class="elementor-post__thumbnail">
-                                                            <img src="{{ item.featured_image | img_url: 'large' }}" class="attachment-full size-full" alt="" srcset=""
-                                                                sizes="(max-width: 2000px) 100vw, 2000px" />
+                                                            <img src="{{ item.featured_image | img_url: 'large' }}" class="attachment-full size-full" alt="" />
                                                         </div>
                                                     </a>
                                                     {% endif %}
@@ -94,7 +100,7 @@
                                                         </h4>
                                                         <div class="elementor-post__excerpt">
                                                             <p>
-                                                                {{ item.description | truncatewords: 25 }}
+                                                                {{ item.description | strip_html | truncatewords: 25 }}
                                                             </p>
                                                         </div>
                                                     </div>
